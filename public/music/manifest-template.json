@@ -1,0 +1,50 @@
+{
+  "$schema": "manifest-schema.json",
+  "version": "1.0.0",
+  "generated": null,
+  "collection": {
+    "name": "Bach: Well-Tempered Clavier",
+    "source": "Open Well-Tempered Clavier - MuseScore Edition",
+    "creator": "OpenGoldberg (Olivier Miquel)",
+    "license": "CC0 Public Domain",
+    "attribution": "Created by Olivier Miquel in collaboration with the MuseScore team. Made possible by 900+ Kickstarter backers.",
+    "project_url": "https://welltemperedclavier.org/",
+    "collection_url": "https://musescore.com/user/9836/sets/669666"
+  },
+  "statistics": {
+    "total_files": 0,
+    "total_size_bytes": 0,
+    "book1_count": 0,
+    "book2_count": 0,
+    "prelude_count": 0,
+    "fugue_count": 0
+  },
+  "files": {
+    "book1": [],
+    "book2": []
+  },
+  "validation": {
+    "all_files_valid_xml": null,
+    "all_files_have_score_partwise": null,
+    "total_measures": null,
+    "total_notes": null,
+    "validation_date": null,
+    "validation_passed": null
+  },
+  "download_info": {
+    "download_method": "manual",
+    "download_date": null,
+    "downloaded_by": null,
+    "source_verification": {
+      "musescore_collection_verified": true,
+      "license_verified": true,
+      "public_domain_status": "CC0"
+    }
+  },
+  "notes": [
+    "This manifest will be automatically generated after downloading and validating MusicXML files",
+    "Run 'npm run music:parse' to populate file metadata",
+    "Run 'npm run music:validate' to populate validation data",
+    "See docs/MUSIC_DOWNLOAD_LOG.md for complete download documentation"
+  ]
+}

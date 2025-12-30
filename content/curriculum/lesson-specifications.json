@@ -1,0 +1,1337 @@
+{
+  "generated_at": "2025-12-30T02:32:22.594Z",
+  "total_lessons": 30,
+  "domains": {
+    "Harmonic Fundamentals": 10,
+    "Voice Leading": 8,
+    "Fugal Technique": 12
+  },
+  "specifications": [
+    {
+      "lesson_id": "harm-fund-001-intervals",
+      "title": "Perfect and Imperfect Consonances",
+      "domain": "Harmonic Fundamentals",
+      "unit": "Intervals and Triads",
+      "module": "Interval Recognition",
+      "previous_lesson": null,
+      "next_lesson": "harm-fund-002-triads",
+      "learning_objectives": [
+        "Distinguish perfect consonances (unisons, fourths, fifths, octaves) from imperfect consonances (thirds, sixths)",
+        "Understand the mathematical basis for interval classification using frequency ratios",
+        "Recognize how Bach uses perfect intervals for structural stability and imperfect for melodic motion",
+        "Apply interval recognition to harmonic and contrapuntal analysis in the WTC"
+      ],
+      "primary_example": {
+        "bwv": 846,
+        "type": "prelude",
+        "measure_start": 1,
+        "measure_end": 4
+      },
+      "secondary_examples": [
+        {
+          "bwv": 857,
+          "type": "fugue",
+          "measure_start": 1,
+          "measure_end": 3
+        },
+        {
+          "bwv": 847,
+          "type": "prelude",
+          "measure_start": 1,
+          "measure_end": 5
+        },
+        {
+          "bwv": 850,
+          "type": "fugue",
+          "measure_start": 1,
+          "measure_end": 2
+        }
+      ],
+      "prerequisites": []
+    },
+    {
+      "lesson_id": "harm-fund-002-triads",
+      "title": "Major and Minor Triads",
+      "domain": "Harmonic Fundamentals",
+      "unit": "Intervals and Triads",
+      "module": "Triad Construction",
+      "previous_lesson": "harm-fund-001-intervals",
+      "next_lesson": "harm-fund-003-inversions",
+      "learning_objectives": [
+        "Construct major and minor triads from any given root",
+        "Identify triad quality by visual inspection and by ear",
+        "Understand how triads function within a key (I, IV, V major; ii, iii, vi minor)",
+        "Recognize triads in various textures and inversions in Bach's keyboard music"
+      ],
+      "primary_example": {
+        "bwv": 846,
+        "type": "prelude",
+        "measure_start": 1,
+        "measure_end": 5
+      },
+      "secondary_examples": [
+        {
+          "bwv": 847,
+          "type": "fugue",
+          "measure_start": 1,
+          "measure_end": 3
+        },
+        {
+          "bwv": 850,
+          "type": "prelude",
+          "measure_start": 1,
+          "measure_end": 8
+        },
+        {
+          "bwv": 856,
+          "type": "prelude",
+          "measure_start": 1,
+          "measure_end": 4
+        }
+      ],
+      "prerequisites": [
+        "harm-fund-001-intervals"
+      ]
+    },
+    {
+      "lesson_id": "harm-fund-003-inversions",
+      "title": "Triad Inversions",
+      "domain": "Harmonic Fundamentals",
+      "unit": "Intervals and Triads",
+      "module": "Inversions",
+      "previous_lesson": "harm-fund-002-triads",
+      "next_lesson": "harm-fund-004-seventh-chords",
+      "learning_objectives": [
+        "Identify root position, first inversion (6), and second inversion (6/4) triads",
+        "Understand the voice-leading advantages of using inversions",
+        "Recognize how inversions create smoother bass lines in progressions",
+        "Analyze Bach's use of inversions for melodic bass lines and harmonic variety"
+      ],
+      "primary_example": {
+        "bwv": 846,
+        "type": "prelude",
+        "measure_start": 4,
+        "measure_end": 11
+      },
+      "secondary_examples": [
+        {
+          "bwv": 848,
+          "type": "prelude",
+          "measure_start": 1,
+          "measure_end": 8
+        },
+        {
+          "bwv": 853,
+          "type": "prelude",
+          "measure_start": 1,
+          "measure_end": 5
+        },
+        {
+          "bwv": 862,
+          "type": "prelude",
+          "measure_start": 1,
+          "measure_end": 4
+        }
+      ],
+      "prerequisites": [
+        "harm-fund-002-triads"
+      ]
+    },
+    {
+      "lesson_id": "harm-fund-004-seventh-chords",
+      "title": "Seventh Chord Types",
+      "domain": "Harmonic Fundamentals",
+      "unit": "Seventh Chords",
+      "module": "Seventh Chord Construction",
+      "previous_lesson": "harm-fund-003-inversions",
+      "next_lesson": "harm-fund-005-dominant-seventh",
+      "learning_objectives": [
+        "Construct major seventh, minor seventh, dominant seventh, half-diminished, and fully diminished seventh chords",
+        "Identify seventh chord quality by examining the triad and seventh interval",
+        "Understand the function of seventh chords in diatonic contexts",
+        "Recognize how seventh chords add color and drive progression in Bach's harmony"
+      ],
+      "primary_example": {
+        "bwv": 849,
+        "type": "prelude",
+        "measure_start": 1,
+        "measure_end": 8
+      },
+      "secondary_examples": [
+        {
+          "bwv": 855,
+          "type": "prelude",
+          "measure_start": 1,
+          "measure_end": 6
+        },
+        {
+          "bwv": 861,
+          "type": "prelude",
+          "measure_start": 1,
+          "measure_end": 4
+        },
+        {
+          "bwv": 867,
+          "type": "prelude",
+          "measure_start": 1,
+          "measure_end": 5
+        }
+      ],
+      "prerequisites": [
+        "harm-fund-002-triads",
+        "harm-fund-003-inversions"
+      ]
+    },
+    {
+      "lesson_id": "harm-fund-005-dominant-seventh",
+      "title": "The V7 Chord and Its Resolution",
+      "domain": "Harmonic Fundamentals",
+      "unit": "Seventh Chords",
+      "module": "Dominant Seventh",
+      "previous_lesson": "harm-fund-004-seventh-chords",
+      "next_lesson": "harm-fund-006-cadences",
+      "learning_objectives": [
+        "Construct dominant seventh chords in any key",
+        "Identify the voice-leading requirements for V7 resolution (seventh down, leading tone up)",
+        "Recognize V7 chords by sight and sound in various textures",
+        "Understand V7's function in cadences, sequences, and tonicization"
+      ],
+      "primary_example": {
+        "bwv": 846,
+        "type": "prelude",
+        "measure_start": 23,
+        "measure_end": 24
+      },
+      "secondary_examples": [
+        {
+          "bwv": 847,
+          "type": "fugue",
+          "measure_start": 25,
+          "measure_end": 27
+        },
+        {
+          "bwv": 850,
+          "type": "prelude",
+          "measure_start": 14,
+          "measure_end": 16
+        },
+        {
+          "bwv": 852,
+          "type": "fugue",
+          "measure_start": 18,
+          "measure_end": 20
+        }
+      ],
+      "prerequisites": [
+        "harm-fund-004-seventh-chords"
+      ]
+    },
+    {
+      "lesson_id": "harm-fund-006-cadences",
+      "title": "Authentic and Half Cadences",
+      "domain": "Harmonic Fundamentals",
+      "unit": "Cadences and Progressions",
+      "module": "Cadence Types",
+      "previous_lesson": "harm-fund-005-dominant-seventh",
+      "next_lesson": "harm-fund-007-plagal-deceptive",
+      "learning_objectives": [
+        "Identify perfect authentic cadences (PAC), imperfect authentic cadences (IAC), and half cadences (HC)",
+        "Understand how cadences articulate formal structure in Baroque music",
+        "Recognize cadential voice leading and bass patterns",
+        "Analyze how Bach uses cadences to create sectional divisions and harmonic goals"
+      ],
+      "primary_example": {
+        "bwv": 846,
+        "type": "prelude",
+        "measure_start": 22,
+        "measure_end": 24
+      },
+      "secondary_examples": [
+        {
+          "bwv": 853,
+          "type": "prelude",
+          "measure_start": 18,
+          "measure_end": 20
+        },
+        {
+          "bwv": 848,
+          "type": "fugue",
+          "measure_start": 28,
+          "measure_end": 30
+        },
+        {
+          "bwv": 862,
+          "type": "prelude",
+          "measure_start": 12,
+          "measure_end": 14
+        }
+      ],
+      "prerequisites": [
+        "harm-fund-005-dominant-seventh"
+      ]
+    },
+    {
+      "lesson_id": "harm-fund-007-plagal-deceptive",
+      "title": "Plagal and Deceptive Cadences",
+      "domain": "Harmonic Fundamentals",
+      "unit": "Cadences and Progressions",
+      "module": "Cadence Types",
+      "previous_lesson": "harm-fund-006-cadences",
+      "next_lesson": "harm-fund-008-sequences",
+      "learning_objectives": [
+        "Identify plagal cadences (IV-I) and understand their \"Amen\" quality",
+        "Recognize deceptive cadences (V-vi) and their role in extending phrases",
+        "Understand the expressive effects of cadential substitutions",
+        "Analyze how Bach uses deceptive cadences to avoid premature closure"
+      ],
+      "primary_example": {
+        "bwv": 855,
+        "type": "prelude",
+        "measure_start": 16,
+        "measure_end": 19
+      },
+      "secondary_examples": [
+        {
+          "bwv": 849,
+          "type": "fugue",
+          "measure_start": 32,
+          "measure_end": 34
+        },
+        {
+          "bwv": 861,
+          "type": "prelude",
+          "measure_start": 10,
+          "measure_end": 12
+        },
+        {
+          "bwv": 867,
+          "type": "fugue",
+          "measure_start": 18,
+          "measure_end": 20
+        }
+      ],
+      "prerequisites": [
+        "harm-fund-006-cadences"
+      ]
+    },
+    {
+      "lesson_id": "harm-fund-008-sequences",
+      "title": "Harmonic Sequences",
+      "domain": "Harmonic Fundamentals",
+      "unit": "Cadences and Progressions",
+      "module": "Sequential Patterns",
+      "previous_lesson": "harm-fund-007-plagal-deceptive",
+      "next_lesson": "harm-fund-009-secondary-dominants",
+      "learning_objectives": [
+        "Identify descending fifth sequences, ascending step sequences, and other common patterns",
+        "Understand how sequences create harmonic momentum and bridge structural points",
+        "Recognize the relationship between sequential harmony and melodic sequence",
+        "Analyze Bach's use of sequences in preludes and fugal episodes"
+      ],
+      "primary_example": {
+        "bwv": 847,
+        "type": "prelude",
+        "measure_start": 10,
+        "measure_end": 18
+      },
+      "secondary_examples": [
+        {
+          "bwv": 850,
+          "type": "fugue",
+          "measure_start": 12,
+          "measure_end": 18
+        },
+        {
+          "bwv": 856,
+          "type": "prelude",
+          "measure_start": 8,
+          "measure_end": 14
+        },
+        {
+          "bwv": 862,
+          "type": "fugue",
+          "measure_start": 16,
+          "measure_end": 22
+        }
+      ],
+      "prerequisites": [
+        "harm-fund-006-cadences"
+      ]
+    },
+    {
+      "lesson_id": "harm-fund-009-secondary-dominants",
+      "title": "Secondary Dominant Functions",
+      "domain": "Harmonic Fundamentals",
+      "unit": "Chromatic Harmony",
+      "module": "Tonicization",
+      "previous_lesson": "harm-fund-008-sequences",
+      "next_lesson": "harm-fund-010-modulation",
+      "learning_objectives": [
+        "Construct secondary dominants (V/V, V/IV, V/vi, etc.) in any key",
+        "Identify tonicization and distinguish it from true modulation",
+        "Recognize chromatic alterations that signal secondary dominant function",
+        "Analyze how Bach uses secondary dominants to expand tonal space"
+      ],
+      "primary_example": {
+        "bwv": 846,
+        "type": "prelude",
+        "measure_start": 12,
+        "measure_end": 17
+      },
+      "secondary_examples": [
+        {
+          "bwv": 850,
+          "type": "prelude",
+          "measure_start": 9,
+          "measure_end": 13
+        },
+        {
+          "bwv": 853,
+          "type": "fugue",
+          "measure_start": 14,
+          "measure_end": 18
+        },
+        {
+          "bwv": 862,
+          "type": "prelude",
+          "measure_start": 6,
+          "measure_end": 11
+        }
+      ],
+      "prerequisites": [
+        "harm-fund-005-dominant-seventh",
+        "harm-fund-008-sequences"
+      ]
+    },
+    {
+      "lesson_id": "harm-fund-010-modulation",
+      "title": "Common-Chord Modulation",
+      "domain": "Harmonic Fundamentals",
+      "unit": "Chromatic Harmony",
+      "module": "Modulation Techniques",
+      "previous_lesson": "harm-fund-009-secondary-dominants",
+      "next_lesson": "voice-lead-001-two-voice",
+      "learning_objectives": [
+        "Identify common-chord (pivot-chord) modulations to closely related keys",
+        "Understand the difference between tonicization and modulation",
+        "Recognize the formal role of modulation in binary and ternary forms",
+        "Analyze Bach's modulation techniques in preludes and fugues"
+      ],
+      "primary_example": {
+        "bwv": 848,
+        "type": "prelude",
+        "measure_start": 12,
+        "measure_end": 20
+      },
+      "secondary_examples": [
+        {
+          "bwv": 853,
+          "type": "prelude",
+          "measure_start": 8,
+          "measure_end": 14
+        },
+        {
+          "bwv": 857,
+          "type": "fugue",
+          "measure_start": 18,
+          "measure_end": 24
+        },
+        {
+          "bwv": 862,
+          "type": "prelude",
+          "measure_start": 14,
+          "measure_end": 20
+        }
+      ],
+      "prerequisites": [
+        "harm-fund-009-secondary-dominants"
+      ]
+    },
+    {
+      "lesson_id": "voice-lead-001-two-voice",
+      "title": "Two-Voice Counterpoint Fundamentals",
+      "domain": "Voice Leading",
+      "unit": "Two-Voice Counterpoint",
+      "module": "First Species Principles",
+      "previous_lesson": "harm-fund-010-modulation",
+      "next_lesson": "voice-lead-002-consonance-dissonance",
+      "learning_objectives": [
+        "Identify consonant intervals (thirds, sixths, perfect fifths, octaves) in two-voice textures",
+        "Recognize contrary, oblique, and similar motion between voices",
+        "Understand the prohibition against parallel perfect fifths and octaves",
+        "Analyze how Bach maintains voice independence in two-voice passages"
+      ],
+      "primary_example": {
+        "bwv": 846,
+        "type": "fugue",
+        "measure_start": 1,
+        "measure_end": 3
+      },
+      "secondary_examples": [
+        {
+          "bwv": 772,
+          "type": "prelude",
+          "measure_start": 1,
+          "measure_end": 8
+        },
+        {
+          "bwv": 847,
+          "type": "fugue",
+          "measure_start": 3,
+          "measure_end": 6
+        },
+        {
+          "bwv": 854,
+          "type": "fugue",
+          "measure_start": 1,
+          "measure_end": 4
+        }
+      ],
+      "prerequisites": [
+        "harm-fund-001-intervals"
+      ]
+    },
+    {
+      "lesson_id": "voice-lead-002-consonance-dissonance",
+      "title": "Consonance, Dissonance, and Resolution",
+      "domain": "Voice Leading",
+      "unit": "Two-Voice Counterpoint",
+      "module": "Dissonance Treatment",
+      "previous_lesson": "voice-lead-001-two-voice",
+      "next_lesson": "voice-lead-003-passing-neighbor",
+      "learning_objectives": [
+        "Distinguish consonant from dissonant intervals by ear and sight",
+        "Identify preparation, dissonance, and resolution in suspension figures",
+        "Understand the stepwise resolution requirements for dissonances",
+        "Analyze Bach's treatment of dissonance in contrapuntal textures"
+      ],
+      "primary_example": {
+        "bwv": 847,
+        "type": "fugue",
+        "measure_start": 8,
+        "measure_end": 12
+      },
+      "secondary_examples": [
+        {
+          "bwv": 849,
+          "type": "prelude",
+          "measure_start": 12,
+          "measure_end": 16
+        },
+        {
+          "bwv": 853,
+          "type": "fugue",
+          "measure_start": 10,
+          "measure_end": 14
+        },
+        {
+          "bwv": 861,
+          "type": "fugue",
+          "measure_start": 14,
+          "measure_end": 18
+        }
+      ],
+      "prerequisites": [
+        "voice-lead-001-two-voice"
+      ]
+    },
+    {
+      "lesson_id": "voice-lead-003-passing-neighbor",
+      "title": "Passing Tones and Neighbor Tones",
+      "domain": "Voice Leading",
+      "unit": "Two-Voice Counterpoint",
+      "module": "Dissonance Treatment",
+      "previous_lesson": "voice-lead-002-consonance-dissonance",
+      "next_lesson": "voice-lead-004-suspensions",
+      "learning_objectives": [
+        "Identify passing tones (stepwise motion through dissonance) in melodic contexts",
+        "Recognize neighbor tones (upper and lower neighbors) as melodic embellishments",
+        "Understand the metric placement of passing and neighbor tones",
+        "Analyze how Bach uses these ornamental dissonances to create melodic fluidity"
+      ],
+      "primary_example": {
+        "bwv": 846,
+        "type": "prelude",
+        "measure_start": 5,
+        "measure_end": 11
+      },
+      "secondary_examples": [
+        {
+          "bwv": 850,
+          "type": "prelude",
+          "measure_start": 1,
+          "measure_end": 8
+        },
+        {
+          "bwv": 853,
+          "type": "prelude",
+          "measure_start": 8,
+          "measure_end": 14
+        },
+        {
+          "bwv": 862,
+          "type": "prelude",
+          "measure_start": 4,
+          "measure_end": 10
+        }
+      ],
+      "prerequisites": [
+        "voice-lead-002-consonance-dissonance"
+      ]
+    },
+    {
+      "lesson_id": "voice-lead-004-suspensions",
+      "title": "Suspensions and Their Resolutions",
+      "domain": "Voice Leading",
+      "unit": "Three-Voice Counterpoint",
+      "module": "Suspension Figures",
+      "previous_lesson": "voice-lead-003-passing-neighbor",
+      "next_lesson": "voice-lead-005-three-voice",
+      "learning_objectives": [
+        "Identify 4-3, 7-6, 9-8, and 2-3 suspension figures",
+        "Understand the three-part structure: preparation, suspension, resolution",
+        "Recognize chains of suspensions and their expressive effects",
+        "Analyze Bach's use of suspensions to create intensity and forward drive"
+      ],
+      "primary_example": {
+        "bwv": 847,
+        "type": "prelude",
+        "measure_start": 20,
+        "measure_end": 28
+      },
+      "secondary_examples": [
+        {
+          "bwv": 849,
+          "type": "fugue",
+          "measure_start": 24,
+          "measure_end": 30
+        },
+        {
+          "bwv": 853,
+          "type": "prelude",
+          "measure_start": 16,
+          "measure_end": 22
+        },
+        {
+          "bwv": 857,
+          "type": "fugue",
+          "measure_start": 28,
+          "measure_end": 34
+        }
+      ],
+      "prerequisites": [
+        "voice-lead-002-consonance-dissonance"
+      ]
+    },
+    {
+      "lesson_id": "voice-lead-005-three-voice",
+      "title": "Three-Voice Texture and Independence",
+      "domain": "Voice Leading",
+      "unit": "Three-Voice Counterpoint",
+      "module": "Three-Part Writing",
+      "previous_lesson": "voice-lead-004-suspensions",
+      "next_lesson": "voice-lead-006-four-voice",
+      "learning_objectives": [
+        "Analyze the distribution of harmonic functions across three voices",
+        "Recognize how each voice maintains melodic independence",
+        "Understand spacing and register considerations in three-voice writing",
+        "Identify instances where voices cross or temporarily share register"
+      ],
+      "primary_example": {
+        "bwv": 846,
+        "type": "fugue",
+        "measure_start": 7,
+        "measure_end": 14
+      },
+      "secondary_examples": [
+        {
+          "bwv": 848,
+          "type": "fugue",
+          "measure_start": 10,
+          "measure_end": 16
+        },
+        {
+          "bwv": 850,
+          "type": "fugue",
+          "measure_start": 8,
+          "measure_end": 14
+        },
+        {
+          "bwv": 853,
+          "type": "fugue",
+          "measure_start": 12,
+          "measure_end": 18
+        }
+      ],
+      "prerequisites": [
+        "voice-lead-001-two-voice",
+        "voice-lead-004-suspensions"
+      ]
+    },
+    {
+      "lesson_id": "voice-lead-006-four-voice",
+      "title": "Four-Voice Texture and SATB Writing",
+      "domain": "Voice Leading",
+      "unit": "Four-Voice Counterpoint",
+      "module": "Four-Part Writing",
+      "previous_lesson": "voice-lead-005-three-voice",
+      "next_lesson": "voice-lead-007-parallel-motion",
+      "learning_objectives": [
+        "Identify soprano, alto, tenor, and bass voices in keyboard texture",
+        "Understand voice-leading principles for four-voice chordal progressions",
+        "Recognize complete vs. incomplete chords (doubled third, omitted fifth, etc.)",
+        "Analyze how Bach distributes harmonic and melodic material across four voices"
+      ],
+      "primary_example": {
+        "bwv": 849,
+        "type": "fugue",
+        "measure_start": 15,
+        "measure_end": 22
+      },
+      "secondary_examples": [
+        {
+          "bwv": 853,
+          "type": "fugue",
+          "measure_start": 18,
+          "measure_end": 24
+        },
+        {
+          "bwv": 857,
+          "type": "fugue",
+          "measure_start": 20,
+          "measure_end": 26
+        },
+        {
+          "bwv": 861,
+          "type": "fugue",
+          "measure_start": 22,
+          "measure_end": 28
+        }
+      ],
+      "prerequisites": [
+        "voice-lead-005-three-voice"
+      ]
+    },
+    {
+      "lesson_id": "voice-lead-007-parallel-motion",
+      "title": "Parallel Motion: Rules and Exceptions",
+      "domain": "Voice Leading",
+      "unit": "Four-Voice Counterpoint",
+      "module": "Prohibited Parallels",
+      "previous_lesson": "voice-lead-006-four-voice",
+      "next_lesson": "voice-lead-008-voice-exchange",
+      "learning_objectives": [
+        "Identify parallel perfect fifths and octaves and understand why they're avoided",
+        "Recognize acceptable parallel thirds and sixths",
+        "Understand direct (hidden) fifths and octaves and their acceptable contexts",
+        "Analyze instances where Bach seemingly breaks rules for expressive effect"
+      ],
+      "primary_example": {
+        "bwv": 846,
+        "type": "fugue",
+        "measure_start": 18,
+        "measure_end": 24
+      },
+      "secondary_examples": [
+        {
+          "bwv": 848,
+          "type": "fugue",
+          "measure_start": 14,
+          "measure_end": 20
+        },
+        {
+          "bwv": 850,
+          "type": "fugue",
+          "measure_start": 16,
+          "measure_end": 22
+        },
+        {
+          "bwv": 853,
+          "type": "fugue",
+          "measure_start": 20,
+          "measure_end": 26
+        }
+      ],
+      "prerequisites": [
+        "voice-lead-006-four-voice"
+      ]
+    },
+    {
+      "lesson_id": "voice-lead-008-voice-exchange",
+      "title": "Voice Exchange and Invertible Counterpoint",
+      "domain": "Voice Leading",
+      "unit": "Advanced Voice Leading",
+      "module": "Contrapuntal Techniques",
+      "previous_lesson": "voice-lead-007-parallel-motion",
+      "next_lesson": "fugue-001-subject-design",
+      "learning_objectives": [
+        "Identify voice exchange where two voices swap melodic material",
+        "Understand invertible counterpoint at the octave, tenth, and twelfth",
+        "Recognize how invertible counterpoint enables imitation and development",
+        "Analyze Bach's use of voice exchange in fugal episodes and sequences"
+      ],
+      "primary_example": {
+        "bwv": 847,
+        "type": "fugue",
+        "measure_start": 14,
+        "measure_end": 22
+      },
+      "secondary_examples": [
+        {
+          "bwv": 850,
+          "type": "fugue",
+          "measure_start": 18,
+          "measure_end": 24
+        },
+        {
+          "bwv": 853,
+          "type": "fugue",
+          "measure_start": 22,
+          "measure_end": 28
+        },
+        {
+          "bwv": 857,
+          "type": "fugue",
+          "measure_start": 24,
+          "measure_end": 30
+        }
+      ],
+      "prerequisites": [
+        "voice-lead-005-three-voice",
+        "voice-lead-007-parallel-motion"
+      ]
+    },
+    {
+      "lesson_id": "fugue-001-subject-design",
+      "title": "Characteristics of Effective Fugue Subjects",
+      "domain": "Fugal Technique",
+      "unit": "Subject and Answer",
+      "module": "Subject Design",
+      "previous_lesson": "voice-lead-008-voice-exchange",
+      "next_lesson": "fugue-002-tonal-answer",
+      "learning_objectives": [
+        "Identify tonal clarity, rhythmic distinctiveness, and contrapuntal potential in subjects",
+        "Understand typical subject length, range, and melodic contour",
+        "Recognize how subject design determines fugal possibilities",
+        "Analyze the subjects of multiple WTC fugues for common characteristics"
+      ],
+      "primary_example": {
+        "bwv": 846,
+        "type": "fugue",
+        "measure_start": 1,
+        "measure_end": 2
+      },
+      "secondary_examples": [
+        {
+          "bwv": 849,
+          "type": "fugue",
+          "measure_start": 1,
+          "measure_end": 3
+        },
+        {
+          "bwv": 850,
+          "type": "fugue",
+          "measure_start": 1,
+          "measure_end": 2
+        },
+        {
+          "bwv": 857,
+          "type": "fugue",
+          "measure_start": 1,
+          "measure_end": 3
+        }
+      ],
+      "prerequisites": [
+        "voice-lead-005-three-voice"
+      ]
+    },
+    {
+      "lesson_id": "fugue-002-tonal-answer",
+      "title": "Tonal vs. Real Answer",
+      "domain": "Fugal Technique",
+      "unit": "Subject and Answer",
+      "module": "Answer Construction",
+      "previous_lesson": "fugue-001-subject-design",
+      "next_lesson": "fugue-003-countersubject",
+      "learning_objectives": [
+        "Distinguish tonal answers (dominant to tonic adjustment) from real answers",
+        "Understand why tonal answers maintain tonal stability",
+        "Identify the specific alterations in tonal answers",
+        "Analyze Bach's choice of tonal vs. real answer in different fugues"
+      ],
+      "primary_example": {
+        "bwv": 846,
+        "type": "fugue",
+        "measure_start": 3,
+        "measure_end": 5
+      },
+      "secondary_examples": [
+        {
+          "bwv": 847,
+          "type": "fugue",
+          "measure_start": 3,
+          "measure_end": 5
+        },
+        {
+          "bwv": 850,
+          "type": "fugue",
+          "measure_start": 3,
+          "measure_end": 5
+        },
+        {
+          "bwv": 853,
+          "type": "fugue",
+          "measure_start": 3,
+          "measure_end": 6
+        }
+      ],
+      "prerequisites": [
+        "fugue-001-subject-design"
+      ]
+    },
+    {
+      "lesson_id": "fugue-003-countersubject",
+      "title": "Creating Effective Countersubjects",
+      "domain": "Fugal Technique",
+      "unit": "Subject and Answer",
+      "module": "Countersubject",
+      "previous_lesson": "fugue-002-tonal-answer",
+      "next_lesson": "fugue-004-exposition",
+      "learning_objectives": [
+        "Identify countersubjects that accompany subject and answer statements",
+        "Understand the relationship between subject and countersubject",
+        "Recognize invertible countersubjects that work above or below the subject",
+        "Analyze how Bach creates complementary rhythmic and melodic profiles"
+      ],
+      "primary_example": {
+        "bwv": 846,
+        "type": "fugue",
+        "measure_start": 3,
+        "measure_end": 7
+      },
+      "secondary_examples": [
+        {
+          "bwv": 847,
+          "type": "fugue",
+          "measure_start": 3,
+          "measure_end": 7
+        },
+        {
+          "bwv": 849,
+          "type": "fugue",
+          "measure_start": 4,
+          "measure_end": 8
+        },
+        {
+          "bwv": 853,
+          "type": "fugue",
+          "measure_start": 4,
+          "measure_end": 9
+        }
+      ],
+      "prerequisites": [
+        "fugue-002-tonal-answer",
+        "voice-lead-005-three-voice"
+      ]
+    },
+    {
+      "lesson_id": "fugue-004-exposition",
+      "title": "The Fugue Exposition",
+      "domain": "Fugal Technique",
+      "unit": "Fugue Structure",
+      "module": "Exposition",
+      "previous_lesson": "fugue-003-countersubject",
+      "next_lesson": "fugue-005-episodes",
+      "learning_objectives": [
+        "Identify the complete exposition in three- and four-voice fugues",
+        "Understand the order of voice entries (subject-answer-subject pattern)",
+        "Recognize when an exposition ends and development begins",
+        "Analyze how Bach varies exposition length and structure across fugues"
+      ],
+      "primary_example": {
+        "bwv": 846,
+        "type": "fugue",
+        "measure_start": 1,
+        "measure_end": 14
+      },
+      "secondary_examples": [
+        {
+          "bwv": 847,
+          "type": "fugue",
+          "measure_start": 1,
+          "measure_end": 11
+        },
+        {
+          "bwv": 849,
+          "type": "fugue",
+          "measure_start": 1,
+          "measure_end": 13
+        },
+        {
+          "bwv": 853,
+          "type": "fugue",
+          "measure_start": 1,
+          "measure_end": 15
+        }
+      ],
+      "prerequisites": [
+        "fugue-003-countersubject"
+      ]
+    },
+    {
+      "lesson_id": "fugue-005-episodes",
+      "title": "Episode Construction and Function",
+      "domain": "Fugal Technique",
+      "unit": "Fugue Structure",
+      "module": "Episodes",
+      "previous_lesson": "fugue-004-exposition",
+      "next_lesson": "fugue-006-middle-entries",
+      "learning_objectives": [
+        "Identify episodes as non-thematic developmental sections",
+        "Understand how episodes derive from subject or countersubject material",
+        "Recognize modulating vs. non-modulating episodes",
+        "Analyze how Bach uses episodes to transition between key areas"
+      ],
+      "primary_example": {
+        "bwv": 846,
+        "type": "fugue",
+        "measure_start": 14,
+        "measure_end": 19
+      },
+      "secondary_examples": [
+        {
+          "bwv": 847,
+          "type": "fugue",
+          "measure_start": 11,
+          "measure_end": 16
+        },
+        {
+          "bwv": 850,
+          "type": "fugue",
+          "measure_start": 12,
+          "measure_end": 18
+        },
+        {
+          "bwv": 853,
+          "type": "fugue",
+          "measure_start": 15,
+          "measure_end": 22
+        }
+      ],
+      "prerequisites": [
+        "fugue-004-exposition"
+      ]
+    },
+    {
+      "lesson_id": "fugue-006-middle-entries",
+      "title": "Middle Entries in Related Keys",
+      "domain": "Fugal Technique",
+      "unit": "Fugue Structure",
+      "module": "Development",
+      "previous_lesson": "fugue-005-episodes",
+      "next_lesson": "fugue-007-stretto",
+      "learning_objectives": [
+        "Identify subject entries in dominant, subdominant, and relative keys",
+        "Understand how middle entries establish new tonal centers",
+        "Recognize complete vs. partial subject statements",
+        "Analyze the tonal plan of WTC fugues through middle entry locations"
+      ],
+      "primary_example": {
+        "bwv": 847,
+        "type": "fugue",
+        "measure_start": 16,
+        "measure_end": 24
+      },
+      "secondary_examples": [
+        {
+          "bwv": 849,
+          "type": "fugue",
+          "measure_start": 18,
+          "measure_end": 26
+        },
+        {
+          "bwv": 853,
+          "type": "fugue",
+          "measure_start": 22,
+          "measure_end": 30
+        },
+        {
+          "bwv": 857,
+          "type": "fugue",
+          "measure_start": 20,
+          "measure_end": 28
+        }
+      ],
+      "prerequisites": [
+        "fugue-005-episodes",
+        "harm-fund-010-modulation"
+      ]
+    },
+    {
+      "lesson_id": "fugue-007-stretto",
+      "title": "Stretto: Overlapping Entries",
+      "domain": "Fugal Technique",
+      "unit": "Advanced Techniques",
+      "module": "Stretto",
+      "previous_lesson": "fugue-006-middle-entries",
+      "next_lesson": "fugue-008-augmentation",
+      "learning_objectives": [
+        "Identify stretto passages where subject entries overlap",
+        "Understand the different time intervals at which stretto can occur",
+        "Recognize how stretto intensifies contrapuntal density",
+        "Analyze how Bach uses stretto climactically near fugue conclusions"
+      ],
+      "primary_example": {
+        "bwv": 849,
+        "type": "fugue",
+        "measure_start": 32,
+        "measure_end": 40
+      },
+      "secondary_examples": [
+        {
+          "bwv": 853,
+          "type": "fugue",
+          "measure_start": 28,
+          "measure_end": 36
+        },
+        {
+          "bwv": 857,
+          "type": "fugue",
+          "measure_start": 30,
+          "measure_end": 38
+        },
+        {
+          "bwv": 861,
+          "type": "fugue",
+          "measure_start": 34,
+          "measure_end": 42
+        }
+      ],
+      "prerequisites": [
+        "fugue-006-middle-entries"
+      ]
+    },
+    {
+      "lesson_id": "fugue-008-augmentation",
+      "title": "Augmentation and Diminution",
+      "domain": "Fugal Technique",
+      "unit": "Advanced Techniques",
+      "module": "Rhythmic Transformation",
+      "previous_lesson": "fugue-007-stretto",
+      "next_lesson": "fugue-009-inversion",
+      "learning_objectives": [
+        "Identify augmented subjects (doubled note values) in contrapuntal contexts",
+        "Recognize diminished subjects (halved note values) and their effects",
+        "Understand how augmentation creates grandeur and climax",
+        "Analyze Bach's use of rhythmic transformation for structural emphasis"
+      ],
+      "primary_example": {
+        "bwv": 853,
+        "type": "fugue",
+        "measure_start": 38,
+        "measure_end": 48
+      },
+      "secondary_examples": [
+        {
+          "bwv": 857,
+          "type": "fugue",
+          "measure_start": 40,
+          "measure_end": 50
+        },
+        {
+          "bwv": 861,
+          "type": "fugue",
+          "measure_start": 42,
+          "measure_end": 52
+        },
+        {
+          "bwv": 867,
+          "type": "fugue",
+          "measure_start": 44,
+          "measure_end": 54
+        }
+      ],
+      "prerequisites": [
+        "fugue-006-middle-entries"
+      ]
+    },
+    {
+      "lesson_id": "fugue-009-inversion",
+      "title": "Subject Inversion and Retrograde",
+      "domain": "Fugal Technique",
+      "unit": "Advanced Techniques",
+      "module": "Melodic Transformation",
+      "previous_lesson": "fugue-008-augmentation",
+      "next_lesson": "fugue-010-pedal-point",
+      "learning_objectives": [
+        "Identify inverted subjects where intervals are flipped",
+        "Recognize retrograde subjects (played backwards) when they occur",
+        "Understand how inversion maintains recognizability while creating variety",
+        "Analyze fugues that systematically employ inversion"
+      ],
+      "primary_example": {
+        "bwv": 849,
+        "type": "fugue",
+        "measure_start": 24,
+        "measure_end": 32
+      },
+      "secondary_examples": [
+        {
+          "bwv": 853,
+          "type": "fugue",
+          "measure_start": 26,
+          "measure_end": 34
+        },
+        {
+          "bwv": 861,
+          "type": "fugue",
+          "measure_start": 28,
+          "measure_end": 36
+        },
+        {
+          "bwv": 867,
+          "type": "fugue",
+          "measure_start": 30,
+          "measure_end": 38
+        }
+      ],
+      "prerequisites": [
+        "fugue-006-middle-entries"
+      ]
+    },
+    {
+      "lesson_id": "fugue-010-pedal-point",
+      "title": "Pedal Points and Harmonic Suspension",
+      "domain": "Fugal Technique",
+      "unit": "Advanced Techniques",
+      "module": "Structural Devices",
+      "previous_lesson": "fugue-009-inversion",
+      "next_lesson": "fugue-011-final-cadence",
+      "learning_objectives": [
+        "Identify dominant and tonic pedal points in fugal codas",
+        "Understand how pedal points create harmonic tension and resolution",
+        "Recognize the formal function of pedal points (typically near conclusions)",
+        "Analyze how Bach uses pedal points to build climactic intensity"
+      ],
+      "primary_example": {
+        "bwv": 846,
+        "type": "fugue",
+        "measure_start": 24,
+        "measure_end": 27
+      },
+      "secondary_examples": [
+        {
+          "bwv": 847,
+          "type": "fugue",
+          "measure_start": 26,
+          "measure_end": 31
+        },
+        {
+          "bwv": 850,
+          "type": "fugue",
+          "measure_start": 28,
+          "measure_end": 34
+        },
+        {
+          "bwv": 853,
+          "type": "fugue",
+          "measure_start": 44,
+          "measure_end": 50
+        }
+      ],
+      "prerequisites": [
+        "fugue-006-middle-entries"
+      ]
+    },
+    {
+      "lesson_id": "fugue-011-final-cadence",
+      "title": "Fugal Codas and Final Cadences",
+      "domain": "Fugal Technique",
+      "unit": "Fugue Structure",
+      "module": "Conclusion",
+      "previous_lesson": "fugue-010-pedal-point",
+      "next_lesson": "fugue-012-overall-structure",
+      "learning_objectives": [
+        "Identify the beginning of the coda or final section",
+        "Understand how Bach intensifies activity approaching the final cadence",
+        "Recognize the use of stretto, augmentation, or pedal in codas",
+        "Analyze how final cadences bring tonal and contrapuntal closure"
+      ],
+      "primary_example": {
+        "bwv": 846,
+        "type": "fugue",
+        "measure_start": 24,
+        "measure_end": 27
+      },
+      "secondary_examples": [
+        {
+          "bwv": 847,
+          "type": "fugue",
+          "measure_start": 28,
+          "measure_end": 31
+        },
+        {
+          "bwv": 849,
+          "type": "fugue",
+          "measure_start": 42,
+          "measure_end": 48
+        },
+        {
+          "bwv": 853,
+          "type": "fugue",
+          "measure_start": 46,
+          "measure_end": 50
+        }
+      ],
+      "prerequisites": [
+        "fugue-010-pedal-point"
+      ]
+    },
+    {
+      "lesson_id": "fugue-012-overall-structure",
+      "title": "Overall Fugue Architecture",
+      "domain": "Fugal Technique",
+      "unit": "Fugue Structure",
+      "module": "Formal Analysis",
+      "previous_lesson": "fugue-011-final-cadence",
+      "next_lesson": "keyboard-001-prelude-types",
+      "learning_objectives": [
+        "Analyze complete fugue structure: exposition, episodes, middle entries, coda",
+        "Understand tonal plans and modulation schemes across entire fugues",
+        "Recognize how Bach balances unity (subject) with variety (episodes, keys)",
+        "Create formal diagrams of fugue structure showing entries and key areas"
+      ],
+      "primary_example": {
+        "bwv": 846,
+        "type": "fugue",
+        "measure_start": 1,
+        "measure_end": 27
+      },
+      "secondary_examples": [
+        {
+          "bwv": 847,
+          "type": "fugue",
+          "measure_start": 1,
+          "measure_end": 31
+        },
+        {
+          "bwv": 849,
+          "type": "fugue",
+          "measure_start": 1,
+          "measure_end": 48
+        },
+        {
+          "bwv": 853,
+          "type": "fugue",
+          "measure_start": 1,
+          "measure_end": 50
+        }
+      ],
+      "prerequisites": [
+        "fugue-004-exposition",
+        "fugue-005-episodes",
+        "fugue-011-final-cadence"
+      ]
+    }
+  ]
+}

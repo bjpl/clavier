@@ -1,0 +1,477 @@
+{
+  "$schema": "download-urls-schema.json",
+  "version": "1.0.0",
+  "generated": "2025-12-29T18:45:00Z",
+  "source": {
+    "name": "Open Well-Tempered Clavier - MuseScore Edition",
+    "url": "https://musescore.com/user/9836/sets/669666",
+    "creator": "OpenGoldberg (Olivier Miquel)",
+    "license": "CC0 Public Domain (Creative Commons Zero)",
+    "attribution": "Created by Olivier Miquel in collaboration with the MuseScore team. Made possible by 900+ Kickstarter backers.",
+    "project_url": "https://welltemperedclavier.org/",
+    "verification_date": "2025-12-29"
+  },
+  "download_method": "manual",
+  "download_instructions": {
+    "method": "Manual download from MuseScore.com (API is private)",
+    "steps": [
+      "Visit the score collection: https://musescore.com/user/9836/sets/669666",
+      "Click on individual pieces to view each score",
+      "For each piece: Click 'Download' button → Select 'MusicXML' format",
+      "Save files to appropriate directory (public/music/book1/ or book2/)",
+      "Rename files to match naming convention: BWV-{number}-book{book}-{type}-{key}.musicxml"
+    ],
+    "alternative_sources": [
+      {
+        "name": "Musopen",
+        "url": "https://musopen.org/music/43466-the-well-tempered-clavier-book-i-bwv-846-869/",
+        "notes": "Book 1 only, various formats available"
+      },
+      {
+        "name": "IMSLP",
+        "url": "https://imslp.org/wiki/Das_wohltemperierte_Klavier_I,_BWV_846-869_(Bach,_Johann_Sebastian)",
+        "notes": "Limited MusicXML availability, mostly PDF scans"
+      }
+    ]
+  },
+  "pieces": {
+    "book1": [
+      {
+        "bwv": 846,
+        "number": 1,
+        "key": "C major",
+        "prelude": {
+          "musescore_url": "https://musescore.com/opengoldberg/scores/541101",
+          "filename": "BWV-846-book1-prelude-c-major.musicxml",
+          "manual_download": true,
+          "verified": false
+        },
+        "fugue": {
+          "musescore_url": "https://musescore.com/opengoldberg/scores/541101",
+          "filename": "BWV-846-book1-fugue-c-major.musicxml",
+          "manual_download": true,
+          "verified": false
+        }
+      },
+      {
+        "bwv": 847,
+        "number": 2,
+        "key": "C minor",
+        "prelude": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-847-book1-prelude-c-minor.musicxml",
+          "manual_download": true,
+          "verified": false
+        },
+        "fugue": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-847-book1-fugue-c-minor.musicxml",
+          "manual_download": true,
+          "verified": false
+        }
+      },
+      {
+        "bwv": 848,
+        "number": 3,
+        "key": "C# major",
+        "prelude": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-848-book1-prelude-c-sharp-major.musicxml",
+          "manual_download": true,
+          "verified": false
+        },
+        "fugue": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-848-book1-fugue-c-sharp-major.musicxml",
+          "manual_download": true,
+          "verified": false
+        }
+      },
+      {
+        "bwv": 849,
+        "number": 4,
+        "key": "C# minor",
+        "prelude": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-849-book1-prelude-c-sharp-minor.musicxml",
+          "manual_download": true,
+          "verified": false
+        },
+        "fugue": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-849-book1-fugue-c-sharp-minor.musicxml",
+          "manual_download": true,
+          "verified": false
+        }
+      },
+      {
+        "bwv": 850,
+        "number": 5,
+        "key": "D major",
+        "prelude": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-850-book1-prelude-d-major.musicxml",
+          "manual_download": true,
+          "verified": false
+        },
+        "fugue": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-850-book1-fugue-d-major.musicxml",
+          "manual_download": true,
+          "verified": false
+        }
+      },
+      {
+        "bwv": 851,
+        "number": 6,
+        "key": "D minor",
+        "prelude": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-851-book1-prelude-d-minor.musicxml",
+          "manual_download": true,
+          "verified": false
+        },
+        "fugue": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-851-book1-fugue-d-minor.musicxml",
+          "manual_download": true,
+          "verified": false
+        }
+      },
+      {
+        "bwv": 852,
+        "number": 7,
+        "key": "Eb major",
+        "prelude": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-852-book1-prelude-eb-major.musicxml",
+          "manual_download": true,
+          "verified": false
+        },
+        "fugue": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-852-book1-fugue-eb-major.musicxml",
+          "manual_download": true,
+          "verified": false
+        }
+      },
+      {
+        "bwv": 853,
+        "number": 8,
+        "key": "Eb minor",
+        "prelude": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-853-book1-prelude-eb-minor.musicxml",
+          "manual_download": true,
+          "verified": false
+        },
+        "fugue": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-853-book1-fugue-eb-minor.musicxml",
+          "manual_download": true,
+          "verified": false
+        }
+      },
+      {
+        "bwv": 854,
+        "number": 9,
+        "key": "E major",
+        "prelude": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-854-book1-prelude-e-major.musicxml",
+          "manual_download": true,
+          "verified": false
+        },
+        "fugue": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-854-book1-fugue-e-major.musicxml",
+          "manual_download": true,
+          "verified": false
+        }
+      },
+      {
+        "bwv": 855,
+        "number": 10,
+        "key": "E minor",
+        "prelude": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-855-book1-prelude-e-minor.musicxml",
+          "manual_download": true,
+          "verified": false
+        },
+        "fugue": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-855-book1-fugue-e-minor.musicxml",
+          "manual_download": true,
+          "verified": false
+        }
+      },
+      {
+        "bwv": 856,
+        "number": 11,
+        "key": "F major",
+        "prelude": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-856-book1-prelude-f-major.musicxml",
+          "manual_download": true,
+          "verified": false
+        },
+        "fugue": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-856-book1-fugue-f-major.musicxml",
+          "manual_download": true,
+          "verified": false
+        }
+      },
+      {
+        "bwv": 857,
+        "number": 12,
+        "key": "F minor",
+        "prelude": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-857-book1-prelude-f-minor.musicxml",
+          "manual_download": true,
+          "verified": false
+        },
+        "fugue": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-857-book1-fugue-f-minor.musicxml",
+          "manual_download": true,
+          "verified": false
+        }
+      },
+      {
+        "bwv": 858,
+        "number": 13,
+        "key": "F# major",
+        "prelude": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-858-book1-prelude-f-sharp-major.musicxml",
+          "manual_download": true,
+          "verified": false
+        },
+        "fugue": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-858-book1-fugue-f-sharp-major.musicxml",
+          "manual_download": true,
+          "verified": false
+        }
+      },
+      {
+        "bwv": 859,
+        "number": 14,
+        "key": "F# minor",
+        "prelude": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-859-book1-prelude-f-sharp-minor.musicxml",
+          "manual_download": true,
+          "verified": false
+        },
+        "fugue": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-859-book1-fugue-f-sharp-minor.musicxml",
+          "manual_download": true,
+          "verified": false
+        }
+      },
+      {
+        "bwv": 860,
+        "number": 15,
+        "key": "G major",
+        "prelude": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-860-book1-prelude-g-major.musicxml",
+          "manual_download": true,
+          "verified": false
+        },
+        "fugue": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-860-book1-fugue-g-major.musicxml",
+          "manual_download": true,
+          "verified": false
+        }
+      },
+      {
+        "bwv": 861,
+        "number": 16,
+        "key": "G minor",
+        "prelude": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-861-book1-prelude-g-minor.musicxml",
+          "manual_download": true,
+          "verified": false
+        },
+        "fugue": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-861-book1-fugue-g-minor.musicxml",
+          "manual_download": true,
+          "verified": false
+        }
+      },
+      {
+        "bwv": 862,
+        "number": 17,
+        "key": "Ab major",
+        "prelude": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-862-book1-prelude-ab-major.musicxml",
+          "manual_download": true,
+          "verified": false
+        },
+        "fugue": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-862-book1-fugue-ab-major.musicxml",
+          "manual_download": true,
+          "verified": false
+        }
+      },
+      {
+        "bwv": 863,
+        "number": 18,
+        "key": "G# minor",
+        "prelude": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-863-book1-prelude-g-sharp-minor.musicxml",
+          "manual_download": true,
+          "verified": false
+        },
+        "fugue": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-863-book1-fugue-g-sharp-minor.musicxml",
+          "manual_download": true,
+          "verified": false
+        }
+      },
+      {
+        "bwv": 864,
+        "number": 19,
+        "key": "A major",
+        "prelude": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-864-book1-prelude-a-major.musicxml",
+          "manual_download": true,
+          "verified": false
+        },
+        "fugue": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-864-book1-fugue-a-major.musicxml",
+          "manual_download": true,
+          "verified": false
+        }
+      },
+      {
+        "bwv": 865,
+        "number": 20,
+        "key": "A minor",
+        "prelude": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-865-book1-prelude-a-minor.musicxml",
+          "manual_download": true,
+          "verified": false
+        },
+        "fugue": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-865-book1-fugue-a-minor.musicxml",
+          "manual_download": true,
+          "verified": false
+        }
+      },
+      {
+        "bwv": 866,
+        "number": 21,
+        "key": "Bb major",
+        "prelude": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-866-book1-prelude-bb-major.musicxml",
+          "manual_download": true,
+          "verified": false
+        },
+        "fugue": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-866-book1-fugue-bb-major.musicxml",
+          "manual_download": true,
+          "verified": false
+        }
+      },
+      {
+        "bwv": 867,
+        "number": 22,
+        "key": "Bb minor",
+        "prelude": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-867-book1-prelude-bb-minor.musicxml",
+          "manual_download": true,
+          "verified": false
+        },
+        "fugue": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-867-book1-fugue-bb-minor.musicxml",
+          "manual_download": true,
+          "verified": false
+        }
+      },
+      {
+        "bwv": 868,
+        "number": 23,
+        "key": "B major",
+        "prelude": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-868-book1-prelude-b-major.musicxml",
+          "manual_download": true,
+          "verified": false
+        },
+        "fugue": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-868-book1-fugue-b-major.musicxml",
+          "manual_download": true,
+          "verified": false
+        }
+      },
+      {
+        "bwv": 869,
+        "number": 24,
+        "key": "B minor",
+        "prelude": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-869-book1-prelude-b-minor.musicxml",
+          "manual_download": true,
+          "verified": false
+        },
+        "fugue": {
+          "musescore_url": "TBD - Visit collection page",
+          "filename": "BWV-869-book1-fugue-b-minor.musicxml",
+          "manual_download": true,
+          "verified": false
+        }
+      }
+    ],
+    "book2": [
+      {
+        "bwv": 870,
+        "number": 1,
+        "key": "C major",
+        "prelude": {
+          "musescore_url": "TBD - Needs verification",
+          "filename": "BWV-870-book2-prelude-c-major.musicxml",
+          "manual_download": true,
+          "verified": false,
+          "notes": "Book 2 availability needs verification on MuseScore"
+        },
+        "fugue": {
+          "musescore_url": "TBD - Needs verification",
+          "filename": "BWV-870-book2-fugue-c-major.musicxml",
+          "manual_download": true,
+          "verified": false,
+          "notes": "Book 2 availability needs verification on MuseScore"
+        }
+      }
+    ]
+  },
+  "notes": {
+    "book1_status": "Complete collection available on MuseScore (OpenGoldberg user)",
+    "book2_status": "Availability needs verification - may require alternative sources",
+    "download_automation": "Not possible - MuseScore API requires authentication and is private",
+    "recommended_workflow": "Manual download following provided instructions, then run parse and import scripts",
+    "quality": "Professional crowd-sourced edition, CC0 public domain, suitable for educational use"
+  }
+}

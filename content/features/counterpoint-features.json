@@ -1,0 +1,619 @@
+{
+  "version": "1.0.0",
+  "category": "counterpoint",
+  "description": "Comprehensive definitions for counterpoint features in Bach's Well-Tempered Clavier",
+  "features": [
+    {
+      "id": "parallel-motion",
+      "name": "Parallel Motion",
+      "category": "counterpoint",
+      "definitions": {
+        "brief": "Two voices moving in the same direction by the same interval.",
+        "standard": "A type of contrapuntal motion where two or more voices move simultaneously in the same direction, maintaining the same interval between them. Common in thirds and sixths; parallel fifths and octaves are generally avoided in strict counterpoint.",
+        "detailed": "Parallel motion occurs when two or more voices move in the same direction while preserving the same intervallic distance between them. This creates a sense of unity and blend between the voices. In Baroque counterpoint, parallel thirds and sixths are favored for their consonant, sweet quality, while parallel fifths and octaves are avoided as they weaken voice independence and were considered stylistically inappropriate. However, Bach occasionally employs hidden or direct parallels for specific effects. The smoothness of parallel motion contrasts with the tension created by contrary motion, and skilled composers balance both to create engaging textures."
+      },
+      "listening_guidance": "Listen for voices moving 'together' - rising or falling at the same time while maintaining the same distance apart. Parallel thirds often sound sweet and flowing, like two singers moving in harmony.",
+      "visual_markers": "Look for note stems that move in the same direction with consistent vertical spacing between the voices. The melodic contour of both lines will appear as mirror images offset vertically.",
+      "common_contexts": "Common in two-part passages and sequences. Bach frequently uses parallel thirds and sixths in episodic material. Extended parallel motion often signals transitional or sequential passages rather than primary thematic statements.",
+      "difficulty_level": 2,
+      "prerequisites": ["consonance", "dissonance"],
+      "keywords": ["motion", "parallel", "thirds", "sixths", "voice-leading", "interval"],
+      "wtc_examples": [
+        {
+          "bwv": 846,
+          "type": "fugue",
+          "measures": "3-4",
+          "description": "Subject and countersubject moving in parallel thirds"
+        },
+        {
+          "bwv": 855,
+          "type": "fugue",
+          "measures": "12-14",
+          "description": "Episode featuring parallel sixths between upper voices"
+        },
+        {
+          "bwv": 862,
+          "type": "fugue",
+          "measures": "8-10",
+          "description": "Sequential passage with parallel thirds"
+        }
+      ]
+    },
+    {
+      "id": "contrary-motion",
+      "name": "Contrary Motion",
+      "category": "counterpoint",
+      "definitions": {
+        "brief": "Two voices moving in opposite directions.",
+        "standard": "A fundamental type of contrapuntal motion where voices move in opposing directions - one ascending while the other descends. This creates the strongest sense of independence between voices and is considered the ideal motion in strict counterpoint.",
+        "detailed": "Contrary motion represents the pinnacle of voice independence in counterpoint. When one voice ascends and another descends, each maintains its distinct melodic identity while creating harmonic interest through the changing intervals between them. Bach masterfully employs contrary motion at structurally important moments - cadences, climaxes, and thematic statements - to emphasize voice independence. This motion type naturally avoids parallel fifths and octaves, making it inherently 'safe' from a voice-leading perspective. The visual and aural effect is of two lines diverging or converging, creating dramatic tension or resolution."
+      },
+      "listening_guidance": "Listen for voices that seem to 'open up' (diverge) or 'close in' (converge). One voice rises while the other falls. This creates a sense of expansion or contraction in the musical space.",
+      "visual_markers": "Note stems point in opposite directions - one line ascending on the page while the other descends. The contours form a V-shape (diverging) or inverted V (converging).",
+      "common_contexts": "Essential at cadence points where bass typically descends while upper voice ascends to resolution. Used extensively in fugue subjects and their inversions. Creates dramatic effect in climactic passages.",
+      "difficulty_level": 2,
+      "prerequisites": ["consonance", "dissonance"],
+      "keywords": ["motion", "contrary", "opposite", "independence", "voice-leading", "diverge", "converge"],
+      "wtc_examples": [
+        {
+          "bwv": 847,
+          "type": "fugue",
+          "measures": "1-3",
+          "description": "Subject features contrary motion between outer voices at entry"
+        },
+        {
+          "bwv": 849,
+          "type": "fugue",
+          "measures": "35-37",
+          "description": "Climactic contrary motion leading to final cadence"
+        },
+        {
+          "bwv": 853,
+          "type": "fugue",
+          "measures": "20-22",
+          "description": "Subject and answer in contrary motion (inversion)"
+        }
+      ]
+    },
+    {
+      "id": "oblique-motion",
+      "name": "Oblique Motion",
+      "category": "counterpoint",
+      "definitions": {
+        "brief": "One voice moves while the other remains stationary.",
+        "standard": "A type of contrapuntal motion where one voice sustains or repeats a pitch while another voice moves melodically. This creates a stable anchor point against which melodic activity unfolds, often building tension or providing harmonic clarity.",
+        "detailed": "Oblique motion provides a unique textural effect where stillness and motion coexist. One voice acts as a fixed reference point - often a pedal tone, sustained note, or repeated pitch - while other voices move freely around it. This technique creates harmonic tension as the moving voices form varying intervals against the stationary voice. Bach uses oblique motion to build anticipation before cadences, to clarify harmonic function (especially with pedal points), and to create textural variety. The held voice can be in any register, though bass and soprano pedals are most common. This motion type is essential for creating the characteristic 'spinning out' of Baroque melody over stable harmony."
+      },
+      "listening_guidance": "Listen for one voice that seems 'stuck' or sustained while others move around it. The stationary voice acts like an anchor, and you can hear tension build as other voices create different harmonies against it.",
+      "visual_markers": "One voice appears as a horizontal line or repeated notes at the same pitch level while other voices show melodic movement above or below it.",
+      "common_contexts": "Frequently appears with pedal tones in bass or soprano. Common before cadences where dominant pedal supports harmonic motion above. Used in fugue stretto passages where sustained subject notes overlap with moving countersubject.",
+      "difficulty_level": 2,
+      "prerequisites": ["consonance", "dissonance"],
+      "keywords": ["motion", "oblique", "stationary", "pedal", "sustained", "anchor"],
+      "wtc_examples": [
+        {
+          "bwv": 846,
+          "type": "prelude",
+          "measures": "24-31",
+          "description": "Dominant pedal in bass with moving harmonies above"
+        },
+        {
+          "bwv": 848,
+          "type": "fugue",
+          "measures": "67-72",
+          "description": "Tonic pedal in bass during final statement"
+        },
+        {
+          "bwv": 867,
+          "type": "fugue",
+          "measures": "28-31",
+          "description": "Soprano sustains while inner voices move"
+        }
+      ]
+    },
+    {
+      "id": "similar-motion",
+      "name": "Similar Motion",
+      "category": "counterpoint",
+      "definitions": {
+        "brief": "Two voices moving in the same direction but by different intervals.",
+        "standard": "A type of contrapuntal motion where voices move in the same direction but not by identical intervals. Unlike parallel motion (same direction, same interval), similar motion allows the interval between voices to expand or contract while both ascend or descend.",
+        "detailed": "Similar motion occupies a middle ground between parallel and contrary motion. Both voices move in the same direction, but the intervallic distance between them changes. This allows voices to maintain some independence while still creating a unified directional flow. Similar motion approaching perfect consonances (fifths, octaves) by step in the upper voice is acceptable, but leaping into these intervals can create 'direct' or 'hidden' parallels that skilled composers generally avoid. Bach navigates similar motion with great subtlety, often using it in inner voices or in rapid passages where strict voice-leading rules can be relaxed. Similar motion provides variety between the extremes of parallel and contrary motion."
+      },
+      "listening_guidance": "Listen for voices moving in the same general direction but with one 'catching up' or 'falling behind' the other. The spacing between voices gradually opens or closes.",
+      "visual_markers": "Both lines move up or down together, but the vertical distance between them visibly changes. One voice moves by a larger interval than the other.",
+      "common_contexts": "Common in sequential passages where exact parallelism would be monotonous. Frequently used in inner voices where it's less conspicuous. Bach employs it when approaching cadences to create smooth voice leading.",
+      "difficulty_level": 3,
+      "prerequisites": ["parallel-motion", "contrary-motion"],
+      "keywords": ["motion", "similar", "direction", "expanding", "contracting", "voice-leading"],
+      "wtc_examples": [
+        {
+          "bwv": 850,
+          "type": "fugue",
+          "measures": "15-17",
+          "description": "Similar motion between alto and tenor in episode"
+        },
+        {
+          "bwv": 858,
+          "type": "fugue",
+          "measures": "9-11",
+          "description": "Subject accompanied by similar motion in countersubject"
+        },
+        {
+          "bwv": 871,
+          "type": "fugue",
+          "measures": "5-7",
+          "description": "Sequential passage featuring similar motion"
+        }
+      ]
+    },
+    {
+      "id": "4-3-suspension",
+      "name": "4-3 Suspension",
+      "category": "counterpoint",
+      "definitions": {
+        "brief": "A dissonant fourth resolving down by step to a third.",
+        "standard": "A melodic-harmonic device where a note that was consonant is held over (suspended) into the next chord where it becomes a dissonant fourth above the bass, then resolves downward by step to a consonant third. One of the most common and expressive suspensions in Baroque counterpoint.",
+        "detailed": "The 4-3 suspension is perhaps the most ubiquitous suspension in tonal music. It consists of three phases: preparation (the suspended note sounds as a consonance), suspension (the bass or other voices move while the note is held, creating a dissonant fourth), and resolution (the suspended note descends by step to form a consonant third). This creates a characteristic 'sigh' or 'leaning' quality that composers use to heighten emotional expression. Bach employs chains of 4-3 suspensions in sequences, creating waves of tension and release. The suspension delays the expected resolution, stretching time at expressive moments. In figured bass, this is often marked as 4-3 below the bass note."
+      },
+      "listening_guidance": "Listen for a 'leaning' or 'sighing' quality - a moment of tension (the 4th) followed by release (the 3rd). The suspended note seems to 'want' to move down. Chains of 4-3s create cascading waves of tension and release.",
+      "visual_markers": "Look for a note tied across a beat or bar, held while bass moves below it. The tied note then steps down. The dissonance typically falls on a strong beat with resolution on a weak beat.",
+      "common_contexts": "Extremely common at cadences, especially in soprano voice over dominant harmony. Frequently appears in chains (sequences) during episodes. Bach uses them to intensify emotional passages and to delay cadential resolution.",
+      "difficulty_level": 3,
+      "prerequisites": ["consonance", "dissonance"],
+      "keywords": ["suspension", "dissonance", "resolution", "fourth", "third", "tied", "prepared"],
+      "wtc_examples": [
+        {
+          "bwv": 846,
+          "type": "prelude",
+          "measures": "32-33",
+          "description": "4-3 suspension at penultimate cadence"
+        },
+        {
+          "bwv": 849,
+          "type": "fugue",
+          "measures": "27-29",
+          "description": "Chain of 4-3 suspensions in sequence"
+        },
+        {
+          "bwv": 861,
+          "type": "fugue",
+          "measures": "44-46",
+          "description": "Expressive 4-3 suspension highlighting climax"
+        }
+      ]
+    },
+    {
+      "id": "7-6-suspension",
+      "name": "7-6 Suspension",
+      "category": "counterpoint",
+      "definitions": {
+        "brief": "A dissonant seventh resolving down by step to a sixth.",
+        "standard": "A suspension where an upper voice holds a note that becomes a dissonant seventh above the bass, then resolves downward by step to a consonant sixth. Common in descending bass lines and sequences, creating rich harmonic color.",
+        "detailed": "The 7-6 suspension creates a distinctive harmonic richness that Bach exploits throughout the Well-Tempered Clavier. Like all suspensions, it involves preparation, suspension, and resolution. The seventh's sharp dissonance against the bass generates considerable tension, and its resolution to the sixth provides satisfying relief while maintaining forward motion. This suspension is particularly effective over a descending bass line, where it can appear in chains, each resolution becoming the preparation for the next. Bach often combines 7-6 suspensions with parallel sixths in the other voices, creating lush textures. The 7-6 suspension appears prominently in lament bass patterns and in sequences that descend by step."
+      },
+      "listening_guidance": "Listen for a more 'biting' dissonance than the 4-3 - the seventh has a sharper quality. The resolution to the sixth sounds warm but still active, often leading to further motion. Chains create a 'cascading' effect.",
+      "visual_markers": "Upper voice note tied across while bass descends, creating first a seventh then sixth interval. Often appears in sequences with descending bass lines.",
+      "common_contexts": "Prevalent in descending sequences and lament bass figures. Common in inner voices during thick textures. Bach uses 7-6 chains to build intensity in developmental passages.",
+      "difficulty_level": 3,
+      "prerequisites": ["consonance", "dissonance", "4-3-suspension"],
+      "keywords": ["suspension", "dissonance", "seventh", "sixth", "descending", "sequence", "chain"],
+      "wtc_examples": [
+        {
+          "bwv": 851,
+          "type": "fugue",
+          "measures": "18-21",
+          "description": "7-6 suspension chain over descending bass"
+        },
+        {
+          "bwv": 857,
+          "type": "prelude",
+          "measures": "28-31",
+          "description": "Expressive 7-6 suspensions in sequential passage"
+        },
+        {
+          "bwv": 869,
+          "type": "fugue",
+          "measures": "55-58",
+          "description": "7-6 suspensions intensifying approach to cadence"
+        }
+      ]
+    },
+    {
+      "id": "9-8-suspension",
+      "name": "9-8 Suspension",
+      "category": "counterpoint",
+      "definitions": {
+        "brief": "A dissonant ninth resolving down by step to an octave.",
+        "standard": "A suspension where an upper voice holds a note that becomes a ninth above the bass, then resolves downward by step to an octave. Creates dramatic tension due to the wide dissonant interval and resolves to the most stable consonance.",
+        "detailed": "The 9-8 suspension creates maximum tension followed by maximum stability. The ninth is a compound second - intensely dissonant - while the octave represents perfect consonance. This dramatic contrast makes the 9-8 suspension particularly effective at important structural moments. Bach typically employs this suspension at significant cadences or climactic points where he wants to emphasize arrival on a strong consonance. The resolution to an octave often signals structural importance - the doubling of the bass note reinforces the harmonic foundation. Because the ninth is so wide, this suspension is most effective when the upper voice is clearly audible, typically in the soprano or a prominent tenor line."
+      },
+      "listening_guidance": "Listen for a wide, 'stretched' dissonance that feels particularly urgent to resolve. The resolution to the octave sounds complete and grounded - like two voices merging into one.",
+      "visual_markers": "Upper voice note suspended a ninth above bass (octave plus a second), then stepping down to unison/octave. Often appears at cadential moments with both voices on the same pitch class.",
+      "common_contexts": "Most common at important cadences, especially final cadences. Used when Bach wants to emphasize arrival on a root position chord. Appears in compound melody where the ninth is implied.",
+      "difficulty_level": 4,
+      "prerequisites": ["consonance", "dissonance", "4-3-suspension"],
+      "keywords": ["suspension", "ninth", "octave", "cadence", "dissonance", "compound", "dramatic"],
+      "wtc_examples": [
+        {
+          "bwv": 848,
+          "type": "fugue",
+          "measures": "75-76",
+          "description": "9-8 suspension at final cadence"
+        },
+        {
+          "bwv": 860,
+          "type": "prelude",
+          "measures": "38-39",
+          "description": "Dramatic 9-8 suspension before structural cadence"
+        },
+        {
+          "bwv": 876,
+          "type": "fugue",
+          "measures": "62-63",
+          "description": "9-8 suspension emphasizing arrival point"
+        }
+      ]
+    },
+    {
+      "id": "2-3-suspension-bass",
+      "name": "2-3 Suspension (Bass)",
+      "category": "counterpoint",
+      "definitions": {
+        "brief": "A bass suspension resolving upward from second to third.",
+        "standard": "An unusual suspension type where the bass voice is suspended, creating a dissonant second against an upper voice, then resolves upward by step to a third. This reverses the typical downward resolution and creates a distinctive 'lifting' quality.",
+        "detailed": "The 2-3 bass suspension inverts the normal suspension paradigm. Instead of an upper voice resolving downward, the bass resolves upward. This creates a unique effect - rather than the 'sighing' quality of descending suspensions, the 2-3 bass suspension has an 'aspiring' or 'lifting' character. The dissonant second is harsh and demands resolution, but the upward motion to the third feels like emergence or opening rather than settling. Bach uses this device sparingly but effectively, often in passages with ascending bass lines or when he wants to create an ascending melodic gesture in the lowest voice. It's technically a 'retardation' by some definitions but functions as a suspension in harmonic context."
+      },
+      "listening_guidance": "Listen for harsh dissonance in the bass that resolves upward with a 'lifting' quality. Unlike most suspensions that sigh downward, this one rises, creating an ascending gesture.",
+      "visual_markers": "Bass note tied across while upper voice holds, creating a second interval. The bass then steps up, creating a third. The unusual upward resolution in bass is the key identifier.",
+      "common_contexts": "Appears in ascending bass lines and passages requiring upward resolution. Less common than downward-resolving suspensions but creates distinctive effect. Bach uses it for variety and when melodic logic demands upward bass motion.",
+      "difficulty_level": 4,
+      "prerequisites": ["consonance", "dissonance", "4-3-suspension"],
+      "keywords": ["suspension", "bass", "second", "third", "upward", "ascending", "retardation"],
+      "wtc_examples": [
+        {
+          "bwv": 852,
+          "type": "fugue",
+          "measures": "33-34",
+          "description": "Bass suspension resolving upward in ascending sequence"
+        },
+        {
+          "bwv": 866,
+          "type": "prelude",
+          "measures": "22-23",
+          "description": "2-3 bass suspension over ascending bass line"
+        },
+        {
+          "bwv": 878,
+          "type": "fugue",
+          "measures": "45-46",
+          "description": "Rare bass suspension creating upward melodic gesture"
+        }
+      ]
+    },
+    {
+      "id": "passing-tone",
+      "name": "Passing Tone",
+      "category": "counterpoint",
+      "definitions": {
+        "brief": "A non-chord tone that moves stepwise between two chord tones.",
+        "standard": "A melodic embellishment where a dissonant note connects two consonant chord tones by stepwise motion, typically occurring on a weak beat. The passing tone 'passes through' the space between stable pitches, creating smooth melodic lines.",
+        "detailed": "The passing tone is perhaps the most fundamental non-chord tone in counterpoint. It fills in the melodic space between two chord tones by step, creating flowing, conjunct lines. Passing tones can be unaccented (on weak beats, the norm) or accented (on strong beats, creating more tension). They can move either ascending or descending, and multiple passing tones can fill larger intervals. Bach's melodic writing is saturated with passing tones - they're essential to the continuous, spinning quality of Baroque melody. In analysis, passing tones are identified by their stepwise approach and departure, connecting two different chord tones. They create momentary dissonance but sound natural because the ear anticipates the resolution to the next chord tone."
+      },
+      "listening_guidance": "Listen for notes that seem to 'fill in the gap' between two more stable notes. They typically feel 'in transit' - moving through rather than arriving. The dissonance is brief and the motion feels natural.",
+      "visual_markers": "A note between two chord tones, approached and left by step in the same direction. Often appears on weak beats (eighth notes or off-beats in common time).",
+      "common_contexts": "Ubiquitous in Bach's melodic writing. Essential for creating smooth, conjunct lines. Appears in nearly every measure of counterpoint. Chains of passing tones create scalar passages.",
+      "difficulty_level": 1,
+      "prerequisites": ["consonance", "dissonance"],
+      "keywords": ["non-chord-tone", "passing", "stepwise", "embellishment", "melodic", "conjunct"],
+      "wtc_examples": [
+        {
+          "bwv": 846,
+          "type": "fugue",
+          "measures": "1-2",
+          "description": "Subject contains multiple passing tones filling melodic intervals"
+        },
+        {
+          "bwv": 850,
+          "type": "prelude",
+          "measures": "1-4",
+          "description": "Continuous passing tone figuration throughout"
+        },
+        {
+          "bwv": 854,
+          "type": "fugue",
+          "measures": "5-8",
+          "description": "Countersubject heavily embellished with passing tones"
+        }
+      ]
+    },
+    {
+      "id": "neighbor-tone",
+      "name": "Neighbor Tone",
+      "category": "counterpoint",
+      "definitions": {
+        "brief": "A non-chord tone that steps away from and returns to the same chord tone.",
+        "standard": "A melodic embellishment where a chord tone moves by step to a dissonant neighbor, then returns by step to the original note. Can be upper neighbor (step up then down) or lower neighbor (step down then up). Creates oscillating decoration around a stable pitch.",
+        "detailed": "The neighbor tone (also called auxiliary tone) decorates a single pitch by departing and returning to it. Unlike the passing tone which connects different pitches, the neighbor tone embellishes one pitch by moving away and back. Upper neighbors create a 'lifting' decoration while lower neighbors create a 'leaning' quality. Like passing tones, neighbors can be accented or unaccented, with accented neighbors creating more tension. Bach uses neighbor tones to add interest to sustained notes and to create characteristic ornamental figures. Double neighbors (upper then lower, or vice versa) surround a pitch from both sides before returning. Neighbor tones are essential to Baroque ornamentation and appear in both written-out and improvised decorations."
+      },
+      "listening_guidance": "Listen for a note that 'steps away' and 'steps back' to where it started. It decorates a single pitch rather than connecting two different ones. Upper neighbors feel like brief lifts; lower neighbors feel like brief dips.",
+      "visual_markers": "Three notes where the first and third are the same pitch, and the middle note is a step away (above or below). Creates a small arch or dip shape in the melodic line.",
+      "common_contexts": "Common in ornamental passages and written-out trills. Frequently decorates held notes or notes of longer duration. Essential in Baroque ornamentation practice. Bach writes them explicitly but they were also added improvisationally.",
+      "difficulty_level": 1,
+      "prerequisites": ["consonance", "dissonance"],
+      "keywords": ["non-chord-tone", "neighbor", "auxiliary", "ornament", "decoration", "embellishment"],
+      "wtc_examples": [
+        {
+          "bwv": 847,
+          "type": "prelude",
+          "measures": "1-2",
+          "description": "Upper and lower neighbor tones in arpeggiated figuration"
+        },
+        {
+          "bwv": 856,
+          "type": "fugue",
+          "measures": "14-16",
+          "description": "Neighbor tones decorating countersubject"
+        },
+        {
+          "bwv": 865,
+          "type": "prelude",
+          "measures": "8-10",
+          "description": "Double neighbor figures ornamenting melodic line"
+        }
+      ]
+    },
+    {
+      "id": "anticipation",
+      "name": "Anticipation",
+      "category": "counterpoint",
+      "definitions": {
+        "brief": "A non-chord tone that arrives early, before its supporting harmony.",
+        "standard": "A melodic device where a note belonging to the following chord sounds before that chord arrives, creating brief dissonance against the current harmony. The anticipated note is approached by step and sustained into the new chord where it becomes consonant.",
+        "detailed": "The anticipation creates a sense of eagerness or forward momentum by arriving at a destination pitch before the harmony catches up. It's the opposite of a suspension - instead of holding on to a note from the previous chord, it reaches ahead to the next. Anticipations are typically unaccented and short, often appearing just before cadences or chord changes. They create a slight 'rushing ahead' effect that can heighten expectation. Bach uses anticipations to propel melodies forward, especially at cadence points where the leading tone or resolution pitch arrives just before the final chord. Multiple anticipations can overlap in different voices, creating complex rhythmic interplay."
+      },
+      "listening_guidance": "Listen for notes that seem to 'arrive early' - they sound briefly wrong against the current chord but then become right when the harmony changes. Creates a sense of eagerness or forward lean.",
+      "visual_markers": "Short note that matches the following chord tone, appearing just before the barline or beat where that chord arrives. Often a small note value leading into a longer resolution.",
+      "common_contexts": "Very common at cadences, especially in faster-moving voices. The leading tone or final note often anticipates the arrival of the cadential chord. Adds rhythmic interest to otherwise predictable resolutions.",
+      "difficulty_level": 2,
+      "prerequisites": ["consonance", "dissonance", "passing-tone"],
+      "keywords": ["non-chord-tone", "anticipation", "early", "forward", "cadence", "momentum"],
+      "wtc_examples": [
+        {
+          "bwv": 846,
+          "type": "fugue",
+          "measures": "26-27",
+          "description": "Anticipation of tonic before final cadence"
+        },
+        {
+          "bwv": 853,
+          "type": "prelude",
+          "measures": "39-40",
+          "description": "Multiple anticipations creating forward momentum"
+        },
+        {
+          "bwv": 862,
+          "type": "fugue",
+          "measures": "30-31",
+          "description": "Cadential anticipation in soprano voice"
+        }
+      ]
+    },
+    {
+      "id": "escape-tone",
+      "name": "Escape Tone",
+      "category": "counterpoint",
+      "definitions": {
+        "brief": "A non-chord tone approached by step and left by leap in the opposite direction.",
+        "standard": "A melodic embellishment that is approached by step from a chord tone and resolves by leap in the opposite direction to another chord tone. Also called an 'echappee' (French for 'escaped'). Creates an angular, restless quality in melodic lines.",
+        "detailed": "The escape tone (echappee) creates a distinctive angular gesture in melody. A voice steps away from a chord tone but instead of returning (like a neighbor) or continuing (like a passing tone), it 'escapes' by leaping in the opposite direction. This creates melodic unpredictability and energy. The escape tone is usually unaccented and brief, but its characteristic step-then-leap-back contour is immediately recognizable. Bach uses escape tones to add angularity and interest to melodic lines that might otherwise be too conjunct. They're particularly effective in faster passages where the leap creates momentum. The escape tone represents one of several 'incomplete neighbor' configurations."
+      },
+      "listening_guidance": "Listen for a note that steps one direction then 'jumps back' the other way. It has a fleeting, restless quality - like a note that tried to go somewhere but had to leap back to catch up.",
+      "visual_markers": "A short note approached by step but left by leap in the opposite direction. Creates a small 'hook' shape in the melodic contour - up then down-skip, or down then up-skip.",
+      "common_contexts": "Common in faster-moving passages and ornamental lines. Adds variety to stepwise motion. Bach uses them to create melodic interest in sequences and episodes.",
+      "difficulty_level": 3,
+      "prerequisites": ["passing-tone", "neighbor-tone"],
+      "keywords": ["non-chord-tone", "escape", "echappee", "step", "leap", "angular", "incomplete-neighbor"],
+      "wtc_examples": [
+        {
+          "bwv": 848,
+          "type": "prelude",
+          "measures": "12-14",
+          "description": "Escape tones adding angularity to running passages"
+        },
+        {
+          "bwv": 856,
+          "type": "prelude",
+          "measures": "5-7",
+          "description": "Characteristic escape tone figure in melodic line"
+        },
+        {
+          "bwv": 870,
+          "type": "fugue",
+          "measures": "18-20",
+          "description": "Escape tones creating restless countersubject motion"
+        }
+      ]
+    },
+    {
+      "id": "appoggiatura",
+      "name": "Appoggiatura",
+      "category": "counterpoint",
+      "definitions": {
+        "brief": "An accented non-chord tone approached by leap and resolved by step.",
+        "standard": "A stressed melodic dissonance that is approached by leap and resolves by step in the opposite direction, typically downward. Falls on a strong beat, creating expressive tension that 'leans into' the resolution. The term comes from Italian 'appoggiare' meaning 'to lean'.",
+        "detailed": "The appoggiatura is among the most expressive melodic devices in Baroque music. Unlike most non-chord tones which are unaccented, the appoggiatura falls on a strong beat, creating emphatic dissonance that demands resolution. It's approached by leap (often from below) and resolves by step (typically downward), creating a 'lean and release' gesture. The name literally means 'leaning note.' In Bach's time, appoggiaturas were often not written out but were added by performers as expressive ornaments. In the Well-Tempered Clavier, Bach frequently writes them explicitly. The appoggiatura's accented dissonance creates pathos and expressivity, making it essential for affective passages. Long appoggiaturas can occupy half or more of the beat."
+      },
+      "listening_guidance": "Listen for a 'leaning' dissonance on the beat - a note that sounds wrong at first but then 'falls' into place. It creates a sense of yearning or sighing. The stronger the beat and longer the dissonance, the more expressive the effect.",
+      "visual_markers": "A note on a strong beat that doesn't belong to the chord, approached by leap and resolving down by step. Often written as a small grace note in original sources but may be written in full value.",
+      "common_contexts": "Essential for expressive passages. Common in affective preludes and slower fugue subjects. Bach uses them at climactic moments and in passages requiring emotional intensity.",
+      "difficulty_level": 3,
+      "prerequisites": ["consonance", "dissonance", "passing-tone"],
+      "keywords": ["non-chord-tone", "appoggiatura", "accented", "lean", "expressive", "ornament", "dissonance"],
+      "wtc_examples": [
+        {
+          "bwv": 849,
+          "type": "prelude",
+          "measures": "3-5",
+          "description": "Expressive appoggiaturas throughout melodic line"
+        },
+        {
+          "bwv": 853,
+          "type": "prelude",
+          "measures": "12-14",
+          "description": "Written-out appoggiaturas creating affective character"
+        },
+        {
+          "bwv": 867,
+          "type": "prelude",
+          "measures": "8-10",
+          "description": "Appoggiaturas on strong beats adding expressivity"
+        }
+      ]
+    },
+    {
+      "id": "retardation",
+      "name": "Retardation",
+      "category": "counterpoint",
+      "definitions": {
+        "brief": "A suspension that resolves upward rather than downward.",
+        "standard": "A tied dissonance similar to a suspension but resolving upward by step instead of the normal downward resolution. Creates an 'aspiring' or 'rising' quality rather than the 'sighing' effect of downward-resolving suspensions.",
+        "detailed": "The retardation inverts the expected resolution direction of a suspension. While suspensions typically resolve downward (following the natural tendency of tension to release downward), retardations resolve upward, creating a sense of lifting, aspiration, or emergence. This is particularly effective when the leading tone is held over and resolves up to the tonic - the resolution upward reinforces the natural tendency of the leading tone. Retardations are less common than suspensions but Bach employs them for specific expressive purposes, particularly when he wants upward melodic motion at cadences or when voice-leading logic demands upward resolution. The term 'retardation' emphasizes that the upper note is 'held back' from where it wants to go."
+      },
+      "listening_guidance": "Listen for a held dissonance that resolves upward with a 'lifting' quality. Instead of the usual sigh downward, the retardation rises, creating a sense of aspiration or emergence.",
+      "visual_markers": "Tied note creating dissonance that resolves up by step. Similar appearance to suspension but the resolution note is higher than the suspended note.",
+      "common_contexts": "Often involves leading tone held over resolving to tonic. Appears where upward melodic motion is desired at resolution. Less common than downward suspensions but effective for specific expressive purposes.",
+      "difficulty_level": 4,
+      "prerequisites": ["4-3-suspension", "consonance", "dissonance"],
+      "keywords": ["retardation", "suspension", "upward", "resolution", "leading-tone", "aspiring"],
+      "wtc_examples": [
+        {
+          "bwv": 855,
+          "type": "fugue",
+          "measures": "28-29",
+          "description": "Leading tone retardation at cadence"
+        },
+        {
+          "bwv": 863,
+          "type": "prelude",
+          "measures": "34-35",
+          "description": "Retardation creating upward-resolving suspension"
+        },
+        {
+          "bwv": 875,
+          "type": "fugue",
+          "measures": "41-42",
+          "description": "Expressive retardation in soprano line"
+        }
+      ]
+    },
+    {
+      "id": "pedal-tone",
+      "name": "Pedal Tone",
+      "category": "counterpoint",
+      "definitions": {
+        "brief": "A sustained or repeated note, usually in the bass, held through changing harmonies.",
+        "standard": "A note, typically in the bass, that is sustained or continuously repeated while other voices move through various harmonies, some of which create dissonance against the pedal. Named after the organ's pedal keyboard. Creates stability and tension simultaneously.",
+        "detailed": "The pedal tone (or pedal point) is a powerful compositional device where one voice maintains a single pitch while other voices create an harmonic progression above or around it. Bass pedals on the tonic or dominant are most common, creating a sense of arrival or anticipation respectively. The pedal may be literally sustained (as on organ) or continuously repeated (as on harpsichord or piano). The resulting harmonies include both consonances and dissonances with the pedal, creating waves of tension and release. Bach masterfully uses pedal tones to build anticipation before final cadences, to establish tonal stability after modulations, and to create powerful climactic effects. Pedals can also appear in upper voices (inverted pedal) or inner voices (internal pedal)."
+      },
+      "listening_guidance": "Listen for one note that 'refuses to move' while everything else changes around it. The pedal acts like an anchor - you can hear harmonies being consonant then dissonant then consonant against it, creating building tension.",
+      "visual_markers": "A long sustained note or pattern of repeated notes at one pitch level while other voices show melodic and harmonic movement. Bass pedals appear at the bottom of the texture; inverted pedals at the top.",
+      "common_contexts": "Dominant pedals are classic before final cadences. Tonic pedals establish stability at beginnings or after modulations. Bach frequently uses extended pedal passages to build toward structural climaxes.",
+      "difficulty_level": 2,
+      "prerequisites": ["consonance", "dissonance"],
+      "keywords": ["pedal", "sustained", "bass", "dominant", "tonic", "organ-point", "anchor"],
+      "wtc_examples": [
+        {
+          "bwv": 846,
+          "type": "prelude",
+          "measures": "24-31",
+          "description": "Extended dominant pedal building to final cadence"
+        },
+        {
+          "bwv": 848,
+          "type": "fugue",
+          "measures": "67-76",
+          "description": "Tonic pedal in monumental final statement"
+        },
+        {
+          "bwv": 858,
+          "type": "fugue",
+          "measures": "43-46",
+          "description": "Dominant pedal creating anticipation before conclusion"
+        }
+      ]
+    },
+    {
+      "id": "consonance",
+      "name": "Consonance",
+      "category": "counterpoint",
+      "definitions": {
+        "brief": "Intervals that sound stable and complete: unisons, thirds, fifths, sixths, and octaves.",
+        "standard": "Intervals that sound stable, restful, and harmonically complete. Perfect consonances (unison, fifth, octave) are most stable; imperfect consonances (thirds, sixths) are stable but warmer. Consonance provides points of rest and resolution in counterpoint.",
+        "detailed": "Consonance is the foundation upon which counterpoint is built. Consonant intervals - unisons, octaves, and fifths (perfect consonances) plus thirds and sixths (imperfect consonances) - provide the stable points around which dissonant non-chord tones move. In strict counterpoint, strong beats typically feature consonances while dissonances are confined to weak beats and resolved by step. Perfect consonances (unison, octave, fifth) have a hollow, pure quality due to simple frequency ratios. Imperfect consonances (thirds, sixths) are warmer and more colorful due to slightly more complex ratios. Bach's counterpoint constantly balances consonance and dissonance, using consonance for structural stability and cadential resolution while employing dissonance for tension, expressivity, and forward motion."
+      },
+      "listening_guidance": "Listen for moments of 'rest' or 'agreement' between voices - intervals that sound stable and don't demand resolution. Perfect consonances (octaves, fifths) sound hollow and pure; imperfect consonances (thirds, sixths) sound warm and sweet.",
+      "visual_markers": "Notes forming intervals of unison/octave (same letter name), third (line-to-line or space-to-space), fifth (line-space-line or space-line-space), or sixth. Strong beats typically show consonant vertical intervals.",
+      "common_contexts": "Required on strong beats in strict counterpoint. Essential at cadence points. Provides resolution for dissonant non-chord tones. The entire framework of tonal counterpoint depends on consonance as the norm from which dissonance departs.",
+      "difficulty_level": 1,
+      "prerequisites": [],
+      "keywords": ["consonance", "interval", "stability", "thirds", "sixths", "fifths", "octaves", "resolution"],
+      "wtc_examples": [
+        {
+          "bwv": 846,
+          "type": "fugue",
+          "measures": "1-2",
+          "description": "Subject establishes consonant intervals at structural points"
+        },
+        {
+          "bwv": 850,
+          "type": "prelude",
+          "measures": "35-36",
+          "description": "Final cadence resolves to consonant tonic chord"
+        },
+        {
+          "bwv": 869,
+          "type": "fugue",
+          "measures": "87",
+          "description": "Perfect consonances at structural arrival"
+        }
+      ]
+    },
+    {
+      "id": "dissonance",
+      "name": "Dissonance",
+      "category": "counterpoint",
+      "definitions": {
+        "brief": "Intervals that sound unstable and require resolution: seconds, sevenths, and tritones.",
+        "standard": "Intervals that sound unstable, tense, and incomplete, requiring resolution to consonance. Includes seconds, sevenths, and tritones (augmented fourths/diminished fifths). The fourth is treated as dissonant in two-voice counterpoint. Dissonance creates forward motion and expressive tension.",
+        "detailed": "Dissonance is the engine that drives counterpoint forward. Dissonant intervals - seconds, sevenths, and tritones - create tension that demands resolution to consonance. This tension-release pattern is fundamental to tonal music's sense of direction and motion. In strict counterpoint, dissonances are carefully controlled: they typically appear on weak beats, are approached and left by step, and resolve to consonance. Bach's genius lies in his sophisticated handling of dissonance - using it for expressive effect while maintaining control. Suspensions, passing tones, neighbor tones, and other non-chord tones are all methods of introducing controlled dissonance. The strength of dissonance varies: minor seconds and major sevenths are most tense; tritones have an unstable, searching quality. Understanding dissonance treatment is essential for analysis and appreciation of counterpoint."
+      },
+      "listening_guidance": "Listen for moments of 'clash' or 'tension' between voices - intervals that sound unstable and seem to want to move somewhere. Dissonances create the 'pull' that makes music feel like it's going somewhere.",
+      "visual_markers": "Notes forming intervals of second (adjacent lines or spaces), seventh (one less than octave), or tritone (three whole steps). Often appear on weak beats or as tied notes resolving on weak beats.",
+      "common_contexts": "Essential for musical motion and expression. Controlled use on weak beats in strict counterpoint. Suspensions place dissonance on strong beats for emphasis. Non-chord tones are all forms of controlled dissonance.",
+      "difficulty_level": 1,
+      "prerequisites": [],
+      "keywords": ["dissonance", "interval", "tension", "seconds", "sevenths", "tritone", "resolution", "non-chord-tone"],
+      "wtc_examples": [
+        {
+          "bwv": 847,
+          "type": "fugue",
+          "measures": "7-9",
+          "description": "Dissonant suspensions creating intensity"
+        },
+        {
+          "bwv": 853,
+          "type": "fugue",
+          "measures": "15-18",
+          "description": "Chains of dissonances in chromatic passage"
+        },
+        {
+          "bwv": 861,
+          "type": "fugue",
+          "measures": "38-40",
+          "description": "Expressive dissonances at climactic moment"
+        }
+      ]
+    }
+  ]
+}

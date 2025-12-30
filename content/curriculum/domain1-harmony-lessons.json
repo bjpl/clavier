@@ -1,0 +1,505 @@
+{
+  "domain": "harmonic-fundamentals",
+  "title": "Domain 1: Harmonic Fundamentals",
+  "description": "Master the essential building blocks of Western harmony through Bach's Well-Tempered Clavier",
+  "total_lessons": 10,
+  "estimated_total_hours": 5,
+  "generated_at": "2025-12-29T00:00:00.000Z",
+  "lessons": [
+    {
+      "id": "intervals-introduction",
+      "title": "Introduction to Intervals",
+      "domain": "harmonic-fundamentals",
+      "order": 1,
+      "estimated_minutes": 25,
+      "learning_objectives": [
+        "Identify intervals by quality and size",
+        "Understand the difference between melodic and harmonic intervals",
+        "Recognize common intervals by ear in WTC examples",
+        "Apply interval recognition to harmonic analysis"
+      ],
+      "prerequisites": [],
+      "content": {
+        "introduction": "Music is built from the relationships between pitches, and the most fundamental of these relationships is the interval. Before we can understand chords, progressions, or the intricate harmonies of Bach's Well-Tempered Clavier, we must first master the language of intervals. An interval describes the distance between any two notes, whether they sound simultaneously or one after another. This seemingly simple concept unlocks the entire edifice of Western harmony. In Bach's keyboard works, intervals serve as the DNA of both melody and harmony, creating the characteristic sound that has captivated musicians for three centuries. Understanding intervals is not merely academic; it transforms how we hear, analyze, and perform music.",
+        "explanation": "An interval is measured by counting the number of letter names from the lower note to the upper note, including both endpoints. For example, from C to E encompasses three letter names (C, D, E), making it a third. However, the number alone tells only part of the story. We must also specify the quality: major, minor, perfect, augmented, or diminished.\n\nPerfect intervals include the unison, fourth, fifth, and octave. These intervals have a particularly stable, consonant quality that has been recognized since ancient times. The perfect fifth, with its frequency ratio of 3:2, forms the backbone of tonal harmony.\n\nMajor and minor intervals apply to seconds, thirds, sixths, and sevenths. A major interval is one half-step larger than its minor counterpart. The major third (four half-steps) sounds bright and stable, while the minor third (three half-steps) has a darker, more poignant character.\n\nMelodic intervals occur when two notes sound in succession, creating horizontal movement in music. Harmonic intervals occur when two notes sound simultaneously, creating vertical sonority. Bach's music constantly interweaves both types. In a fugue, the melodic intervals of the subject define its character, while the harmonic intervals between voices create the rich counterpoint.\n\nAugmented intervals are one half-step larger than perfect or major intervals, while diminished intervals are one half-step smaller than perfect or minor intervals. These chromatic intervals add color and tension to music, often creating strong tendencies toward resolution.\n\nThe tritone, spanning three whole tones (six half-steps), deserves special attention. This interval, either an augmented fourth or diminished fifth depending on spelling, creates maximum instability and drives harmonic motion. Bach uses tritones strategically to create forward momentum and emphasize cadential points.",
+        "guided_example": {
+          "bwv": 846,
+          "type": "prelude",
+          "measures": "1-4",
+          "analysis": "In the opening measures of Bach's most famous prelude, the C Major Prelude BWV 846, we encounter a masterclass in interval construction. Each measure presents an arpeggiated chord figure that unfolds the same pattern: bass note, then a series of upper notes creating a composite harmony.\n\nExamine the first measure closely. The bass C establishes the foundation. Above it, the notes E and G appear, creating a major third (C to E) and a perfect fifth (C to G). Together, these intervals form a C major triad. The upper voice adds a C an octave above the bass.\n\nAs the pattern continues, notice how the intervals change with each chord change. In measure 2, the bass remains on C, but the upper notes shift to D, A, D, and F. The interval from C to D is a major second, from C to A is a major sixth, and from C to F is a perfect fourth. This creates a different harmonic color while maintaining the same textural pattern.\n\nThe brilliance of this prelude lies in how Bach reveals complex harmony through simple interval relationships. By arpeggiating each chord, he allows us to hear each interval distinctly before they combine into full sonorities. This makes the C Major Prelude an ideal starting point for interval study."
+        },
+        "additional_examples": [
+          {
+            "bwv": 847,
+            "measures": "1-2",
+            "brief": "The C minor prelude opens with dramatic minor intervals. Notice the minor third between C and E-flat, creating immediate contrast with the bright major intervals of BWV 846. The diminished intervals in the melodic line heighten the dark, passionate character."
+          },
+          {
+            "bwv": 850,
+            "measures": "1-4",
+            "brief": "The D major prelude features confident major intervals in its opening fanfare. The prominent major thirds and perfect fifths establish a bright, triumphant character that persists throughout the piece."
+          }
+        ],
+        "summary": "We have established that intervals are the fundamental building blocks of all harmony and melody. By measuring both the size (second, third, fourth, etc.) and quality (major, minor, perfect, augmented, diminished) of intervals, we gain the vocabulary to describe any harmonic or melodic relationship. The distinction between melodic and harmonic intervals helps us understand music both horizontally and vertically. Bach's preludes provide ideal material for interval study because his arpeggiated textures reveal individual intervals clearly. As we continue to the next lesson on triads, remember that chords are simply combinations of intervals stacked together."
+      },
+      "exercises": [
+        "Identify all intervals in BWV 846 Prelude, measure 1 by labeling each note's relationship to the bass C",
+        "Compare the opening intervals of BWV 846 and BWV 847 preludes, noting how quality changes affect character",
+        "Listen to measures 1-8 of BWV 846 and identify intervals by ear before checking with the score",
+        "Write out all possible intervals within an octave, categorizing them by quality"
+      ],
+      "related_features": ["consonance", "dissonance", "major-triad", "minor-triad", "perfect-fifth", "tritone"],
+      "narration_text": "Music is built from the relationships between pitches, and the most fundamental of these relationships is the interval. Before we can understand chords, progressions, or the intricate harmonies of Bach's Well-Tempered Clavier, we must first master the language of intervals.\n\nAn interval describes the distance between any two notes, whether they sound simultaneously or one after another. This seemingly simple concept unlocks the entire edifice of Western harmony.\n\nAn interval is measured by counting the number of letter names from the lower note to the upper note, including both endpoints. For example, from C to E encompasses three letter names: C, D, E, making it a third. However, the number alone tells only part of the story. We must also specify the quality: major, minor, perfect, augmented, or diminished.\n\nPerfect intervals include the unison, fourth, fifth, and octave. These intervals have a particularly stable, consonant quality. The perfect fifth, with its frequency ratio of three to two, forms the backbone of tonal harmony.\n\nMajor and minor intervals apply to seconds, thirds, sixths, and sevenths. A major interval is one half-step larger than its minor counterpart. The major third sounds bright and stable, while the minor third has a darker, more poignant character.\n\nLet us examine the opening of Bach's C Major Prelude, BWV 846. Each measure presents an arpeggiated chord that unfolds interval relationships clearly. In the first measure, the bass C supports an E and G above, creating a major third and a perfect fifth respectively. Together, these intervals form a C major triad.\n\nThe C minor prelude, BWV 847, opens with dramatically different intervals. Notice the minor third between C and E-flat, creating immediate contrast with the bright major intervals of BWV 846.\n\nUnderstanding intervals transforms how we hear, analyze, and perform music. They are the DNA of both melody and harmony in Bach's keyboard works."
+    },
+    {
+      "id": "major-minor-triads",
+      "title": "Major and Minor Triads",
+      "domain": "harmonic-fundamentals",
+      "order": 2,
+      "estimated_minutes": 30,
+      "learning_objectives": [
+        "Construct major and minor triads from any given root",
+        "Identify triad quality by visual inspection and by ear",
+        "Understand how triads function within a key",
+        "Recognize triads in various textures in Bach's keyboard music"
+      ],
+      "prerequisites": ["intervals-introduction"],
+      "content": {
+        "introduction": "Having mastered intervals, we now combine them to form triads, the three-note chords that serve as the foundation of Western harmony. A triad consists of three notes: a root, a third, and a fifth, all stacked in intervals of thirds. Despite their simplicity, triads generate the harmonic language that Bach employs throughout the Well-Tempered Clavier. Understanding triads means understanding the essential vocabulary of tonal music. In this lesson, we focus on the two most common triad types: major and minor. These contrasting chord qualities create the emotional palette that composers have drawn upon for centuries.",
+        "explanation": "A major triad combines a major third with a minor third stacked above it. Starting from the root, count up four half-steps to find the third, then three more half-steps to find the fifth. For example, a C major triad contains C, E, and G. The interval from C to E is a major third (four half-steps), and from E to G is a minor third (three half-steps). The outer interval, from root to fifth, is always a perfect fifth (seven half-steps) in both major and minor triads.\n\nA minor triad reverses this order: a minor third on the bottom, a major third on top. A C minor triad contains C, E-flat, and G. The interval from C to E-flat is a minor third (three half-steps), and from E-flat to G is a major third (four half-steps). Notice that the fifth remains perfect; only the third changes between major and minor.\n\nThis single difference, the quality of the third, creates profoundly different emotional effects. Major triads sound bright, stable, and often happy. Minor triads sound darker, more complex, and often sad or serious. Bach exploits this contrast masterfully, sometimes shifting between major and minor versions of the same chord for expressive effect.\n\nWithin any major key, seven triads occur naturally using only the notes of the scale. Three are major (built on scale degrees 1, 4, and 5), three are minor (built on scale degrees 2, 3, and 6), and one is diminished (built on scale degree 7). In C major: C, F, and G are major; D minor, E minor, and A minor are minor; B diminished is the seventh chord. Understanding these relationships helps us navigate chord progressions.\n\nBach rarely presents triads as simple three-note blocks. Instead, he spreads them across registers, arpeggiates them, or weaves them into contrapuntal textures. The skill of recognizing triads in complex textures develops with practice and lies at the heart of harmonic analysis.",
+        "guided_example": {
+          "bwv": 846,
+          "type": "prelude",
+          "measures": "1-5",
+          "analysis": "The C Major Prelude presents triads in arpeggiated form, making them ideal for study. Each measure outlines a different chord through its characteristic five-note pattern repeated twice.\n\nMeasure 1 arpeggiates a C major triad: C in the bass, with E and G appearing in the upper voices. This is our home chord, the tonic of C major. The brightness of this major triad establishes the positive character of the piece.\n\nMeasure 2 introduces the first chord change. While C remains in the bass, the upper notes now spell D minor seventh chord elements. The D and A outline a fifth, while F adds the minor quality. Here Bach demonstrates how triads connect through common tones and stepwise motion.\n\nMeasure 3 returns to G, the fifth of our home key. This G major triad (G-B-D) functions as the dominant, creating a sense of expectation that pulls us back toward C.\n\nMeasure 4 presents an A minor triad (A-C-E). This is the relative minor of C major, sharing many notes with C major but casting a slightly shadowed quality over the passage.\n\nMeasure 5 introduces a D major triad, which is actually borrowed from the key of G major. This tonicization briefly suggests G as a temporary tonic before the harmony continues its journey.\n\nNotice how Bach creates harmonic rhythm and direction through the succession of triads, even while maintaining the same rhythmic pattern throughout."
+        },
+        "additional_examples": [
+          {
+            "bwv": 847,
+            "measures": "1-3",
+            "brief": "The C minor fugue opens with an unaccompanied subject that outlines a C minor triad. The first three notes (C, E-flat, G) spell the chord directly, establishing the minor quality that pervades this intense fugue."
+          },
+          {
+            "bwv": 850,
+            "measures": "1-8",
+            "brief": "The D major prelude features prominent D major triads in its brilliant opening gestures. The confident major quality supports the piece's triumphant, festive character. Compare this with the darker D minor prelude (BWV 851) to hear how triad quality shapes overall mood."
+          },
+          {
+            "bwv": 856,
+            "measures": "1-4",
+            "brief": "The F major prelude employs gentle F major triads in its pastoral opening. The bright major quality combined with the warm key of F major creates a particularly sunny, relaxed atmosphere."
+          }
+        ],
+        "summary": "Triads are three-note chords built by stacking thirds. Major triads combine a major third below a minor third, creating a bright, stable sound. Minor triads reverse this order, placing a minor third below a major third, resulting in a darker, more complex quality. Both types share a perfect fifth between root and fifth; only the third differs. Within a major key, triads built on scale degrees 1, 4, and 5 are major, while those on 2, 3, and 6 are minor. Bach presents triads in countless textures throughout the WTC. The ability to recognize triads in various configurations is essential for understanding his harmonic language. In our next lesson, we will explore how inversions transform triads while preserving their fundamental identity."
+      },
+      "exercises": [
+        "Construct major and minor triads starting from every note of the chromatic scale",
+        "Identify all triads in BWV 846 Prelude, measures 1-11, labeling each by root and quality",
+        "Listen to the opening of BWV 846 and BWV 847 fugues; identify whether each begins with major or minor triad outlines",
+        "Analyze the diatonic triads in C major and C minor, noting which scale degrees produce each quality"
+      ],
+      "related_features": ["major-triad", "minor-triad", "root-position", "chord-quality", "diatonic-harmony"],
+      "narration_text": "Having mastered intervals, we now combine them to form triads, the three-note chords that serve as the foundation of Western harmony. A triad consists of three notes: a root, a third, and a fifth, all stacked in intervals of thirds.\n\nA major triad combines a major third with a minor third stacked above it. Starting from the root, count up four half-steps to find the third, then three more half-steps to find the fifth. For example, a C major triad contains C, E, and G.\n\nA minor triad reverses this order: a minor third on the bottom, a major third on top. A C minor triad contains C, E-flat, and G. The fifth remains perfect in both; only the third changes between major and minor.\n\nThis single difference creates profoundly different emotional effects. Major triads sound bright and stable. Minor triads sound darker and more complex.\n\nLet us examine the C Major Prelude, BWV 846. Measure 1 arpeggiates a C major triad: C in the bass, with E and G in the upper voices. This tonic chord establishes the positive character of the piece.\n\nMeasure 3 presents a G major triad, the dominant, creating expectation. Measure 4 introduces A minor, casting a slightly shadowed quality.\n\nCompare this with the C minor fugue, BWV 847, which opens by outlining a C minor triad. The first three notes, C, E-flat, G, establish the darker quality that pervades this intense fugue.\n\nWithin any major key, three triads are major, three are minor, and one is diminished. Understanding these relationships helps us navigate chord progressions in Bach's music."
+    },
+    {
+      "id": "triad-inversions",
+      "title": "Triad Inversions",
+      "domain": "harmonic-fundamentals",
+      "order": 3,
+      "estimated_minutes": 25,
+      "learning_objectives": [
+        "Identify root position, first inversion, and second inversion triads",
+        "Understand the voice-leading advantages of using inversions",
+        "Recognize how inversions create smoother bass lines",
+        "Analyze Bach's use of inversions for melodic bass lines and harmonic variety"
+      ],
+      "prerequisites": ["major-minor-triads"],
+      "content": {
+        "introduction": "Triads in root position, with the root as the lowest note, represent only one of three possible configurations. By rearranging which chord tone appears in the bass, we create inversions that maintain the chord's essential identity while transforming its character and function. Inversions are indispensable tools for creating smooth bass lines, avoiding awkward leaps, and adding variety to harmonic progressions. Bach was a master of inversion, constantly varying the bass note of chords to create flowing, melodic bass lines that are themselves worthy of attention. Understanding inversions deepens our appreciation of Bach's craft and equips us to analyze his music with greater precision.",
+        "explanation": "Root position places the root of the triad in the bass. A C major triad in root position has C as its lowest note, with E and G above. Root position triads sound most stable and grounded, making them ideal for establishing tonality at important structural points.\n\nFirst inversion places the third in the bass. A C major triad in first inversion has E as its lowest note, with G and C above. First inversion triads have a lighter, more mobile quality than root position. The bass note forms a sixth with the upper root, which is why first inversion is sometimes called a \"six chord\" or indicated by the figure 6.\n\nSecond inversion places the fifth in the bass. A C major triad in second inversion has G as its lowest note, with C and E above. Second inversion triads are the least stable, often functioning as passing chords or as preparation for cadences. The bass forms a fourth with the upper root, indicated by the figures 6/4.\n\nFigured bass, a notational system from Bach's era, indicates inversions using numbers below the bass note. Root position is assumed and usually not figured. First inversion is indicated by 6. Second inversion is indicated by 6/4. These figures represent the intervals above the bass.\n\nThe practical advantage of inversions lies in voice leading. Consider a progression from C major to F major. In root position, the bass would leap from C up to F, a perfect fourth. By placing F major in first inversion (with A in the bass), the bass instead steps down from C to the nearest A. This stepwise motion sounds smoother and more elegant.\n\nBach exploits inversions to create bass lines that are genuinely melodic. In many passages, the bass part alone could stand as a satisfying melody. This reflects the contrapuntal ideal of maintaining independence and interest in all voices, not just the soprano.",
+        "guided_example": {
+          "bwv": 846,
+          "type": "prelude",
+          "measures": "4-11",
+          "analysis": "Following the opening tonic statement, Bach employs a rich variety of inversions to create harmonic motion while maintaining a smooth bass line.\n\nIn measure 5, we encounter an A minor triad with A in the bass, root position. The bass then moves to measure 6 where D appears, supporting what is essentially a D dominant seventh chord (though we will discuss seventh chords in detail later).\n\nMeasure 7 presents G major in root position, establishing the dominant. But observe measure 8: the bass moves to C, yet the upper voices spell an F chord. This is F major in first inversion, with C in the bass instead of F. The stepwise descent in the bass (G to C) sounds far more elegant than the alternative leap.\n\nMeasure 9 shows an even subtler choice. The bass note B supports a G major chord in first inversion. By choosing this inversion, Bach creates a descending bass line: C, B, moving naturally into the subsequent harmonies.\n\nThroughout these measures, notice how rarely the bass leaps by large intervals. When it does move by skip, the motion is purposeful, usually outlining an important harmonic interval. Bach's inversions serve the larger goal of maintaining a singing, flowing bass that supports the harmony while asserting its own melodic identity.\n\nThe consistent five-note arpeggiated pattern makes it easy to identify which note is lowest in each measure, helping us classify inversions despite the elaborate texture."
+        },
+        "additional_examples": [
+          {
+            "bwv": 848,
+            "measures": "1-8",
+            "brief": "The C-sharp major prelude demonstrates extensive use of first inversion triads to create its characteristic flowing bass line. Notice how the bass moves primarily by step despite the rapid harmonic rhythm."
+          },
+          {
+            "bwv": 853,
+            "measures": "1-5",
+            "brief": "The E-flat major prelude uses inversions to support its stately character. Second inversion triads appear at cadential moments, while first inversions keep the middle sections flowing."
+          },
+          {
+            "bwv": 862,
+            "measures": "1-4",
+            "brief": "The A-flat major prelude alternates between root position and first inversion with elegant regularity, demonstrating how inversions contribute to formal balance."
+          }
+        ],
+        "summary": "Inversions rearrange chord tones to place different notes in the bass while maintaining the chord's identity. Root position (root in bass) is most stable, first inversion (third in bass) is lighter and mobile, and second inversion (fifth in bass) is least stable. Figured bass notation indicates inversions: 6 for first inversion, 6/4 for second. The primary advantage of inversions is smoother voice leading, enabling stepwise bass motion where root position would require leaps. Bach uses inversions masterfully to create melodic, independent bass lines. In our next lesson, we will add a fourth note to our triads, exploring the rich world of seventh chords."
+      },
+      "exercises": [
+        "Identify the inversions in BWV 846 Prelude, measures 1-15, marking each as root position, first inversion, or second inversion",
+        "Rewrite a passage from BWV 846 using only root position triads and observe how the bass line changes character",
+        "Practice spelling major and minor triads in all three inversions from every root",
+        "Analyze the bass line of BWV 848 Prelude, measures 1-16, noting how inversions enable stepwise motion"
+      ],
+      "related_features": ["root-position", "first-inversion", "second-inversion", "figured-bass", "voice-leading"],
+      "narration_text": "Triads in root position represent only one of three possible configurations. By rearranging which chord tone appears in the bass, we create inversions that maintain the chord's identity while transforming its character.\n\nRoot position places the root in the bass. A C major triad in root position has C lowest, with E and G above. Root position sounds most stable and grounded.\n\nFirst inversion places the third in the bass. C major in first inversion has E lowest. First inversion triads have a lighter, more mobile quality. Figured bass indicates this with the number six.\n\nSecond inversion places the fifth in the bass. C major in second inversion has G lowest. This is the least stable, often appearing at cadences. Figured bass indicates this with six-four.\n\nThe practical advantage of inversions lies in voice leading. A progression from C major to F major in root position would leap a fourth in the bass. By using F major in first inversion, with A in the bass, we step down from C, creating smoother motion.\n\nLet us examine the C Major Prelude, measures 4 through 11. Bach employs varied inversions to create harmonic motion while maintaining a smooth bass line. In measure 8, F major appears in first inversion, with C in the bass. The stepwise descent from the previous G sounds far more elegant than a leap would.\n\nBach exploits inversions to create bass lines that are genuinely melodic. This reflects the contrapuntal ideal of maintaining independence in all voices."
+    },
+    {
+      "id": "seventh-chords",
+      "title": "Seventh Chords",
+      "domain": "harmonic-fundamentals",
+      "order": 4,
+      "estimated_minutes": 30,
+      "learning_objectives": [
+        "Construct major seventh, minor seventh, dominant seventh, half-diminished, and fully diminished seventh chords",
+        "Identify seventh chord quality by examining the triad and seventh interval",
+        "Understand the function of seventh chords in diatonic contexts",
+        "Recognize how seventh chords add color and drive in Bach's harmony"
+      ],
+      "prerequisites": ["triad-inversions"],
+      "content": {
+        "introduction": "Triads provide the harmonic foundation, but adding a seventh above the root creates chords of greater complexity and tension. Seventh chords, with their four notes, introduce dissonance that demands resolution, driving harmonic motion forward. Bach's harmony is unthinkable without seventh chords; they appear constantly throughout the Well-Tempered Clavier, adding richness and propelling the music toward cadential goals. In this lesson, we explore the five types of seventh chords, each with its distinctive quality and function. Mastering seventh chords significantly expands your analytical vocabulary.",
+        "explanation": "A seventh chord adds a note a seventh above the root to a triad. This fourth note creates the characteristic dissonance that distinguishes seventh chords from triads. Five types occur commonly in tonal music.\n\nThe major seventh chord combines a major triad with a major seventh. Built on C: C-E-G-B. This chord has a soft, rich quality, often described as \"sweet\" or \"warm.\" It occurs naturally on scale degrees 1 and 4 in major keys.\n\nThe minor seventh chord combines a minor triad with a minor seventh. Built on C: C-E-flat-G-B-flat. This chord has a mellow, somewhat melancholic quality. It occurs naturally on scale degrees 2, 3, and 6 in major keys.\n\nThe dominant seventh chord combines a major triad with a minor seventh. Built on C: C-E-G-B-flat. This is the most important seventh chord in tonal music. Its combination of major triad stability with minor seventh tension creates strong drive toward resolution. It occurs naturally on scale degree 5 and forms the basis for secondary dominants.\n\nThe half-diminished seventh chord combines a diminished triad with a minor seventh. Built on C: C-E-flat-G-flat-B-flat. This unstable chord occurs naturally on scale degree 7 in major keys and scale degree 2 in minor keys. Its tritone interval creates strong forward motion.\n\nThe fully diminished seventh chord combines a diminished triad with a diminished seventh. Built on C: C-E-flat-G-flat-B-double-flat (enharmonically A). This symmetrical chord, built entirely of minor thirds, has maximum instability and can resolve in multiple directions. Bach uses it for dramatic effect and as a modulatory pivot.\n\nRecognizing seventh chords requires identifying both the triad quality and the seventh interval. The dominant seventh, combining major triad with minor seventh, is the most common. Learn to spot its telltale tritone between the third and seventh, which creates its characteristic tension and pull toward resolution.",
+        "guided_example": {
+          "bwv": 849,
+          "type": "prelude",
+          "measures": "1-8",
+          "analysis": "The C-sharp minor prelude opens with a profound exploration of seventh chord colors. Its slow, improvisatory style allows us to hear seventh chords clearly as they unfold.\n\nThe opening measure establishes C-sharp minor through an arpeggiated figure, but by measure 2, seventh chord richness enters the texture. Notice the B-sharp appearing against C-sharp harmony, creating a major seventh sonority. This leading tone adds intensity without yet resolving.\n\nMeasure 3 introduces what will become a recurring gesture: a dominant seventh on G-sharp (G-sharp-B-sharp-D-sharp-F-sharp). The F-sharp creates the minor seventh interval above the root. This dominant seventh creates strong pull toward the tonic C-sharp.\n\nAs the prelude continues, Bach employs a sequence of seventh chords that intensify the harmony. Measure 5 features a minor seventh chord on D-sharp, measure 6 introduces another dominant seventh on A-sharp pointing toward D-sharp minor.\n\nThe effect is one of constant harmonic motion and yearning. Each seventh chord introduces tension that resolves into the next harmony, which often proves to be another seventh chord, perpetuating the forward drive.\n\nPay particular attention to the voice leading of the sevenths. Bach almost always resolves them stepwise downward. The seventh of the chord in measure 3 descends to become part of the chord in measure 4. This careful treatment of dissonance is characteristic of Baroque style."
+        },
+        "additional_examples": [
+          {
+            "bwv": 855,
+            "measures": "1-6",
+            "brief": "The E minor prelude features prominent minor seventh chords in its melancholic opening. The ii7 chord (F-sharp half-diminished) is particularly prominent, lending a searching quality to the harmony."
+          },
+          {
+            "bwv": 861,
+            "measures": "1-4",
+            "brief": "The G minor prelude demonstrates how seventh chords in minor keys create heightened drama. The dominant seventh on D and the diminished seventh on F-sharp both drive toward the tonic with intensity."
+          },
+          {
+            "bwv": 867,
+            "measures": "1-5",
+            "brief": "The B-flat minor prelude uses seventh chords to create its dark, introspective character. Notice how chains of seventh chords in sequence propel the harmonic rhythm."
+          }
+        ],
+        "summary": "Seventh chords add a seventh above the root to a triad, creating four-note chords with built-in tension. Five types are common: major seventh (major triad plus major seventh), minor seventh (minor triad plus minor seventh), dominant seventh (major triad plus minor seventh), half-diminished (diminished triad plus minor seventh), and fully diminished (diminished triad plus diminished seventh). The dominant seventh is most important, with its tritone creating strong resolution tendency. Bach uses seventh chords throughout the WTC to add harmonic richness and forward momentum. In our next lesson, we examine seventh chord inversions and their role in creating smooth voice leading."
+      },
+      "exercises": [
+        "Construct all five seventh chord types starting from C, F, G, and D",
+        "Identify all seventh chords in BWV 849 Prelude, measures 1-8, labeling each by type",
+        "Listen to the openings of BWV 846 and BWV 849, comparing the role of seventh chords in each",
+        "Find the tritone in each dominant seventh chord you identify and predict its resolution"
+      ],
+      "related_features": ["seventh-chord", "dominant-seventh", "diminished-seventh", "tritone", "dissonance-resolution"],
+      "narration_text": "Adding a seventh above the root to a triad creates seventh chords, which introduce dissonance demanding resolution. Five types occur commonly.\n\nThe major seventh combines a major triad with a major seventh. Built on C: C, E, G, B. This chord has a soft, rich quality.\n\nThe minor seventh combines a minor triad with a minor seventh. Built on C: C, E-flat, G, B-flat. This has a mellow, somewhat melancholic quality.\n\nThe dominant seventh combines a major triad with a minor seventh. Built on C: C, E, G, B-flat. This is the most important seventh chord, with its tritone creating strong drive toward resolution.\n\nThe half-diminished combines a diminished triad with a minor seventh. The fully diminished combines a diminished triad with a diminished seventh, built entirely of minor thirds.\n\nLet us examine the C-sharp minor prelude, BWV 849. Its slow style allows us to hear seventh chords clearly. Measure 3 introduces a dominant seventh on G-sharp. The F-sharp creates the minor seventh above the root, pulling toward C-sharp.\n\nBach almost always resolves sevenths stepwise downward. This careful treatment of dissonance is characteristic of Baroque style and creates the constant forward motion we hear in his music."
+    },
+    {
+      "id": "seventh-chord-inversions",
+      "title": "Seventh Chord Inversions",
+      "domain": "harmonic-fundamentals",
+      "order": 5,
+      "estimated_minutes": 25,
+      "learning_objectives": [
+        "Identify all four inversions of seventh chords",
+        "Understand figured bass symbols for seventh chord inversions",
+        "Recognize how seventh chord inversions enable smooth bass lines",
+        "Apply seventh chord inversion analysis to Bach's WTC"
+      ],
+      "prerequisites": ["seventh-chords"],
+      "content": {
+        "introduction": "Just as triads can appear in three positions, seventh chords with their four notes can appear in four positions: root position and three inversions. Each inversion places a different chord tone in the bass, creating distinct sonorities and voice-leading possibilities. The figured bass system developed during Bach's time provides efficient notation for these inversions. Mastering seventh chord inversions completes your fundamental harmonic vocabulary and equips you to analyze the sophisticated voice leading that characterizes Bach's keyboard music.",
+        "explanation": "Seventh chord inversions are named and figured based on which chord member appears in the bass.\n\nRoot position places the root in the bass. A dominant seventh in root position (G-B-D-F in C major) has G lowest. Figured bass indicates this as 7, representing the seventh above the bass. Root position seventh chords are stable and often appear at cadences.\n\nFirst inversion places the third in the bass. The same chord with B in the bass is figured 6/5 (indicating a sixth and fifth above the bass). First inversion seventh chords have moderate mobility and often appear in sequence.\n\nSecond inversion places the fifth in the bass. With D lowest, the figuring becomes 4/3. This inversion frequently serves passing function, connecting other harmonies through stepwise bass motion.\n\nThird inversion places the seventh in the bass. With F lowest, the figuring becomes 4/2 (often abbreviated as 2). This unstable inversion almost always resolves down by step in the bass, making it ideal for approaching cadences.\n\nThe figures indicate intervals above the bass, abbreviated from the complete figures. The complete figuring for first inversion would be 6/5/3, but the 3 is omitted as understood. Similarly, second inversion's full 6/4/3 becomes 4/3, and third inversion's 6/4/2 becomes simply 2.\n\nIn practice, the third inversion is particularly significant. Its characteristic resolution downward by step creates some of the most compelling voice leading in tonal music. Bach frequently uses the \"4-2\" or \"2\" chord to approach cadential points. The seventh, now in the bass, must resolve down while the upper voices complete the cadence.\n\nRecognizing inversions requires identifying the bass note and its relationship to the chord. In a G dominant seventh chord (G-B-D-F), B in bass indicates first inversion, D indicates second, F indicates third. Root position has G in bass.",
+        "guided_example": {
+          "bwv": 846,
+          "type": "prelude",
+          "measures": "23-24",
+          "analysis": "The final cadence of the C Major Prelude provides a textbook demonstration of seventh chord inversions leading to resolution.\n\nMeasure 23 presents a G dominant seventh chord. Examining the bass note, we find G, indicating root position (figured as 7). The chord contains G-B-D-F, with F creating the characteristic tension of the dominant seventh. This stable presentation of the dominant prepares the cadence.\n\nThe resolution in measure 24 demonstrates the proper voice leading of the seventh. The F (the seventh of the G chord) descends to E, which becomes the third of the C major tonic chord. Simultaneously, the B (the third of G) ascends to C. This contrary motion in the outer voices creates a satisfying resolution.\n\nNow consider how different the effect would be with the seventh in the bass. If we had F in the bass (third inversion), the bass would descend by step to E, creating an even smoother approach to the tonic. Bach chooses root position here for its stability and finality, appropriate to the end of the piece.\n\nEarlier in the prelude, Bach employs other inversions more freely. Examining the harmonies reveals first inversion seventh chords providing smooth passing motion and second inversions filling out sequences. The variety of inversions contributes to the work's continuous harmonic flow."
+        },
+        "additional_examples": [
+          {
+            "bwv": 847,
+            "measures": "25-27",
+            "brief": "The C minor fugue's final approach uses a third inversion dominant seventh (G7 with F in bass) resolving down by step to the tonic. This creates an especially smooth, almost inevitable approach to the final cadence."
+          },
+          {
+            "bwv": 850,
+            "measures": "14-16",
+            "brief": "The D major prelude employs a sequence of seventh chords in various inversions. Notice how each inversion choice enables stepwise bass motion through the progression."
+          },
+          {
+            "bwv": 852,
+            "measures": "18-20",
+            "brief": "The E-flat major fugue demonstrates seventh chord inversions in a contrapuntal context. The inversions enable the bass to participate as an independent melodic line while supporting harmonic progressions."
+          }
+        ],
+        "summary": "Seventh chords appear in four positions: root position (figured 7), first inversion (6/5), second inversion (4/3), and third inversion (4/2 or simply 2). Each places a different chord tone in the bass, creating distinct sonorities and enabling different voice-leading strategies. Third inversion is particularly important, as its bass note (the seventh) must resolve down by step, creating compelling motion toward cadences. Bach employs all inversions throughout the WTC, choosing each for its specific voice-leading benefits. Understanding seventh chord inversions completes our fundamental chord vocabulary. In our next lesson, we examine cadences, the punctuation marks of tonal music."
+      },
+      "exercises": [
+        "Write G dominant seventh in all four inversions, labeling each with figured bass",
+        "Identify the inversions of all seventh chords in BWV 846 Prelude, measures 19-24",
+        "Find examples of third inversion (4/2) seventh chords in BWV 847 and describe their resolutions",
+        "Analyze how seventh chord inversions contribute to bass line continuity in BWV 848, measures 1-12"
+      ],
+      "related_features": ["seventh-chord-inversions", "figured-bass", "voice-leading", "bass-line", "chord-progression"],
+      "narration_text": "Seventh chords with their four notes appear in four positions: root position and three inversions. Each places a different chord tone in the bass.\n\nRoot position has the root in bass, figured as seven. First inversion has the third in bass, figured six-five. Second inversion has the fifth in bass, figured four-three. Third inversion has the seventh in bass, figured four-two or simply two.\n\nThird inversion is particularly significant. The seventh in the bass must resolve down by step, creating compelling motion toward cadences.\n\nLet us examine the final cadence of BWV 846. Measure 23 presents a G dominant seventh in root position, with G in the bass. The F creates the characteristic tension. In measure 24, this F descends to E while B ascends to C, creating satisfying contrary motion.\n\nThe C minor fugue, BWV 847, measures 25 through 27, uses a third inversion dominant seventh approaching the final cadence. The F in the bass descends by step to E-flat in the tonic chord. This creates an especially smooth approach.\n\nBach employs all inversions throughout the WTC, choosing each for its specific voice-leading benefits."
+    },
+    {
+      "id": "cadences-authentic-half",
+      "title": "Cadences: Authentic and Half",
+      "domain": "harmonic-fundamentals",
+      "order": 6,
+      "estimated_minutes": 30,
+      "learning_objectives": [
+        "Identify perfect authentic, imperfect authentic, and half cadences",
+        "Understand how cadences articulate formal structure",
+        "Recognize cadential voice leading and bass patterns",
+        "Analyze how Bach uses cadences to create sectional divisions"
+      ],
+      "prerequisites": ["seventh-chord-inversions"],
+      "content": {
+        "introduction": "Cadences are the punctuation of music. Just as sentences end with periods, question marks, or commas, musical phrases conclude with cadences of varying degrees of finality. The authentic cadence provides the strongest sense of closure, analogous to a period. The half cadence pauses on the dominant, creating tension that demands continuation, like a comma or question mark. Understanding cadences allows us to perceive the phrase structure that organizes Bach's music into comprehensible units. Without this structural articulation, even the most beautiful harmonies would blur into shapeless succession.",
+        "explanation": "The authentic cadence moves from dominant (V) to tonic (I). This progression represents the most fundamental harmonic motion in tonal music. The dominant contains the leading tone, which pulls upward to the tonic, and often includes the seventh, which pulls downward. When these tendencies resolve simultaneously, we experience cadential closure.\n\nThe perfect authentic cadence (PAC) is the strongest form. Three conditions must be met: root position V proceeding to root position I, the soprano ending on the tonic note (scale degree 1), and both chords complete. A PAC typically ends major sections and pieces.\n\nThe imperfect authentic cadence (IAC) weakens one of these conditions. If the soprano ends on the third or fifth instead of the tonic, or if either chord appears in inversion, the cadence is imperfect. IACs provide intermediate closure within phrases, allowing the music to breathe without fully stopping.\n\nThe half cadence (HC) ends on the dominant chord rather than resolving to tonic. This creates an open, questioning effect. Half cadences typically occur mid-phrase or at the end of antecedent phrases in period structures. The expectation of resolution creates forward momentum into subsequent material.\n\nCadential preparation frequently involves a specific bass pattern. The cadential 6/4, a second inversion tonic chord, often precedes the dominant. This creates the bass motion do-sol-do (or scale degrees 1-5-1), with the 6/4 chord resolving into the dominant before the final tonic. Bach uses this pattern extensively.\n\nCadences articulate form by marking phrase endings and section boundaries. In binary forms, the first section often ends with a half cadence or a cadence in the dominant key, while the second section concludes with a PAC in the home key. In fugues, cadences mark the end of subject entries and episodes.",
+        "guided_example": {
+          "bwv": 846,
+          "type": "prelude",
+          "measures": "22-24",
+          "analysis": "The conclusion of the C Major Prelude offers a model authentic cadence that demonstrates these principles perfectly.\n\nMeasure 22 serves as pre-dominant preparation. The harmony here suggests subdominant function (F major elements), leading the ear to expect dominant arrival.\n\nMeasure 23 presents the dominant, G major with its seventh (G-B-D-F). The bass rests on G, root position. The F as seventh creates tension demanding resolution. The B as leading tone points upward toward C.\n\nMeasure 24 provides resolution to C major. The bass moves from G to C, both chord roots. The soprano (upper voice) moves to C, scale degree 1. The F resolves down to E. The B resolves up to C. Every voice finds its expected destination.\n\nThis is a textbook perfect authentic cadence: root position V7 to root position I, soprano on tonic, all voices resolving properly. The sense of closure is absolute. Bach places this cadence at the end of the piece because no stronger ending exists.\n\nContrast this with moments earlier in the piece where harmonic motion suggests cadence but then continues. These are moments of weaker cadential strength, allowing the continuous flow of the prelude while still providing structural articulation."
+        },
+        "additional_examples": [
+          {
+            "bwv": 853,
+            "measures": "18-20",
+            "brief": "The E-flat major prelude demonstrates a half cadence mid-phrase. The music pauses on B-flat major (the dominant) without resolving, creating expectation that drives the following material."
+          },
+          {
+            "bwv": 848,
+            "measures": "28-30",
+            "brief": "The C-sharp major fugue ends with a perfect authentic cadence decorated with ornamental figures. Despite the elaboration, the fundamental V-I motion is clear."
+          },
+          {
+            "bwv": 862,
+            "measures": "12-14",
+            "brief": "The A-flat major prelude features an imperfect authentic cadence where the soprano ends on the third rather than the root. This provides partial closure while maintaining flow."
+          }
+        ],
+        "summary": "Authentic cadences move from dominant to tonic, providing varying degrees of closure. Perfect authentic cadences (PAC) require root position V to root position I with soprano on tonic, creating maximum finality. Imperfect authentic cadences (IAC) weaken one condition, providing intermediate closure. Half cadences (HC) end on the dominant without resolving, creating expectation and forward drive. Cadences function as structural markers, articulating phrase endings and section boundaries throughout Bach's music. In our next lesson, we explore deceptive and plagal cadences, which provide additional variety in cadential expression."
+      },
+      "exercises": [
+        "Identify all cadences in BWV 846 Prelude, classifying each as PAC, IAC, or HC",
+        "Listen to BWV 846 and mark each cadence point; then verify against the score",
+        "Compare the final cadences of BWV 846 and BWV 847 Preludes, noting any differences in cadential treatment",
+        "Find three examples of half cadences in WTC Book 1 and describe how they create forward momentum"
+      ],
+      "related_features": ["authentic-cadence", "half-cadence", "phrase-structure", "dominant-resolution", "cadential-64"],
+      "narration_text": "Cadences are the punctuation of music. Just as sentences end with periods or question marks, musical phrases conclude with cadences of varying finality.\n\nThe authentic cadence moves from dominant to tonic, the most fundamental harmonic motion. The perfect authentic cadence requires root position five to root position one with soprano on tonic. This provides maximum finality.\n\nThe imperfect authentic cadence weakens one condition, perhaps the soprano ending on the third instead. The half cadence ends on the dominant without resolving, creating an open, questioning effect.\n\nLet us examine the conclusion of BWV 846, measures 22 through 24. Measure 23 presents the dominant G major with its seventh. The bass is on G, root position. The B as leading tone points toward C.\n\nMeasure 24 provides resolution to C major. The bass moves from G to C. The soprano moves to C. The F resolves down to E. The B resolves up to C. This is a textbook perfect authentic cadence.\n\nContrast this with the E-flat major prelude, BWV 853, measures 18 through 20, where the music pauses on the dominant without resolving. This half cadence creates expectation that drives the following material."
+    },
+    {
+      "id": "cadences-deceptive-plagal",
+      "title": "Cadences: Deceptive and Plagal",
+      "domain": "harmonic-fundamentals",
+      "order": 7,
+      "estimated_minutes": 25,
+      "learning_objectives": [
+        "Identify plagal cadences and their 'Amen' quality",
+        "Recognize deceptive cadences and their role in extending phrases",
+        "Understand the expressive effects of cadential substitutions",
+        "Analyze how Bach uses deceptive cadences to avoid premature closure"
+      ],
+      "prerequisites": ["cadences-authentic-half"],
+      "content": {
+        "introduction": "While authentic and half cadences form the structural backbone of tonal music, deceptive and plagal cadences provide essential variety and expressive power. The deceptive cadence frustrates expected resolution, extending phrases and heightening drama. The plagal cadence supplements authentic closure with the gentler motion from subdominant to tonic. Together, these cadence types complete the palette of harmonic punctuation available to Bach and allow for subtle manipulation of listener expectations. Understanding when and why Bach chooses these alternatives deepens our appreciation of his compositional craft.",
+        "explanation": "The deceptive cadence substitutes an unexpected chord for the expected tonic. The standard deceptive cadence moves from V to vi (in major) or V to VI (in minor). The dominant creates expectation of tonic resolution, but instead the music moves to the submediant. This surprises the listener and extends the phrase, requiring additional music to eventually reach proper closure.\n\nSeveral factors make the deceptive cadence effective. First, vi and I share two common tones: in C major, both C major (C-E-G) and A minor (A-C-E) contain C and E. The voice leading can proceed almost identically to an authentic cadence, with only the bass differing. Second, the leading tone still resolves upward (B to C in C major), satisfying part of the dominant's tension. Third, vi has a minor quality in major keys, creating an unexpected color shift.\n\nBach uses deceptive cadences strategically to avoid premature closure, particularly when more musical development is needed. By setting up an apparent authentic cadence and then deflecting to vi, he can extend phrases, introduce new material, or build toward a more climactic true cadence later.\n\nThe plagal cadence moves from subdominant (IV) to tonic (I), without involving the dominant at all. This softer progression lacks the leading tone tension of authentic cadences. The plagal cadence often follows an authentic cadence, adding a supplementary sense of closure. Its association with the word \"Amen\" in hymn settings gives it a devotional, conclusive character.\n\nThe plagal cadence appears less frequently than authentic cadences but serves important functions. It can extend a final tonic, confirming closure already achieved. It can also appear independently when a gentler ending is desired. The bass motion from scale degree 4 to 1 (F to C in C major) creates a distinctive sound quite different from V-I.",
+        "guided_example": {
+          "bwv": 855,
+          "type": "prelude",
+          "measures": "16-19",
+          "analysis": "The E minor prelude provides an instructive example of the deceptive cadence in action. In this emotionally intense work, Bach uses deceptive resolution to extend and intensify the musical argument.\n\nLeading into measure 16, the harmony moves toward B major, the dominant of E minor. All signals point toward an authentic cadence: the bass moves to B, the leading tone D-sharp appears prominently, and the rhythmic pattern suggests phrase ending.\n\nBut in measure 17, instead of the expected E minor tonic, Bach moves to C major, the submediant of E minor. This is the deceptive resolution: V to VI in minor (using the major form of VI, which is common in minor keys). The D-sharp still resolves up to E, but the bass moves unexpectedly from B to C rather than B to E.\n\nThe effect is striking. The expected closure evaporates, replaced by the relative major chord's warmer but surprising color. The phrase must continue, seeking the true resolution that was denied. Bach uses the extended material following this deception to build toward an even more satisfying eventual cadence.\n\nMeasure 19 eventually achieves proper closure in E minor, but the journey there has been made more dramatic and satisfying by the deceptive deflection. The listener's expectations were manipulated, creating heightened emotional involvement."
+        },
+        "additional_examples": [
+          {
+            "bwv": 849,
+            "measures": "32-34",
+            "brief": "The C-sharp minor fugue employs deceptive cadence to extend its development. When authentic cadence seems imminent, the move to VI provides unexpected continuation and builds toward the eventual climax."
+          },
+          {
+            "bwv": 861,
+            "measures": "10-12",
+            "brief": "The G minor prelude demonstrates deceptive cadence in minor mode. The move from D major (V) to E-flat major (VI) creates rich color contrast and phrase extension."
+          },
+          {
+            "bwv": 867,
+            "measures": "18-20",
+            "brief": "The B-flat minor fugue uses deceptive cadence to avoid premature closure. The deception occurs at a structurally significant point, requiring substantial additional material before final resolution."
+          }
+        ],
+        "summary": "Deceptive cadences move from V to vi (or VI in minor), frustrating expected resolution and extending phrases. The submediant shares common tones with the tonic, allowing smooth voice leading despite the harmonic surprise. Bach uses deceptive cadences strategically to avoid premature closure and build dramatic tension. Plagal cadences move from IV to I, providing gentler closure without leading tone tension. Often following authentic cadences, plagal motion adds supplementary finality with its characteristic \"Amen\" quality. Together with authentic and half cadences, these alternatives complete the vocabulary of harmonic punctuation. Our next lesson explores harmonic progressions as connected sequences of chords."
+      },
+      "exercises": [
+        "Find three deceptive cadences in WTC Book 1 and describe what happens musically after each",
+        "Identify any plagal cadences at the ends of preludes or fugues in WTC Book 1",
+        "Compare the effect of authentic vs. deceptive cadence by imagining the expected resolution at each deceptive point",
+        "Analyze how Bach uses cadential variety to create phrase rhythm in BWV 855 Prelude"
+      ],
+      "related_features": ["deceptive-cadence", "plagal-cadence", "phrase-extension", "vi-chord", "subdominant"],
+      "narration_text": "Deceptive and plagal cadences provide variety and expressive power beyond authentic cadences.\n\nThe deceptive cadence substitutes an unexpected chord for tonic. The standard form moves from V to vi in major. The dominant creates expectation, but the music moves to the submediant instead, surprising the listener and extending the phrase.\n\nSeveral factors make deceptive cadences effective. The vi and I share common tones, allowing smooth voice leading. The leading tone still resolves upward. And vi's minor quality creates unexpected color.\n\nThe E minor prelude, BWV 855, measures 16 through 19, demonstrates this. Leading into measure 16, harmony moves toward B major, the dominant. All signals point toward authentic cadence. But in measure 17, instead of E minor, Bach moves to C major, the submediant. The expected closure evaporates, and the phrase must continue.\n\nThe plagal cadence moves from subdominant to tonic without involving dominant at all. Its association with the word Amen gives it a devotional character. Plagal cadences often follow authentic cadences, adding supplementary closure.\n\nBach uses these alternatives strategically to manipulate expectations and create dramatic tension."
+    },
+    {
+      "id": "harmonic-progressions",
+      "title": "Harmonic Progressions",
+      "domain": "harmonic-fundamentals",
+      "order": 8,
+      "estimated_minutes": 30,
+      "learning_objectives": [
+        "Identify common harmonic progressions and sequential patterns",
+        "Understand how progressions create harmonic momentum",
+        "Recognize the relationship between bass motion and harmonic rhythm",
+        "Analyze Bach's use of progressions in preludes and fugal episodes"
+      ],
+      "prerequisites": ["cadences-deceptive-plagal"],
+      "content": {
+        "introduction": "Individual chords derive much of their meaning from context, from the progressions in which they participate. A chord in isolation tells us little; the same chord within a progression reveals its function and direction. Harmonic progressions are the sentences of tonal music, with each chord serving as a word whose meaning depends partly on what precedes and follows. Bach's music demonstrates remarkable sophistication in progression construction, balancing predictable patterns that orient the listener with unexpected turns that maintain interest. This lesson examines the principles governing chord succession and the characteristic patterns that define Baroque harmonic language.",
+        "explanation": "Harmonic progressions follow tendencies rooted in the physics of sound and centuries of practice. Certain chord successions feel natural and directed; others feel awkward or static. Understanding these tendencies illuminates Bach's compositional choices.\n\nThe most powerful tendency in tonal music is dominant to tonic (V-I). The tritone within the dominant seventh chord creates maximum tension that resolves with the perfect fifth of the tonic. This progression defines key and creates the strongest sense of arrival.\n\nRoot motion by fifth (or fourth) produces the strongest progressions generally. The progression I-IV-V-I moves the bass by fourth, fourth, and fourth again, creating a powerful sense of direction. The progression I-V-I spans a fifth in each direction. Bach's music is full of fifth-related progressions.\n\nRoot motion by third creates smoother, more subtle progressions. Moving from I to vi keeps two common tones (in C major, C-E-G to A-C-E shares C and E). Similarly, IV to ii, and V to iii maintain common tones. These progressions connect harmonies gently rather than forcefully.\n\nRoot motion by step creates the smoothest but least directional progressions. IV-V moves the bass by step while maintaining the sense of pre-dominant to dominant function. Step motion appears frequently in sequential passages.\n\nSequences are progressions that repeat at different pitch levels. The descending fifth sequence (I-IV-vii°-iii-vi-ii-V-I) chains dominant-type motions, creating unstoppable forward drive. The descending third sequence moves more gently. Bach uses sequences extensively in fugal episodes and prelude development sections.\n\nHarmonic rhythm refers to the rate of chord change. Fast harmonic rhythm creates urgency; slow harmonic rhythm creates stability. Bach often accelerates harmonic rhythm approaching cadences, increasing tension before resolution. Conversely, he may slow harmonic rhythm on the tonic to establish stability.",
+        "guided_example": {
+          "bwv": 847,
+          "type": "prelude",
+          "measures": "10-18",
+          "analysis": "The C minor prelude contains one of Bach's most impressive sequential passages, demonstrating how progressions create irresistible harmonic momentum.\n\nBeginning in measure 10, Bach initiates a descending fifth sequence. The pattern chains chords whose roots relate by fifth, each functioning momentarily as dominant to the next. In C minor context, this might proceed: C minor - F - Bb - Eb - Ab - D diminished - G, eventually arriving back at C minor.\n\nExamine the bass line through these measures. It outlines the root motion, descending through the sequence. Despite elaboration in upper voices, the fundamental bass progression drives the harmony inexorably forward.\n\nEach chord in the sequence sounds briefly like a goal, only to become itself a dominant seeking the next chord. This creates a compelling sense of harmonic inevitability. We know we are going somewhere, even if we cannot immediately predict where.\n\nThe sequence eventually reaches dominant harmony (G major in C minor), where the pattern breaks to prepare the cadence. This interruption of the sequence focuses attention on the approaching structural arrival.\n\nNotice how the harmonic rhythm remains consistent through the sequence, with chords changing at regular intervals. This regularity contributes to the sequence's driving quality. Each chord receives equal time, preventing any from feeling like a goal until the pattern deliberately breaks."
+        },
+        "additional_examples": [
+          {
+            "bwv": 850,
+            "measures": "12-18",
+            "brief": "The D major fugue employs descending fifth sequences in its episodes. The sequential progressions provide contrast with the subject entries while maintaining harmonic direction toward new key areas."
+          },
+          {
+            "bwv": 856,
+            "measures": "8-14",
+            "brief": "The F major prelude demonstrates ascending step sequences, creating a different effect from descending fifth patterns. The bass rises through the sequence, building tension toward a climactic point."
+          },
+          {
+            "bwv": 862,
+            "measures": "16-22",
+            "brief": "The A-flat major fugue uses sequential progressions to navigate from episode to subject entry. The predictable harmonic pattern allows listeners to anticipate the arrival of thematic material."
+          }
+        ],
+        "summary": "Harmonic progressions derive meaning from chord relationships rather than isolated sonorities. Root motion by fifth creates the strongest progressions; motion by third is smoother; motion by step is smoothest but least directional. The V-I progression defines tonal music through its tritone-to-perfect-fifth resolution. Sequences repeat progressions at different pitch levels, creating momentum that drives extended passages. Harmonic rhythm, the rate of chord change, contributes to musical tension and release. Bach employs these principles masterfully, balancing pattern and surprise to maintain both coherence and interest. Our next lesson examines secondary dominants, which expand the tonal palette through temporary tonicization."
+      },
+      "exercises": [
+        "Map the bass line and root progression through BWV 847 Prelude, measures 10-18",
+        "Identify the sequence type (descending fifth, descending third, etc.) in BWV 850 Fugue, measures 12-18",
+        "Chart the harmonic rhythm in BWV 846 Prelude, noting where it accelerates approaching cadences",
+        "Compare sequential passages in three different preludes, noting similarities and differences in progression types"
+      ],
+      "related_features": ["harmonic-sequence", "root-motion", "harmonic-rhythm", "fifth-progression", "chord-function"],
+      "narration_text": "Harmonic progressions give chords meaning through context. A chord in isolation tells us little; within a progression, it reveals function and direction.\n\nThe most powerful tendency is dominant to tonic. The tritone in the dominant resolves with the perfect fifth of tonic. Root motion by fifth produces the strongest progressions generally. Root motion by third is smoother, maintaining common tones. Root motion by step is smoothest but least directional.\n\nSequences repeat progressions at different pitch levels. The descending fifth sequence chains dominant-type motions, creating unstoppable forward drive.\n\nThe C minor prelude, BWV 847, measures 10 through 18, demonstrates this. Bach initiates a descending fifth sequence, chaining chords whose roots relate by fifth. The bass outlines root motion, descending through the sequence.\n\nEach chord sounds briefly like a goal, only to become itself a dominant seeking the next chord. This creates harmonic inevitability. The sequence eventually reaches dominant harmony, where the pattern breaks to prepare cadence.\n\nHarmonic rhythm, the rate of chord change, contributes to tension and release. Bach often accelerates harmonic rhythm approaching cadences."
+    },
+    {
+      "id": "secondary-dominants",
+      "title": "Secondary Dominants",
+      "domain": "harmonic-fundamentals",
+      "order": 9,
+      "estimated_minutes": 30,
+      "learning_objectives": [
+        "Construct secondary dominants in any key",
+        "Identify tonicization and distinguish it from true modulation",
+        "Recognize chromatic alterations that signal secondary dominant function",
+        "Analyze how Bach uses secondary dominants to expand tonal space"
+      ],
+      "prerequisites": ["harmonic-progressions"],
+      "content": {
+        "introduction": "The dominant-to-tonic relationship is so powerful that it can be temporarily applied to chords other than the main tonic. When we precede a diatonic chord with its own dominant, we create a secondary dominant, briefly tonicizing that chord before continuing in the original key. Secondary dominants introduce chromatic color and directional energy without abandoning the home key. Bach's music is rich with secondary dominants, which add harmonic variety and strengthen progressions. Understanding secondary dominants reveals another layer of sophistication in Bach's harmonic language.",
+        "explanation": "A secondary dominant is a dominant chord applied to a chord other than the tonic. We notate them with slashes: V/V means \"the dominant of the dominant,\" V/ii means \"the dominant of the supertonic,\" and so forth.\n\nIn C major, the dominant is G major. The dominant of G major is D major, which contains F-sharp, a note not in C major. When D major appears in a C major context and resolves to G major, we have a secondary dominant: V/V resolving to V. The F-sharp signals that something special is happening.\n\nSecondary dominants can be applied to any major or minor triad in the key. In C major: V/V is D major, V/IV is C major (same as tonic, so rarely used), V/ii is A major, V/iii is B major, V/vi is E major. Each brings its own chromatic alteration: D major has F-sharp, A major has C-sharp, B major has D-sharp, E major has G-sharp.\n\nSecondary dominants can appear with or without sevenths. The secondary dominant seventh (V7/V, V7/vi, etc.) adds the characteristic seventh interval, increasing the drive toward resolution. The tritone within the secondary dominant seventh pulls toward its target chord just as V7 pulls toward I.\n\nTonicization is the brief treatment of a non-tonic chord as if it were a temporary tonic. Secondary dominants create tonicization. The difference between tonicization and true modulation is duration and confirmation: tonicization is fleeting, while modulation establishes a new key for an extended passage. Bach often uses chains of secondary dominants in sequential passages, briefly tonicizing several chords in succession without truly leaving the original key.\n\nRecognizing secondary dominants requires identifying chromatic alterations and their resolutions. When you see a raised note resolving upward or a lowered note resolving downward, consider whether a secondary dominant is at work.",
+        "guided_example": {
+          "bwv": 846,
+          "type": "prelude",
+          "measures": "12-17",
+          "analysis": "The middle section of the C Major Prelude provides clear examples of secondary dominants enriching an otherwise diatonic context.\n\nIn measure 12, examine the harmony carefully. Among the arpeggiated notes, we find A-C-sharp-E-G. This is A dominant seventh, containing C-sharp, a note foreign to C major. What chord does A dominant seventh want to resolve to? D minor, the ii chord in C major. This is V7/ii.\n\nMeasure 13 confirms the analysis: the harmony moves to D minor. The secondary dominant has fulfilled its function, tonicizing ii before the music continues. The C-sharp resolved upward to D, exactly as a leading tone should.\n\nContinuing through this passage, notice how Bach chains these secondary functions. After establishing D minor, subsequent measures may introduce another secondary dominant pointing toward G major (the dominant), continuing the harmonic journey.\n\nMeasure 15 introduces E-G-sharp-B-D, an E dominant seventh. The G-sharp signals V7/vi, pointing toward A minor. When A minor arrives, it too has been briefly tonicized.\n\nThrough these measures, Bach never truly leaves C major. Each tonicization is brief, and the overall harmonic trajectory continues toward the cadential goal. But the secondary dominants add richness, direction, and chromatic color that purely diatonic harmony would lack."
+        },
+        "additional_examples": [
+          {
+            "bwv": 850,
+            "measures": "9-13",
+            "brief": "The D major prelude employs secondary dominants to strengthen its sequential progressions. V/vi and V/ii appear prominently, each adding chromatic sharpening to the texture."
+          },
+          {
+            "bwv": 853,
+            "measures": "14-18",
+            "brief": "The E-flat major fugue uses secondary dominants in its episodes. The chromatic inflections signal temporary tonicizations that add harmonic interest to non-thematic passages."
+          },
+          {
+            "bwv": 862,
+            "measures": "6-11",
+            "brief": "The A-flat major prelude demonstrates chains of secondary dominants. Each temporary tonic becomes itself the target of another secondary dominant, creating extended chromatic passages."
+          }
+        ],
+        "summary": "Secondary dominants are dominant chords applied to chords other than the tonic. Notated with slashes (V/V, V/ii, etc.), they introduce chromatic alterations that point toward their target chords. Secondary dominants create tonicization, briefly treating a diatonic chord as a temporary tonic. Unlike true modulation, tonicization is fleeting. Bach uses secondary dominants extensively to add chromatic color, strengthen progressions, and increase harmonic direction. Recognizing them requires identifying chromatic alterations and their expected resolutions. In our final lesson for this domain, we examine the circle of fifths, the theoretical framework underlying tonal harmony."
+      },
+      "exercises": [
+        "Construct secondary dominants V/V, V/ii, V/vi, and V/iii in the key of G major",
+        "Identify all secondary dominants in BWV 846 Prelude, measures 12-19",
+        "Find the chromatic alterations in BWV 850 Prelude and determine which secondary dominants they signal",
+        "Compare the chromatic content of BWV 846 (C major) with BWV 847 (C minor), noting how secondary dominants function differently in minor"
+      ],
+      "related_features": ["secondary-dominant", "tonicization", "chromatic-harmony", "applied-chord", "leading-tone"],
+      "narration_text": "Secondary dominants apply the dominant-to-tonic relationship to chords other than the main tonic. V slash V means the dominant of the dominant. Each brings chromatic alterations that signal something special.\n\nIn C major, V/V is D major, containing F-sharp. When D major appears and resolves to G major, we have a secondary dominant. V/ii is A major with C-sharp. V/vi is E major with G-sharp.\n\nTonicization briefly treats a non-tonic chord as temporary tonic. Unlike modulation, tonicization is fleeting.\n\nThe C Major Prelude, BWV 846, measures 12 through 17, provides clear examples. In measure 12, we find A dominant seventh with C-sharp, foreign to C major. This is V7/ii, resolving to D minor in measure 13. The C-sharp resolved upward to D.\n\nMeasure 15 introduces E dominant seventh with G-sharp, signaling V7/vi pointing toward A minor.\n\nThrough these measures, Bach never truly leaves C major. Each tonicization is brief. But secondary dominants add richness and chromatic color that purely diatonic harmony would lack."
+    },
+    {
+      "id": "circle-of-fifths",
+      "title": "Circle of Fifths",
+      "domain": "harmonic-fundamentals",
+      "order": 10,
+      "estimated_minutes": 25,
+      "learning_objectives": [
+        "Navigate the circle of fifths and understand key relationships",
+        "Recognize how the circle underlies common progressions and modulations",
+        "Apply circle of fifths knowledge to identify related keys",
+        "Analyze how Bach exploits circle relationships in the WTC"
+      ],
+      "prerequisites": ["secondary-dominants"],
+      "content": {
+        "introduction": "The circle of fifths provides the theoretical framework underlying tonal harmony. By arranging the twelve keys around a circle according to their fifth relationships, we create a map of tonal space that reveals which keys are closely related and how harmonic progressions derive their power. Bach's Well-Tempered Clavier, composed to demonstrate the viability of well-tempered tuning in all keys, implicitly references the circle of fifths in its very conception. Understanding this organizing principle illuminates both the theoretical foundations and practical applications of tonal harmony.",
+        "explanation": "The circle of fifths arranges all twelve major keys (and their relative minors) in a circle, with each key a perfect fifth higher than the one before (moving clockwise) or a perfect fifth lower (moving counterclockwise). Starting from C major at the top: G major has one sharp, D major has two sharps, A major has three sharps, and so on around the sharp side. Going counterclockwise: F major has one flat, B-flat major has two flats, E-flat major has three flats, continuing around the flat side.\n\nRelative major and minor keys share the same key signature and position on the circle. C major and A minor both have no sharps or flats. G major and E minor both have one sharp. This relationship is important for modulation between parallel positions.\n\nThe circle reveals key relationships. Adjacent keys on the circle are closely related, sharing all but one note of their scales. Keys across the circle are distantly related, sharing few common tones. Modulation to closely related keys (those within one step on the circle) sounds smooth and natural. Modulation to distant keys is more dramatic and requires more preparation.\n\nThe circle also explains why fifth progressions are so powerful. Root motion by fifth follows the circle. The progression I-IV-vii°-iii-vi-ii-V-I traverses counterclockwise around the circle, each chord acting as dominant to the next. This is why descending fifth sequences feel so inevitable.\n\nBach's Well-Tempered Clavier presents pieces in all 24 major and minor keys, arranged chromatically but implicitly acknowledging the circle of fifths relationships. The ability to play in any key equally well was revolutionary, enabled by well-tempered tuning that compromised pure intervals slightly to allow free modulation.\n\nThe circle serves as a practical tool for several tasks: determining key signatures, finding related keys for modulation, understanding chromatic alterations, and predicting likely harmonic paths.",
+        "guided_example": {
+          "bwv": 848,
+          "type": "prelude",
+          "measures": "12-20",
+          "analysis": "The C-sharp major prelude demonstrates circle of fifths relationships through its modulation scheme. Beginning in C-sharp major (seven sharps), Bach navigates to related keys following the circle's logic.\n\nC-sharp major sits at the far sharp end of the circle. Its closest relatives are G-sharp minor (relative minor) and F-sharp major (subdominant). These are the keys where modulation occurs most easily.\n\nExamining measures 12-14, Bach prepares modulation toward G-sharp minor. The appearance of F-double-sharp (the leading tone of G-sharp) signals this move. G-sharp minor is one step counterclockwise on the circle from C-sharp major, making it a closely related key.\n\nMeasures 15-17 confirm the arrival in G-sharp minor through authentic cadence. The music dwells in this key briefly, exploring its color before preparing return to the tonic.\n\nMeasures 18-20 navigate back toward C-sharp major, often passing through F-sharp major (the subdominant of C-sharp and also adjacent on the circle). The dominant D-sharp eventually leads back to C-sharp.\n\nNotice how all modulations move to adjacent keys on the circle. Bach does not leap across the circle to distant keys like D major (five sharps removed). The harmonic journey stays within a small segment of the circle, creating coherence while providing variety.\n\nThe entire Well-Tempered Clavier can be understood as a tour of the circle, demonstrating each key's unique character while revealing the underlying relationships that connect them all."
+        },
+        "additional_examples": [
+          {
+            "bwv": 857,
+            "measures": "18-24",
+            "brief": "The F major fugue modulates to closely related keys following circle relationships. The move to the dominant C major and later to the relative D minor follows the circle's logic precisely."
+          },
+          {
+            "bwv": 853,
+            "measures": "8-14",
+            "brief": "The E-flat major prelude demonstrates modulation to B-flat major (dominant, one step clockwise on the circle). The smooth transition reflects the close relationship between adjacent keys."
+          },
+          {
+            "bwv": 862,
+            "measures": "14-20",
+            "brief": "The A-flat major prelude modulates to F minor (relative minor) and E-flat major (dominant). These circle-adjacent keys provide harmonic variety while maintaining relationship to the tonic."
+          }
+        ],
+        "summary": "The circle of fifths arranges keys by fifth relationships, revealing which keys are closely related. Adjacent keys share all but one scale note and provide smooth modulation targets. Relative major and minor keys share position on the circle. Fifth progressions derive their power from tracing the circle. Bach's Well-Tempered Clavier, presenting all 24 keys, implicitly demonstrates circle relationships. Understanding the circle provides a map for navigating tonal harmony, predicting modulation paths, and comprehending the theoretical foundation underlying Bach's musical language. This concludes our exploration of harmonic fundamentals. You now possess the vocabulary and concepts necessary to analyze the sophisticated harmony of Bach's keyboard works."
+      },
+      "exercises": [
+        "Draw the complete circle of fifths, labeling all major keys with their relative minors",
+        "Identify all keys visited in BWV 848 Prelude and plot them on the circle",
+        "Using the circle, predict which keys would be easiest to modulate to from E major",
+        "Analyze the modulation scheme of any WTC prelude and explain the circle relationships involved"
+      ],
+      "related_features": ["circle-of-fifths", "key-relationships", "modulation", "relative-minor", "closely-related-keys"],
+      "narration_text": "The circle of fifths arranges all twelve keys in a circle, each a perfect fifth from its neighbors. Starting from C major at the top: G major has one sharp, D major has two, continuing around the sharp side. Counterclockwise: F major has one flat, B-flat has two, continuing around the flat side.\n\nAdjacent keys are closely related, sharing all but one scale note. Relative major and minor keys share position on the circle. Modulation to adjacent keys sounds smooth; to distant keys, more dramatic.\n\nFifth progressions trace the circle. The descending fifth sequence moves counterclockwise, each chord acting as dominant to the next.\n\nThe C-sharp major prelude, BWV 848, measures 12 through 20, demonstrates circle relationships. C-sharp major modulates to G-sharp minor, one step counterclockwise. The music later passes through F-sharp major before returning to C-sharp.\n\nAll modulations stay within a small segment of the circle, creating coherence while providing variety.\n\nBach's Well-Tempered Clavier presents all 24 keys, demonstrating each key's character while revealing the relationships connecting them. This concludes our exploration of harmonic fundamentals."
+    }
+  ]
+}

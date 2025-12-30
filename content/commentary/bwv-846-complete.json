@@ -1,0 +1,1342 @@
+{
+  "bwv": 846,
+  "title": "Prelude and Fugue in C Major",
+  "collection": "The Well-Tempered Clavier, Book I",
+  "composer": "Johann Sebastian Bach",
+  "generatedAt": "2024-12-29T00:00:00Z",
+  "template": true,
+  "templateVersion": "1.0.0",
+
+  "prelude": {
+    "key": "C major",
+    "timeSignature": "4/4",
+    "totalMeasures": 35,
+    "tempo": "No tempo marking (typically Andante or Moderato)",
+    "character": "Serene, meditative, continuous flow",
+    "historicalNote": "Made famous by Gounod's Ave Maria superimposition (1853)",
+    "difficulty": "Intermediate",
+    "duration": "2:00-2:30",
+
+    "overallStructure": {
+      "sections": [
+        { "name": "Opening", "measures": "1-4", "description": "Establishes tonic, introduces arpeggiated figuration" },
+        { "name": "First Departure", "measures": "5-11", "description": "Explores related keys through secondary dominants" },
+        { "name": "Sequential Development", "measures": "12-19", "description": "Chain of fifths sequence with increasing chromaticism" },
+        { "name": "Climactic Passage", "measures": "20-24", "description": "Harmonic intensification reaching highest tension" },
+        { "name": "Return and Preparation", "measures": "25-31", "description": "Gradual return to tonic, alternating inversions" },
+        { "name": "Pedal Point and Resolution", "measures": "32-35", "description": "Dominant pedal resolving to final tonic" }
+      ],
+      "technicalFeatures": [
+        "Consistent 16th-note arpeggiated figuration throughout",
+        "Left hand provides bass notes and harmonic foundation",
+        "Right hand arpeggios span approximately one octave",
+        "No melodic theme in traditional sense - harmony IS the content"
+      ],
+      "pedagogicalValue": [
+        "Introduction to Baroque keyboard texture",
+        "Study of harmonic progression",
+        "Development of even 16th-note technique",
+        "Listening for harmonic color changes"
+      ]
+    },
+
+    "measureByMeasure": [
+      {
+        "measure": 1,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "I (C major, root position)",
+          "voiceActivity": "RH: Broken chord pattern C-E-G-C-E; LH: Bass C, inner voice E providing 5ths and octaves",
+          "notableFeatures": [
+            "Establishes the iconic 16th-note broken chord pattern",
+            "Pattern: bass-chord tone-chord tone-chord tone-chord tone (repeated)",
+            "Each measure presents ONE harmony - this is fundamental to the prelude's design"
+          ],
+          "pedagogy": "The opening measure establishes the entire prelude's DNA. Notice how the arpeggiation spans from low C to high E, creating a harp-like wash of sound. The pattern will remain unchanged for 35 measures - only the harmonies shift beneath.",
+          "connections": "This tonic establishes 'home' before the harmonic journey begins. The stability here makes later departures more meaningful."
+        },
+        "difficultyNotes": "Establishing even 16th notes and proper hand position",
+        "practiceTips": "Practice the pattern hands together slowly, feeling the 'lean' into beat 1 and 3. Keep wrist flexible."
+      },
+      {
+        "measure": 2,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "ii6/5 (Dm7 in first inversion, F in bass)",
+          "voiceActivity": "RH: D-F-A-D-F pattern; LH: F bass, A as inner voice",
+          "notableFeatures": [
+            "First chord change - the journey begins",
+            "Seventh chord adds dissonance requiring resolution",
+            "Bass moves up by step (C to D avoided by using F)",
+            "Pre-dominant function preparing the dominant"
+          ],
+          "pedagogy": "The ii6/5 is Bach's favorite pre-dominant. Notice the seventh (C) in the chord creating gentle tension. This is not just 'another chord' - it's the first step in a I-ii-V-I progression, one of the most fundamental in all tonal music.",
+          "connections": "Creates forward motion from M1's stability. The F in bass provides smooth voice leading to the coming G."
+        },
+        "difficultyNotes": "Maintaining even rhythm during chord change",
+        "practiceTips": "Prepare the hand shape for measure 2 while still playing measure 1's last beats"
+      },
+      {
+        "measure": 3,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "V6/5 (G7 in first inversion, B in bass)",
+          "voiceActivity": "RH: D-G-B-D-G pattern; LH: B bass, D/G inner voices",
+          "notableFeatures": [
+            "Dominant seventh chord - maximum tension point in phrase",
+            "B in bass creates smooth descending line: C-F-B (tritone!)",
+            "Contains the leading tone (B) demanding resolution to C",
+            "The F in the chord is the dissonant 7th, pulling toward E"
+          ],
+          "pedagogy": "This V6/5 is textbook dominant function. The tritone between B and F creates the 'need' to resolve. Play measures 3-4 together and feel how M3 is 'incomplete' without M4's resolution. This tension-release pattern is the engine of tonal music.",
+          "connections": "Directly resolves to M4's tonic. The bass descends B-C, the 7th (F) falls to E - both are obligatory voice-leading resolutions."
+        },
+        "difficultyNotes": "Hearing the dominant tension",
+        "practiceTips": "Pause on M3 and listen to the chord - can you feel it 'wanting' to resolve?"
+      },
+      {
+        "measure": 4,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "I (C major, root position)",
+          "voiceActivity": "RH: E-G-C-E-G pattern; LH: C bass, G inner voice",
+          "notableFeatures": [
+            "Resolution of the I-ii-V-I progression",
+            "Return to stability after dominant tension",
+            "Completes the first harmonic 'sentence'",
+            "Pattern identical to M1 but now feels like arrival, not departure"
+          ],
+          "pedagogy": "M1-4 form a complete harmonic phrase: I-ii6/5-V6/5-I. This is the same progression underlying countless pieces from Bach to the Beatles. Having experienced departure and return, we now have a template for understanding the entire prelude.",
+          "connections": "This resolution is 'final' for the opening phrase, but M5 immediately begins a new journey to more distant harmonic regions."
+        },
+        "difficultyNotes": "Feeling the arrival without slowing down",
+        "practiceTips": "Lean slightly into beat 1 of M4 to emphasize resolution without disrupting tempo"
+      },
+      {
+        "measure": 5,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "vi7 (Am7, root position)",
+          "voiceActivity": "RH: E-A-C-E-A pattern; LH: A bass, E inner voice",
+          "notableFeatures": [
+            "First move away from the I-V axis",
+            "A minor seventh chord - adding harmonic color",
+            "The relative minor creates a 'darkening' effect",
+            "Beginning of harmonic exploration"
+          ],
+          "pedagogy": "The vi chord is the relative minor - it shares two notes with the tonic (C and E) but introduces a minor color. This is Bach showing us the harmonic landscape is richer than just I and V. The seventh makes it even more colorful.",
+          "connections": "Begins a new harmonic journey. The A in bass is a third below C - circle of thirds motion complements circle of fifths."
+        },
+        "difficultyNotes": "Recognizing the shift in harmonic color",
+        "practiceTips": "Listen for the 'darkening' as you move from M4 to M5"
+      },
+      {
+        "measure": 6,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "ii7 (Dm7, root position)",
+          "voiceActivity": "RH: D-A-C-D-F pattern; LH: D bass, A inner voice",
+          "notableFeatures": [
+            "Pre-dominant function, now in root position",
+            "Continues the descending bass line: C-A-D (ascending 4th to D)",
+            "Second appearance of ii but in different inversion than M2",
+            "Sets up another dominant resolution"
+          ],
+          "pedagogy": "Compare this ii7 to M2's ii6/5. Same chord, different inversion, different context. In M2, it was part of the opening phrase. Here, it's part of a longer harmonic sequence. Context changes meaning even for identical harmonies.",
+          "connections": "Connects vi (M5) to V (M7) - the classic ii-V-I turnaround underlying jazz and much classical music."
+        },
+        "difficultyNotes": "Maintaining forward motion through sequential passage",
+        "practiceTips": "Think of M5-8 as one long phrase, not four separate measures"
+      },
+      {
+        "measure": 7,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "V7 (G7, root position)",
+          "voiceActivity": "RH: D-G-B-D-F pattern; LH: G bass, B/D inner voices",
+          "notableFeatures": [
+            "Root position dominant - more emphatic than M3's inversion",
+            "G in bass provides strong harmonic foundation",
+            "Creates strong pull toward tonic resolution in M8",
+            "The 7th (F) again demands resolution to E"
+          ],
+          "pedagogy": "This root-position V7 is more grounded than M3's V6/5. When the bass has the root, the chord has maximum stability within its function. The progression vi-ii-V (M5-6-7) is setting up a strong return to tonic.",
+          "connections": "Resolves to M8. The bass motion G-C will create a perfect authentic cadence (V-I with both roots in bass)."
+        },
+        "difficultyNotes": "Building appropriate tension",
+        "practiceTips": "Allow a slight crescendo through M7 to M8"
+      },
+      {
+        "measure": 8,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "I (C major, root position)",
+          "voiceActivity": "RH: C-E-G-C-E pattern; LH: C bass, G inner voice",
+          "notableFeatures": [
+            "Third statement of tonic - now as strong cadential arrival",
+            "Completes the second phrase (M5-8): vi-ii-V-I",
+            "Each tonic return is more 'earned' than the last",
+            "End of the exposition of basic harmonic material"
+          ],
+          "pedagogy": "We've now heard two complete progressions: M1-4 and M5-8. The first was I-ii-V-I, the second was vi-ii-V-I. Both end on tonic but started differently. Bach is showing us that there are multiple paths home.",
+          "connections": "M9 will begin the development section, venturing further afield. This is the last 'comfortable' tonic for a while."
+        },
+        "difficultyNotes": "Cadential arrival without ritardando",
+        "practiceTips": "Feel the arrival but maintain strict tempo - the music continues!"
+      },
+      {
+        "measure": 9,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "Am7 (functioning as ii7/V - secondary predominant)",
+          "voiceActivity": "RH: E-A-C-E-A pattern; LH: A bass, E inner voice",
+          "notableFeatures": [
+            "Same notes as M5 but new function - pointing toward G major",
+            "Beginning of modulation to the dominant key",
+            "Secondary function: ii of V (leading to V of C)",
+            "The music begins looking toward G major as a goal"
+          ],
+          "pedagogy": "Recontextualization! This Am7 has identical notes to M5 but now functions differently. In M5, it was vi of C. Here, it's ii of G - a pre-dominant of the dominant. Same chord, different meaning. This is sophisticated harmonic thinking.",
+          "connections": "Sets up V/V in M10 (if we read it that way) or simply moves through the circle of fifths toward G."
+        },
+        "difficultyNotes": "Hearing the shift in harmonic function",
+        "practiceTips": "Think of M9-10 as moving toward G rather than away from C"
+      },
+      {
+        "measure": 10,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "V (G major, functioning as I of the dominant region)",
+          "voiceActivity": "RH: D-G-B-D-G pattern; LH: G bass, B/D inner voices",
+          "notableFeatures": [
+            "Arrival on dominant - but no 7th yet",
+            "G major as a temporary tonic",
+            "Moment of stability within the dominant region",
+            "Prepares for the secondary dominant sequence to come"
+          ],
+          "pedagogy": "Bach briefly treats G major as if it were the tonic. This technique - 'tonicizing' the dominant - creates a sense of expansion. We're not in C anymore, nor fully in G, but somewhere in between. Harmonic ambiguity creates interest.",
+          "connections": "From here, Bach will begin a chain of secondary dominants, each one leading to the next chord in a circle of fifths."
+        },
+        "difficultyNotes": "Sensing the temporary 'key change'",
+        "practiceTips": "Think of M10 as a moment of arrival before the sequence begins"
+      },
+      {
+        "measure": 11,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "V7/vi (E7 - secondary dominant of A minor)",
+          "voiceActivity": "RH: E-G#-B-E-G# pattern; LH: E bass, B inner voice",
+          "notableFeatures": [
+            "First chromatic note (G#) - outside C major scale",
+            "Secondary dominant pointing to A minor",
+            "Beginning of the sequential passage",
+            "The raised G creates urgency and forward drive"
+          ],
+          "pedagogy": "The G# is a shock to the ear trained on C major. This E7 is 'borrowed' from A minor and demands resolution to Am. Secondary dominants are 'temporary visitors' that point to the next chord. Each one creates its own small tension-resolution.",
+          "connections": "Resolves to vi (Am) in M12. This begins a chain: V/vi - vi - V/ii - ii - V/V - V, etc."
+        },
+        "difficultyNotes": "Executing the accidental (G#) cleanly",
+        "practiceTips": "Hear the G# as a 'brightening' of the chord, pulling toward A"
+      },
+      {
+        "measure": 12,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "vi (A minor)",
+          "voiceActivity": "RH: E-A-C-E-A pattern; LH: A bass, E inner voice",
+          "notableFeatures": [
+            "Resolution of V/vi from M11",
+            "Now serves as a link in the chain sequence",
+            "Same notes as M5 and M9 - three different contexts!",
+            "Beginning of the 'chain of fifths' sequential passage"
+          ],
+          "pedagogy": "We've heard this Am sonority three times now (M5, M9, M12), each time with different meaning. This is the genius of tonal harmony - context determines function. Here, Am is a stepping stone in a descending fifths sequence.",
+          "connections": "M12 leads to M13 (V/ii), then to M14 (ii), continuing the chain down by fifths."
+        },
+        "difficultyNotes": "Maintaining sequence momentum",
+        "practiceTips": "Feel the sequence as one long line, not individual measures"
+      },
+      {
+        "measure": 13,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "V7/ii (A7 - secondary dominant of D minor)",
+          "voiceActivity": "RH: E-A-C#-E-G pattern; LH: A bass, G inner voice",
+          "notableFeatures": [
+            "Second chromatic note (C#) - pointing to D minor",
+            "The chain continues: E7-Am-A7-Dm",
+            "A becomes its own dominant by adding the C#",
+            "Major quality of A7 contrasts with previous Am"
+          ],
+          "pedagogy": "The Am of M12 transforms into A7 (dominant of D). This is called 'mutating' a chord - it keeps the root but changes quality to point to the next destination. The C# creates the leading tone to D.",
+          "connections": "Resolves to ii (Dm) in M14. The sequence continues its inexorable descent."
+        },
+        "difficultyNotes": "Clean execution of C#",
+        "practiceTips": "Notice how M12's A minor becomes M13's A major - same root, different color"
+      },
+      {
+        "measure": 14,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "ii (D minor)",
+          "voiceActivity": "RH: D-A-D-F-A pattern; LH: D bass, A inner voice",
+          "notableFeatures": [
+            "Resolution of V/ii from M13",
+            "Back to diatonic harmony (no accidentals)",
+            "Pre-dominant function restored",
+            "Chain of fifths: Am - (A7) - Dm"
+          ],
+          "pedagogy": "The sequence has brought us to D minor, the ii chord. Notice how naturally we arrived here through the chain of fifths. Each link (V/x - x) creates its own mini-resolution while propelling the larger progression forward.",
+          "connections": "M15 will tonicize G (the dominant), continuing toward the structural dominant."
+        },
+        "difficultyNotes": "Maintaining musical direction",
+        "practiceTips": "Think ahead to where the sequence is going"
+      },
+      {
+        "measure": 15,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "V7/V (D7 - secondary dominant of G)",
+          "voiceActivity": "RH: D-F#-C-D-F# pattern; LH: D bass, A/C inner voices",
+          "notableFeatures": [
+            "Third chromatic note (F#) - pointing to G",
+            "D minor mutates to D major (D7)",
+            "This dominant of the dominant is harmonically significant",
+            "Creates strong pull toward the structural dominant"
+          ],
+          "pedagogy": "The V/V is one of the most important secondary dominants. It's a 'double dominant' - dominant of the dominant. The F# is the leading tone of G, creating powerful forward motion. We're building toward a major structural point.",
+          "connections": "Resolves to V (G) in M16. This is the culmination of the sequential passage."
+        },
+        "difficultyNotes": "Voicing the D7 clearly",
+        "practiceTips": "The F# should 'shine' slightly - it's the leading tone of G"
+      },
+      {
+        "measure": 16,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "V (G major - structural dominant)",
+          "voiceActivity": "RH: D-G-B-D-G pattern; LH: G bass, B inner voice",
+          "notableFeatures": [
+            "Arrival on structural dominant after sequential buildup",
+            "Resolution of the entire M11-15 sequence",
+            "Moment of relative stability within the dominant",
+            "Halfway point of the prelude"
+          ],
+          "pedagogy": "The sequential chain (E7-Am-A7-Dm-D7-G) has reached its goal: the dominant. This is a major structural arrival. The sequence was not random wandering but a directed journey to this point. Hierarchy in harmony!",
+          "connections": "M17 begins a new section with another secondary dominant sequence, now exploring the subdominant region."
+        },
+        "difficultyNotes": "Sensing the structural arrival",
+        "practiceTips": "This is the first major 'pillar' after the opening - give it appropriate weight"
+      },
+      {
+        "measure": 17,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "V7/IV (C7 - secondary dominant of F)",
+          "voiceActivity": "RH: E-Bb-C-E-G pattern; LH: C bass, Bb inner voice",
+          "notableFeatures": [
+            "First Bb in the piece - pointing to F major",
+            "C becomes dominant of F by adding the Bb",
+            "Exploring the subdominant region now",
+            "Continuing the secondary dominant chain in new direction"
+          ],
+          "pedagogy": "After establishing the dominant, Bach now looks toward the subdominant. The Bb is the flat-7 of C, turning it into a dominant seventh pointing to F. This expands the harmonic palette in the opposite direction from M11-16.",
+          "connections": "Resolves to IV (F) in M18. The exploration of subdominant creates balance with earlier dominant exploration."
+        },
+        "difficultyNotes": "Clean Bb execution",
+        "practiceTips": "The Bb should sound like a gentle 'lowering' compared to the natural B"
+      },
+      {
+        "measure": 18,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "IV (F major)",
+          "voiceActivity": "RH: C-F-A-C-F pattern; LH: F bass, A inner voice",
+          "notableFeatures": [
+            "Subdominant arrival after C7 resolution",
+            "First clear F major since the opening",
+            "Warm, stable sonority after chromatic tension",
+            "Subdominant provides contrast to dominant emphasis"
+          ],
+          "pedagogy": "The IV chord is the 'other direction' from the tonic - subdominant rather than dominant. It provides a warm, 'plagal' color. Bach balances dominant and subdominant exploration to create a complete harmonic picture.",
+          "connections": "M19 introduces the most dramatic chromatic chord yet, intensifying toward the climax."
+        },
+        "difficultyNotes": "Voicing the subdominant warmly",
+        "practiceTips": "Let the F major sound 'open' and warm - it's a moment of relative calm"
+      },
+      {
+        "measure": 19,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "viio7/V (F#dim7 - diminished seventh leading to G)",
+          "voiceActivity": "RH: C-Eb-F#-A-C pattern; LH: F# bass, A/C inner voices",
+          "notableFeatures": [
+            "Most dissonant chord so far - fully diminished seventh",
+            "F# in bass creates strongest pull toward G",
+            "Two chromatic notes (F# and Eb) simultaneously",
+            "Maximum tension before climactic resolution"
+          ],
+          "pedagogy": "The diminished seventh is the most unstable chord in tonal harmony - every note wants to resolve. The F# pulls up to G, the Eb pulls down to D. This chord creates almost unbearable tension before the climax.",
+          "connections": "Resolves dramatically to M20's V6/5. This is the peak of harmonic tension in the piece."
+        },
+        "difficultyNotes": "Voicing the diminished seventh chord",
+        "practiceTips": "Allow this measure to 'pull' toward M20 - don't resolve early!"
+      },
+      {
+        "measure": 20,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "V6/5 (G7 first inversion - climactic dominant)",
+          "voiceActivity": "RH: D-G-B-D-F pattern; LH: B bass, D/F inner voices",
+          "notableFeatures": [
+            "Resolution of diminished seventh tension",
+            "Climactic moment of the prelude",
+            "Same chord as M3 but now as structural highpoint",
+            "B in bass creates urgency for tonic resolution"
+          ],
+          "pedagogy": "After the extreme tension of M19, this V6/5 is both resolution and new tension. It resolves the diminished seventh but creates dominant tension of its own. This is the climactic turning point - the 'top of the arch' before descent to final resolution.",
+          "connections": "Begins the long descent toward the final tonic. Everything from here leads home."
+        },
+        "difficultyNotes": "Projecting the climax without overplaying",
+        "practiceTips": "This is the emotional highpoint - let it speak without forcing"
+      },
+      {
+        "measure": 21,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "I6 (C major first inversion - E in bass)",
+          "voiceActivity": "RH: E-G-C-E-G pattern; LH: E bass, G/C inner voices",
+          "notableFeatures": [
+            "First inversion tonic - resolution but not complete",
+            "E in bass creates ongoing motion",
+            "Beginning of the 'return' section",
+            "Alternation of I and V inversions begins"
+          ],
+          "pedagogy": "The first inversion tonic is resolution but with a 'but...' attached. The E in bass keeps the music moving. Bach begins a series of alternating I6 and V chords that gradually settle toward final resolution.",
+          "connections": "Alternates with M22's V4/3, creating a 'stepping down' pattern toward the pedal point."
+        },
+        "difficultyNotes": "Feeling the incomplete resolution",
+        "practiceTips": "This resolves M20 but doesn't feel 'final' - the bass E keeps things moving"
+      },
+      {
+        "measure": 22,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "V4/3 (G7 second inversion - F in bass)",
+          "voiceActivity": "RH: D-G-B-D-F pattern; LH: F bass, B/D inner voices",
+          "notableFeatures": [
+            "Third inversion dominant seventh",
+            "F in bass creates strong downward pull",
+            "Part of the alternating I-V pattern",
+            "Bass line: E-F-E... stepping motion"
+          ],
+          "pedagogy": "The V4/3 has the 7th (F) in the bass - the most unstable note of the chord in the lowest position. This creates maximum urgency for resolution. The bass alternation E-F-E mimics the final cadential pattern to come.",
+          "connections": "Resolves to I6 in M23, continuing the alternating pattern."
+        },
+        "difficultyNotes": "Voicing with F in bass",
+        "practiceTips": "The bass F should 'lean' downward toward the coming E"
+      },
+      {
+        "measure": 23,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "I6 (C major first inversion)",
+          "voiceActivity": "RH: E-G-C-E-G pattern; LH: E bass, G/C inner voices",
+          "notableFeatures": [
+            "Repeat of M21's sonority",
+            "Continuing the alternating pattern",
+            "Bass E provides continuity",
+            "Building expectation for final cadence"
+          ],
+          "pedagogy": "The repetition of I6-V4/3-I6 creates a 'rocking' motion that builds anticipation. We know we're headed somewhere, but each resolution is incomplete. This delayed gratification makes the final arrival more satisfying.",
+          "connections": "M24 will move to V6, beginning the approach to the dominant pedal."
+        },
+        "difficultyNotes": "Maintaining momentum through repetition",
+        "practiceTips": "Even though this repeats M21, feel the ongoing progression"
+      },
+      {
+        "measure": 24,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "V6 (G major first inversion - B in bass)",
+          "voiceActivity": "RH: D-G-B-D-G pattern; LH: B bass, D inner voice",
+          "notableFeatures": [
+            "Dominant without the seventh",
+            "B in bass (leading tone) creates strong pull",
+            "Preparing for the final return",
+            "Transition to the next section"
+          ],
+          "pedagogy": "This V6 (without the 7th) is 'lighter' than the V7 chords we've heard. It creates dominant function but with less urgency. Bach is preparing for the final section rather than creating immediate resolution pressure.",
+          "connections": "Moves to I in M25, which begins the final preparation for the closing pedal point."
+        },
+        "difficultyNotes": "Hearing the 'lighter' dominant",
+        "practiceTips": "Compare this to M22 - no F means less tension"
+      },
+      {
+        "measure": 25,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "I (C major root position)",
+          "voiceActivity": "RH: C-E-G-C-E pattern; LH: C bass, G inner voice",
+          "notableFeatures": [
+            "Root position tonic - most stable position",
+            "First truly stable tonic since M8",
+            "Beginning of final section",
+            "C in bass anchors the return"
+          ],
+          "pedagogy": "After all the inversions and alternations, root position C major feels like coming home. This is the first really stable tonic in a long time. But we're not done yet - Bach has one more journey to make before the end.",
+          "connections": "M26 begins exploring subdominant region one final time before the pedal point."
+        },
+        "difficultyNotes": "Projecting stability without slowing",
+        "practiceTips": "This is NOT the final cadence - maintain forward motion"
+      },
+      {
+        "measure": 26,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "V6/5/IV (C7 first inversion - secondary dominant of F)",
+          "voiceActivity": "RH: C-E-Bb-C-E pattern; LH: E bass, Bb inner voice",
+          "notableFeatures": [
+            "Return of Bb - pointing to F again",
+            "Secondary dominant creates harmonic color",
+            "Last chromatic adventure before conclusion",
+            "E in bass with Bb creates tritone"
+          ],
+          "pedagogy": "One last detour! The V7/IV returns, reminding us of M17's subdominant exploration. Bach creates a final moment of harmonic richness before the long dominant pedal. The Bb is a 'farewell' to chromaticism.",
+          "connections": "Resolves to IV in M27, then quickly returns to dominant territory."
+        },
+        "difficultyNotes": "Clean Bb after return to diatonic context",
+        "practiceTips": "This Bb is the last significant chromatic note - let it 'color' the passage"
+      },
+      {
+        "measure": 27,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "IV (F major)",
+          "voiceActivity": "RH: C-F-A-C-F pattern; LH: F bass, A inner voice",
+          "notableFeatures": [
+            "Subdominant arrival from secondary dominant",
+            "Last visit to F major region",
+            "Warm color before dominant pedal",
+            "Plagal relationship to eventual tonic"
+          ],
+          "pedagogy": "This F major has a 'farewell' quality. We've visited the subdominant region for the last time. From here, everything moves toward dominant and final resolution. The warmth of IV contrasts with the dominant tension to come.",
+          "connections": "M28 introduces the leading tone chord, beginning the final cadential approach."
+        },
+        "difficultyNotes": "Feeling the 'last visit' quality",
+        "practiceTips": "Allow a slight warmth here - it's the last subdominant moment"
+      },
+      {
+        "measure": 28,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "viio6/5 (Bdim7 first inversion - D in bass)",
+          "voiceActivity": "RH: D-F-Ab-B-D pattern; LH: D bass, Ab inner voice",
+          "notableFeatures": [
+            "Diminished seventh returns",
+            "Ab creates chromatic tension",
+            "Leading tone chord demanding resolution",
+            "Intense harmonic moment before settling"
+          ],
+          "pedagogy": "The viio7 is V7 without the root - pure leading-tone function. Every note of this diminished seventh pulls toward resolution. The Ab is particularly poignant, desperately wanting to resolve down to G.",
+          "connections": "Resolves to I6 in M29, continuing the approach to the dominant pedal."
+        },
+        "difficultyNotes": "Voicing the diminished seventh accurately",
+        "practiceTips": "This is high tension - don't over-accent but do allow the dissonance"
+      },
+      {
+        "measure": 29,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "I6 (C major first inversion)",
+          "voiceActivity": "RH: E-G-C-E-G pattern; LH: E bass, G inner voice",
+          "notableFeatures": [
+            "Resolution of diminished seventh",
+            "First inversion continues motion",
+            "E in bass part of descending line",
+            "Approaching the dominant pedal"
+          ],
+          "pedagogy": "Another first inversion tonic - stable but not final. The bass is working its way down: F-E-D... preparing for the low G that will anchor the dominant pedal. Resolution within ongoing motion.",
+          "connections": "M30 will provide another V4/3, continuing toward the pedal point."
+        },
+        "difficultyNotes": "Maintaining direction toward conclusion",
+        "practiceTips": "We're almost home but not there yet - keep the forward lean"
+      },
+      {
+        "measure": 30,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "V4/3 (G7 second inversion)",
+          "voiceActivity": "RH: D-G-B-D-F pattern; LH: F bass, B/D inner voices",
+          "notableFeatures": [
+            "Third inversion dominant seventh",
+            "F in bass creating strong resolution pressure",
+            "Last inverted dominant before pedal",
+            "Parallel to M22"
+          ],
+          "pedagogy": "The V4/3 returns, its bass F pushing down toward E. But this time, instead of going to I6, we're headed for the dominant pedal. The bass is about to lock onto G and stay there.",
+          "connections": "M31 provides one more I6 before the bass finally reaches and holds G."
+        },
+        "difficultyNotes": "Anticipating the pedal point",
+        "practiceTips": "The bass F is about to give way to the long G pedal"
+      },
+      {
+        "measure": 31,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "I6 (C major first inversion)",
+          "voiceActivity": "RH: E-G-C-E-G pattern; LH: E bass, G/C inner voices",
+          "notableFeatures": [
+            "Final first inversion tonic before pedal",
+            "Bass E will step down to D then G",
+            "Last moment of harmonic motion before stasis",
+            "Preparation for the extended dominant"
+          ],
+          "pedagogy": "This is the last 'mobile' harmony before the bass locks onto the dominant pedal. The progression F-E (M30-31) continues to D (implied) and then G. We're entering the final phase of the piece.",
+          "connections": "M32 begins the dominant pedal - the bass will hold G for four measures."
+        },
+        "difficultyNotes": "Sensing the approaching pedal point",
+        "practiceTips": "Listen for how the bass 'settles' into the coming G"
+      },
+      {
+        "measure": 32,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "V (G major on dominant pedal)",
+          "voiceActivity": "RH: D-G-B-D-G pattern; LH: G pedal bass, inner voice motion above",
+          "notableFeatures": [
+            "Dominant pedal begins",
+            "Bass G will hold for four measures",
+            "Creating sustained tension before resolution",
+            "Upper voices continue pattern over held bass"
+          ],
+          "pedagogy": "The dominant pedal is the ultimate tension-builder. By holding the G in the bass for four measures while harmonies shift above, Bach creates a sense of 'waiting' for resolution. The longer we wait, the more satisfying the arrival.",
+          "connections": "M33-34 continue the pedal with increasing dissonance above."
+        },
+        "difficultyNotes": "Sustaining the bass G while playing other notes",
+        "practiceTips": "Think of the bass G as an 'anchor' that holds everything in place"
+      },
+      {
+        "measure": 33,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "V7 (G7 on dominant pedal)",
+          "voiceActivity": "RH: D-G-B-D-F pattern; LH: G pedal, with 7th (F) appearing above",
+          "notableFeatures": [
+            "Seventh added to pedal harmony",
+            "Increasing tension on the pedal",
+            "F in upper voice pulls toward E",
+            "Building toward final cadence"
+          ],
+          "pedagogy": "The 7th is added to the dominant pedal, creating more tension. The F wants to resolve to E (which it will in the final chord). The pedal continues its inexorable hold while tension builds above it.",
+          "connections": "M34 will continue the pedal with even more elaborate dissonance."
+        },
+        "difficultyNotes": "Voicing the seventh clearly over pedal",
+        "practiceTips": "The F should 'lean' toward its eventual resolution to E"
+      },
+      {
+        "measure": 34,
+        "beatInfo": "4/4, beats 1-4",
+        "commentary": {
+          "harmonicAnalysis": "V7 (G7 with suspensions and passing tones)",
+          "voiceActivity": "RH: Complex figuration with C-Eb-D resolution; LH: G pedal continues",
+          "notableFeatures": [
+            "Most elaborate measure of the pedal section",
+            "Includes passing chromaticism (Eb)",
+            "Final intensification before resolution",
+            "All tension points toward M35"
+          ],
+          "pedagogy": "This is the climax of the pedal section. The Eb passing tone creates a momentary diminished quality, adding one last touch of chromaticism before the final pure C major. Maximum tension before maximum release.",
+          "connections": "Resolves to the final tonic in M35 - the goal of the entire piece."
+        },
+        "difficultyNotes": "Executing the chromatic passing tone",
+        "practiceTips": "This is the 'last breath' before the final chord - make it count"
+      },
+      {
+        "measure": 35,
+        "beatInfo": "4/4, beats 1-4 (held)",
+        "commentary": {
+          "harmonicAnalysis": "I (C major, final tonic)",
+          "voiceActivity": "RH: C-E-G-C-E (full arpeggiation resolving); LH: C bass, final resolution",
+          "notableFeatures": [
+            "Final resolution after 35-measure journey",
+            "Return to opening sonority with new meaning",
+            "Perfect authentic cadence completion",
+            "The C major 'earned' through harmonic adventure"
+          ],
+          "pedagogy": "The final C major is the same notes as M1 but carries the weight of everything we've experienced. Every departure, every chromatic adventure, every tension and resolution has led to this moment. This is what 'home' means in music.",
+          "connections": "This tonic is both an ending and preparation for the Fugue to come."
+        },
+        "difficultyNotes": "Creating a satisfying final chord",
+        "practiceTips": "Let the final chord ring - this is the moment we've been waiting for"
+      }
+    ]
+  },
+
+  "fugue": {
+    "key": "C major",
+    "timeSignature": "4/4",
+    "totalMeasures": 27,
+    "voices": 4,
+    "voiceNames": ["Soprano", "Alto", "Tenor", "Bass"],
+    "tempo": "No tempo marking (typically Allegro moderato)",
+    "character": "Stately, learned, balanced",
+    "difficulty": "Intermediate-Advanced",
+    "duration": "1:30-2:00",
+
+    "subjectAnalysis": {
+      "measures": "1-2",
+      "description": "Stepwise subject outlining the tonic triad with characteristic rhythm",
+      "intervals": "Ascending stepwise motion with leap to dominant, descending return",
+      "rhythm": "Half note beginning, quarter notes, characteristic 8th-note figure",
+      "character": "Stately, diatonic, clearly defining C major",
+      "technicalNotes": "Subject spans an octave, requires smooth legato"
+    },
+
+    "answerAnalysis": {
+      "measures": "3-4",
+      "type": "Real answer (transposed exactly to dominant)",
+      "transposition": "Up a fifth to G",
+      "relationship": "Subject in tonic, Answer in dominant - standard fugal procedure"
+    },
+
+    "countersubjectAnalysis": {
+      "description": "Conjunct motion in 8th notes, provides rhythmic contrast to subject",
+      "firstAppearance": "Measure 3 (Soprano, while Alto has Answer)",
+      "character": "Flowing, continuous 8th notes against the subject's longer values"
+    },
+
+    "overallStructure": {
+      "sections": [
+        { "name": "Exposition", "measures": "1-7", "description": "All four voices enter with Subject/Answer" },
+        { "name": "Episode 1", "measures": "7-8", "description": "Brief sequential passage, modulating material" },
+        { "name": "Middle Entries 1", "measures": "9-13", "description": "Subject entries in related keys" },
+        { "name": "Episode 2", "measures": "14-15", "description": "Sequential development" },
+        { "name": "Middle Entries 2", "measures": "16-20", "description": "Further subject statements, stretto begins" },
+        { "name": "Episode 3", "measures": "21-23", "description": "Building toward final section" },
+        { "name": "Final Section", "measures": "24-27", "description": "Culminating entries and final cadence" }
+      ]
+    },
+
+    "measureByMeasure": [
+      {
+        "measure": 1,
+        "fugalEvents": {
+          "subjectEntries": ["Soprano enters with Subject in C major"],
+          "countersubject": "Not yet present",
+          "episode": false,
+          "stretto": false,
+          "specialDevices": []
+        },
+        "commentary": {
+          "harmonicAnalysis": "I (tonic established)",
+          "voiceActivity": "S: Subject; A/T/B: Silent",
+          "notableFeatures": [
+            "Monophonic opening - solo voice",
+            "Subject begins on C (tonic), rises to G (dominant)",
+            "Characteristic rhythmic profile established",
+            "Clear C major tonality"
+          ],
+          "pedagogy": "The Subject is the fugue's DNA - everything else derives from it. Bach presents it alone so we can memorize its contour. The rising motion from C to G outlines the tonic-dominant axis that will govern the entire fugue.",
+          "connections": "This subject will appear in all four voices and in multiple keys. Learn its shape - you'll hear it everywhere."
+        }
+      },
+      {
+        "measure": 2,
+        "fugalEvents": {
+          "subjectEntries": ["Soprano continues Subject"],
+          "countersubject": "Not yet present",
+          "episode": false,
+          "stretto": false,
+          "specialDevices": []
+        },
+        "commentary": {
+          "harmonicAnalysis": "I-V (subject spans tonic to dominant)",
+          "voiceActivity": "S: Subject conclusion; A/T/B: Silent",
+          "notableFeatures": [
+            "Subject concludes on beat 3",
+            "Characteristic 8th-note figure at end",
+            "Descending motion balances M1's ascent",
+            "Prepares for Alto entrance"
+          ],
+          "pedagogy": "The Subject's two-measure span is typical for Bach. Note the rhythmic variety: half notes, quarters, and eighths. The subject ends on G, leaving harmonic 'room' for the Answer to begin.",
+          "connections": "The Alto will enter with the Answer in M3, transposed to the dominant."
+        }
+      },
+      {
+        "measure": 3,
+        "fugalEvents": {
+          "subjectEntries": ["Alto enters with Answer (transposed to G)"],
+          "countersubject": "Soprano begins Countersubject",
+          "episode": false,
+          "stretto": false,
+          "specialDevices": []
+        },
+        "commentary": {
+          "harmonicAnalysis": "V (Answer in dominant key)",
+          "voiceActivity": "S: Countersubject (8th notes); A: Answer",
+          "notableFeatures": [
+            "Two-voice texture established",
+            "Answer is 'real' (exact transposition)",
+            "Countersubject provides rhythmic contrast",
+            "Soprano moves in 8ths while Alto has longer values"
+          ],
+          "pedagogy": "The Answer in the dominant is fundamental to fugal structure - it 'answers' the tonic Subject with a dominant response. Meanwhile, the Countersubject (Soprano) provides continuous motion. This S-CS pairing will recur throughout.",
+          "connections": "The Countersubject will accompany nearly every subject entry. Listen for its 8th-note motion."
+        }
+      },
+      {
+        "measure": 4,
+        "fugalEvents": {
+          "subjectEntries": ["Alto continues Answer"],
+          "countersubject": "Soprano continues Countersubject",
+          "episode": false,
+          "stretto": false,
+          "specialDevices": []
+        },
+        "commentary": {
+          "harmonicAnalysis": "V-I (Answer cadence returns to tonic)",
+          "voiceActivity": "S: Countersubject conclusion; A: Answer conclusion",
+          "notableFeatures": [
+            "Answer concludes on D (dominant of dominant)",
+            "Countersubject continues flowing motion",
+            "Texture ready for third voice entry",
+            "Harmonic motion prepares for Tenor"
+          ],
+          "pedagogy": "The S-A combination establishes the primary contrapuntal relationship. Note how they complement each other: when one voice moves, the other often holds or moves in contrary motion. This is the art of counterpoint.",
+          "connections": "M5 brings the Tenor with the Subject, now in three-voice texture."
+        }
+      },
+      {
+        "measure": 5,
+        "fugalEvents": {
+          "subjectEntries": ["Tenor enters with Subject in C major"],
+          "countersubject": "Alto has Countersubject",
+          "episode": false,
+          "stretto": false,
+          "specialDevices": []
+        },
+        "commentary": {
+          "harmonicAnalysis": "I (return to tonic for third entry)",
+          "voiceActivity": "S: Free counterpoint; A: Countersubject; T: Subject",
+          "notableFeatures": [
+            "Three-voice texture established",
+            "Subject returns in tonic (Tenor)",
+            "Alto takes over Countersubject role",
+            "Soprano provides free counterpoint"
+          ],
+          "pedagogy": "The third entry returns to tonic (C major), following the standard S-D-T pattern. Notice how the Countersubject 'transfers' from Soprano to Alto. This fluidity of material between voices is essential to fugal texture.",
+          "connections": "One more voice to go - Bass will enter in M7 with the Answer."
+        }
+      },
+      {
+        "measure": 6,
+        "fugalEvents": {
+          "subjectEntries": ["Tenor continues Subject"],
+          "countersubject": "Alto continues Countersubject",
+          "episode": false,
+          "stretto": false,
+          "specialDevices": []
+        },
+        "commentary": {
+          "harmonicAnalysis": "I-V (Subject trajectory)",
+          "voiceActivity": "S: Free counterpoint; A: Countersubject; T: Subject conclusion",
+          "notableFeatures": [
+            "Subject nearing completion",
+            "Three-voice texture continues",
+            "Preparing for Bass entry",
+            "Harmonic motion toward dominant"
+          ],
+          "pedagogy": "With three voices active, the contrapuntal density increases. Each voice has independent motion while contributing to the harmonic whole. This is the texture of learned counterpoint that Bach perfected.",
+          "connections": "M7 completes the exposition with Bass entry."
+        }
+      },
+      {
+        "measure": 7,
+        "fugalEvents": {
+          "subjectEntries": ["Bass enters with Answer in G"],
+          "countersubject": "Tenor has Countersubject",
+          "episode": false,
+          "stretto": false,
+          "specialDevices": []
+        },
+        "commentary": {
+          "harmonicAnalysis": "V (Answer in dominant)",
+          "voiceActivity": "S/A: Free counterpoint; T: Countersubject; B: Answer",
+          "notableFeatures": [
+            "All four voices now present",
+            "Exposition complete with this entry",
+            "Full fugal texture achieved",
+            "Bass provides harmonic foundation"
+          ],
+          "pedagogy": "The exposition is complete! All four voices have stated the Subject or Answer: S (Subject), A (Answer), T (Subject), B (Answer). This alternation of S-A-S-A ensures harmonic balance between tonic and dominant.",
+          "connections": "After M8, episodes and middle entries will develop the material."
+        }
+      },
+      {
+        "measure": 8,
+        "fugalEvents": {
+          "subjectEntries": ["Bass continues Answer"],
+          "countersubject": "Tenor continues Countersubject",
+          "episode": false,
+          "stretto": false,
+          "specialDevices": []
+        },
+        "commentary": {
+          "harmonicAnalysis": "V-I (cadential motion)",
+          "voiceActivity": "All four voices active",
+          "notableFeatures": [
+            "Answer conclusion in Bass",
+            "Exposition formally complete",
+            "Brief cadential moment",
+            "Transition to development section"
+          ],
+          "pedagogy": "The exposition has presented all the material we need. From here, Bach will explore this material: different keys, different combinations, episodes that develop motives from the Subject and Countersubject.",
+          "connections": "M9 begins the development with middle entries."
+        }
+      },
+      {
+        "measure": 9,
+        "fugalEvents": {
+          "subjectEntries": ["Subject entry in Alto (A minor region)"],
+          "countersubject": "Soprano with Countersubject",
+          "episode": false,
+          "stretto": false,
+          "specialDevices": []
+        },
+        "commentary": {
+          "harmonicAnalysis": "vi (A minor - relative minor)",
+          "voiceActivity": "S: Countersubject; A: Subject in vi; T/B: Accompaniment",
+          "notableFeatures": [
+            "First subject entry in new key",
+            "Relative minor provides contrast",
+            "Development section begins",
+            "Modal shift creates new color"
+          ],
+          "pedagogy": "Middle entries explore the Subject in related keys. A minor (vi) is the relative minor of C major - closely related but with different color. This expands the fugue's harmonic range while maintaining thematic unity.",
+          "connections": "More middle entries will follow, exploring other key areas."
+        }
+      },
+      {
+        "measure": 10,
+        "fugalEvents": {
+          "subjectEntries": ["Subject continues in Alto"],
+          "countersubject": "Active",
+          "episode": false,
+          "stretto": false,
+          "specialDevices": []
+        },
+        "commentary": {
+          "harmonicAnalysis": "vi continuing",
+          "voiceActivity": "S: Countersubject conclusion; A: Subject conclusion; T/B: Support",
+          "notableFeatures": [
+            "Subject completion in A minor",
+            "Minor mode coloring",
+            "Full four-voice texture maintained",
+            "Preparing for next entry or episode"
+          ],
+          "pedagogy": "The Subject in minor mode sounds darker, more intense. The same notes in a different context create different emotional meaning. This is the power of modal variety in fugal development.",
+          "connections": "The music will modulate or sequence toward the next entry point."
+        }
+      },
+      {
+        "measure": 11,
+        "fugalEvents": {
+          "subjectEntries": ["Subject entry in Bass (G major region)"],
+          "countersubject": "Active in upper voice",
+          "episode": false,
+          "stretto": false,
+          "specialDevices": []
+        },
+        "commentary": {
+          "harmonicAnalysis": "V (dominant region)",
+          "voiceActivity": "Upper voices: Counterpoint; B: Subject in V",
+          "notableFeatures": [
+            "Subject in dominant key (G major)",
+            "Bass entry grounds the harmony",
+            "Continuing middle entries",
+            "Dominant emphasis creates tension"
+          ],
+          "pedagogy": "The dominant key is the most important related key. A Subject entry here reinforces the tonic-dominant polarity that governs the fugue. The Bass provides both thematic and harmonic foundation.",
+          "connections": "More development continues, building toward the next structural point."
+        }
+      },
+      {
+        "measure": 12,
+        "fugalEvents": {
+          "subjectEntries": ["Subject continues in Bass"],
+          "countersubject": "Upper voices active",
+          "episode": false,
+          "stretto": false,
+          "specialDevices": []
+        },
+        "commentary": {
+          "harmonicAnalysis": "V continuing",
+          "voiceActivity": "Full four-voice texture",
+          "notableFeatures": [
+            "Subject completion in G major",
+            "Dominant prolongation",
+            "Dense contrapuntal activity",
+            "Building harmonic tension"
+          ],
+          "pedagogy": "Extended time in the dominant creates expectation for return to tonic. The dominant's instability makes us 'want' resolution. Bach controls this tension carefully.",
+          "connections": "An episode may follow to provide contrast and modulate."
+        }
+      },
+      {
+        "measure": 13,
+        "fugalEvents": {
+          "subjectEntries": [],
+          "countersubject": "Motive fragments",
+          "episode": true,
+          "stretto": false,
+          "specialDevices": ["Sequence"]
+        },
+        "commentary": {
+          "harmonicAnalysis": "Sequential motion",
+          "voiceActivity": "All voices with fragmentary motives",
+          "notableFeatures": [
+            "Episode begins - no complete Subject",
+            "Sequential patterns from Subject/CS motives",
+            "Modulatory function",
+            "Provides contrast to entries"
+          ],
+          "pedagogy": "Episodes use fragments of the Subject and Countersubject in sequences. They provide contrast to the entries and allow harmonic motion to new key areas. This is 'development' in the truest sense.",
+          "connections": "The sequence will lead to the next subject entry."
+        }
+      },
+      {
+        "measure": 14,
+        "fugalEvents": {
+          "subjectEntries": [],
+          "countersubject": "Fragmented",
+          "episode": true,
+          "stretto": false,
+          "specialDevices": ["Sequence continues"]
+        },
+        "commentary": {
+          "harmonicAnalysis": "Sequential motion continuing",
+          "voiceActivity": "Interlocking sequences in all voices",
+          "notableFeatures": [
+            "Episode continues",
+            "Sequences build intensity",
+            "Harmonic motion toward new key",
+            "Preparing next entry"
+          ],
+          "pedagogy": "Sequential episodes create forward momentum through repetition at different pitch levels. Each repetition builds expectation. The listener recognizes the pattern and anticipates where it leads.",
+          "connections": "M15 will likely bring a new Subject entry."
+        }
+      },
+      {
+        "measure": 15,
+        "fugalEvents": {
+          "subjectEntries": ["Subject entry in Soprano (return toward tonic)"],
+          "countersubject": "Alto with Countersubject",
+          "episode": false,
+          "stretto": false,
+          "specialDevices": []
+        },
+        "commentary": {
+          "harmonicAnalysis": "Return toward I",
+          "voiceActivity": "S: Subject; A: Countersubject; T/B: Support",
+          "notableFeatures": [
+            "Episode resolves to entry",
+            "Soprano takes Subject - return to opening voice",
+            "Signaling structural return",
+            "Building toward climax"
+          ],
+          "pedagogy": "The Soprano's return with the Subject is significant - it mirrors the opening. This cyclical element gives the fugue architectural coherence. We sense we're approaching a major structural point.",
+          "connections": "The fugue begins building toward its final section."
+        }
+      },
+      {
+        "measure": 16,
+        "fugalEvents": {
+          "subjectEntries": ["Subject continues in Soprano"],
+          "countersubject": "Active",
+          "episode": false,
+          "stretto": false,
+          "specialDevices": []
+        },
+        "commentary": {
+          "harmonicAnalysis": "I established",
+          "voiceActivity": "Full texture with Subject in Soprano",
+          "notableFeatures": [
+            "Subject completion",
+            "Tonic reinforcement",
+            "Dense four-voice texture",
+            "Preparing for intensification"
+          ],
+          "pedagogy": "Each return to the tonic with the Subject feels like 'coming home.' But Bach isn't finished - more development and a final intensification remain before the conclusion.",
+          "connections": "M17-20 may include stretto or other intensifying devices."
+        }
+      },
+      {
+        "measure": 17,
+        "fugalEvents": {
+          "subjectEntries": ["Subject entry in Tenor"],
+          "countersubject": "Active in other voices",
+          "episode": false,
+          "stretto": false,
+          "specialDevices": []
+        },
+        "commentary": {
+          "harmonicAnalysis": "Modal/key variety",
+          "voiceActivity": "T: Subject; other voices: counterpoint",
+          "notableFeatures": [
+            "Tenor entry continues development",
+            "Increasing contrapuntal density",
+            "Building toward climax",
+            "Entries becoming closer together"
+          ],
+          "pedagogy": "In the later stages of a fugue, entries often come closer together. This 'compression' creates intensity. The texture becomes more complex as we approach the end.",
+          "connections": "Stretto entries may begin soon."
+        }
+      },
+      {
+        "measure": 18,
+        "fugalEvents": {
+          "subjectEntries": ["Subject continues in Tenor"],
+          "countersubject": "Multiple countersubjects active",
+          "episode": false,
+          "stretto": false,
+          "specialDevices": []
+        },
+        "commentary": {
+          "harmonicAnalysis": "Harmonic intensification",
+          "voiceActivity": "Rich four-voice texture",
+          "notableFeatures": [
+            "Subject completion",
+            "Maximum contrapuntal activity",
+            "Preparing final section",
+            "Harmonic tension building"
+          ],
+          "pedagogy": "The texture is now at its most complex. All four voices are fully engaged, and the harmonic rhythm may increase. Bach is building toward the final climactic section.",
+          "connections": "M19-20 lead to the final entries."
+        }
+      },
+      {
+        "measure": 19,
+        "fugalEvents": {
+          "subjectEntries": ["Stretto begins - overlapping entries"],
+          "countersubject": "Fragmented in stretto texture",
+          "episode": false,
+          "stretto": true,
+          "specialDevices": ["Stretto"]
+        },
+        "commentary": {
+          "harmonicAnalysis": "Intensified harmonic rhythm",
+          "voiceActivity": "Overlapping Subject entries",
+          "notableFeatures": [
+            "Stretto - Subject entries overlap",
+            "Maximum contrapuntal intensity",
+            "Climactic fugal technique",
+            "Creating harmonic compression"
+          ],
+          "pedagogy": "Stretto is the ultimate fugal technique - Subject entries that overlap before the previous entry finishes. This creates maximum intensity. It's Bach showing mastery: the Subject works in combination with itself!",
+          "connections": "Stretto leads to the final cadential approach."
+        }
+      },
+      {
+        "measure": 20,
+        "fugalEvents": {
+          "subjectEntries": ["Stretto continues"],
+          "countersubject": "Absorbed into stretto texture",
+          "episode": false,
+          "stretto": true,
+          "specialDevices": ["Stretto continuation"]
+        },
+        "commentary": {
+          "harmonicAnalysis": "Climactic harmonic density",
+          "voiceActivity": "Maximum complexity",
+          "notableFeatures": [
+            "Stretto at its peak",
+            "All resources combined",
+            "Approaching final resolution",
+            "Fugal climax"
+          ],
+          "pedagogy": "This is the fugue's climax - the point of maximum contrapuntal and harmonic intensity. From here, Bach will guide us toward the final cadence. The complexity will gradually resolve.",
+          "connections": "M21-23 begin the descent toward conclusion."
+        }
+      },
+      {
+        "measure": 21,
+        "fugalEvents": {
+          "subjectEntries": ["Final entries approaching"],
+          "countersubject": "Elements present",
+          "episode": true,
+          "stretto": false,
+          "specialDevices": ["Cadential approach"]
+        },
+        "commentary": {
+          "harmonicAnalysis": "Pre-cadential motion",
+          "voiceActivity": "Texture beginning to clarify",
+          "notableFeatures": [
+            "Post-climax passage",
+            "Preparing final cadence",
+            "Harmonic stabilization",
+            "Leading to tonic"
+          ],
+          "pedagogy": "After the stretto climax, the texture begins to clarify. The harmony moves toward the final cadence. This is the 'unwinding' after the point of maximum tension.",
+          "connections": "M24-27 will bring the final resolution."
+        }
+      },
+      {
+        "measure": 22,
+        "fugalEvents": {
+          "subjectEntries": [],
+          "countersubject": "Fragments",
+          "episode": true,
+          "stretto": false,
+          "specialDevices": ["Pre-cadential episode"]
+        },
+        "commentary": {
+          "harmonicAnalysis": "Dominant preparation",
+          "voiceActivity": "Moving toward homophony",
+          "notableFeatures": [
+            "Episode leading to cadence",
+            "Dominant emphasis",
+            "Simplifying texture",
+            "Building final expectation"
+          ],
+          "pedagogy": "The pre-cadential episode prepares the listener for the end. The texture may become somewhat more homophonic, and the harmony emphasizes the dominant in preparation for the final tonic.",
+          "connections": "Final cadence approaching."
+        }
+      },
+      {
+        "measure": 23,
+        "fugalEvents": {
+          "subjectEntries": ["Final Subject statement begins"],
+          "countersubject": "Accompanying",
+          "episode": false,
+          "stretto": false,
+          "specialDevices": ["Final entry"]
+        },
+        "commentary": {
+          "harmonicAnalysis": "Cadential I (or approach)",
+          "voiceActivity": "Final Subject presentation",
+          "notableFeatures": [
+            "Last full Subject statement",
+            "Bringing the fugue full circle",
+            "Preparing for conclusion",
+            "Thematic summation"
+          ],
+          "pedagogy": "The final Subject statement brings the fugue full circle. We hear the theme one last time before the closing cadence. It's a moment of thematic homecoming that parallels the harmonic return to tonic.",
+          "connections": "M24-27 complete the fugue."
+        }
+      },
+      {
+        "measure": 24,
+        "fugalEvents": {
+          "subjectEntries": ["Subject completion"],
+          "countersubject": "Final statements",
+          "episode": false,
+          "stretto": false,
+          "specialDevices": []
+        },
+        "commentary": {
+          "harmonicAnalysis": "Tonic confirmation",
+          "voiceActivity": "Full four-voice texture",
+          "notableFeatures": [
+            "Subject completed",
+            "Final cadential approach",
+            "All voices contributing",
+            "Harmonic clarity"
+          ],
+          "pedagogy": "The final measures confirm the tonic through clear cadential motion. After all the contrapuntal complexity, the harmony returns to simple, clear function: dominant to tonic, tension to resolution.",
+          "connections": "Final cadence imminent."
+        }
+      },
+      {
+        "measure": 25,
+        "fugalEvents": {
+          "subjectEntries": [],
+          "countersubject": "Cadential",
+          "episode": false,
+          "stretto": false,
+          "specialDevices": ["Cadential extension"]
+        },
+        "commentary": {
+          "harmonicAnalysis": "V-I motion",
+          "voiceActivity": "Cadential voicing",
+          "notableFeatures": [
+            "Dominant-tonic motion",
+            "Final cadential formula",
+            "Voices converging",
+            "Resolution approaching"
+          ],
+          "pedagogy": "The final cadence uses conventional V-I motion, but with all the weight of the preceding fugue behind it. Every voice leads to its final destination. The contrapuntal journey ends in harmonic clarity.",
+          "connections": "M26-27 conclude the fugue."
+        }
+      },
+      {
+        "measure": 26,
+        "fugalEvents": {
+          "subjectEntries": [],
+          "countersubject": "Final",
+          "episode": false,
+          "stretto": false,
+          "specialDevices": ["Cadential decoration"]
+        },
+        "commentary": {
+          "harmonicAnalysis": "Cadential resolution",
+          "voiceActivity": "Moving to final chord",
+          "notableFeatures": [
+            "Resolution underway",
+            "Final tonic approach",
+            "Voices finding final notes",
+            "Cadential ornamentation possible"
+          ],
+          "pedagogy": "The final measures may include cadential decoration - suspensions, passing tones, or rhythmic elongation. These emphasize the finality of the ending and give the conclusion proper weight.",
+          "connections": "M27 brings the final chord."
+        }
+      },
+      {
+        "measure": 27,
+        "fugalEvents": {
+          "subjectEntries": [],
+          "countersubject": "None",
+          "episode": false,
+          "stretto": false,
+          "specialDevices": ["Final chord - Picardy third"]
+        },
+        "commentary": {
+          "harmonicAnalysis": "I (C major - final tonic)",
+          "voiceActivity": "All voices on final chord",
+          "notableFeatures": [
+            "Final C major chord",
+            "Complete resolution",
+            "All contrapuntal motion resolved",
+            "Perfect authentic cadence"
+          ],
+          "pedagogy": "The final chord is the goal of the entire fugue. All four voices arrive at notes of the C major chord, all tensions resolved, all motion completed. This is the 'Q.E.D.' of the fugal argument.",
+          "connections": "This concludes BWV 846. The first of 48 Preludes and Fugues stands complete."
+        }
+      }
+    ]
+  },
+
+  "pedagogicalSummary": {
+    "preludeKeyTakeaways": [
+      "Broken chord figuration as sole texture - harmony IS the content",
+      "Progressive harmonic journey: I - departures - chromaticism - return",
+      "Chain of secondary dominants creates forward motion",
+      "Dominant pedal creates maximum tension before final resolution",
+      "Same tonic sonority means different things at different structural points"
+    ],
+    "fugueKeyTakeaways": [
+      "Exposition presents Subject in all four voices (alternating tonic/dominant)",
+      "Middle entries explore related keys (vi, V, etc.)",
+      "Episodes develop motives through sequence",
+      "Stretto creates climactic intensity through overlapping entries",
+      "Final section brings thematic and harmonic resolution"
+    ],
+    "practiceRecommendations": [
+      "Prelude: First learn the hand shape for each chord, then connect them",
+      "Prelude: Listen for harmonic color changes, not just notes",
+      "Fugue: Learn to hear and identify the Subject in all four voices",
+      "Fugue: Practice each voice separately, then in pairs, then all together",
+      "Both: Understand the structure before focusing on speed"
+    ]
+  }
+}

@@ -1,0 +1,287 @@
+{
+  "version": "1.0.0",
+  "category": "fugue",
+  "description": "Fugue-specific musical features and techniques found in Bach's Well-Tempered Clavier",
+  "features": [
+    {
+      "id": "subject",
+      "name": "Subject",
+      "category": "fugue",
+      "definitions": {
+        "brief": "The main theme of a fugue, stated at the beginning.",
+        "standard": "The primary melodic idea of a fugue, typically 1-4 measures long, which is stated at the opening and returns throughout the piece in various voices and keys. The subject defines the fugue's character and provides material for development.",
+        "detailed": "The fugue subject (from Latin 'subjectum', meaning 'that which is laid under') is the foundational theme upon which the entire fugue is constructed. It establishes the fugue's melodic identity, rhythmic character, and harmonic implications. A well-crafted subject possesses a distinctive profile that makes it recognizable when it returns, yet is flexible enough to combine with counterpoint. Subjects may be characterized by their length (short subjects allow more frequent entries), their intervallic content (stepwise vs. leaping), their rhythmic profile, and whether they modulate to the dominant. Bach's subjects range from simple, compact themes to elaborate, chromatic lines that seem to contain an entire emotional world within a few measures."
+      },
+      "listening_guidance": "Listen for the opening melody - it will return many times throughout. Notice its distinctive rhythm and contour. Each voice takes its turn presenting this theme. Track how the subject moves between high, middle, and low registers as different voices state it.",
+      "visual_markers": "The subject appears first alone in a single voice. Look for the same melodic pattern returning in different voices and registers, sometimes transposed to different keys. In scores, the subject is often marked with brackets or highlighted.",
+      "common_contexts": "Opens every fugue in a single voice. Returns in all voices during the exposition, and throughout the piece in various keys. Subjects may appear in the tonic, dominant, or other related keys.",
+      "difficulty_level": 2,
+      "prerequisites": [],
+      "keywords": ["fugue", "theme", "subject", "melody", "imitation", "principal theme"],
+      "wtc_examples": [
+        {"bwv": 846, "type": "fugue", "measures": "1-2", "description": "Clear, stepwise subject in C major - one of the most famous and accessible fugue subjects"},
+        {"bwv": 847, "type": "fugue", "measures": "1-2", "description": "Chromatic, intense subject in C minor with angular leaps"},
+        {"bwv": 849, "type": "fugue", "measures": "1-4", "description": "Long, profound subject of the 4-voice fugue in C-sharp minor"},
+        {"bwv": 853, "type": "fugue", "measures": "1-3", "description": "Expressive, sighing subject with chromatic inflections in E-flat minor"}
+      ]
+    },
+    {
+      "id": "answer-real",
+      "name": "Answer (Real)",
+      "category": "fugue",
+      "definitions": {
+        "brief": "An exact transposition of the subject to the dominant key.",
+        "standard": "When the second voice enters with the subject transposed exactly interval-for-interval to the dominant key (a fifth higher or fourth lower), this is called a real answer. Every interval is preserved precisely, maintaining the exact melodic shape of the subject.",
+        "detailed": "A real answer preserves the exact intervallic structure of the subject when transposing it to the dominant. If the subject begins on the tonic and leaps a perfect fifth, the answer begins on the dominant and leaps an identical perfect fifth. This type of answer works well when the subject does not prominently feature the tonic-dominant relationship or when the subject's intervals do not create harmonic awkwardness at the dominant level. Real answers are more common in subjects that move stepwise or use intervals other than the fourth and fifth prominently. The term 'real' distinguishes this type from the 'tonal' answer, which makes adjustments to maintain proper harmonic relationships."
+      },
+      "listening_guidance": "When the second voice enters, listen for whether it sounds like an exact copy of the subject, just higher or lower. A real answer maintains the same 'shape' - the same pattern of steps and leaps - as the original subject.",
+      "visual_markers": "Compare the first two entries of the subject. In a real answer, every interval will be identical. If the subject rises by a third, the answer rises by a third at the corresponding point.",
+      "common_contexts": "Used in fugues where the subject does not emphasize the tonic-dominant relationship strongly, or where exact transposition does not create harmonic problems.",
+      "difficulty_level": 3,
+      "prerequisites": ["subject"],
+      "keywords": ["answer", "real answer", "transposition", "dominant", "imitation", "exact"],
+      "wtc_examples": [
+        {"bwv": 846, "type": "fugue", "measures": "3-4", "description": "Real answer in the C major fugue - exact transposition to G"},
+        {"bwv": 862, "type": "fugue", "measures": "3-5", "description": "Real answer in G major fugue"},
+        {"bwv": 884, "type": "fugue", "measures": "2-4", "description": "Real answer in E major from WTC Book II"}
+      ]
+    },
+    {
+      "id": "answer-tonal",
+      "name": "Answer (Tonal)",
+      "category": "fugue",
+      "definitions": {
+        "brief": "A modified transposition of the subject that adjusts certain intervals to maintain tonal coherence.",
+        "standard": "When the subject is transposed to the dominant but with certain intervals adjusted (typically the fifth becomes a fourth at the beginning, or vice versa), this is called a tonal answer. These modifications preserve the sense of tonic-dominant relationship without modulating too far.",
+        "detailed": "A tonal answer modifies the exact intervallic transposition to maintain proper harmonic orientation within the fugue's key structure. The most common adjustment occurs when a subject begins by leaping from tonic to dominant (a fifth) - in the tonal answer, this becomes dominant to tonic (a fourth), keeping both subject and answer firmly rooted in the home key and its dominant. This prevents the answer from implying a modulation to the dominant of the dominant. Tonal answers are particularly necessary when the subject prominently emphasizes the tonic note at its beginning or makes significant use of the fifth scale degree. Bach employs tonal answers in the majority of his fugues, demonstrating his careful attention to harmonic balance."
+      },
+      "listening_guidance": "Listen at the beginning of the answer for whether the shape slightly differs from the subject's opening. If the subject leaps up a fifth and the answer leaps up only a fourth (or vice versa), it is a tonal answer. The modification usually occurs at the head of the theme.",
+      "visual_markers": "Compare the opening intervals of subject and answer. In a tonal answer, typically the first significant interval will differ - often a fifth in the subject becomes a fourth in the answer.",
+      "common_contexts": "Used when the subject begins on or prominently features the tonic or dominant notes, which is the majority of fugue subjects.",
+      "difficulty_level": 3,
+      "prerequisites": ["subject", "answer-real"],
+      "keywords": ["answer", "tonal answer", "adjustment", "mutation", "dominant", "harmonic"],
+      "wtc_examples": [
+        {"bwv": 847, "type": "fugue", "measures": "3-4", "description": "Tonal answer in C minor - adjusts the opening leap"},
+        {"bwv": 849, "type": "fugue", "measures": "5-8", "description": "Tonal answer in the great C-sharp minor fugue"},
+        {"bwv": 867, "type": "fugue", "measures": "3-5", "description": "Tonal answer in B-flat minor"},
+        {"bwv": 869, "type": "fugue", "measures": "5-8", "description": "Tonal answer in the monumental B minor fugue"}
+      ]
+    },
+    {
+      "id": "countersubject",
+      "name": "Countersubject",
+      "category": "fugue",
+      "definitions": {
+        "brief": "A recurring melodic line that accompanies the subject throughout the fugue.",
+        "standard": "A countersubject is a distinctive melodic line that consistently appears alongside the subject whenever the subject is stated. It is designed to work in invertible counterpoint with the subject, meaning it can appear either above or below the subject while maintaining good harmony.",
+        "detailed": "The countersubject is a secondary theme that serves as the primary companion to the fugue subject. Unlike free counterpoint, which varies with each subject entry, a true countersubject maintains its essential melodic and rhythmic identity throughout the fugue. It must be written in invertible (usually double) counterpoint, allowing it to appear either above or below the subject while producing correct harmony. A well-designed countersubject complements the subject rhythmically (moving when the subject is still, and vice versa) and melodically (using different intervallic patterns). Some fugues have two countersubjects (triple counterpoint), and a few remarkable examples have three (quadruple counterpoint). Not all fugues employ regular countersubjects; some rely on free counterpoint throughout."
+      },
+      "listening_guidance": "After the subject first enters alone, listen for what the first voice does when the second voice takes the subject. If the same accompanying melody returns each time the subject appears, that is the countersubject. It often has a contrasting rhythmic character to the subject.",
+      "visual_markers": "Look for a consistent melodic line in whichever voice just finished stating the subject. If this line reappears each time a new voice takes the subject, it is the countersubject.",
+      "common_contexts": "First appears when the second voice enters with the answer, as the first voice continues with the countersubject. Recurs throughout the fugue alongside subject statements.",
+      "difficulty_level": 3,
+      "prerequisites": ["subject"],
+      "keywords": ["countersubject", "counterpoint", "companion theme", "invertible", "secondary theme"],
+      "wtc_examples": [
+        {"bwv": 847, "type": "fugue", "measures": "3-4", "description": "Clear, rhythmically active countersubject in C minor"},
+        {"bwv": 858, "type": "fugue", "measures": "3-6", "description": "Distinctive running countersubject in F-sharp major"},
+        {"bwv": 869, "type": "fugue", "measures": "5-8", "description": "Stately countersubject in the B minor fugue"}
+      ]
+    },
+    {
+      "id": "episode",
+      "name": "Episode",
+      "category": "fugue",
+      "definitions": {
+        "brief": "A passage between subject entries that develops motives from the subject or countersubject.",
+        "standard": "Episodes are transitional passages in a fugue where the complete subject is not being stated in any voice. They typically develop fragments (motives) from the subject or countersubject, often using sequence, and serve to modulate to new keys and provide contrast.",
+        "detailed": "Episodes provide structural breathing room between the statements of the complete subject, allowing the fugue to modulate, develop thematic material, and create variety. Rather than introducing entirely new material, episodes typically draw upon fragments or motives from the subject and countersubject, subjecting them to sequential treatment, imitative exchange between voices, and harmonic development. Episodes serve crucial formal functions: they modulate from one key area to another, they provide relief from the intensity of full subject entries, and they demonstrate the compositional possibilities latent in the subject material. The length and complexity of episodes vary greatly - some fugues use brief linking passages, while others feature extended episodic developments that rival the subject entries in importance. Bach's episodes often feature chains of suspensions, sequences rising or falling by step, and dialogue between paired voices."
+      },
+      "listening_guidance": "Listen for passages where the main theme seems to disappear, replaced by fragments and sequences. The texture often becomes lighter, with voices engaging in quick back-and-forth exchanges. Episodes typically lead to the subject returning in a new key.",
+      "visual_markers": "Episodes appear between complete subject statements. Look for sequential patterns (the same figure repeated at different pitch levels) and motivic development rather than the full subject melody.",
+      "common_contexts": "Typically follows each complete round of subject entries. Used to modulate from one key to another and to develop thematic material.",
+      "difficulty_level": 3,
+      "prerequisites": ["subject", "countersubject"],
+      "keywords": ["episode", "development", "sequence", "modulation", "motive", "transition"],
+      "wtc_examples": [
+        {"bwv": 846, "type": "fugue", "measures": "7-9", "description": "Sequential episode developing fragments from the subject"},
+        {"bwv": 847, "type": "fugue", "measures": "9-11", "description": "Chromatic episode leading to a new key area"},
+        {"bwv": 858, "type": "fugue", "measures": "15-20", "description": "Extended episode with brilliant sequential writing"},
+        {"bwv": 869, "type": "fugue", "measures": "25-35", "description": "Substantial developmental episode in the B minor fugue"}
+      ]
+    },
+    {
+      "id": "stretto",
+      "name": "Stretto",
+      "category": "fugue",
+      "definitions": {
+        "brief": "Overlapping entries of the subject, where a new voice begins before the previous one finishes.",
+        "standard": "Stretto (Italian for 'tight' or 'narrow') occurs when subject entries overlap, with a new voice beginning the subject before the previous voice has completed it. This creates heightened intensity and demonstrates the subject's contrapuntal potential.",
+        "detailed": "Stretto represents one of the most sophisticated techniques in fugal writing, demonstrating that the subject can be combined with itself at different time intervals. When voices enter in stretto, they overlap, creating a compressed, intensified texture where multiple subject statements sound simultaneously. The closer the entries (the shorter the time between them), the 'tighter' the stretto. Bach often reserves stretto for climactic passages, using progressively closer entries to build excitement toward the fugue's conclusion. Some subjects permit stretto at various time intervals and even at different pitch intervals. Stretto maestrale (masterly stretto) uses all voices in overlapping entries. Writing effective stretto passages requires exceptional contrapuntal skill, as the subject must harmonize with itself at the chosen interval of entry."
+      },
+      "listening_guidance": "Listen for moments when the theme seems to pile up on itself, with one voice starting the subject while another is still in the middle of it. The texture becomes more intense and urgent. Stretto often appears near the end of a fugue as a climactic device.",
+      "visual_markers": "Look for overlapping subject entries in the score - one voice begins the subject while another is partway through. The entries are vertically aligned but offset in time.",
+      "common_contexts": "Most commonly used in the latter part of the fugue, especially approaching the conclusion. Serves as a climactic intensification device.",
+      "difficulty_level": 4,
+      "prerequisites": ["subject", "countersubject", "episode"],
+      "keywords": ["stretto", "overlap", "compression", "intensification", "climax", "imitation"],
+      "wtc_examples": [
+        {"bwv": 846, "type": "fugue", "measures": "24-27", "description": "Clear stretto entries near the conclusion"},
+        {"bwv": 847, "type": "fugue", "measures": "26-29", "description": "Intense stretto building to the climax in C minor"},
+        {"bwv": 849, "type": "fugue", "measures": "85-100", "description": "Extended stretto section in the great C-sharp minor fugue"},
+        {"bwv": 858, "type": "fugue", "measures": "30-35", "description": "Brilliant stretto writing in F-sharp major"}
+      ]
+    },
+    {
+      "id": "augmentation",
+      "name": "Augmentation",
+      "category": "fugue",
+      "definitions": {
+        "brief": "The subject presented with all note values doubled, making it twice as slow.",
+        "standard": "Augmentation is a compositional technique where the subject is stated with all its rhythmic values multiplied (usually doubled), so that a quarter note becomes a half note, a half note becomes a whole note, and so forth. This stretches the subject to twice its original length.",
+        "detailed": "Augmentation transforms the subject by proportionally lengthening all its note values, most commonly doubling them. This creates a majestic, expanded version of the theme that moves at half the original speed. When combined with the subject in its original form, augmentation creates a striking effect: one voice progressing slowly and grandly while others move at normal speed. The technique demonstrates the subject's structural integrity - a well-designed subject remains recognizable even when time-stretched. Bach uses augmentation strategically, often in combination with other techniques (stretto in augmentation is particularly impressive), typically in the latter portion of the fugue. Augmentation can also be combined with inversion, creating an augmented inversion. The technique highlights latent harmonic properties of the subject and creates a sense of temporal expansion."
+      },
+      "listening_guidance": "Listen for a very slow, stretched-out version of the subject - the same melody but taking twice as long to unfold. It often appears in the bass voice while faster activity continues above. The effect is grand and monumental.",
+      "visual_markers": "Look for the subject with all note values doubled (quarter notes become half notes, etc.). The augmented subject often appears in longer note values in one voice while others continue in normal rhythm.",
+      "common_contexts": "Typically appears in the developmental or final sections of more learned fugues. Often combined with the subject in original values for dramatic effect.",
+      "difficulty_level": 4,
+      "prerequisites": ["subject", "episode", "stretto"],
+      "keywords": ["augmentation", "lengthening", "expansion", "double", "transformation"],
+      "wtc_examples": [
+        {"bwv": 849, "type": "fugue", "measures": "65-80", "description": "Majestic augmentation in the C-sharp minor fugue"},
+        {"bwv": 867, "type": "fugue", "measures": "40-50", "description": "Augmented subject in B-flat minor"},
+        {"bwv": 869, "type": "fugue", "measures": "55-70", "description": "Grandly augmented subject in the B minor fugue"}
+      ]
+    },
+    {
+      "id": "diminution",
+      "name": "Diminution",
+      "category": "fugue",
+      "definitions": {
+        "brief": "The subject presented with all note values halved, making it twice as fast.",
+        "standard": "Diminution is the opposite of augmentation: the subject is stated with all its rhythmic values reduced (usually halved), so that a half note becomes a quarter note, a quarter note becomes an eighth note, and so forth. This compresses the subject to half its original length.",
+        "detailed": "Diminution compresses the subject by proportionally shortening all note values, most commonly halving them. This creates a quicker, more urgent version of the theme that moves at double the original speed. The technique produces an animated, almost playful transformation of the subject, particularly effective when combined with the original or augmented forms. Diminution requires that the subject's essential character remain recognizable at increased speed, which favors subjects with clear melodic profiles. Bach uses diminution less frequently than augmentation in the Well-Tempered Clavier, but when it appears, it creates exciting textural variety. Diminution can suggest acceleration and increasing energy, particularly effective in building toward climaxes or in lighter, more virtuosic fugues."
+      },
+      "listening_guidance": "Listen for a quick, compressed version of the subject - the same melody but rushing by at double speed. It may appear in an upper voice darting above slower-moving material, creating a sense of urgency or excitement.",
+      "visual_markers": "Look for the subject with all note values halved (half notes become quarter notes, etc.). The diminished subject will complete in half the usual time span.",
+      "common_contexts": "Less common than augmentation. May appear in developmental sections or combined with other transformations for variety and increased energy.",
+      "difficulty_level": 4,
+      "prerequisites": ["subject", "episode", "augmentation"],
+      "keywords": ["diminution", "shortening", "compression", "halving", "transformation", "acceleration"],
+      "wtc_examples": [
+        {"bwv": 858, "type": "fugue", "measures": "25-28", "description": "Diminution creates brilliance in F-sharp major"},
+        {"bwv": 889, "type": "fugue", "measures": "35-40", "description": "Diminished subject in A major from Book II"},
+        {"bwv": 883, "type": "fugue", "measures": "30-35", "description": "Quick diminution in F-sharp minor from Book II"}
+      ]
+    },
+    {
+      "id": "inversion",
+      "name": "Inversion",
+      "category": "fugue",
+      "definitions": {
+        "brief": "The subject presented upside-down, with all intervals reversed in direction.",
+        "standard": "Melodic inversion (also called mirror inversion) presents the subject with all its intervals reversed in direction: where the original rose, the inversion falls, and vice versa. An ascending fifth becomes a descending fifth; a rising step becomes a falling step.",
+        "detailed": "Inversion creates a mirror image of the subject by reversing the direction of every interval while typically preserving interval sizes. This transformation maintains the subject's rhythmic profile and general contour relationships while creating an entirely new melodic line. The inverted subject may be exact (preserving interval quality as well as size) or modified (adjusting certain intervals for harmonic or melodic reasons). Inversion demonstrates the subject's ability to generate new melodic material while remaining recognizably related to the original. Bach often introduces inversion after establishing the subject thoroughly in its original form, providing fresh perspective on familiar material. Inverted subjects can be combined with original subjects in double counterpoint, and can themselves be subjected to augmentation, diminution, and stretto."
+      },
+      "listening_guidance": "Listen for the subject turned upside-down - when the original melody went up, the inversion goes down by the same interval. The rhythm remains the same, so you can recognize it, but the melodic direction is reversed throughout.",
+      "visual_markers": "If the subject's contour looks like a hill (rising then falling), its inversion will look like a valley (falling then rising). Every upward motion in the original becomes downward in the inversion.",
+      "common_contexts": "Often introduced in the developmental section of more elaborate fugues. May be combined with the original subject or used in stretto.",
+      "difficulty_level": 4,
+      "prerequisites": ["subject", "countersubject", "episode"],
+      "keywords": ["inversion", "mirror", "reversal", "upside-down", "transformation", "contrary motion"],
+      "wtc_examples": [
+        {"bwv": 847, "type": "fugue", "measures": "15-17", "description": "Inverted subject appears in C minor fugue"},
+        {"bwv": 849, "type": "fugue", "measures": "35-45", "description": "Systematic use of inversion in C-sharp minor"},
+        {"bwv": 867, "type": "fugue", "measures": "25-35", "description": "Inverted subject combined with original in B-flat minor"},
+        {"bwv": 878, "type": "fugue", "measures": "30-40", "description": "Elaborate inversional treatment in D major from Book II"}
+      ]
+    },
+    {
+      "id": "retrograde",
+      "name": "Retrograde",
+      "category": "fugue",
+      "definitions": {
+        "brief": "The subject presented backwards, from last note to first.",
+        "standard": "Retrograde (also called cancrizans, from the Latin for 'crab') presents the subject backwards, with the last note becoming the first and proceeding in reverse order to the original first note. This mirror-in-time transformation maintains pitch content while reversing temporal order.",
+        "detailed": "Retrograde is the temporal mirror of the subject, reading the melody from end to beginning. Unlike inversion (which reverses pitch direction), retrograde reverses the order of notes in time. This technique is relatively rare in Bach's fugues compared to inversion, augmentation, and stretto, partly because most melodic subjects do not produce musically satisfying results when reversed. For retrograde to be effective, the subject's intervallic content must work harmonically in reverse order, and its rhythmic profile must remain recognizable backwards. When Bach does employ retrograde, it is often in combination with other techniques (retrograde inversion, for example, combines both transformations). The technique demonstrates ultimate contrapuntal mastery - the subject's ability to generate musical sense read in any direction."
+      },
+      "listening_guidance": "Listen for the subject played backwards - the final notes come first, working back to what was originally the beginning. This is difficult to hear unless you know the subject very well. The rhythm pattern will also be reversed.",
+      "visual_markers": "Compare the note sequence with the original subject read from right to left. Retrograde preserves the pitches but reverses their order. It is relatively rare to find pure retrograde in Bach's fugues.",
+      "common_contexts": "Rarely used as a primary technique in WTC fugues. More common in canons and theoretical demonstrations of contrapuntal learning.",
+      "difficulty_level": 5,
+      "prerequisites": ["subject", "inversion", "augmentation"],
+      "keywords": ["retrograde", "cancrizans", "backwards", "crab", "mirror", "temporal reversal"],
+      "wtc_examples": [
+        {"bwv": 849, "type": "fugue", "measures": "45-50", "description": "Suggestions of retrograde treatment in C-sharp minor"},
+        {"bwv": 889, "type": "fugue", "measures": "45-50", "description": "Retrograde elements in A major from Book II"}
+      ]
+    },
+    {
+      "id": "exposition",
+      "name": "Exposition",
+      "category": "fugue",
+      "definitions": {
+        "brief": "The opening section where all voices enter one by one with the subject.",
+        "standard": "The exposition is the opening section of a fugue in which each voice enters successively with the subject (or answer). In a four-voice fugue, the exposition ends when all four voices have stated the theme, establishing the fugue's polyphonic texture.",
+        "detailed": "The fugue exposition introduces the subject to all voices systematically, establishing the fugue's texture, key, and thematic material. The first voice presents the subject alone, typically in the tonic key. The second voice enters with the answer (usually in the dominant), while the first voice continues with counterpoint (often the countersubject). This process continues until all voices have entered. The exposition follows conventional patterns: in a four-voice fugue, entries often alternate between subject (tonic) and answer (dominant). Some expositions include a codetta - a brief linking passage between entries. After all voices have entered, the exposition is complete, though some fugues feature a counter-exposition (a second round of entries) before the developmental middle section begins. The exposition typically represents the most structured portion of the fugue."
+      },
+      "listening_guidance": "Listen to the fugue's opening: one voice begins alone, then a second joins (usually higher or lower), then a third, possibly a fourth. Count the entries as they accumulate. By the end of the exposition, all the voices are active.",
+      "visual_markers": "The exposition spans from the beginning until all voices have entered with the subject. Look for successive entries of the main theme, each in a different voice, typically alternating between tonic and dominant keys.",
+      "common_contexts": "Always the opening section of a fugue. Establishes all voices, the subject, often the countersubject, and the basic texture.",
+      "difficulty_level": 2,
+      "prerequisites": ["subject"],
+      "keywords": ["exposition", "opening", "entries", "voices", "introduction", "fugue structure"],
+      "wtc_examples": [
+        {"bwv": 846, "type": "fugue", "measures": "1-7", "description": "Clear 4-voice exposition in C major"},
+        {"bwv": 847, "type": "fugue", "measures": "1-9", "description": "3-voice exposition in C minor"},
+        {"bwv": 849, "type": "fugue", "measures": "1-20", "description": "Extended 4-voice exposition in C-sharp minor"},
+        {"bwv": 869, "type": "fugue", "measures": "1-16", "description": "Stately 4-voice exposition in B minor"}
+      ]
+    },
+    {
+      "id": "development",
+      "name": "Development",
+      "category": "fugue",
+      "definitions": {
+        "brief": "The middle section where the subject is explored through various keys and techniques.",
+        "standard": "The development (or middle section) of a fugue follows the exposition and explores the subject through modulation to related keys, episodic passages, and various contrapuntal techniques such as stretto, inversion, augmentation, and diminution.",
+        "detailed": "The development section represents the creative heart of the fugue, where the subject is explored, transformed, and combined in ways that reveal its latent musical possibilities. This section modulates through related keys (relative major/minor, subdominant, dominant of relative, etc.), presenting the subject in new harmonic contexts. Episodes connect subject entries, developing motives and facilitating modulation. The development may introduce special techniques: stretto (overlapping entries), inversion (mirror image), augmentation (longer note values), and diminution (shorter note values). The development section varies enormously in length and complexity across different fugues - some are brief and focused, others extended and episodic. Bach's developments demonstrate his remarkable ability to generate extensive musical discourse from limited thematic material."
+      },
+      "listening_guidance": "After all voices have entered in the exposition, listen for the subject appearing in new keys - minor if the fugue began in major, or exploring various related keys. Notice episodes (passages without the complete subject) and special treatments like stretto or inversion.",
+      "visual_markers": "The development follows the exposition and precedes the final section. Look for the subject in various keys, episodes (sequential passages without full subject statements), and contrapuntal techniques like stretto or inversion.",
+      "common_contexts": "Comprises the majority of many fugues. Contains modulation, episodic development, and often the most sophisticated contrapuntal writing.",
+      "difficulty_level": 3,
+      "prerequisites": ["subject", "exposition", "episode"],
+      "keywords": ["development", "middle section", "modulation", "exploration", "transformation", "fugue structure"],
+      "wtc_examples": [
+        {"bwv": 846, "type": "fugue", "measures": "7-24", "description": "Developmental section exploring related keys in C major"},
+        {"bwv": 849, "type": "fugue", "measures": "20-85", "description": "Extensive development with multiple techniques in C-sharp minor"},
+        {"bwv": 858, "type": "fugue", "measures": "10-35", "description": "Brilliant developmental writing in F-sharp major"},
+        {"bwv": 869, "type": "fugue", "measures": "16-80", "description": "Monumental development in B minor"}
+      ]
+    },
+    {
+      "id": "pedal-point-fugue",
+      "name": "Pedal Point (in Fugue)",
+      "category": "fugue",
+      "definitions": {
+        "brief": "A sustained bass note held while upper voices continue with subject entries and counterpoint.",
+        "standard": "In fugal context, a pedal point is a sustained note (usually tonic or dominant) held in the bass while the upper voices continue with subject entries, counterpoint, and harmonic movement that may create temporary dissonances against the held note.",
+        "detailed": "The pedal point in a fugue serves as a powerful structural and climactic device, typically appearing near the conclusion. A sustained bass note (most commonly the tonic or dominant) anchors the harmony while the upper voices continue their contrapuntal activity, including subject statements, countersubject entries, and even stretto passages. The pedal creates a sense of harmonic stability and arrival while simultaneously generating tension through the dissonances that occur as the moving voices clash with the static bass. Bach frequently concludes his fugues with tonic pedal points, which create a sense of harmonic gravitation toward the final cadence. Dominant pedal points may precede the final tonic pedal, creating a two-stage approach to the conclusion. The technique demonstrates how a single sustained note can transform the entire harmonic and textural character of a passage."
+      },
+      "listening_guidance": "Listen near the end of the fugue for a sustained bass note that holds while the upper voices continue moving. You will hear the melody and harmonies moving above this anchor note, sometimes creating tension that resolves at the final cadence.",
+      "visual_markers": "Look for a long held note in the bass voice while upper voices continue active counterpoint. Often appears in the final dozen or so measures of the fugue, leading to the final cadence.",
+      "common_contexts": "Most common in the final section of fugues, creating a sense of arrival and preparation for the final cadence. May occur on dominant before moving to tonic.",
+      "difficulty_level": 3,
+      "prerequisites": ["subject", "exposition", "development"],
+      "keywords": ["pedal point", "pedal tone", "sustained bass", "conclusion", "tonic", "dominant"],
+      "wtc_examples": [
+        {"bwv": 846, "type": "fugue", "measures": "24-27", "description": "Tonic pedal at the conclusion of C major fugue"},
+        {"bwv": 847, "type": "fugue", "measures": "26-29", "description": "Dramatic pedal point conclusion in C minor"},
+        {"bwv": 849, "type": "fugue", "measures": "110-115", "description": "Extended tonic pedal concluding the great C-sharp minor fugue"},
+        {"bwv": 869, "type": "fugue", "measures": "85-90", "description": "Majestic tonic pedal in B minor fugue"}
+      ]
+    }
+  ]
+}

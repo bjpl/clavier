@@ -1,0 +1,7 @@
+# Music files system generated files
+download-progress.json
+logs/
+reports/
+
+# Test files (if any)
+*.test.musicxml

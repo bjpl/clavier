@@ -1,0 +1,450 @@
+{
+  "domain": "fugal-technique",
+  "domain_title": "Fugal Technique",
+  "total_lessons": 12,
+  "estimated_total_minutes": 480,
+  "generated_at": "2025-12-29T00:00:00.000Z",
+  "lessons": [
+    {
+      "id": "introduction-to-fugue",
+      "title": "Introduction to Fugue",
+      "domain": "fugal-technique",
+      "order": 1,
+      "estimated_minutes": 35,
+      "learning_objectives": [
+        "Understand the basic structure and principles of fugue",
+        "Identify the main components of a fugue (subject, answer, countersubject, episode)",
+        "Follow the subject through multiple voices in a complete fugue",
+        "Recognize the historical significance of fugue in Baroque music"
+      ],
+      "prerequisites": ["voice-lead-001-two-voice", "harm-fund-006-cadences"],
+      "content": {
+        "introduction": "The fugue represents the pinnacle of contrapuntal art, a form that Johann Sebastian Bach elevated to unprecedented heights in the Well-Tempered Clavier. Unlike simpler imitative forms such as the canon, the fugue is not bound by strict rules but follows principles that allow for immense creativity within a unified framework. The word 'fugue' derives from the Latin 'fuga,' meaning flight or chase, aptly describing how voices pursue one another with the same melodic idea. In this lesson, we begin our exploration of this extraordinary form by understanding its essential components and how they work together to create a musical conversation of remarkable sophistication.",
+        "explanation": "A fugue is a contrapuntal composition built on a single theme called the subject. The subject is the musical DNA of the fugue - everything else grows from it. When the fugue begins, a single voice presents the subject alone, establishing both the theme and the tonal center. Once the subject completes its statement, a second voice enters with the answer, which is the subject transposed (usually to the dominant). While the second voice presents the answer, the first voice continues with new material called the countersubject - a complementary melody designed to work well against the subject.\n\nThis pattern continues as additional voices enter, each taking turns presenting the subject or answer while others provide counterpoint. The opening section where all voices enter with the subject/answer is called the exposition. After the exposition, the fugue develops through episodes - passages that derive material from the subject but don't present it completely - and middle entries, where the subject appears in various keys. The fugue typically concludes with a return to the tonic key and often features intensifying techniques like stretto (overlapping entries) or pedal points.\n\nThe fugue's structure can be understood as a conversation: each voice has something important to say (the subject), and when not speaking the main idea, it provides support and commentary through counterpoint. Bach's genius lies in how he makes this conversation feel natural yet endlessly inventive, with the subject recognizable despite constant variation in its context, register, and key.",
+        "guided_example": {
+          "bwv": 846,
+          "type": "fugue",
+          "measures": "1-14",
+          "analysis": "The C major fugue from Book I provides an ideal introduction to fugal technique. Its subject is clear, its structure transparent, and its four voices enter in an orderly fashion. The subject spans two measures, beginning with a stepwise ascent (C-D-E-F-E-D) followed by a scalar descent. This compact design gives it both memorability and contrapuntal flexibility.\n\nIn measure 1, the alto voice presents the subject alone. At measure 3, the soprano enters with the answer (transposed to G) while the alto continues with the countersubject - notice how the countersubject moves in contrary motion and uses different rhythmic values, ensuring independence. The tenor enters in measure 7 with the subject again (back in C), and finally the bass enters in measure 11 with the answer in G. By measure 14, all four voices are active, completing the exposition.\n\nThis fugue demonstrates how a simple, well-crafted subject can generate an entire composition of remarkable unity and variety."
+        },
+        "additional_examples": [
+          {"bwv": 847, "measures": "1-11", "brief": "C minor fugue with chromatic subject showing more expressive character"},
+          {"bwv": 855, "measures": "1-8", "brief": "E minor two-voice fugue offering transparency for following entries"}
+        ],
+        "summary": "The fugue is a conversation between voices, each taking turns with the same theme - the subject. The exposition introduces all voices with the subject and answer, establishing the fugue's material. Episodes develop and modulate between subject entries, while the conclusion brings harmonic and thematic closure. Understanding fugue begins with ear training: learning to follow the subject through various voices, registers, and keys. This ability to track the subject is foundational for all further study of fugal technique."
+      },
+      "exercises": [
+        "Map all subject entries in BWV 846 Fugue, noting which voice presents each entry",
+        "Identify the exposition boundaries in BWV 847 Fugue - where does the first episode begin?",
+        "Listen and follow the subject through all four voices in BWV 846, conducting each entry with your hand"
+      ],
+      "related_features": ["subject", "answer-real", "answer-tonal", "countersubject", "exposition"],
+      "narration_text": "The fugue represents the pinnacle of contrapuntal art, a form that Johann Sebastian Bach elevated to unprecedented heights in the Well-Tempered Clavier. A fugue is a contrapuntal composition built on a single theme called the subject. When the fugue begins, a single voice presents the subject alone. Once the subject completes its statement, a second voice enters with the answer, which is the subject transposed, usually to the dominant. While the second voice presents the answer, the first voice continues with the countersubject, a complementary melody designed to work well against the subject. The opening section where all voices enter is called the exposition. After the exposition, the fugue develops through episodes and middle entries. The C major fugue from Book One provides an ideal introduction. Its subject spans two measures, beginning with a stepwise ascent followed by a scalar descent. The alto presents the subject alone in measure one. At measure three, the soprano enters with the answer while the alto continues with the countersubject. By measure fourteen, all four voices are active, completing the exposition."
+    },
+    {
+      "id": "the-fugue-subject",
+      "title": "The Fugue Subject",
+      "domain": "fugal-technique",
+      "order": 2,
+      "estimated_minutes": 40,
+      "learning_objectives": [
+        "Identify characteristics that make an effective fugue subject",
+        "Analyze subject length, range, and melodic contour",
+        "Understand how subject design determines fugal possibilities",
+        "Compare subjects across multiple WTC fugues"
+      ],
+      "prerequisites": ["introduction-to-fugue"],
+      "content": {
+        "introduction": "The fugue subject is the seed from which the entire composition grows. Every entry, every episode, every developmental passage derives from this initial melodic idea. A well-crafted subject must balance several competing demands: it must be memorable enough to be recognized in any register or key, distinctive enough to maintain interest through dozens of appearances, and flexible enough to combine with itself and other material in counterpoint. Bach's subjects in the Well-Tempered Clavier represent a masterclass in this delicate art, ranging from simple four-note cells to elaborate chromatic melodies spanning two measures or more.",
+        "explanation": "An effective fugue subject typically exhibits several key characteristics. First, tonal clarity: the subject should establish its key unambiguously, usually beginning on the tonic or dominant and making the tonality clear within its first few notes. This is crucial because the answer will transpose the subject, and the listener must understand both versions as belonging to the same tonal family.\n\nSecond, rhythmic distinctiveness: the subject needs a recognizable rhythmic profile that allows identification even when melodic intervals are altered in stretto or inversion. Many Bach subjects begin with longer notes that accelerate into shorter values, creating a sense of momentum.\n\nThird, melodic shape: effective subjects often have a clear contour - perhaps an initial leap followed by stepwise motion, or an ascending line that descends to its starting point. This shape helps the ear track the subject through complex textures.\n\nFourth, contrapuntal potential: the subject must work in combination with other material, including itself at various time intervals (stretto) and in inversion. Bach often tests these possibilities before settling on a subject's final form.\n\nFifth, appropriate length: most fugue subjects span one to three measures. Too short, and the subject lacks character; too long, and it becomes difficult to recognize and combine in counterpoint.\n\nThe subject's opening intervals - particularly whether it begins on the tonic or dominant - often determines whether the answer will be real (exact transposition) or tonal (adjusted transposition).",
+        "guided_example": {
+          "bwv": 846,
+          "type": "fugue",
+          "measures": "1-2",
+          "analysis": "The C major subject demonstrates exemplary design. It begins on C (the tonic) with a stepwise ascent through the fifth scale degree, then turns and descends scalewise. The total range is exactly one octave (C4 to C5), making it comfortable for all four voices. The rhythm accelerates from quarter notes to sixteenth notes, creating natural momentum.\n\nNotice how the subject's initial leap from C to D is followed entirely by stepwise motion - this creates a 'head' and 'tail' structure where the opening gesture is particularly memorable. The stepwise tail provides smooth voice leading when combined with other material. Bach's choice to begin on the tonic (rather than the dominant) means the answer will require a tonal adjustment, a topic we'll explore in the next lesson.\n\nThis subject exemplifies clarity and balance: it's long enough to have character, short enough to be manageable in stretto, and scalic enough to combine smoothly in counterpoint."
+        },
+        "additional_examples": [
+          {"bwv": 847, "measures": "1-2", "brief": "Chromatic subject in C minor with expressive sighing figures"},
+          {"bwv": 849, "measures": "1-3", "brief": "Extended C-sharp minor subject with elaborate ornamentation"},
+          {"bwv": 857, "measures": "1-2", "brief": "F minor subject with distinctive rhythmic head and flowing tail"}
+        ],
+        "summary": "The fugue subject must balance memorability with flexibility, establishing tonality while remaining distinctive through countless repetitions. Effective subjects have clear tonal centers, recognizable rhythmic profiles, memorable melodic shapes, and the potential for contrapuntal combination. Bach's WTC subjects demonstrate extraordinary variety within these constraints - from the simple diatonic C major subject to complex chromatic designs. Studying these subjects reveals how small changes in design lead to dramatically different fugal possibilities."
+      },
+      "exercises": [
+        "Analyze the subjects of BWV 846, 847, 848, and 849, noting length, range, starting pitch, and rhythmic profile",
+        "Sing or play each subject and identify its most memorable feature",
+        "Compare the C major and C minor subjects - how does mode affect character and design?"
+      ],
+      "related_features": ["subject", "subject-head", "subject-tail", "tonal-clarity", "rhythmic-profile"],
+      "narration_text": "The fugue subject is the seed from which the entire composition grows. A well-crafted subject must be memorable enough to be recognized in any register or key, distinctive enough to maintain interest through dozens of appearances, and flexible enough to combine with itself in counterpoint. Effective subjects exhibit tonal clarity, establishing their key unambiguously. They have rhythmic distinctiveness, allowing identification even when melodic intervals change. Their melodic shape gives a clear contour that helps the ear track them through complex textures. The C major subject demonstrates exemplary design. It begins on the tonic with a stepwise ascent through the fifth, then descends scalewise. The rhythm accelerates from quarter notes to sixteenth notes, creating natural momentum. This subject exemplifies clarity and balance, long enough to have character, short enough for stretto, and scalic enough for smooth counterpoint."
+    },
+    {
+      "id": "real-vs-tonal-answer",
+      "title": "Real vs Tonal Answer",
+      "domain": "fugal-technique",
+      "order": 3,
+      "estimated_minutes": 45,
+      "learning_objectives": [
+        "Distinguish tonal answers from real answers by ear and analysis",
+        "Understand why tonal answers maintain tonal stability",
+        "Identify the specific intervals altered in tonal answers",
+        "Analyze Bach's choice of answer type across different fugues"
+      ],
+      "prerequisites": ["the-fugue-subject"],
+      "content": {
+        "introduction": "When the second voice enters a fugue with the answer, it transposes the subject to the dominant key. But this transposition is not always exact. A 'real' answer transposes every interval precisely, while a 'tonal' answer adjusts certain intervals to maintain the sense of a single tonic. This seemingly small distinction has profound implications for fugal structure and harmonic stability. Bach's choices between real and tonal answers reveal his deep understanding of how subjects interact with tonal syntax.",
+        "explanation": "The answer in a fugue is the subject transposed to the dominant. In a 'real' answer, every interval is transposed exactly: if the subject moves up a major second, the answer moves up a major second; if the subject leaps down a fourth, the answer leaps down a fourth. Real answers are straightforward but can create tonal ambiguity if the subject prominently features the dominant note.\n\nA 'tonal' answer adjusts specific intervals to keep the music feeling grounded in one key rather than modulating. The classic situation requiring a tonal answer occurs when the subject begins on the tonic and moves to the dominant (or vice versa). If the subject goes C to G (tonic to dominant in C major), a real answer would go G to D - but D is the dominant of G, not a strong reference to C major. A tonal answer instead goes G to C, substituting the tonic for what would have been the second dominant.\n\nThe rule can be summarized: when the subject emphasizes scale degree 5 (dominant), the answer responds with scale degree 1 (tonic), and vice versa. This exchange keeps both subject and answer anchored to the same tonal center.\n\nTonal answers typically affect only the opening notes of the subject - the 'head.' Once the tonic-dominant exchange is made, the rest of the answer usually continues as a real transposition. This creates an elegant solution: the beginning affirms tonality, while the bulk of the melody remains recognizable.",
+        "guided_example": {
+          "bwv": 846,
+          "type": "fugue",
+          "measures": "1-5",
+          "analysis": "The C major fugue provides a clear example of tonal answer. The subject begins with C-D-E-F-E-D-C (scale degrees 1-2-3-4-3-2-1 in C major). If the answer were real, it would begin G-A-B-C-B-A-G. However, Bach writes a tonal answer: G-A-B-C-B-A-G becomes G-A-B-C, but the opening G corresponds to the subject's C (tonic responds to dominant), creating a subtle adjustment.\n\nLook at measure 3 where the soprano enters: the answer begins on G (corresponding to the subject's C), and the first interval is a whole step up to A, just as the subject moved C to D. The tonal adjustment is minimal but crucial - it keeps both subject and answer feeling like they belong to C major rather than suggesting a modulation to G major.\n\nCompare this to the E minor fugue (BWV 855), where Bach uses a real answer because the subject's design doesn't create tonic-dominant ambiguity."
+        },
+        "additional_examples": [
+          {"bwv": 847, "measures": "3-5", "brief": "C minor tonal answer with chromatic adjustments"},
+          {"bwv": 850, "measures": "3-5", "brief": "D major real answer where subject design permits exact transposition"},
+          {"bwv": 853, "measures": "4-7", "brief": "E-flat major tonal answer with clear tonic-dominant exchange"}
+        ],
+        "summary": "The choice between real and tonal answers depends on the subject's design. When subjects prominently feature the tonic-dominant relationship at their opening, tonal answers preserve harmonic clarity by exchanging these scale degrees. Real answers transpose exactly and work well when subjects avoid strong tonic-dominant emphasis at their start. Bach's consistent choices show his sensitivity to how subjects interact with tonal structure - the answer must feel like a response in dialogue, not a departure to a new key."
+      },
+      "exercises": [
+        "Compare the subject and answer in BWV 846 - identify exactly which notes are altered",
+        "Analyze BWV 850: why does Bach use a real answer here? What about the subject makes this appropriate?",
+        "Write out what a real answer would be for BWV 847's subject, then compare to Bach's actual tonal answer"
+      ],
+      "related_features": ["answer-real", "answer-tonal", "tonic-dominant-exchange", "subject-head"],
+      "narration_text": "When the second voice enters a fugue with the answer, it transposes the subject to the dominant key. But this transposition is not always exact. A real answer transposes every interval precisely. A tonal answer adjusts certain intervals to maintain tonal stability. The classic situation requiring a tonal answer occurs when the subject begins on the tonic and moves to the dominant. If the subject goes C to G, a real answer would go G to D, but D suggests a new key. A tonal answer instead goes G to C, substituting the tonic. The C major fugue provides a clear example. The subject begins on C, the tonic. The answer begins on G but is adjusted so that the tonic-dominant relationship is preserved. This keeps both subject and answer anchored to C major. Bach's consistent choices show his sensitivity to how subjects interact with tonal structure."
+    },
+    {
+      "id": "countersubject-design",
+      "title": "Countersubject Design",
+      "domain": "fugal-technique",
+      "order": 4,
+      "estimated_minutes": 40,
+      "learning_objectives": [
+        "Identify countersubjects that accompany subject and answer statements",
+        "Understand the complementary relationship between subject and countersubject",
+        "Recognize invertible countersubjects that work above or below the subject",
+        "Analyze how Bach creates rhythmic and melodic contrast"
+      ],
+      "prerequisites": ["real-vs-tonal-answer"],
+      "content": {
+        "introduction": "While the subject is the fugue's protagonist, the countersubject serves as a constant companion - a secondary theme that accompanies subject entries throughout the piece. A well-designed countersubject must accomplish several goals simultaneously: it must contrast with the subject to maintain two distinct melodic lines, complement it harmonically to create satisfying counterpoint, and be flexible enough to work both above and below the subject in invertible counterpoint. The countersubject often reveals Bach's contrapuntal genius more than the subject itself.",
+        "explanation": "The countersubject first appears when the second voice enters with the answer - the original voice, having completed the subject, continues with new material that combines with the answer. This material becomes the countersubject if it returns consistently with subsequent subject entries.\n\nEffective countersubjects exhibit complementary motion relative to the subject. When the subject moves in one direction, the countersubject often moves in the opposite direction. When the subject has long notes, the countersubject has shorter notes. This principle of complementary design ensures that both lines remain audible and independent.\n\nRhythmic contrast is particularly important. Bach typically offsets the rhythmic activity between subject and countersubject so that when one voice is active (moving in quick notes), the other is relatively stable (sustained notes or rests). This rhythmic counterpoint prevents the texture from becoming muddy while maintaining momentum.\n\nInvertible counterpoint is a crucial consideration. If the countersubject is designed to be invertible at the octave, it can appear either above or below the subject without creating voice-leading errors. This flexibility is essential because voice entries occur in different registers. Bach often tests his countersubject in both positions during the exposition.\n\nNot all fugues have a consistent countersubject. Some fugues use different accompanying material for each subject entry - these are called fugues with free counterpoint. Others have two countersubjects (triple counterpoint), creating even more complex combinations.",
+        "guided_example": {
+          "bwv": 846,
+          "type": "fugue",
+          "measures": "3-7",
+          "analysis": "When the soprano enters with the answer in measure 3, the alto continues with the countersubject. Notice its design: while the subject/answer moves primarily in stepwise motion, the countersubject features more leaps. While the subject accelerates from quarter notes to sixteenths, the countersubject maintains more consistent eighth-note motion.\n\nThe countersubject's rhythm is particularly ingenious. It fills in the 'gaps' left by the subject's rhythmic activity, creating continuous motion without competition. When the subject rests, the countersubject moves; when the subject has its sixteenth-note run, the countersubject has longer values.\n\nThis countersubject is invertible at the octave - you can see it appear below the subject when the tenor enters in measure 7. Bach has carefully designed the intervals so that no voice-leading errors occur in either position. The countersubject's opening interval of a descending sixth becomes an ascending third when inverted - both acceptable intervals."
+        },
+        "additional_examples": [
+          {"bwv": 847, "measures": "3-7", "brief": "Distinctive countersubject with chromatic sighing figures matching the subject's character"},
+          {"bwv": 849, "measures": "4-8", "brief": "Elaborate countersubject in triple counterpoint with two distinct melodic strands"},
+          {"bwv": 853, "measures": "4-10", "brief": "Lyrical countersubject contrasting with the subject's angular profile"}
+        ],
+        "summary": "The countersubject is the subject's essential partner, providing contrast in rhythm and motion while maintaining harmonic compatibility. Effective countersubjects move when the subject rests, leap when it steps, and descend when it rises. Invertible design allows flexibility in voice distribution. The best countersubjects are memorable in their own right while enhancing rather than competing with the subject. Bach's countersubjects demonstrate how constraint breeds creativity - the requirements of good counterpoint lead to distinctive, characterful melodies."
+      },
+      "exercises": [
+        "Identify the countersubject in BWV 846 and trace it through all its appearances in the exposition",
+        "Analyze the rhythmic relationship between subject and countersubject in BWV 847",
+        "Find an example where the countersubject appears both above and below the subject - verify no parallel fifths or octaves occur"
+      ],
+      "related_features": ["countersubject", "invertible-counterpoint", "rhythmic-contrast", "complementary-motion"],
+      "narration_text": "While the subject is the fugue's protagonist, the countersubject serves as a constant companion. The countersubject first appears when the second voice enters with the answer, and the original voice continues with new material. Effective countersubjects exhibit complementary motion: when the subject ascends, the countersubject descends. When the subject has long notes, the countersubject has shorter notes. Rhythmic contrast is particularly important. Bach offsets the rhythmic activity so that when one voice is active, the other is relatively stable. Invertible counterpoint allows the countersubject to appear either above or below the subject. In the C major fugue, when the soprano enters with the answer, the alto continues with the countersubject. Notice how it fills the gaps left by the subject's rhythmic activity. This countersubject is invertible at the octave, appearing below the subject when the tenor enters."
+    },
+    {
+      "id": "exposition-structure",
+      "title": "Exposition Structure",
+      "domain": "fugal-technique",
+      "order": 5,
+      "estimated_minutes": 45,
+      "learning_objectives": [
+        "Identify complete expositions in three- and four-voice fugues",
+        "Understand the subject-answer alternation pattern",
+        "Recognize exposition boundaries and the transition to development",
+        "Analyze varied exposition structures across different fugues"
+      ],
+      "prerequisites": ["countersubject-design"],
+      "content": {
+        "introduction": "The exposition is the fugue's opening section, where all voices enter successively with the subject or answer. This opening ritual establishes the fugue's basic material and texture. Though expositions follow a general pattern - voices entering alternately with subject and answer - Bach shows remarkable flexibility within this framework. Some expositions are compact and efficient; others extend the process with extra entries or linking passages. Understanding exposition structure provides the foundation for analyzing complete fugues.",
+        "explanation": "The standard exposition pattern follows a strict alternation: Subject (voice 1) - Answer (voice 2) - Subject (voice 3) - Answer (voice 4). This creates a regular oscillation between tonic and dominant that establishes the key firmly while introducing all voices. In a four-voice fugue, the typical order is soprano-alto-tenor-bass or alto-soprano-tenor-bass, though Bach varies this freely.\n\nThe exposition continues until all voices have entered with either the subject or answer. The boundary between exposition and development is often marked by a cadence or a change in texture - perhaps the first genuine episode or a modulation away from the tonic-dominant axis.\n\nSeveral elements can extend or elaborate the exposition. A codetta is a brief linking passage between entries, giving one voice time to 'rest' before the next entry. A counter-exposition immediately follows the exposition with additional entries, reinforcing the subject before development begins. Some expositions include a redundant entry where one voice states the subject or answer an extra time.\n\nThe spacing between entries varies by fugue. In some, voices enter almost immediately after the previous entry completes (close entries). In others, substantial material separates entries (spaced entries). Close entries create density and excitement; spaced entries allow each voice to establish itself clearly before the next arrives.\n\nRecognizing where the exposition ends requires attention to several factors: have all voices entered? Has there been a clear cadence? Does the material change character? Is there a modulation to a new key? When these signals align, you've found the exposition boundary.",
+        "guided_example": {
+          "bwv": 846,
+          "type": "fugue",
+          "measures": "1-14",
+          "analysis": "The C major fugue has a textbook four-voice exposition. The alto enters with the subject in measure 1. The soprano enters with the answer in measure 3, while the alto continues with the countersubject. The tenor enters with the subject in measure 7, and finally the bass enters with the answer in measure 11.\n\nNotice the consistent spacing: each entry occurs approximately every two measures (the length of the subject), with brief codettas connecting them. The exposition maintains a clear tonic-dominant alternation: C major (subject) - G major (answer) - C major (subject) - G major (answer).\n\nThe exposition ends around measure 14, where we hear a clear cadence and the texture shifts. From this point, episodes and middle entries develop the material in new directions. The boundary is marked both harmonically (cadence in C) and texturally (the first passage without a complete subject statement).\n\nCompare this to BWV 847 (C minor), where the exposition is more compressed, with entries overlapping slightly due to the subject's different design."
+        },
+        "additional_examples": [
+          {"bwv": 847, "measures": "1-11", "brief": "Three-voice exposition with closer entry spacing"},
+          {"bwv": 849, "measures": "1-13", "brief": "Five-voice exposition with extended countersubject development"},
+          {"bwv": 853, "measures": "1-15", "brief": "Four-voice exposition with prominent codettas between entries"}
+        ],
+        "summary": "The exposition introduces all voices with the subject and answer in alternation, establishing the fugue's material and tonal framework. Standard expositions follow a strict pattern, but Bach varies this through codettas, counter-expositions, and varied entry spacing. Recognizing exposition boundaries requires attention to cadences, texture changes, and the completion of all voice entries. The exposition's design often predicts the fugue's character: compact expositions suggest intense development ahead, while spacious expositions may indicate a more relaxed overall design."
+      },
+      "exercises": [
+        "Map the exposition of BWV 846: list each entry with measure number, voice, and whether it's subject or answer",
+        "Compare exposition lengths in BWV 846, 847, and 848 - what accounts for the differences?",
+        "Identify the first episode in BWV 846 - what changes mark the exposition's end?"
+      ],
+      "related_features": ["exposition", "codetta", "counter-exposition", "entry-order", "voice-entry"],
+      "narration_text": "The exposition is the fugue's opening section, where all voices enter successively with the subject or answer. The standard pattern follows strict alternation: Subject in voice one, Answer in voice two, Subject in voice three, Answer in voice four. This creates oscillation between tonic and dominant that establishes the key firmly. The exposition continues until all voices have entered. The boundary between exposition and development is often marked by a cadence or texture change. The C major fugue has a textbook four-voice exposition. The alto enters with the subject in measure one. The soprano enters with the answer in measure three. The tenor enters with the subject in measure seven. The bass enters with the answer in measure eleven. The exposition ends around measure fourteen, where a clear cadence marks the transition to development."
+    },
+    {
+      "id": "episodes-and-sequences",
+      "title": "Episodes and Sequences",
+      "domain": "fugal-technique",
+      "order": 6,
+      "estimated_minutes": 40,
+      "learning_objectives": [
+        "Identify episodes as developmental passages between subject entries",
+        "Understand how episodes derive material from the subject or countersubject",
+        "Recognize sequential patterns within episodes",
+        "Analyze how episodes accomplish modulation between key areas"
+      ],
+      "prerequisites": ["exposition-structure"],
+      "content": {
+        "introduction": "Between subject entries, fugues breathe through episodes - passages that develop motivic material without presenting the complete subject. Episodes serve multiple functions: they provide contrast to the density of subject entries, they modulate to new keys for subsequent entries, and they develop fragments of the subject in new contexts. Far from being mere filler, episodes showcase Bach's developmental imagination, transforming simple motivic cells into extended passages of remarkable invention.",
+        "explanation": "Episodes typically derive their material from the subject or countersubject, ensuring unity throughout the fugue. Common techniques include fragmentation (using just the head or tail of the subject), sequence (repeating a pattern at different pitch levels), and inversion (turning motives upside down). This derivation from thematic material distinguishes episodes from generic passagework - everything in a well-crafted fugue connects to the subject.\n\nSequential patterns are the backbone of most episodes. A sequence takes a melodic-harmonic pattern and repeats it at successive pitch levels, usually descending by step (descending fifths sequence) or ascending by step. Sequences create harmonic momentum and can efficiently traverse the tonal distance between keys.\n\nEpisodes fulfill several structural functions. Modulatory episodes move from one key area to another, preparing new subject entries. Non-modulatory episodes remain in one key while developing material - these often appear near the fugue's end, intensifying before the final cadence. Some episodes are brief (just a measure or two), while others extend to become significant sections of the fugue.\n\nThe texture of episodes often differs from subject entries. With no complete subject to present, voices are freer to engage in imitation, dialogue, or parallel motion. This textural contrast makes subject entries more impactful when they return.\n\nIdentifying episodes requires recognizing what they're not - passages without complete subject statements. Once you've mapped all subject entries, episodes are what remains between them.",
+        "guided_example": {
+          "bwv": 846,
+          "type": "fugue",
+          "measures": "14-19",
+          "analysis": "After the exposition concludes around measure 14, the first episode begins. This passage doesn't present the complete subject in any voice, but it's far from arbitrary. Look at the soprano line: it takes the subject's sixteenth-note scalar figure and sequences it downward. The bass similarly takes material from the countersubject.\n\nThe episode is built on a descending sequence, moving harmonically through the circle of fifths. This sequential motion accomplishes modulation: we begin in C major (the tonic) and arrive in A minor (the relative minor) by measure 17, where a new subject entry begins.\n\nNotice how the episode reduces the texture - instead of four fully active voices, we hear a more transparent two-voice dialogue. This contrast makes the return of full four-voice texture at the next subject entry more effective.\n\nThe episode demonstrates Bach's economy: every note derives from the subject or countersubject, yet the passage sounds fresh because the material appears in new combinations and contexts."
+        },
+        "additional_examples": [
+          {"bwv": 847, "measures": "11-16", "brief": "Episode with chromatic sequences reflecting the subject's character"},
+          {"bwv": 850, "measures": "12-18", "brief": "Extended episode with invertible counterpoint between two motives"},
+          {"bwv": 853, "measures": "15-22", "brief": "Modulatory episode moving through multiple key areas"}
+        ],
+        "summary": "Episodes are the developmental heart of the fugue, transforming subject material through sequence, fragmentation, and inversion. They provide contrast to subject entries, accomplish modulation, and demonstrate the subject's generative potential. Effective episodes derive clearly from thematic material while achieving their own musical identity. Recognizing episodes requires first mapping subject entries - episodes occupy the spaces between."
+      },
+      "exercises": [
+        "Find the first episode in BWV 846 and identify which motive from the subject or countersubject it uses",
+        "Trace the sequential pattern in BWV 846 measures 14-17 - what harmonic progression does it outline?",
+        "Compare episodes in BWV 846 and 847 - how does subject character influence episode design?"
+      ],
+      "related_features": ["episode", "sequence", "fragmentation", "modulation", "motivic-development"],
+      "narration_text": "Between subject entries, fugues breathe through episodes, passages that develop motivic material without presenting the complete subject. Episodes serve multiple functions: they provide contrast to subject entries, they modulate to new keys, and they develop fragments of the subject in new contexts. Episodes typically derive their material from the subject or countersubject. Common techniques include fragmentation, sequence, and inversion. Sequential patterns are the backbone of most episodes, creating harmonic momentum. After the exposition of the C major fugue concludes around measure fourteen, the first episode begins. The soprano takes the subject's sixteenth-note figure and sequences it downward. The episode is built on a descending sequence, moving through the circle of fifths from C major to A minor. Notice how the episode reduces the texture, making the return of four-voice counterpoint more effective."
+    },
+    {
+      "id": "stretto-technique",
+      "title": "Stretto Technique",
+      "domain": "fugal-technique",
+      "order": 7,
+      "estimated_minutes": 45,
+      "learning_objectives": [
+        "Identify stretto passages where subject entries overlap",
+        "Understand different stretto intervals (distance between entries)",
+        "Recognize how stretto intensifies contrapuntal density",
+        "Analyze Bach's strategic placement of stretto for climactic effect"
+      ],
+      "prerequisites": ["episodes-and-sequences"],
+      "content": {
+        "introduction": "Stretto (Italian for 'tight' or 'narrow') occurs when a new voice begins the subject before the previous voice has finished it. This overlapping of entries creates intense contrapuntal density and is often reserved for climactic moments, particularly near the fugue's conclusion. The ability to write effective stretto is a hallmark of contrapuntal mastery - it requires a subject designed to harmonize with itself at various time intervals. Bach's manipulation of stretto demonstrates his supreme command of this demanding technique.",
+        "explanation": "In normal fugal entries, one voice completes the subject before another begins. In stretto, the second entry begins while the first is still in progress, creating a canonic overlap. The interval of stretto refers to how soon the second entry begins - stretto at one measure means the second voice enters one measure after the first; stretto at two beats means entry after two beats.\n\nNot all subjects work in stretto. For stretto to succeed, the subject must be able to harmonize with itself at the chosen time interval. Bach often designs subjects with stretto possibilities in mind, testing various entry points during composition.\n\nStretto intensifies the fugue's texture in several ways. The density of thematic material increases dramatically - instead of one subject statement, we hear two or more simultaneously. This creates a sense of urgency and compression. Stretto also demonstrates the subject's contrapuntal potential, showing how it can combine with itself.\n\nBach typically reserves stretto for the fugue's latter portions, using it as a developmental and climactic device. A fugue might begin with regular spaced entries in the exposition, introduce stretto in the middle section, and culminate with the tightest stretto near the end. This creates a sense of increasing intensity.\n\nStrettos can involve two, three, or even all voices of the fugue. Multi-voice strettos are particularly impressive, creating a dense web of overlapping subjects. Some fugues build to a final stretto involving all voices in their closest possible configuration.",
+        "guided_example": {
+          "bwv": 849,
+          "type": "fugue",
+          "measures": "32-40",
+          "analysis": "The C-sharp minor fugue (BWV 849) features remarkable stretto passages. In measure 32, we encounter a three-voice stretto where the subject entries overlap by just one measure. The alto begins the subject, and before it's complete, the soprano enters with the same subject, followed closely by the bass.\n\nThis stretto works because Bach designed the subject to harmonize with itself at this interval. The subject's opening notes (C#-B#-C#-D#-E) create consonant intervals with the same notes displaced by one measure. This is no accident - Bach tested these possibilities when crafting the subject.\n\nNotice the increased intensity this creates. Where earlier in the fugue we heard one voice presenting the subject while others accompanied, now we hear three voices simultaneously presenting the subject in canon. The ear struggles to follow all entries, creating a sense of overwhelming contrapuntal richness.\n\nThe stretto continues to tighten as the fugue approaches its conclusion, with entries eventually overlapping by just two beats - the tightest configuration possible with this subject."
+        },
+        "additional_examples": [
+          {"bwv": 846, "measures": "21-24", "brief": "Modest stretto passages in the developmental section"},
+          {"bwv": 853, "measures": "28-36", "brief": "Extended stretto building to climactic intensity"},
+          {"bwv": 857, "measures": "30-38", "brief": "Multi-voice stretto with entries at different intervals"}
+        ],
+        "summary": "Stretto overlaps subject entries, creating intense contrapuntal density. Successful stretto requires subjects that harmonize with themselves at various time intervals. Bach strategically places stretto for climactic effect, typically increasing the tightness of entries as the fugue approaches its conclusion. Multi-voice strettos demonstrate the highest level of contrapuntal craft, weaving multiple subject statements into a unified texture."
+      },
+      "exercises": [
+        "Find the first stretto in BWV 849 and measure the entry interval",
+        "Analyze whether the BWV 846 subject could work in stretto at one-beat intervals - what dissonances would occur?",
+        "Compare stretto placement in BWV 849 and 853 - how does Bach build intensity through the fugue?"
+      ],
+      "related_features": ["stretto", "entry-interval", "canonic-overlap", "climactic-density"],
+      "narration_text": "Stretto occurs when a new voice begins the subject before the previous voice has finished it. This overlapping of entries creates intense contrapuntal density and is often reserved for climactic moments. The interval of stretto refers to how soon the second entry begins. Not all subjects work in stretto. For stretto to succeed, the subject must harmonize with itself at the chosen time interval. Bach typically reserves stretto for the fugue's latter portions, using it as a climactic device. The C-sharp minor fugue features remarkable stretto passages. In measure thirty-two, we encounter a three-voice stretto where entries overlap by just one measure. The alto begins, the soprano enters before the alto finishes, and the bass follows. This creates overwhelming contrapuntal richness as the ear struggles to follow three simultaneous subject statements."
+    },
+    {
+      "id": "augmentation-and-diminution",
+      "title": "Augmentation and Diminution",
+      "domain": "fugal-technique",
+      "order": 8,
+      "estimated_minutes": 40,
+      "learning_objectives": [
+        "Identify augmented subjects (doubled note values)",
+        "Recognize diminished subjects (halved note values)",
+        "Understand how rhythmic transformation creates variety and climax",
+        "Analyze Bach's use of augmentation and diminution for structural emphasis"
+      ],
+      "prerequisites": ["stretto-technique"],
+      "content": {
+        "introduction": "Augmentation and diminution transform the subject's rhythm while preserving its melodic intervals. In augmentation, note values are doubled (or multiplied further), stretching the subject across more time; in diminution, note values are halved, compressing the subject into less time. These transformations create variety, contrast, and often climactic intensification. A subject in augmentation sounds grand and weighty; the same subject in diminution sounds urgent and nimble.",
+        "explanation": "Augmentation multiplies all note values by a consistent factor, typically two. A quarter note becomes a half note, an eighth note becomes a quarter, and so on. The melodic intervals remain identical - only the rhythm changes. Augmentation is often used in bass voices, where the stretched subject can serve as a harmonic foundation while faster-moving upper voices provide activity.\n\nDiminution divides all note values by a consistent factor, typically two. Half notes become quarters, quarters become eighths. The compressed subject fits into half the time, allowing more entries in the same span. Diminution is often combined with stretto for maximum intensity.\n\nThese transformations have structural implications. Augmentation naturally creates grandeur and weight, making it effective for climactic passages, particularly in the bass. The elongated subject sounds solemn and authoritative. Diminution creates urgency and excitement, often appearing as fugues build toward their conclusions.\n\nAugmentation and diminution can combine with other techniques. A fugue might feature the subject in diminution in stretto against the subject in augmentation, creating a complex texture that demonstrates the subject's versatility. Some fugues systematically explore all rhythmic transformations, moving from normal to diminution to augmentation.\n\nNot all subjects work equally well in augmentation or diminution. Subjects with varied rhythm transform more effectively than those with uniform note values. Bach considers these possibilities when designing subjects.",
+        "guided_example": {
+          "bwv": 853,
+          "type": "fugue",
+          "measures": "38-48",
+          "analysis": "The E-flat major fugue demonstrates augmentation beautifully. In measure 38, after extensive development of the subject in its normal form, the bass voice presents the subject in augmentation - every note value is doubled. Where the original subject fills approximately two measures, the augmented version spans four.\n\nThis augmentation creates a dramatic change in character. The subject that previously flowed in steady motion now moves with deliberate grandeur. Above this slow-moving bass, the upper voices continue with faster material, creating a sense of harmonic depth and stability.\n\nBach places this augmentation strategically near the fugue's conclusion. The weight of the augmented subject signals that we're approaching the end. It also allows for additional subject entries above - while the bass slowly presents the augmented subject, other voices can present the subject in normal or even diminished values.\n\nThis passage demonstrates how augmentation serves both expressive and structural purposes: it transforms the subject's character while marking the fugue's formal trajectory toward its conclusion."
+        },
+        "additional_examples": [
+          {"bwv": 857, "measures": "40-50", "brief": "Subject in diminution creating urgent momentum"},
+          {"bwv": 861, "measures": "42-52", "brief": "Augmented subject in bass supporting faster upper voice activity"},
+          {"bwv": 867, "measures": "44-54", "brief": "Combination of augmentation and diminution in different voices"}
+        ],
+        "summary": "Augmentation and diminution transform the subject's rhythm while preserving its melodic identity. Augmentation doubles note values, creating grandeur and weight; diminution halves them, creating urgency. These transformations typically appear in later sections of fugues, contributing to climactic intensification. Combining augmentation with diminution and stretto creates the most complex textures, demonstrating the subject's full contrapuntal potential."
+      },
+      "exercises": [
+        "Find the augmented subject entry in BWV 853 and verify that all note values are doubled",
+        "Write out what the BWV 846 subject would look like in diminution",
+        "Analyze how Bach combines augmentation with other techniques in BWV 857"
+      ],
+      "related_features": ["augmentation", "diminution", "rhythmic-transformation", "structural-emphasis"],
+      "narration_text": "Augmentation and diminution transform the subject's rhythm while preserving its melodic intervals. In augmentation, note values are doubled, stretching the subject across more time. In diminution, note values are halved, compressing the subject. A subject in augmentation sounds grand and weighty. The same subject in diminution sounds urgent and nimble. The E-flat major fugue demonstrates augmentation beautifully. In measure thirty-eight, the bass voice presents the subject with every note value doubled. Where the original subject fills two measures, the augmented version spans four. This creates dramatic change in character, as the subject moves with deliberate grandeur. Bach places this augmentation near the fugue's conclusion, signaling the approaching end while allowing additional entries above."
+    },
+    {
+      "id": "inversion-and-retrograde",
+      "title": "Inversion and Retrograde",
+      "domain": "fugal-technique",
+      "order": 9,
+      "estimated_minutes": 40,
+      "learning_objectives": [
+        "Identify inverted subjects where intervals are flipped",
+        "Recognize retrograde subjects (played backwards)",
+        "Understand how melodic transformation maintains recognizability",
+        "Analyze fugues that systematically employ inversion"
+      ],
+      "prerequisites": ["augmentation-and-diminution"],
+      "content": {
+        "introduction": "Beyond rhythmic transformation, Bach employs melodic transformation to create variety while maintaining unity. Inversion flips the subject's intervals: where the original ascends, the inversion descends by the same interval. Retrograde presents the subject backwards, starting from its last note and proceeding to its first. These transformations test the subject's identity - can we still recognize it when turned upside down or backwards? Bach's best subjects remain recognizable through all transformations.",
+        "explanation": "Inversion preserves the subject's intervallic content while reversing its direction. An ascending major third becomes a descending major third; a descending step becomes an ascending step. The rhythm typically remains unchanged - only the direction of intervals changes. Strict inversion maintains exact interval sizes; tonal inversion adjusts some intervals to remain within the key.\n\nInversion creates fascinating psychological effects. We recognize the subject - its rhythm, its general shape - yet it sounds fundamentally different. The emotional character often transforms: ascending, optimistic subjects become descending, melancholy versions. This is thematic transformation at its most powerful.\n\nRetrograde presents the subject from end to beginning. This transformation is rarely used because subjects played backwards are difficult to recognize. When retrograde does appear, it's usually combined with other transformations (retrograde-inversion) or used for scholarly/symbolic purposes.\n\nBach sometimes builds entire fugues around inversion, introducing the inverted subject as a formal feature rather than a passing device. In these fugues, the inverted form almost functions as a second subject, creating a quasi-double fugue texture.\n\nCombinations are possible: retrograde-inversion plays the subject backwards and upside down, combining both transformations. Augmented inversion doubles note values while inverting intervals. These combinations multiply the subject's possibilities exponentially.",
+        "guided_example": {
+          "bwv": 849,
+          "type": "fugue",
+          "measures": "24-32",
+          "analysis": "The C-sharp minor fugue makes extensive use of inversion. Beginning around measure 24, we hear the subject inverted - where the original subject descended chromatically (C#-B#-C#-D#-E), the inversion ascends (C#-D-C#-B-A). The rhythm remains identical, but the melodic direction is reversed.\n\nThis inverted form sounds distinctly different from the original. The original subject's descending chromatic line has a sighing, melancholic quality. The inversion, ascending chromatically, sounds more restless and searching. Yet we recognize it as the same theme - the rhythm, the chromatic motion, the general contour are all present.\n\nBach uses the inverted subject in combination with the original, creating passages where both forms appear simultaneously. One voice presents the subject while another presents its inversion - a kind of melodic mirror. This demonstrates the subject's contrapuntal potential while creating textural variety.\n\nThe systematic use of inversion in this fugue goes beyond decoration; it's a structural principle that generates much of the fugue's developmental material."
+        },
+        "additional_examples": [
+          {"bwv": 853, "measures": "26-34", "brief": "Subject inversion in middle voice creating dialogue with original form"},
+          {"bwv": 861, "measures": "28-36", "brief": "Extended passage combining original and inverted subjects"},
+          {"bwv": 867, "measures": "30-38", "brief": "Inversion combined with augmentation for climactic effect"}
+        ],
+        "summary": "Inversion flips the subject's intervals while preserving rhythm, creating a mirror image that remains recognizable yet sounds fresh. Retrograde plays the subject backwards, a rarer transformation due to recognition difficulties. These melodic transformations demonstrate the subject's identity extends beyond specific notes to encompass rhythm, contour, and intervallic relationships. Bach's systematic use of inversion often elevates it to a structural principle rather than a mere ornamental device."
+      },
+      "exercises": [
+        "Identify an inverted subject entry in BWV 849 and verify the interval relationships",
+        "Write out the inversion of BWV 846's subject and compare its character to the original",
+        "Find a passage in BWV 849 where original and inverted subjects appear simultaneously"
+      ],
+      "related_features": ["inversion", "retrograde", "melodic-transformation", "subject-identity"],
+      "narration_text": "Beyond rhythmic transformation, Bach employs melodic transformation to create variety while maintaining unity. Inversion flips the subject's intervals: where the original ascends, the inversion descends by the same interval. Retrograde presents the subject backwards, from its last note to its first. These transformations test the subject's identity. Can we still recognize it when turned upside down or backwards? The C-sharp minor fugue makes extensive use of inversion. Where the original subject descended chromatically, the inversion ascends. The rhythm remains identical, but the melodic direction is reversed. This inverted form sounds distinctly different, yet we recognize it as the same theme. Bach uses the inverted subject in combination with the original, creating passages where both forms appear simultaneously, like a melodic mirror."
+    },
+    {
+      "id": "double-and-triple-fugues",
+      "title": "Double and Triple Fugues",
+      "domain": "fugal-technique",
+      "order": 10,
+      "estimated_minutes": 45,
+      "learning_objectives": [
+        "Distinguish double fugues (two subjects) from single-subject fugues",
+        "Understand the three main types of double fugue structure",
+        "Recognize how multiple subjects combine in counterpoint",
+        "Analyze examples of double and triple fugue from the WTC"
+      ],
+      "prerequisites": ["inversion-and-retrograde"],
+      "content": {
+        "introduction": "While most fugues develop a single subject, double fugues work with two distinct subjects, and triple fugues with three. These multi-subject fugues present unique compositional challenges and opportunities. The subjects must work well independently and in combination; the formal structure must accommodate multiple expositions; the listener must track several thematic strands. Double and triple fugues represent the most ambitious manifestations of fugal technique.",
+        "explanation": "Double fugues employ two distinct subjects and can be organized in three main ways:\n\nType 1: Both subjects are introduced together from the start. The first voice presents Subject 1 while the second presents Subject 2. The entire fugue develops both subjects in combination. This type maintains maximum density throughout.\n\nType 2: Subject 1 receives its own complete exposition, then Subject 2 is introduced with its own exposition. Finally, both subjects combine in a climactic final section. This type provides clear contrast and builds toward combination.\n\nType 3: Subject 2 is introduced as a countersubject to Subject 1, gradually gaining independence. The distinction between double fugue and fugue-with-countersubject becomes a matter of degree in these cases.\n\nThe subjects in a double fugue must be carefully designed to work together. They should contrast in rhythm, contour, and character to maintain independence, yet combine harmoniously in invertible counterpoint. The second subject often has a distinct character from the first - perhaps one is smooth and scalar while the other is angular and leaping.\n\nTriple fugues add a third subject, requiring even more careful planning. The combinations multiply: Subject 1 alone, Subject 2 alone, Subject 3 alone, 1+2, 1+3, 2+3, and finally 1+2+3. Bach's triple fugues typically build toward the magnificent combination of all three subjects near the conclusion.\n\nThese complex structures require clarity of design. Bach ensures each subject is memorable and distinct, that combinations are musically satisfying, and that the overall form is comprehensible despite its complexity.",
+        "guided_example": {
+          "bwv": 848,
+          "type": "fugue",
+          "measures": "1-30",
+          "analysis": "The C-sharp major fugue (BWV 848) provides an example of how Bach integrates multiple thematic elements. While debate exists about whether this is a true double fugue, it illustrates the principles involved.\n\nThe primary subject enters in measure 1 with its characteristic rhythm and contour. As the fugue develops, a secondary thematic element gains prominence - material that began as countersubject-like accompaniment gradually assumes independent status.\n\nBy the fugue's middle section, we hear passages where both thematic elements receive equal weight, presented in various voice combinations. The texture becomes richer as both ideas are developed simultaneously.\n\nThis demonstrates the gradual emergence model of double fugue, where the second subject grows organically from the fugue's texture rather than being announced in a separate exposition. The listener experiences increasing complexity as the relationship between subjects evolves.\n\nCompare this to Bach's Fugue in G minor (BWV 542) for organ, which clearly presents separate expositions for each subject before combining them - a more overtly sectional double fugue structure."
+        },
+        "additional_examples": [
+          {"bwv": 849, "measures": "complete", "brief": "Extended fugue with countersubject that approaches second-subject status"},
+          {"bwv": 867, "measures": "1-48", "brief": "B-flat major fugue with distinctly characterized countersubject material"}
+        ],
+        "summary": "Double and triple fugues expand the fugal concept to multiple subjects, creating opportunities for contrast, development, and climactic combination. The three types of double fugue - simultaneous introduction, successive expositions, and gradual emergence - offer different structural possibilities. The subjects must balance independence with combinability, remaining distinct while forming satisfying counterpoint together. These complex structures represent the apex of fugal ambition."
+      },
+      "exercises": [
+        "Analyze BWV 848 for evidence of double-fugue characteristics",
+        "Compare the countersubject of BWV 846 to the second subject of a true double fugue - what distinguishes them?",
+        "Identify the moment of thematic combination in any double fugue from the WTC"
+      ],
+      "related_features": ["double-fugue", "triple-fugue", "multiple-subjects", "thematic-combination"],
+      "narration_text": "While most fugues develop a single subject, double fugues work with two distinct subjects, and triple fugues with three. Double fugues can be organized in three main ways. Type one introduces both subjects together from the start. Type two gives Subject one its own exposition, then Subject two its own exposition, before combining them. Type three introduces Subject two as a countersubject that gradually gains independence. The subjects must contrast in rhythm, contour, and character to maintain independence, yet combine harmoniously. Triple fugues add a third subject, building toward the magnificent combination of all three near the conclusion. The C-sharp major fugue illustrates how secondary thematic elements can gain prominence, approaching double-fugue status as the relationship between subjects evolves."
+    },
+    {
+      "id": "fugue-analysis-practice",
+      "title": "Fugue Analysis Practice",
+      "domain": "fugal-technique",
+      "order": 11,
+      "estimated_minutes": 50,
+      "learning_objectives": [
+        "Apply all learned techniques to analyze complete fugues",
+        "Create comprehensive formal diagrams showing structure",
+        "Identify tonal plans and modulation schemes",
+        "Synthesize knowledge into coherent analytical narratives"
+      ],
+      "prerequisites": ["double-and-triple-fugues"],
+      "content": {
+        "introduction": "Having studied individual fugal techniques, we now integrate this knowledge through comprehensive analysis. Analyzing a complete fugue requires tracking multiple dimensions simultaneously: subject entries, key areas, episodes, special techniques, and formal sections. This lesson provides a systematic approach to fugue analysis, demonstrating how to construct formal diagrams and analytical narratives that illuminate the fugue's structure and artistry.",
+        "explanation": "Comprehensive fugue analysis proceeds in stages:\n\nStage 1 - Subject Identification: Begin by identifying the subject completely. Note its length, melodic characteristics, rhythmic profile, and whether it begins on tonic or dominant. This initial analysis predicts whether the answer will be real or tonal and suggests what contrapuntal possibilities the fugue might employ.\n\nStage 2 - Exposition Mapping: Trace all subject and answer entries in the exposition. Note the order of voice entries, identify the countersubject(s), and mark the exposition's boundaries. Record whether Bach uses codettas or redundant entries.\n\nStage 3 - Entry Inventory: Map every subject entry throughout the fugue. For each entry, note: measure number, voice, key, form (subject/answer/inversion/augmentation/diminution), and whether it overlaps with other entries (stretto).\n\nStage 4 - Episode Identification: Mark all episodes between subject entries. Note what material they derive from (subject head, tail, countersubject), their harmonic function (modulating or non-modulating), and their sequential patterns.\n\nStage 5 - Tonal Plan: Chart the key areas visited throughout the fugue. Most WTC fugues visit the dominant, relative major/minor, and perhaps subdominant before returning to the tonic. The tonal plan reveals the fugue's large-scale harmonic rhythm.\n\nStage 6 - Special Techniques: Identify uses of stretto, augmentation, diminution, inversion, and pedal point. Note where these appear structurally - typically later in the fugue, building toward climax.\n\nStage 7 - Formal Sections: Divide the fugue into larger formal sections: exposition, development, final section/coda. Some fugues have clear sectional divisions; others flow continuously.\n\nStage 8 - Synthesis: Construct a narrative describing how the fugue works as a whole - how it balances unity and variety, how it builds intensity, how it achieves closure.",
+        "guided_example": {
+          "bwv": 846,
+          "type": "fugue",
+          "measures": "1-27",
+          "analysis": "Let's apply this method to the C major fugue:\n\nSubject (mm. 1-2): Two measures, stepwise with scalic tail, begins on tonic, range of one octave, predicting tonal answer.\n\nExposition (mm. 1-14): Four voices enter alto-soprano-tenor-bass. Answer is tonal (G begins where C was, maintaining tonic-dominant relationship). Countersubject begins in m. 3 with contrasting rhythm. Exposition ends with cadence around m. 14.\n\nEntry Inventory: Subject entries occur at mm. 1 (A, C), 3 (S, G), 7 (T, C), 11 (B, G), 17 (A, A minor), 19 (T, G), 21 (S, C), 24 (B, C with pedal).\n\nEpisodes: First episode mm. 14-17 uses subject tail material in sequence, modulating to A minor. Second episode mm. 20-21 is brief, preparing the return to C major.\n\nTonal Plan: C major (exposition) → A minor (m. 17) → G major (m. 19) → C major (final entries).\n\nSpecial Techniques: Modest stretto in mm. 21-22, tonic pedal point in final measures.\n\nFormal Sections: Exposition (mm. 1-14), Middle Entries (mm. 14-23), Coda (mm. 24-27).\n\nSynthesis: This fugue demonstrates classical economy. The subject's clear design allows straightforward development. Bach visits expected key areas, uses restrained stretto, and concludes with pedal-point affirmation. The fugue's transparency makes it ideal for study while demonstrating all essential fugal principles."
+        },
+        "additional_examples": [
+          {"bwv": 847, "measures": "1-31", "brief": "Apply the analysis method to the contrasting C minor fugue"},
+          {"bwv": 849, "measures": "1-48", "brief": "Analyze the more complex C-sharp minor fugue with its extensive stretto"}
+        ],
+        "summary": "Fugue analysis integrates all techniques into comprehensive understanding. The systematic approach - subject identification, exposition mapping, entry inventory, episode identification, tonal plan, special techniques, formal sections, and synthesis - ensures thorough examination. Creating formal diagrams and analytical narratives illuminates how Bach balances unity and variety, builds intensity, and achieves closure. Practice with multiple fugues develops analytical fluency."
+      },
+      "exercises": [
+        "Complete a full analysis of BWV 847 using the eight-stage method",
+        "Create a formal diagram for BWV 846 showing all entries, episodes, and key areas",
+        "Write a 200-word analytical narrative comparing the structures of BWV 846 and 847"
+      ],
+      "related_features": ["formal-analysis", "entry-inventory", "tonal-plan", "analytical-narrative"],
+      "narration_text": "Having studied individual fugal techniques, we now integrate this knowledge through comprehensive analysis. The systematic approach proceeds in stages. First, identify the subject completely. Second, map the exposition, tracing all entries and identifying the countersubject. Third, create an entry inventory marking every subject appearance throughout the fugue. Fourth, identify episodes between entries. Fifth, chart the tonal plan. Sixth, identify special techniques like stretto and augmentation. Seventh, divide into formal sections. Eighth, synthesize into narrative. Applying this to the C major fugue: the subject spans two measures, begins on tonic. The exposition has four entries, alto soprano tenor bass. Entries continue in A minor and G major before returning to C major. The coda features pedal point. This fugue demonstrates classical economy, transparency making it ideal for study."
+    },
+    {
+      "id": "advanced-fugal-devices",
+      "title": "Advanced Fugal Devices",
+      "domain": "fugal-technique",
+      "order": 12,
+      "estimated_minutes": 45,
+      "learning_objectives": [
+        "Identify pedal points and their structural functions",
+        "Recognize permutation fugue techniques",
+        "Understand the role of the coda in achieving closure",
+        "Synthesize all fugal techniques into mastery of the form"
+      ],
+      "prerequisites": ["fugue-analysis-practice"],
+      "content": {
+        "introduction": "Our study of fugal technique concludes with advanced devices that Bach employs for structural emphasis and climactic effect. Pedal points provide harmonic anchoring at crucial moments; permutation techniques offer systematic exploration of voice combinations; the coda brings thematic and harmonic closure. These devices, combined with the techniques studied in previous lessons, constitute the complete vocabulary of fugal composition. Mastering them prepares you to analyze any fugue Bach created.",
+        "explanation": "Pedal Points: A pedal point is a sustained or repeated note (usually in the bass) that continues while other voices move freely above it. The pedal creates harmonic tension as moving voices create dissonances against the stationary note, resolved when the pedal finally changes. Bach typically uses dominant pedals to build tension before final cadences and tonic pedals to affirm the key at the fugue's conclusion. The pedal's formal function is clear: it signals that the fugue is approaching (dominant pedal) or confirming (tonic pedal) its conclusion.\n\nPermutation Fugue: In a permutation fugue, material rotates systematically through all voices. If the exposition presents Subject in voice 1 and Countersubject in voice 2, the next section might have Countersubject in voice 1 and Subject in voice 2. This systematic rotation ensures equal treatment of voices and demonstrates invertible counterpoint. Bach's permutation fugues explore all possible combinations of subject and countersubject(s).\n\nThe Coda: The coda (Italian for 'tail') is the fugue's concluding section, typically featuring intensification techniques (stretto, augmentation, pedal point) and strong cadential motion to the tonic. The coda often presents a final, often climactic, statement of the subject, frequently in the bass for maximum weight. Codas vary greatly in length - from a few measures to extended peroration.\n\nCombining Devices: Bach often combines advanced devices in the final section. A fugue might present the subject in augmentation in the bass while the upper voices engage in stretto, all over a tonic pedal point. This combination creates maximum density and emphasis at the crucial moment of closure.\n\nBeyond the WTC: While we've focused on keyboard fugues, Bach's fugal technique extends to vocal music (cantata fugues, Mass in B minor), organ works (the great organ fugues), and chamber music (The Musical Offering, The Art of Fugue). The techniques learned here apply universally to Bach's contrapuntal works.",
+        "guided_example": {
+          "bwv": 846,
+          "type": "fugue",
+          "measures": "24-27",
+          "analysis": "The C major fugue's conclusion demonstrates several advanced devices in combination. In measure 24, the bass settles onto a C, initiating a tonic pedal point that continues to the end. Above this stable foundation, the upper voices present final subject references.\n\nThe pedal's effect is striking. Despite complex voice leading above, the sustained C grounds the harmony unambiguously in the tonic. This creates a sense of arrival and finality that couldn't be achieved through moving bass alone.\n\nNotice how the upper voices intensify as the pedal continues. The subject fragment appears in stretto-like compression, building energy even as the bass remains stationary. This combination of static bass and active upper voices creates the fugue's climactic moment.\n\nThe final cadence arrives with the subject's conclusion coinciding with harmonic resolution over the pedal. The long-sustained C finally participates in authentic cadential motion (V-I), releasing accumulated tension. This arrival represents both thematic completion (subject finished) and harmonic resolution (tonic affirmed).\n\nThis compact coda demonstrates Bach's efficiency: pedal point, motivic intensification, and cadential resolution accomplish closure in just four measures."
+        },
+        "additional_examples": [
+          {"bwv": 847, "measures": "26-31", "brief": "Extended dominant pedal building to final resolution in C minor"},
+          {"bwv": 849, "measures": "42-48", "brief": "Climactic coda with multiple subjects in stretto over pedal"},
+          {"bwv": 853, "measures": "44-50", "brief": "Elaborate coda combining augmentation, stretto, and pedal point"}
+        ],
+        "summary": "Advanced fugal devices - pedal points, permutation, and coda techniques - provide the tools for climactic conclusion. Pedal points anchor harmony at crucial structural moments. Permutation ensures systematic exploration of voice combinations. The coda brings thematic and harmonic closure through intensification and resolution. Combined with subject design, answer construction, exposition structure, episode development, stretto, augmentation, diminution, and inversion, these techniques constitute complete mastery of fugal technique. The journey through Bach's WTC fugues reveals not just technical procedures but profound musical intelligence in service of expression."
+      },
+      "exercises": [
+        "Find and analyze pedal points in BWV 846, 847, and 849 - compare their placement and duration",
+        "Identify the coda in any three WTC fugues and list the intensification techniques employed",
+        "Choose one WTC fugue and write a complete analysis applying all techniques from this domain"
+      ],
+      "related_features": ["pedal-point", "permutation", "coda", "climactic-devices", "formal-closure"],
+      "narration_text": "Our study concludes with advanced devices Bach employs for structural emphasis and climactic effect. Pedal points are sustained or repeated notes, usually in the bass, that continue while other voices move freely. Bach typically uses dominant pedals to build tension and tonic pedals to affirm the key at conclusions. In permutation fugues, material rotates systematically through all voices, demonstrating invertible counterpoint. The coda is the concluding section, featuring intensification techniques and cadential motion. The C major fugue's conclusion demonstrates these devices. In measure twenty-four, the bass settles onto C, initiating a tonic pedal. Above this stable foundation, upper voices intensify with subject fragments in compression. The final cadence releases accumulated tension. This compact coda accomplishes closure through pedal point, motivic intensification, and resolution in just four measures."
+    }
+  ]
+}

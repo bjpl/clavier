@@ -1,0 +1,427 @@
+{
+  "category": "harmony",
+  "version": "1.0.0",
+  "last_updated": "2025-12-29",
+  "features": [
+    {
+      "id": "perfect-authentic-cadence",
+      "name": "Perfect Authentic Cadence",
+      "category": "harmony",
+      "definitions": {
+        "brief": "V-I with soprano on tonic; strongest resolution.",
+        "standard": "A harmonic progression from dominant to tonic (V-I) with the melody ending on the tonic pitch. This creates the strongest sense of finality and closure in tonal music.",
+        "detailed": "The Perfect Authentic Cadence (PAC) represents the most conclusive harmonic gesture in Western tonal music. It requires three specific conditions: root position dominant chord (V) moving to root position tonic chord (I), the bass moving by descending fifth or ascending fourth, and the soprano arriving on the tonic pitch (scale degree 1). This cadence type emerged as the definitive closing gesture during the Baroque era and remains the gold standard for musical finality. Bach employs PACs strategically at major structural points, often preparing them with predominant harmonies (ii6, IV, or vi) to maximize their rhetorical impact. The voice leading typically features the leading tone resolving up to tonic and the chordal seventh (if present) resolving down."
+      },
+      "listening_guidance": "Listen for the strong pull from the V chord to I, with the melody landing decisively on the tonic note. The bass typically moves by fifth or fourth. Notice the sense of complete rest and arrival.",
+      "visual_markers": "Look for V-I in the harmony with scale degree 1 in the soprano. Often preceded by pre-dominant harmony (ii, IV, vi). Both chords in root position.",
+      "common_contexts": "Ends of phrases, sections, and complete pieces. Bach uses PACs at major structural points throughout the WTC to articulate form and provide closure.",
+      "difficulty_level": 2,
+      "prerequisites": [],
+      "keywords": ["cadence", "authentic", "V-I", "resolution", "tonic", "dominant", "closure", "finality"],
+      "wtc_examples": [
+        {"bwv": 846, "type": "prelude", "measures": "35", "description": "Final cadence of C major prelude"},
+        {"bwv": 846, "type": "fugue", "measures": "27", "description": "Concluding PAC with soprano on C"},
+        {"bwv": 847, "type": "fugue", "measures": "29", "description": "Final PAC in C minor"}
+      ]
+    },
+    {
+      "id": "imperfect-authentic-cadence",
+      "name": "Imperfect Authentic Cadence",
+      "category": "harmony",
+      "definitions": {
+        "brief": "V-I without soprano on tonic; weaker closure than PAC.",
+        "standard": "An authentic cadence (V-I) where either the soprano does not end on the tonic pitch, or one or both chords appear in inversion. Provides resolution but with less finality than a PAC.",
+        "detailed": "The Imperfect Authentic Cadence (IAC) shares the fundamental V-I harmonic motion of its perfect counterpart but lacks one or more conditions for maximum closure. Three subtypes exist: the root position IAC (both chords in root position but soprano on scale degree 3 or 5), the inverted IAC (one or both chords inverted), and the leading tone IAC (vii6 substituting for V). Bach frequently employs IACs at internal phrase endings where complete closure would be premature, creating forward momentum while still marking structural articulations. The IAC's relative weakness makes it ideal for antecedent phrases in period structures, where the consequent phrase will provide stronger closure with a PAC."
+      },
+      "listening_guidance": "Listen for V-I motion that feels somewhat incomplete or open. The melody may end on scale degree 3 or 5 instead of 1, creating a subtle sense of continuation rather than absolute finality.",
+      "visual_markers": "V-I progression where soprano is on 3 or 5 rather than 1, or where V or I (or both) appear in inversion. Often found mid-phrase.",
+      "common_contexts": "Internal phrase endings, antecedent phrases in periods, moments where continuation is desired. Common in sequences and modulatory passages.",
+      "difficulty_level": 3,
+      "prerequisites": ["perfect-authentic-cadence"],
+      "keywords": ["cadence", "authentic", "imperfect", "V-I", "inversion", "phrase"],
+      "wtc_examples": [
+        {"bwv": 846, "type": "prelude", "measures": "19-20", "description": "IAC with soprano on E"},
+        {"bwv": 848, "type": "fugue", "measures": "14", "description": "Internal IAC marking phrase boundary"},
+        {"bwv": 851, "type": "prelude", "measures": "8", "description": "IAC with inverted tonic"}
+      ]
+    },
+    {
+      "id": "half-cadence",
+      "name": "Half Cadence",
+      "category": "harmony",
+      "definitions": {
+        "brief": "Any cadence ending on V; creates expectation.",
+        "standard": "A cadence that concludes on the dominant chord (V), creating harmonic tension and the expectation of continuation. Functions as a musical comma or question mark.",
+        "detailed": "The Half Cadence (HC) represents harmonic punctuation without resolution, ending on the dominant chord rather than the tonic. This creates a powerful sense of incompleteness and forward momentum, as the dominant's inherent tension demands eventual resolution to tonic. Approach chords vary widely: I-V, ii-V, IV-V, and vi-V are all common. The Phrygian half cadence (iv6-V in minor) deserves special mention for its distinctive bass motion by half step. Bach exploits half cadences masterfully to maintain tension across phrase boundaries, often using them at the midpoint of binary forms or to set up dramatic returns of thematic material. The HC's open quality makes it essential for creating musical questions that subsequent phrases must answer."
+      },
+      "listening_guidance": "Listen for a phrase that ends on tension rather than resolution. The final chord should feel unstable, pointing forward to something yet to come. Notice how the music seems to pause mid-thought.",
+      "visual_markers": "Any chord progression ending on V. Often preceded by predominant harmony. Look for the dominant chord at phrase endings, frequently with a fermata.",
+      "common_contexts": "Midpoints of phrases and periods, antecedent phrases, moments of dramatic pause. Essential in binary and sonata forms for creating tonal tension.",
+      "difficulty_level": 2,
+      "prerequisites": [],
+      "keywords": ["cadence", "half", "dominant", "tension", "incomplete", "Phrygian"],
+      "wtc_examples": [
+        {"bwv": 847, "type": "prelude", "measures": "13", "description": "Half cadence on G major"},
+        {"bwv": 849, "type": "fugue", "measures": "22", "description": "Dramatic HC before episode"},
+        {"bwv": 853, "type": "prelude", "measures": "16", "description": "Phrygian half cadence in E-flat minor"}
+      ]
+    },
+    {
+      "id": "deceptive-cadence",
+      "name": "Deceptive Cadence",
+      "category": "harmony",
+      "definitions": {
+        "brief": "V resolves to vi instead of I; thwarted expectation.",
+        "standard": "A cadence where the dominant chord (V) resolves unexpectedly to the submediant (vi) instead of the expected tonic. Creates surprise while maintaining harmonic logic.",
+        "detailed": "The Deceptive Cadence (DC) exploits listener expectations by substituting vi for the anticipated tonic resolution. This works because vi shares two common tones with I (scale degrees 1 and 3), providing enough harmonic continuity to avoid complete disorientation while still delivering rhetorical surprise. In minor keys, the deceptive resolution typically goes to VI (the relative major). Bach employs deceptive cadences for text painting in vocal works and for extending musical phrases in instrumental compositions. The DC often leads to a subsequent authentic cadence, as the thwarted resolution creates even stronger expectation for eventual tonic arrival. This cadence type demonstrates how tonal music manipulates syntax for expressive purposes."
+      },
+      "listening_guidance": "Listen for the moment when you expect resolution but don't quite get it. The V chord leads somewhere unexpected but not wrong. Notice how the phrase continues rather than concluding.",
+      "visual_markers": "V-vi (or V-VI in minor) at a point where V-I would be expected. The vi chord typically continues to a cadential extension ending with a true authentic cadence.",
+      "common_contexts": "Phrase extensions, moments of text painting (disappointment, surprise), avoiding premature closure. Often followed by IV-V-I to complete the resolution.",
+      "difficulty_level": 3,
+      "prerequisites": ["perfect-authentic-cadence"],
+      "keywords": ["cadence", "deceptive", "V-vi", "surprise", "submediant", "extension"],
+      "wtc_examples": [
+        {"bwv": 846, "type": "prelude", "measures": "24", "description": "Deceptive motion extending phrase"},
+        {"bwv": 850, "type": "fugue", "measures": "45", "description": "V-vi avoiding early closure"},
+        {"bwv": 861, "type": "prelude", "measures": "18", "description": "Deceptive cadence in G major"}
+      ]
+    },
+    {
+      "id": "plagal-cadence",
+      "name": "Plagal Cadence",
+      "category": "harmony",
+      "definitions": {
+        "brief": "IV-I motion; the 'Amen' cadence.",
+        "standard": "A cadence featuring motion from the subdominant (IV) to tonic (I). Often used as a supplement to an authentic cadence, providing a sense of peaceful resolution.",
+        "detailed": "The Plagal Cadence (PC), often called the 'Amen cadence' due to its ubiquitous use in hymn conclusions, features IV-I motion without the leading tone tension of authentic cadences. This creates a distinctly different quality of resolution: serene and affirming rather than tension-releasing. Historically, the plagal cadence gained prominence in sacred music, where its gentle character suited devotional texts. In tonal practice, it rarely functions as a primary structural cadence but rather extends or softens authentic cadences. Bach occasionally employs plagal motion for specific expressive effects, though authentic cadences dominate his structural articulations. The plagal cadence's characteristic sound comes from the subdominant's scale degree 4 moving down to scale degree 3 in the tonic chord."
+      },
+      "listening_guidance": "Listen for a gentle, settling quality without the tension-release of authentic cadences. Often follows an authentic cadence as an 'amen' extension. Notice the lack of leading tone activity.",
+      "visual_markers": "IV-I motion, often following a PAC. May appear as iv-i in minor. Look for scale degree 4 in an upper voice resolving down to 3.",
+      "common_contexts": "Hymn endings, post-cadential extensions, moments requiring gentle affirmation. Less common as a structural cadence in Bach's instrumental works.",
+      "difficulty_level": 2,
+      "prerequisites": [],
+      "keywords": ["cadence", "plagal", "IV-I", "amen", "subdominant", "gentle"],
+      "wtc_examples": [
+        {"bwv": 846, "type": "prelude", "measures": "35", "description": "Plagal extension after final PAC"},
+        {"bwv": 866, "type": "prelude", "measures": "41", "description": "IV-I motion at phrase end"},
+        {"bwv": 871, "type": "fugue", "measures": "87", "description": "Plagal coloring in final measures"}
+      ]
+    },
+    {
+      "id": "major-triad",
+      "name": "Major Triad",
+      "category": "harmony",
+      "definitions": {
+        "brief": "Root, major third, perfect fifth; stable and bright.",
+        "standard": "A three-note chord consisting of a root, major third (4 semitones), and perfect fifth (7 semitones). The fundamental consonant sonority of major-key tonal music.",
+        "detailed": "The Major Triad forms the consonant foundation of major-key tonality, built from a root with major third (4 semitones) and perfect fifth (7 semitones) above. Its intervallic structure (M3 + m3) creates a bright, stable quality that has dominated Western music since the Renaissance. In tonal harmony, major triads naturally occur on scale degrees 1, 4, and 5 in major keys, and on scale degrees 3, 6, and 7 in minor keys. Bach's treatment of major triads reflects Baroque performance practice, often with doublings that favor the root and fifth. The major triad's acoustic properties, closely approximating the lower partials of the harmonic series, contribute to its perceived stability and consonance."
+      },
+      "listening_guidance": "Listen for the bright, stable, 'happy' quality. Compare with minor triads to hear the distinctive major third. Notice how major triads on I, IV, and V anchor tonal progressions.",
+      "visual_markers": "Three-note stack with major third on bottom and minor third on top. Root position shows the characteristic M3 + m3 structure. Roman numerals: I, IV, V in major.",
+      "common_contexts": "Tonic, subdominant, and dominant functions in major keys. Cadential goals, structural pillars, and points of stability throughout Bach's works.",
+      "difficulty_level": 1,
+      "prerequisites": [],
+      "keywords": ["triad", "major", "consonance", "chord", "root", "third", "fifth"],
+      "wtc_examples": [
+        {"bwv": 846, "type": "prelude", "measures": "1", "description": "Opening C major triad arpeggiated"},
+        {"bwv": 846, "type": "fugue", "measures": "1", "description": "Subject outlines C major triad"},
+        {"bwv": 848, "type": "prelude", "measures": "1", "description": "C-sharp major triad established"}
+      ]
+    },
+    {
+      "id": "minor-triad",
+      "name": "Minor Triad",
+      "category": "harmony",
+      "definitions": {
+        "brief": "Root, minor third, perfect fifth; stable but darker.",
+        "standard": "A three-note chord consisting of a root, minor third (3 semitones), and perfect fifth (7 semitones). The fundamental consonant sonority of minor-key tonal music.",
+        "detailed": "The Minor Triad provides the consonant foundation for minor-key tonality, built from a root with minor third (3 semitones) and perfect fifth (7 semitones) above. Its intervallic structure (m3 + M3) creates a darker, more somber quality compared to major triads. In tonal harmony, minor triads naturally occur on scale degrees 1, 4, and 5 in minor keys (though v is often raised to V), and on scale degrees 2, 3, and 6 in major keys. Bach exploits the expressive potential of minor triads extensively, particularly in his minor-key preludes and fugues where the tonic minor triad establishes the work's affective character. The minor triad's distinct color arises from its lower third, which lies further from the harmonic series norm."
+      },
+      "listening_guidance": "Listen for the darker, more introspective quality compared to major. The lower third creates a distinctive color. Notice how minor triads shape the emotional landscape of minor-key works.",
+      "visual_markers": "Three-note stack with minor third on bottom and major third on top. Root position shows m3 + M3 structure. Roman numerals: i, iv, v in minor; ii, iii, vi in major.",
+      "common_contexts": "Tonic function in minor keys, supertonic and mediant in major keys. Essential for the contrasting color palette in Bach's major-key works.",
+      "difficulty_level": 1,
+      "prerequisites": [],
+      "keywords": ["triad", "minor", "consonance", "chord", "root", "third", "fifth", "dark"],
+      "wtc_examples": [
+        {"bwv": 847, "type": "prelude", "measures": "1", "description": "C minor triad in opening gesture"},
+        {"bwv": 847, "type": "fugue", "measures": "1", "description": "Subject in C minor"},
+        {"bwv": 849, "type": "fugue", "measures": "1", "description": "C-sharp minor triad outlined"}
+      ]
+    },
+    {
+      "id": "diminished-triad",
+      "name": "Diminished Triad",
+      "category": "harmony",
+      "definitions": {
+        "brief": "Root, minor third, diminished fifth; tense and unstable.",
+        "standard": "A three-note chord consisting of a root, minor third (3 semitones), and diminished fifth (6 semitones). An inherently unstable sonority requiring resolution.",
+        "detailed": "The Diminished Triad contains two minor thirds stacked (m3 + m3), creating an intervallic structure with an inherent tritone between root and fifth. This dissonance makes the chord inherently unstable, demanding resolution. In tonal music, diminished triads occur naturally on scale degree 7 in major (vii°) and scale degrees 2 and 7 in minor (ii° and vii°). Bach most frequently uses the diminished triad in first inversion (vii°6) as a dominant substitute, where it efficiently leads to tonic with strong voice-leading tendencies. The tritone within the chord provides the essential tension that drives harmonic motion, with both notes typically resolving by step in contrary motion."
+      },
+      "listening_guidance": "Listen for the tense, unstable quality created by the tritone. Notice how the chord seems to demand resolution. Compare with major and minor triads to hear the distinctive dissonance.",
+      "visual_markers": "Two stacked minor thirds creating a diminished fifth between outer voices. Symbol: ° (e.g., vii°). Most common in first inversion (vii°6).",
+      "common_contexts": "Leading tone chords (vii°6), diminished supertonic in minor (ii°6). Functions as dominant substitute with efficient voice leading to tonic.",
+      "difficulty_level": 2,
+      "prerequisites": ["major-triad", "minor-triad"],
+      "keywords": ["triad", "diminished", "dissonance", "tritone", "unstable", "leading tone"],
+      "wtc_examples": [
+        {"bwv": 847, "type": "prelude", "measures": "5", "description": "vii°6 leading to tonic"},
+        {"bwv": 849, "type": "fugue", "measures": "15", "description": "Diminished triad in sequence"},
+        {"bwv": 853, "type": "prelude", "measures": "7", "description": "ii° in E-flat minor context"}
+      ]
+    },
+    {
+      "id": "augmented-triad",
+      "name": "Augmented Triad",
+      "category": "harmony",
+      "definitions": {
+        "brief": "Root, major third, augmented fifth; ambiguous and chromatic.",
+        "standard": "A three-note chord consisting of a root, major third (4 semitones), and augmented fifth (8 semitones). A symmetrical, tonally ambiguous sonority often used for chromatic color.",
+        "detailed": "The Augmented Triad stacks two major thirds (M3 + M3), creating a symmetrical structure that divides the octave into three equal parts. This symmetry makes the chord tonally ambiguous, as any of its three notes could theoretically function as the root. Unlike diminished triads, augmented triads occur rarely in diatonic contexts, appearing naturally only on scale degree 3 in harmonic minor (III+). Bach typically employs augmented triads as chromatic passing chords or as alterations of dominant harmony (V+ resolving to I with the raised fifth moving up to the third of tonic). The augmented triad's whole-tone character gives it a distinctive, ethereal quality that contrasts sharply with diatonic harmonies."
+      },
+      "listening_guidance": "Listen for the stretched, ambiguous quality created by the augmented fifth. The symmetrical structure makes it hard to identify a clear root. Notice how it typically resolves the augmented fifth upward by half step.",
+      "visual_markers": "Two stacked major thirds creating an augmented fifth. Symbol: + (e.g., V+). Often appears as chromatic alteration of V with raised fifth.",
+      "common_contexts": "Chromatic passing chords, altered dominants (V+), dramatic harmonic color. Relatively rare in Bach compared to later Romantic usage.",
+      "difficulty_level": 4,
+      "prerequisites": ["major-triad", "minor-triad"],
+      "keywords": ["triad", "augmented", "chromatic", "symmetrical", "ambiguous", "whole-tone"],
+      "wtc_examples": [
+        {"bwv": 853, "type": "prelude", "measures": "21", "description": "Augmented chord as chromatic passing"},
+        {"bwv": 867, "type": "fugue", "measures": "33", "description": "V+ resolving to i"},
+        {"bwv": 871, "type": "prelude", "measures": "15", "description": "Augmented triad for color"}
+      ]
+    },
+    {
+      "id": "dominant-seventh-chord",
+      "name": "Dominant Seventh Chord",
+      "category": "harmony",
+      "definitions": {
+        "brief": "V7: major triad plus minor seventh; strongest pull to tonic.",
+        "standard": "A four-note chord built on the dominant scale degree, consisting of a major triad with an added minor seventh. Contains a tritone that creates powerful resolution tendency toward tonic.",
+        "detailed": "The Dominant Seventh Chord (V7) represents the most important dissonant sonority in tonal harmony. Built on scale degree 5, it combines a major triad with a minor seventh above the root, creating two crucial dissonances: the tritone between scale degrees 7 and 4, and the seventh itself requiring downward resolution. These dissonances create an almost gravitational pull toward tonic. Bach's treatment of V7 follows strict voice-leading conventions: the leading tone (third of V7) resolves up to tonic, while the seventh resolves down by step. The resulting tonic chord is typically incomplete (missing the fifth) when all voices resolve correctly. Dominant seventh chords can appear in all inversions, each with characteristic bass motion."
+      },
+      "listening_guidance": "Listen for the complex tension created by the tritone and seventh. Notice the strong pull toward resolution to tonic. The chord feels incomplete until it resolves. Compare root position with inversions.",
+      "visual_markers": "Major triad plus minor seventh (M3 + m3 + m3). Symbol: V7. Inversions: V6/5, V4/3, V4/2. Contains tritone between 3rd and 7th of chord.",
+      "common_contexts": "Dominant function with maximum tension. Cadential preparation, tonicization of secondary keys. Ubiquitous in Bach's harmonic vocabulary.",
+      "difficulty_level": 2,
+      "prerequisites": ["major-triad", "perfect-authentic-cadence"],
+      "keywords": ["seventh chord", "dominant", "V7", "tritone", "resolution", "dissonance", "leading tone"],
+      "wtc_examples": [
+        {"bwv": 846, "type": "prelude", "measures": "34", "description": "V7 to I at final cadence"},
+        {"bwv": 847, "type": "fugue", "measures": "28", "description": "V7 preparation for final cadence"},
+        {"bwv": 850, "type": "prelude", "measures": "23", "description": "V7 in D major context"}
+      ]
+    },
+    {
+      "id": "diminished-seventh-chord",
+      "name": "Diminished Seventh Chord",
+      "category": "harmony",
+      "definitions": {
+        "brief": "Four stacked minor thirds; maximally tense and symmetrical.",
+        "standard": "A four-note chord consisting of a diminished triad with an added diminished seventh. Its symmetrical structure (four minor thirds) makes it tonally ambiguous and highly expressive.",
+        "detailed": "The Diminished Seventh Chord stacks four minor thirds, dividing the octave into four equal parts and creating maximal dissonance with multiple tritones. This symmetrical structure means only three unique diminished seventh chords exist (the others are enharmonic respellings). In tonal practice, diminished sevenths typically function as vii°7, resolving to tonic, or as secondary leading-tone chords (vii°7/V, etc.). Bach exploits the chord's ambiguity for dramatic effect and efficient modulation, as a single diminished seventh can resolve to four different keys depending on enharmonic spelling. The chord's intensity makes it invaluable for text painting and moments of heightened expression in Bach's vocal and instrumental works alike."
+      },
+      "listening_guidance": "Listen for the intense, unstable quality with maximum tension. The symmetrical structure creates tonal ambiguity. Notice how the chord can resolve in multiple directions depending on context.",
+      "visual_markers": "Four stacked minor thirds (m3 + m3 + m3). Symbol: °7 (e.g., vii°7). Contains two tritones. Only three unique pitch collections exist.",
+      "common_contexts": "Leading-tone function (vii°7), secondary leading-tone chords, dramatic moments, modulatory pivots. Extremely common in Bach's minor-key works.",
+      "difficulty_level": 3,
+      "prerequisites": ["diminished-triad", "dominant-seventh-chord"],
+      "keywords": ["seventh chord", "diminished", "symmetrical", "tritone", "ambiguous", "leading tone", "modulation"],
+      "wtc_examples": [
+        {"bwv": 847, "type": "prelude", "measures": "10", "description": "vii°7 resolving to tonic"},
+        {"bwv": 849, "type": "fugue", "measures": "35", "description": "Diminished seventh as pivot"},
+        {"bwv": 853, "type": "prelude", "measures": "12", "description": "Dramatic vii°7 in E-flat minor"}
+      ]
+    },
+    {
+      "id": "half-diminished-seventh-chord",
+      "name": "Half-Diminished Seventh Chord",
+      "category": "harmony",
+      "definitions": {
+        "brief": "Diminished triad plus minor seventh; less tense than fully diminished.",
+        "standard": "A four-note chord consisting of a diminished triad with an added minor seventh (rather than diminished seventh). Retains instability while being less symmetrical and intense.",
+        "detailed": "The Half-Diminished Seventh Chord combines a diminished triad (m3 + m3) with a minor seventh above the root, creating an asymmetrical structure distinct from the fully diminished seventh. It contains one tritone (between root and fifth) rather than two. This chord occurs naturally as ii-7 in minor keys and vii-7 in major keys. Bach employs half-diminished sevenths particularly in the ii-7-V7-i progression in minor, where they provide strong predominant function with characteristic voice leading. The chord's less intense dissonance compared to fully diminished sevenths gives it a more plaintive, yearning quality. In modern theory, it's sometimes called the 'Tristan chord' due to its prominence in Wagner, though it appears throughout the common-practice period."
+      },
+      "listening_guidance": "Listen for a quality between the fully diminished seventh and the dominant seventh. Less tense and symmetrical than full diminished, but still unstable. Notice its distinctive color in minor-key progressions.",
+      "visual_markers": "Diminished triad plus minor seventh (m3 + m3 + M3). Symbol: ø7 or -7b5 (e.g., iiø7). Contains one tritone. Asymmetrical structure.",
+      "common_contexts": "Supertonic in minor (iiø7), leading tone in major (viiø7). Common in ii-V-i progressions. Provides predominant function in minor keys.",
+      "difficulty_level": 3,
+      "prerequisites": ["diminished-triad", "dominant-seventh-chord"],
+      "keywords": ["seventh chord", "half-diminished", "supertonic", "tritone", "minor key", "predominant"],
+      "wtc_examples": [
+        {"bwv": 847, "type": "prelude", "measures": "25", "description": "iiø7 in C minor"},
+        {"bwv": 849, "type": "fugue", "measures": "42", "description": "Half-diminished in ii-V-i"},
+        {"bwv": 867, "type": "prelude", "measures": "8", "description": "iiø7 preparation for cadence"}
+      ]
+    },
+    {
+      "id": "circle-of-fifths-progression",
+      "name": "Circle of Fifths Progression",
+      "category": "harmony",
+      "definitions": {
+        "brief": "Root motion by descending fifths; strongest harmonic sequence.",
+        "standard": "A chord progression where roots move by descending fifths (or ascending fourths), following the circle of fifths. Creates powerful harmonic momentum through consistent intervallic motion.",
+        "detailed": "The Circle of Fifths Progression represents the most common and powerful sequential harmonic pattern in tonal music. Root motion by descending fifth (I-IV-vii°-iii-vi-ii-V-I) creates a sense of inevitability as each chord seems to generate the next. This progression exploits the acoustic relationship between pitches a fifth apart and mirrors the structure of tonal harmony itself. Bach employs circle-of-fifths motion constantly, both in full sequences and partial progressions (vi-ii-V-I is a circle segment). The pattern appears in all manner of textures, from explicit bass lines to hidden motivic connections. Understanding circle progressions unlocks a fundamental organizing principle of Baroque harmony and reveals the logic underlying Bach's seemingly complex surfaces."
+      },
+      "listening_guidance": "Listen for the regular, predictable pattern of root motion. Each chord leads naturally to the next. Notice how the bass often moves down by fifth or up by fourth. The progression creates strong forward momentum.",
+      "visual_markers": "Root motion descending by fifth: iii-vi-ii-V-I or longer chains. Bass line shows consistent intervallic pattern. Each chord appears to prepare the next.",
+      "common_contexts": "Harmonic sequences, transitional passages, approaches to cadences. The partial progression ii-V-I is ubiquitous. Full circles often in developmental passages.",
+      "difficulty_level": 3,
+      "prerequisites": ["major-triad", "minor-triad", "dominant-seventh-chord"],
+      "keywords": ["sequence", "circle of fifths", "root motion", "progression", "descending fifth", "harmonic motion"],
+      "wtc_examples": [
+        {"bwv": 846, "type": "prelude", "measures": "5-11", "description": "Extended circle progression"},
+        {"bwv": 848, "type": "fugue", "measures": "12-18", "description": "Circle sequence in episode"},
+        {"bwv": 851, "type": "prelude", "measures": "7-14", "description": "Circle of fifths through multiple keys"}
+      ]
+    },
+    {
+      "id": "secondary-dominant",
+      "name": "Secondary Dominant",
+      "category": "harmony",
+      "definitions": {
+        "brief": "V/x: dominant of a chord other than tonic; creates local tonicization.",
+        "standard": "A dominant chord that temporarily tonicizes a scale degree other than the tonic. Notated as V/x (e.g., V/V means dominant of the dominant). Adds chromatic color without true modulation.",
+        "detailed": "Secondary Dominants are dominant-function chords applied to scale degrees other than tonic, creating momentary tonicizations within a key. The most common is V/V (dominant of the dominant), but any diatonic chord except vii° can be tonicized. Secondary dominants introduce chromaticism by raising the pitch a half step below the temporary tonic (creating a temporary leading tone). Bach employs secondary dominants extensively to add harmonic color, intensify motion toward structural goals, and create linear chromaticism. The concept extends to secondary leading-tone chords (vii°/x) and secondary dominant sevenths (V7/x). Understanding secondary dominants reveals how tonal music creates hierarchies of harmonic tension."
+      },
+      "listening_guidance": "Listen for unexpected sharps or raised pitches that create temporary leading tones. The secondary dominant creates a brief sense of a new key before returning to the main tonality. Notice the intensified motion toward the target chord.",
+      "visual_markers": "V/x or V7/x notation (e.g., V/V, V7/ii). Accidentals creating temporary leading tones. Often a major chord where minor would be diatonic, or added seventh.",
+      "common_contexts": "Intensifying motion to dominant (V/V), tonicizing relative major or minor, adding chromatic color. Essential in Bach's enriched harmonic language.",
+      "difficulty_level": 4,
+      "prerequisites": ["dominant-seventh-chord", "circle-of-fifths-progression"],
+      "keywords": ["secondary dominant", "tonicization", "V/V", "applied chord", "chromatic", "leading tone"],
+      "wtc_examples": [
+        {"bwv": 846, "type": "prelude", "measures": "21", "description": "V7/V leading to V"},
+        {"bwv": 848, "type": "prelude", "measures": "15", "description": "Secondary dominant chain"},
+        {"bwv": 850, "type": "fugue", "measures": "28", "description": "V/vi tonicizing relative minor"}
+      ]
+    },
+    {
+      "id": "tonicization",
+      "name": "Tonicization",
+      "category": "harmony",
+      "definitions": {
+        "brief": "Brief treatment of non-tonic chord as temporary tonic.",
+        "standard": "The process of making a scale degree other than tonic sound temporarily like a tonal center, typically through secondary dominants. Shorter and less structural than true modulation.",
+        "detailed": "Tonicization creates a fleeting sense of a new key without abandoning the original tonic. It differs from modulation in duration and structural weight: tonicizations typically last one to four chords and don't establish the new key as a structural tonal center. The process involves applying dominant function (V, V7, or vii°) to the target chord, creating a temporary leading tone that intensifies motion toward the tonicized pitch. Bach's WTC displays constant tonicization, particularly of V and iii/III in major, and of III, iv, and v in minor. Recognizing tonicization reveals harmonic hierarchy: some keys are merely touched upon while others serve as structural pillars. The line between extended tonicization and brief modulation can be subjective."
+      },
+      "listening_guidance": "Listen for moments when a new tonic seems to emerge briefly before the original key reasserts itself. Notice accidentals that create temporary leading tones. The effect should be coloring, not structural reorientation.",
+      "visual_markers": "Secondary dominants resolving to their targets. Brief presence of accidentals from the temporary key. Quick return to original tonic harmony.",
+      "common_contexts": "Harmonic enrichment throughout phrases, intensification of motion to structural chords, chromatic color without losing tonal bearings.",
+      "difficulty_level": 4,
+      "prerequisites": ["secondary-dominant", "perfect-authentic-cadence"],
+      "keywords": ["tonicization", "temporary tonic", "secondary dominant", "chromatic", "harmonic color", "key area"],
+      "wtc_examples": [
+        {"bwv": 846, "type": "prelude", "measures": "13-15", "description": "Brief tonicization of G major"},
+        {"bwv": 850, "type": "prelude", "measures": "17-19", "description": "Tonicization of vi (B minor)"},
+        {"bwv": 862, "type": "fugue", "measures": "22-24", "description": "Sequential tonicizations"}
+      ]
+    },
+    {
+      "id": "modulation-common-chord",
+      "name": "Modulation (Common Chord)",
+      "category": "harmony",
+      "definitions": {
+        "brief": "Key change using a chord belonging to both keys.",
+        "standard": "A modulation technique where transition between keys occurs through a pivot chord that functions diatonically in both the old and new keys. The smoothest and most common modulation type.",
+        "detailed": "Common Chord Modulation (also called pivot chord modulation) achieves key change through a chord that exists diatonically in both the departing and arriving keys. This chord serves as a pivot, reinterpreted mid-progression from its function in the old key to its function in the new key. For example, in C major modulating to G major, the chord on A (vi in C, ii in G) can pivot between keys. Bach employs common chord modulation extensively in the WTC, often to closely related keys (dominant, relative major/minor, subdominant). The smoothness of this technique comes from the absence of chromatic alteration at the moment of pivot. Analysis typically shows the pivot chord with dual roman numeral labeling."
+      },
+      "listening_guidance": "Listen for the moment when a chord suddenly seems to belong to a new key. The transition should feel smooth, without jarring chromaticism. Notice how the key confirmation often comes through a cadence in the new key.",
+      "visual_markers": "Pivot chord with dual analysis (e.g., vi = ii). New key confirmed by authentic cadence. No chromatic alterations at the pivot point itself.",
+      "common_contexts": "Modulation to closely related keys (dominant, relative major/minor, subdominant). Most common modulation type in Baroque music. Structural articulation in binary forms.",
+      "difficulty_level": 5,
+      "prerequisites": ["tonicization", "circle-of-fifths-progression"],
+      "keywords": ["modulation", "pivot chord", "common chord", "key change", "closely related keys", "dual function"],
+      "wtc_examples": [
+        {"bwv": 846, "type": "fugue", "measures": "7-10", "description": "Modulation to G major via pivot"},
+        {"bwv": 847, "type": "fugue", "measures": "9-12", "description": "Common chord to relative major"},
+        {"bwv": 848, "type": "fugue", "measures": "20-23", "description": "Pivot chord modulation to dominant"}
+      ]
+    },
+    {
+      "id": "chromatic-modulation",
+      "name": "Chromatic Modulation",
+      "category": "harmony",
+      "definitions": {
+        "brief": "Key change through chromatic alteration of common tones.",
+        "standard": "A modulation technique where a note from the old key is chromatically altered to become a functional pitch in the new key, often a leading tone. Creates a more dramatic effect than common chord modulation.",
+        "detailed": "Chromatic Modulation achieves key change through the chromatic alteration of one or more pitches, transforming a diatonic element of the old key into a functional element of the new key. Unlike common chord modulation, the pivot point involves explicit chromatic motion, creating a more noticeable and dramatic transition. Common techniques include raising a pitch to create a leading tone in the new key or lowering a pitch to create scale degree 4 of the new key. Bach uses chromatic modulation for transitions to more distant keys where common chord pivots are unavailable, and for expressive effect when a smooth transition would be less appropriate. The technique requires careful voice leading to maintain musical logic through the chromatic moment."
+      },
+      "listening_guidance": "Listen for the chromatic inflection that signals the key change. Unlike smooth common chord pivots, chromatic modulation often features an audible 'color change' at the transitional moment. Notice how the altered note usually has clear directional tendency.",
+      "visual_markers": "Chromatic alteration (sharp or flat) at the moment of modulation. The altered pitch typically becomes a leading tone or other tendency tone in the new key. More distant key relationships than common chord modulation.",
+      "common_contexts": "Modulation to distantly related keys, dramatic moments, when common chord pivots aren't available. Creates stronger sense of harmonic journey.",
+      "difficulty_level": 5,
+      "prerequisites": ["modulation-common-chord", "secondary-dominant"],
+      "keywords": ["modulation", "chromatic", "key change", "alteration", "leading tone", "distant keys"],
+      "wtc_examples": [
+        {"bwv": 849, "type": "fugue", "measures": "55-58", "description": "Chromatic modulation to distant key"},
+        {"bwv": 853, "type": "prelude", "measures": "30-33", "description": "Chromatic shift to remote area"},
+        {"bwv": 867, "type": "fugue", "measures": "48-51", "description": "Dramatic chromatic modulation"}
+      ]
+    },
+    {
+      "id": "enharmonic-modulation",
+      "name": "Enharmonic Modulation",
+      "category": "harmony",
+      "definitions": {
+        "brief": "Key change via enharmonic reinterpretation of a chord.",
+        "standard": "A modulation technique exploiting the enharmonic equivalence of pitches (e.g., G# = Ab) to reinterpret a chord's function and facilitate motion to distant keys. Most common with diminished seventh chords.",
+        "detailed": "Enharmonic Modulation exploits the equal-tempered tuning system's enharmonic equivalences to reinterpret chord function and access distant keys efficiently. The diminished seventh chord is ideal for this technique because its symmetrical structure (four minor thirds) means each of its four notes can function as a leading tone, potentially resolving to four different keys. For example, the diminished seventh chord G#-B-D-F can resolve to A minor (G# as leading tone), C major/minor (B respelled as Cb, leading to C), Eb major/minor (D as leading tone), or F# major/minor (F respelled as E#). Bach employs enharmonic modulation sparingly but effectively for sudden tonal shifts. The German augmented sixth chord also permits enharmonic reinterpretation as a dominant seventh."
+      },
+      "listening_guidance": "Listen for a sudden, surprising key change that seems to come 'out of nowhere.' The pivot chord (often diminished seventh) doesn't change pitch but suddenly belongs to an unexpected key. The effect can be disorienting in a thrilling way.",
+      "visual_markers": "Respelling of pitches at the modulation point (e.g., G# becoming Ab). Diminished seventh chords reinterpreted with different root. Sudden arrival in distant key.",
+      "common_contexts": "Modulation to remote keys, dramatic surprises, efficient traversal of large tonal distances. More common in later Baroque and Classical periods.",
+      "difficulty_level": 6,
+      "prerequisites": ["diminished-seventh-chord", "chromatic-modulation"],
+      "keywords": ["modulation", "enharmonic", "respelling", "diminished seventh", "remote keys", "equal temperament"],
+      "wtc_examples": [
+        {"bwv": 853, "type": "fugue", "measures": "68-72", "description": "Enharmonic reinterpretation of diminished seventh"},
+        {"bwv": 867, "type": "fugue", "measures": "62-66", "description": "Enharmonic pivot to remote key"},
+        {"bwv": 871, "type": "fugue", "measures": "45-48", "description": "Diminished seventh enharmonic modulation"}
+      ]
+    },
+    {
+      "id": "harmonic-sequence",
+      "name": "Sequence (Harmonic)",
+      "category": "harmony",
+      "definitions": {
+        "brief": "Pattern of chords repeated at different pitch levels.",
+        "standard": "A musical pattern involving a harmonic progression that is repeated at successive pitch levels, creating systematic motion through tonal space. Essential for development and transition.",
+        "detailed": "Harmonic Sequences repeat a chord pattern at different pitch levels, creating organized motion through tonal space. Diatonic sequences maintain scale degrees and quality changes (e.g., major becomes minor as the pattern moves), while chromatic sequences preserve exact intervallic relationships. Common types include descending fifths (circle of fifths), descending thirds, and ascending seconds. Bach employs sequences extensively in episodes of fugues, developmental passages, and transitions. Sequences serve multiple functions: they create momentum, provide structural continuity, traverse tonal distance efficiently, and allow motivic elaboration. Understanding sequences reveals how Bach organizes extended passages and maintains coherence during complex harmonic journeys. The sequence is arguably the primary engine of Baroque musical rhetoric."
+      },
+      "listening_guidance": "Listen for the repetition of a harmonic pattern at different pitch levels. The same 'shape' should be audible moving up or down through the scale. Notice how sequences create momentum and predictability.",
+      "visual_markers": "Repeated harmonic pattern at transposed levels. Roman numeral analysis shows parallel structure. Often involves predictable bass patterns (e.g., descending by step or third).",
+      "common_contexts": "Fugue episodes, transitions between themes, developmental passages, approaches to cadences. Fundamental organizational technique in Baroque music.",
+      "difficulty_level": 4,
+      "prerequisites": ["circle-of-fifths-progression", "tonicization"],
+      "keywords": ["sequence", "pattern", "transposition", "episode", "development", "harmonic motion"],
+      "wtc_examples": [
+        {"bwv": 846, "type": "fugue", "measures": "14-17", "description": "Descending sequence in episode"},
+        {"bwv": 847, "type": "fugue", "measures": "17-21", "description": "Sequential episode"},
+        {"bwv": 848, "type": "prelude", "measures": "25-33", "description": "Extended harmonic sequence"}
+      ]
+    },
+    {
+      "id": "pedal-point",
+      "name": "Pedal Point",
+      "category": "harmony",
+      "definitions": {
+        "brief": "Sustained bass note while harmony changes above.",
+        "standard": "A compositional device where a single pitch (usually in the bass) is sustained while harmonies change above it, creating tension between the static bass and mobile upper voices.",
+        "detailed": "Pedal Point (or organ point) sustains a single pitch, typically in the bass, while upper voices move through changing harmonies that may or may not be consonant with the sustained note. Tonic and dominant pedals are most common, with dominant pedals building tension before final cadences and tonic pedals creating stability at beginnings and endings. Bach's organ background makes pedal points particularly prominent in his keyboard works, where he creates dramatic effects by stacking dissonant harmonies over immobile bass notes. The technique creates a unique form of tension: harmonic motion continues above while the bass refuses to participate. When the sustained note finally moves (typically at a cadence), the release of accumulated tension can be powerful."
+      },
+      "listening_guidance": "Listen for a bass note that refuses to change while everything above it keeps moving. Notice the tension created when upper harmonies clash with the sustained pitch, and the release when the pedal finally resolves.",
+      "visual_markers": "Repeated or sustained single pitch in bass (sometimes tied, sometimes rearticulated). Roman numeral analysis shows harmonies that conflict with the pedal. Common on scale degrees 1 and 5.",
+      "common_contexts": "Approach to final cadences (dominant pedal), openings and closings (tonic pedal), passages of heightened tension. Particularly common in Bach's fugue endings.",
+      "difficulty_level": 3,
+      "prerequisites": ["dominant-seventh-chord", "perfect-authentic-cadence"],
+      "keywords": ["pedal point", "organ point", "sustained bass", "tonic pedal", "dominant pedal", "tension"],
+      "wtc_examples": [
+        {"bwv": 846, "type": "fugue", "measures": "24-27", "description": "Dominant pedal before final cadence"},
+        {"bwv": 847, "type": "fugue", "measures": "26-29", "description": "Extended dominant pedal"},
+        {"bwv": 848, "type": "fugue", "measures": "35-39", "description": "Tonic pedal establishing closure"}
+      ]
+    }
+  ]
+}

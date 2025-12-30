@@ -1,0 +1,462 @@
+{
+  "category": "form",
+  "description": "Musical form and structural features - organizational principles governing the large-scale architecture of compositions",
+  "features": [
+    {
+      "id": "binary-form",
+      "name": "Binary Form",
+      "category": "form",
+      "definitions": {
+        "brief": "Two-part form (A-B), common in Baroque dances.",
+        "standard": "A musical structure divided into two main sections (A and B), each typically repeated. The first section often modulates to a related key (usually the dominant or relative major), while the second section returns to the tonic. Common in Baroque dance movements and many keyboard works.",
+        "detailed": "Binary form represents one of the fundamental organizing principles in Baroque music, dividing a composition into two complementary halves. Simple binary form presents two distinct sections without significant thematic return, while rounded binary form brings back opening material in the second half after developmental passages. The first section typically establishes the tonic before modulating to a contrasting key area, creating harmonic tension that the second section resolves by returning home. This structure provided the foundation for later sonata form development. Bach often expanded binary principles, blurring boundaries through continuous motivic development while maintaining the essential two-part harmonic journey."
+      },
+      "listening_guidance": "Listen for two distinct sections, often marked by repeats. The first half typically ends in a new key (dominant or relative major); the second half returns to the tonic. In rounded binary, listen for the return of opening material partway through section B.",
+      "visual_markers": "Look for double bar lines with repeat signs dividing the piece in two. The first section often ends with a cadence in V (major keys) or relative major (minor keys). Score annotations may indicate 'Fine' or 'Da Capo' in related forms.",
+      "common_contexts": "Many WTC preludes use binary or expanded binary principles. Ubiquitous in all Baroque dance forms (allemande, courante, sarabande, gigue). Foundational structure for suite movements.",
+      "difficulty_level": 2,
+      "prerequisites": ["phrase", "cadence"],
+      "keywords": ["form", "binary", "two-part", "structure", "sections", "repeats", "dance"],
+      "wtc_examples": [
+        {
+          "bwv": 846,
+          "type": "prelude",
+          "measures": "1-35",
+          "description": "Expanded binary with continuous arpeggiated figuration"
+        },
+        {
+          "bwv": 854,
+          "type": "prelude",
+          "measures": "1-42",
+          "description": "Clear binary structure with modulation to dominant"
+        },
+        {
+          "bwv": 856,
+          "type": "prelude",
+          "measures": "1-24",
+          "description": "Compact binary form in F major"
+        }
+      ]
+    },
+    {
+      "id": "ternary-form",
+      "name": "Ternary Form",
+      "category": "form",
+      "definitions": {
+        "brief": "Three-part form (A-B-A), featuring return of opening material.",
+        "standard": "A musical structure in three sections where the first and third sections are similar or identical (A-B-A). The middle section provides contrast through different key, texture, or thematic material. The return of A creates satisfying closure and formal balance.",
+        "detailed": "Ternary form embodies the principle of departure and return that underlies much Western music. The opening section establishes thematic and tonal identity; the contrasting middle section creates tension through new material, different keys, or altered texture; the return resolves this tension by restoring the opening. Unlike rounded binary, true ternary form presents the B section as a genuinely independent entity rather than a developmental passage. The da capo aria exemplifies vocal ternary form, while instrumental examples range from simple song forms to elaborate structures. Bach's use of ternary principles often involves sophisticated recomposition rather than literal repetition, maintaining interest through varied returns."
+      },
+      "listening_guidance": "Identify three distinct sections: opening material, contrasting middle, and return. The B section should feel like a genuine departure—new themes, different key, changed texture. Listen for how Bach varies the return: exact repetition, ornamented version, or recomposed material.",
+      "visual_markers": "Look for clear sectional divisions, often with double bars. Da Capo indications signal ternary structure. The middle section typically shows different key signature or contrasting notation density. Some scores mark sections with letters or rehearsal marks.",
+      "common_contexts": "Da capo arias in cantatas and oratorios. Some preludes exhibit ternary organization. Minuet and Trio combinations create compound ternary. Less common in fugues, which follow their own formal logic.",
+      "difficulty_level": 2,
+      "prerequisites": ["binary-form", "phrase"],
+      "keywords": ["form", "ternary", "three-part", "ABA", "da capo", "return"],
+      "wtc_examples": [
+        {
+          "bwv": 855,
+          "type": "prelude",
+          "measures": "1-41",
+          "description": "Ternary elements with contrasting middle section"
+        },
+        {
+          "bwv": 875,
+          "type": "prelude",
+          "measures": "1-44",
+          "description": "Clear A-B-A structure with thematic return"
+        }
+      ]
+    },
+    {
+      "id": "through-composed",
+      "name": "Through-Composed",
+      "category": "form",
+      "definitions": {
+        "brief": "Continuous form without repeated sections; new music throughout.",
+        "standard": "A formal design where music continuously evolves without returning to previous sections or repeating large structural units. Each passage presents new or developed material, creating a sense of ongoing narrative rather than architectural symmetry. Common in pieces responding to texts or following dramatic trajectories.",
+        "detailed": "Through-composed form (German: durchkomponiert) represents the antithesis of repetition-based structures, privileging continuous development over sectional return. This approach suits text-driven music where different stanzas require different settings, or instrumental works emphasizing improvisatory freedom. Bach's through-composed preludes often simulate spontaneous invention while maintaining rigorous motivic consistency—the illusion of freedom within a disciplined framework. The challenge lies in creating coherence without repetition: Bach achieves this through persistent figuration patterns, sequential development, and directed harmonic motion. Through-composed doesn't mean formless; rather, form emerges from process rather than pattern."
+      },
+      "listening_guidance": "Notice how music continually moves forward without sectional returns. Track the underlying continuity: consistent figuration, sequential patterns, or harmonic direction provides unity. Appreciate the improvisatory quality while recognizing the underlying logic. Each moment should feel both new and connected to what preceded.",
+      "visual_markers": "Absence of repeat signs and da capo markings. Continuous notation without clear sectional breaks. Often features persistent figuration patterns that provide visual consistency. Page turns don't align with structural articulations as they might in sectional forms.",
+      "common_contexts": "Many WTC preludes adopt through-composed designs, especially the improvisatory types. Common in toccatas and fantasias. Vocal works setting prose or strophic texts with varying content. Recitatives are inherently through-composed.",
+      "difficulty_level": 3,
+      "prerequisites": ["binary-form", "phrase"],
+      "keywords": ["form", "through-composed", "continuous", "developmental", "non-repetitive"],
+      "wtc_examples": [
+        {
+          "bwv": 846,
+          "type": "prelude",
+          "measures": "1-35",
+          "description": "Continuous arpeggiation without sectional returns"
+        },
+        {
+          "bwv": 847,
+          "type": "prelude",
+          "measures": "1-34",
+          "description": "Through-composed toccata-style prelude"
+        },
+        {
+          "bwv": 853,
+          "type": "prelude",
+          "measures": "1-39",
+          "description": "Expressive through-composed lament"
+        }
+      ]
+    },
+    {
+      "id": "ritornello",
+      "name": "Ritornello",
+      "category": "form",
+      "definitions": {
+        "brief": "Recurring theme alternating with contrasting episodes.",
+        "standard": "A structural principle where a main theme (ritornello) returns periodically in different keys, alternating with contrasting episodes. The ritornello typically appears complete in the tonic at beginning and end, with partial or transposed statements between. Fundamental to Baroque concerto form.",
+        "detailed": "Ritornello form emerged from Baroque opera and concerto practice, where a recurring orchestral theme frames solo episodes. The complete ritornello establishes tonic identity; subsequent returns may be abbreviated, transposed, or fragmented, appearing in related keys to articulate the harmonic journey. Episodes provide contrast through different material, textures, or virtuosic display. Bach adapted ritornello principles to keyboard music, creating imaginary dialogues between 'tutti' ritornellos and 'solo' episodes. The form balances predictability (the ritornello returns) with variety (where, how much, in what key). This interplay of unity and diversity made ritornello form supremely flexible for extended movements."
+      },
+      "listening_guidance": "Identify the main ritornello theme at the opening—this is your anchor. Track its returns: Is it complete or partial? In what key? Notice how episodes contrast: different figuration, developmental passages, or new melodic ideas. The final ritornello return in the tonic provides closure.",
+      "visual_markers": "Look for recurring thematic material, often clearly differentiated from episodic passages through texture or figuration. Episodes may show increased virtuosic activity or developmental sequences. Complete ritornellos often appear at structural pillars (tonic, dominant, relative major/minor).",
+      "common_contexts": "Several WTC fugues employ ritornello-like procedures. Concerto movements, especially Vivaldi-influenced works. Many cantata choruses and arias. Organ works often adapt ritornello principles to varied registrations.",
+      "difficulty_level": 4,
+      "prerequisites": ["binary-form", "sequence-melodic", "motive"],
+      "keywords": ["form", "ritornello", "recurring", "episodes", "concerto", "tutti", "solo"],
+      "wtc_examples": [
+        {
+          "bwv": 848,
+          "type": "fugue",
+          "measures": "1-87",
+          "description": "Ritornello-influenced fugue with recurring subject groups"
+        },
+        {
+          "bwv": 870,
+          "type": "prelude",
+          "measures": "1-54",
+          "description": "Concerto-style ritornello structure"
+        },
+        {
+          "bwv": 884,
+          "type": "prelude",
+          "measures": "1-35",
+          "description": "Ritornello principles in keyboard texture"
+        }
+      ]
+    },
+    {
+      "id": "phrase",
+      "name": "Phrase",
+      "category": "form",
+      "definitions": {
+        "brief": "A musical unit expressing a complete thought, like a sentence.",
+        "standard": "A coherent musical unit that forms a complete thought, typically ending with a cadence. Phrases serve as the basic building blocks of musical form, combining into larger structures. Standard phrase lengths are 4 or 8 measures, though Baroque music frequently features irregular or extended phrases.",
+        "detailed": "The phrase represents music's fundamental unit of meaning, analogous to a sentence in language. A well-formed phrase creates a sense of journey and arrival: it begins with a clear gesture, develops through its middle, and concludes with cadential closure. Phrases combine into periods, sections, and movements. Baroque phrases often resist Classical regularity, featuring extensions, elisions, and overlaps that create continuous flow. Bach's phrases frequently interlock, with one ending as another begins, generating the 'perpetual motion' characteristic of his style. Understanding phrase structure is essential for musical interpretation—phrases demand shaping, direction, and appropriate breath."
+      },
+      "listening_guidance": "Feel for musical 'breathing points'—places where the music arrives and could briefly rest. Cadences typically mark phrase endings. Notice phrase lengths: are they regular (4+4 measures) or irregular? Listen for phrase overlaps where one ending serves as another's beginning. Track how phrases combine into larger units.",
+      "visual_markers": "Look for cadential patterns (melodic and harmonic arrival points). Slur markings often indicate phrase boundaries. Rests or longer note values may signal phrase endings. Watch for sequences that extend or develop phrase material.",
+      "common_contexts": "Universal in all WTC movements. Understanding phrase structure essential for interpreting any Bach work. Phrases combine into periods, sections, and complete movements.",
+      "difficulty_level": 1,
+      "prerequisites": [],
+      "keywords": ["form", "phrase", "structure", "cadence", "breathing", "musical sentence"],
+      "wtc_examples": [
+        {
+          "bwv": 846,
+          "type": "prelude",
+          "measures": "1-4",
+          "description": "Opening phrase establishing tonic through arpeggiation"
+        },
+        {
+          "bwv": 850,
+          "type": "fugue",
+          "measures": "1-7",
+          "description": "Subject as complete phrase with clear cadence"
+        },
+        {
+          "bwv": 862,
+          "type": "prelude",
+          "measures": "1-8",
+          "description": "Regular 8-measure phrase structure"
+        }
+      ]
+    },
+    {
+      "id": "period",
+      "name": "Period",
+      "category": "form",
+      "definitions": {
+        "brief": "Two phrases forming a question-answer pair (antecedent-consequent).",
+        "standard": "A musical structure consisting of two phrases: an antecedent (question) ending with an incomplete cadence, and a consequent (answer) ending with a complete cadence. This pairing creates a satisfying sense of proposition and resolution, forming larger structural units.",
+        "detailed": "The period structure embodies music's capacity for dialogue and resolution. The antecedent phrase poses a musical 'question' by ending on an incomplete cadence (typically a half cadence or imperfect authentic cadence), creating expectation. The consequent phrase 'answers' by beginning similarly but concluding with a perfect authentic cadence, providing closure. This question-answer relationship appears throughout Western music, from folk songs to symphonies. While more associated with Classical phrase structure, periods appear in Baroque music, particularly in more lyrical or dance-derived passages. Bach often disguises or elaborates period structures through continuous figuration, but the underlying antecedent-consequent logic remains audible."
+      },
+      "listening_guidance": "Listen for two phrases that belong together: the first creates expectation (ends 'open'), the second provides resolution (ends 'closed'). Often the phrases begin similarly but end differently. The consequent's stronger cadence creates the sense of completion that the antecedent lacks.",
+      "visual_markers": "Two phrase-length units with parallel openings but different endings. The first phrase typically ends on V or an imperfect cadence; the second ends on I with a perfect authentic cadence. Look for melodic parallelism between phrase beginnings.",
+      "common_contexts": "More evident in dance movements and lyrical passages than in fugues. Some WTC preludes exhibit clear period structures. Common in chorales and aria melodies that Bach used as cantus firmi.",
+      "difficulty_level": 2,
+      "prerequisites": ["phrase", "cadence"],
+      "keywords": ["form", "period", "antecedent", "consequent", "question", "answer"],
+      "wtc_examples": [
+        {
+          "bwv": 856,
+          "type": "prelude",
+          "measures": "1-8",
+          "description": "Clear antecedent-consequent period structure"
+        },
+        {
+          "bwv": 862,
+          "type": "prelude",
+          "measures": "1-16",
+          "description": "Double period with parallel phrase construction"
+        },
+        {
+          "bwv": 883,
+          "type": "prelude",
+          "measures": "1-12",
+          "description": "Period structure in trio texture"
+        }
+      ]
+    },
+    {
+      "id": "sentence-structure",
+      "name": "Sentence Structure",
+      "category": "form",
+      "definitions": {
+        "brief": "Phrase structure: presentation (statement + repetition), continuation, cadence.",
+        "standard": "A phrase organization pattern featuring a presentation phase (basic idea stated then repeated, often with variation), followed by continuation (fragmentation and development), concluding with a cadence. This creates a sense of statement, intensification, and resolution within a single phrase.",
+        "detailed": "The sentence structure (German: Satz) represents one of music's fundamental phrase archetypes. Its three functions—presentation, continuation, cadence—mirror rhetorical patterns of statement, development, and conclusion. The presentation typically occupies half the sentence, stating a basic idea twice (exactly or varied). The continuation compresses and fragments this material, increasing harmonic rhythm and melodic activity, building toward the cadential goal. This structure generates internal momentum: statement creates familiarity, fragmentation creates urgency, cadence provides release. While theorized primarily for Classical music, sentence-like structures permeate Baroque practice, particularly in sequential passages that fragment motives before cadential arrival."
+      },
+      "listening_guidance": "Identify the opening idea and its immediate repetition (presentation). Notice how the music then intensifies: faster harmonic rhythm, fragmented motives, increased activity (continuation). Feel the goal-directed motion toward the final cadence. The sentence should feel like a complete thought with beginning, middle, and end.",
+      "visual_markers": "Opening material repeated (exactly or varied) in first half. Second half shows fragmentation: shorter note values, sequences, increased harmonic density. Final measures show cadential patterns. Often 8 measures total: 2+2+4 or similar proportions.",
+      "common_contexts": "Found in both preludes and fugue episodes. Sentence structure underlies many sequential passages. Subject entries sometimes follow sentence logic. Common in dance movements and aria melodies.",
+      "difficulty_level": 3,
+      "prerequisites": ["phrase", "motive", "sequence-melodic"],
+      "keywords": ["form", "sentence", "presentation", "continuation", "fragmentation", "cadence"],
+      "wtc_examples": [
+        {
+          "bwv": 847,
+          "type": "prelude",
+          "measures": "1-8",
+          "description": "Sentence structure with presentation and continuation"
+        },
+        {
+          "bwv": 858,
+          "type": "fugue",
+          "measures": "24-32",
+          "description": "Episode built on sentence principles"
+        },
+        {
+          "bwv": 866,
+          "type": "prelude",
+          "measures": "1-12",
+          "description": "Clear sentence structure in toccata figuration"
+        }
+      ]
+    },
+    {
+      "id": "codetta",
+      "name": "Codetta",
+      "category": "form",
+      "definitions": {
+        "brief": "Brief closing passage within a section or between entries.",
+        "standard": "A short concluding passage that provides closure within a larger section, often appearing between fugue subject entries or at the end of exposition sections. Codettas extend cadential areas and smooth transitions, typically using material derived from the subject or countersubject.",
+        "detailed": "The codetta serves essential structural functions despite its modest dimensions. In fugues, codettas connect subject entries, filling temporal gaps where voices must wait before the next entry. These passages may be as brief as a single beat or extend for several measures, using free counterpoint, sequential development, or cadential figuration. Codettas create breathing room in dense textures and clarify structural articulations. Bach's codettas often develop motivic fragments from the subject, maintaining thematic unity while providing variety. Distinguishing codettas from episodes requires attention to scale and function: codettas are briefer and serve primarily transitional purposes, while episodes develop material more extensively."
+      },
+      "listening_guidance": "Listen for brief connecting passages between subject entries—moments where the texture might thin slightly or the harmony moves toward a cadence. Codettas provide 'breathing room' in the fugal texture. Notice how they often derive from subject material, maintaining continuity while marking transitions.",
+      "visual_markers": "Short passages between subject entries, often with reduced voices or simpler textures. Cadential patterns or sequential figures are common. Codettas typically lack full subject statements in any voice. May show temporary reduction to two or three voices.",
+      "common_contexts": "Common in all WTC fugues. Appear between exposition entries and throughout fugal development. May mark sectional boundaries in binary and ternary forms. Brief codettas often conclude dance movements.",
+      "difficulty_level": 2,
+      "prerequisites": ["phrase", "cadence"],
+      "keywords": ["form", "codetta", "transition", "closing", "fugue", "connecting"],
+      "wtc_examples": [
+        {
+          "bwv": 846,
+          "type": "fugue",
+          "measures": "7-8",
+          "description": "Brief codetta between exposition entries"
+        },
+        {
+          "bwv": 847,
+          "type": "fugue",
+          "measures": "14-15",
+          "description": "Codetta smoothing transition between entry groups"
+        },
+        {
+          "bwv": 851,
+          "type": "fugue",
+          "measures": "21-23",
+          "description": "Extended codetta with sequential development"
+        }
+      ]
+    },
+    {
+      "id": "coda",
+      "name": "Coda",
+      "category": "form",
+      "definitions": {
+        "brief": "Concluding section added after the main form is complete.",
+        "standard": "A closing section that follows the completion of a movement's main formal structure, providing additional emphasis on the tonic and a sense of definitive conclusion. Codas may introduce new material or develop existing themes, extending beyond the structural requirements of the form.",
+        "detailed": "The coda (Italian: 'tail') extends a composition beyond its formal completion, providing conclusive weight that a simple final cadence might lack. Baroque codas vary from brief tonic prolongations to substantial sections introducing new developmental ideas. Bach's codas often feature pedal points—sustained bass notes (typically tonic or dominant) over which upper voices continue moving—creating climactic accumulation before final resolution. In fugues, codas may feature stretto entries, rhythmic augmentation, or added voices, intensifying the texture at the moment of conclusion. The coda transforms mere ending into triumphant arrival, satisfying listeners' need for emphatic closure."
+      },
+      "listening_guidance": "Identify where the main form logically concludes, then notice what additional material follows. Codas often feature pedal points—sustained bass notes creating tension before final release. Listen for intensification: added voices, stretto, rhythmic activity. The coda should feel like a celebration of arrival rather than mere conclusion.",
+      "visual_markers": "Material appearing after the main form's logical completion. Pedal points (sustained bass notes with 'ped.' indications or held note values). Possibly a tempo change or fermata before the coda. May show increased density or voices. Sometimes marked 'Coda' in the score.",
+      "common_contexts": "Common in WTC fugues, providing climactic conclusions. Many preludes feature brief codas reinforcing the tonic. Extended codas appear in larger Bach works (organ fugues, concerto movements). Some movements omit codas, ending simply after final thematic statement.",
+      "difficulty_level": 2,
+      "prerequisites": ["phrase", "cadence"],
+      "keywords": ["form", "coda", "conclusion", "ending", "pedal point", "closure"],
+      "wtc_examples": [
+        {
+          "bwv": 846,
+          "type": "fugue",
+          "measures": "24-27",
+          "description": "Coda with tonic pedal point and stretto"
+        },
+        {
+          "bwv": 849,
+          "type": "fugue",
+          "measures": "83-87",
+          "description": "Extended coda adding climactic weight"
+        },
+        {
+          "bwv": 853,
+          "type": "prelude",
+          "measures": "36-39",
+          "description": "Expressive coda with sustained harmonies"
+        }
+      ]
+    },
+    {
+      "id": "motive",
+      "name": "Motive",
+      "category": "form",
+      "definitions": {
+        "brief": "The smallest recognizable musical idea; building block of themes.",
+        "standard": "A brief, distinctive musical figure that serves as a building block for larger structures. Motives are recognized by their characteristic rhythm, contour, or intervals, and they provide material for development throughout a composition. A motive can be as short as two notes.",
+        "detailed": "The motive represents music's atomic unit of meaning—the smallest element that carries recognizable identity. What makes a motive memorable might be its rhythm (the 'short-short-short-long' of Beethoven's Fifth), its contour (rising vs. falling), its intervals (distinctive leaps or steps), or some combination. Bach's contrapuntal mastery rests on motivic economy: generating entire movements from tiny musical cells through repetition, transposition, inversion, fragmentation, and combination. Identifying core motives unlocks a composition's structural logic, revealing how surface variety emerges from underlying unity. The relationship between motive and subject parallels that between word and sentence—motives combine to form themes, which in turn generate complete musical thoughts."
+      },
+      "listening_guidance": "Identify the distinctive gesture that makes a theme recognizable—often just 3-5 notes. Track this motive through the piece: where does it appear? How is it transformed? Listen for motives in inversion (upside down), augmentation (stretched), diminution (compressed), or fragmentation (partial statements). The motive is your thread through Bach's complex textures.",
+      "visual_markers": "Look for recurring short patterns—similar note groups appearing in different voices, keys, or registers. Bracket or circle repeated figures in your score. Motives often correspond to beat groups or single-beat units. Subject heads typically contain the primary motive.",
+      "common_contexts": "Fundamental to all WTC movements. Fugue subjects are built from motives. Preludes develop motivic cells through figuration. Sequences extend motives through transposition. Understanding motivic content essential for analysis and performance.",
+      "difficulty_level": 1,
+      "prerequisites": [],
+      "keywords": ["form", "motive", "theme", "cell", "figure", "building block"],
+      "wtc_examples": [
+        {
+          "bwv": 847,
+          "type": "fugue",
+          "measures": "1-2",
+          "description": "Subject built from ascending scale motive and mordent figure"
+        },
+        {
+          "bwv": 848,
+          "type": "prelude",
+          "measures": "1-2",
+          "description": "Scalar motive generating entire prelude texture"
+        },
+        {
+          "bwv": 859,
+          "type": "fugue",
+          "measures": "1-3",
+          "description": "Rhythmic motive (dotted figure) providing subject identity"
+        }
+      ]
+    },
+    {
+      "id": "sequence-melodic",
+      "name": "Sequence (Melodic)",
+      "category": "form",
+      "definitions": {
+        "brief": "A pattern repeated at different pitch levels, creating momentum.",
+        "standard": "The immediate repetition of a melodic pattern at different pitch levels, typically ascending or descending by step or third. Sequences generate momentum and connect key areas, serving as primary developmental tools in Baroque music. They may be real (exact transposition) or tonal (adjusted to fit the key).",
+        "detailed": "The sequence ranks among Baroque music's most characteristic developmental techniques, capable of extending ideas indefinitely while maintaining interest through systematic transposition. Melodic sequences move a figure through successive pitch levels, typically descending by step or circle of fifths. Real sequences preserve exact intervals, potentially introducing accidentals; tonal sequences adjust intervals to remain diatonic. Sequences create irresistible forward momentum—once the pattern establishes, listeners anticipate its continuation. Bach employs sequences extensively in episodes, transitions, and development sections, often combining sequential melody with sequential harmony (falling fifths, ascending steps). The technique's danger lies in mechanical predictability; Bach's sequences succeed through subtle variation and timely departure."
+      },
+      "listening_guidance": "Identify a short melodic pattern, then listen for its repetition at different pitch levels. Sequences typically move by step or third, usually descending. Notice the momentum created by predictable pattern repetition. Listen for when Bach breaks the sequence—this moment often signals structural arrival.",
+      "visual_markers": "Look for repeated melodic shapes at successive pitch levels, forming visual staircases on the page. Sequences create parallel diagonal lines through the texture. May be accompanied by sequential bass lines (descending fifths are common). Each sequence iteration typically occupies the same rhythmic space.",
+      "common_contexts": "Essential in all WTC movements. Primary material for fugue episodes. Sequences connect key areas in modulatory passages. Common in concerto-style preludes. Understanding sequences reveals Bach's developmental logic.",
+      "difficulty_level": 2,
+      "prerequisites": ["motive"],
+      "keywords": ["form", "sequence", "repetition", "transposition", "pattern", "developmental"],
+      "wtc_examples": [
+        {
+          "bwv": 847,
+          "type": "fugue",
+          "measures": "15-19",
+          "description": "Descending sequence in episode, building momentum"
+        },
+        {
+          "bwv": 848,
+          "type": "prelude",
+          "measures": "7-14",
+          "description": "Extended ascending sequence through multiple keys"
+        },
+        {
+          "bwv": 869,
+          "type": "fugue",
+          "measures": "42-50",
+          "description": "Sequences generating developmental tension"
+        }
+      ]
+    },
+    {
+      "id": "fortspinnung",
+      "name": "Fortspinnung",
+      "category": "form",
+      "definitions": {
+        "brief": "Continuous 'spinning out' of material through developmental extension.",
+        "standard": "A compositional technique characteristic of Baroque music where initial material is continuously developed and extended through sequence, fragmentation, and transformation. Rather than presenting contrasting themes, Fortspinnung 'spins out' a single idea, creating seamless, ongoing musical discourse.",
+        "detailed": "Fortspinnung (German: 'spinning forth') describes the Baroque aesthetic of continuous development that distinguishes it from Classical theme-and-contrast structures. A composition employing Fortspinnung presents an initial idea, then extends it through relentless development: sequences transpose the material, fragmentation isolates components, diminution increases activity, combination layers fragments contrapuntally. The result is music that perpetually renews itself while maintaining organic connection to its source. This technique embodies Baroque rhetoric—the art of elaboration and amplification. Bach's fugue episodes epitomize Fortspinnung, spinning subject fragments into extended passages that seem to generate themselves inevitably. Understanding Fortspinnung reveals why Baroque movements often feel like unified streams rather than sectional structures."
+      },
+      "listening_guidance": "Notice how Bach extends ideas through continuous development rather than presenting contrasting themes. Track a single motive as it undergoes transformation: transposition, fragmentation, inversion, combination. Feel the 'perpetual motion' quality—music that seems to spin inevitably forward from its opening gesture.",
+      "visual_markers": "Long passages without repeat signs or clear sectional breaks. Continuous sixteenth notes or similar figuration. Sequential patterns extending over multiple systems. Motivic fragments appearing throughout the texture. Smooth transitions without sudden textural changes.",
+      "common_contexts": "Defines the aesthetic of many WTC preludes and fugue episodes. Core technique in toccatas and fantasias. Characteristic of Baroque concerto ritornellos. Understanding Fortspinnung essential for grasping Baroque formal logic.",
+      "difficulty_level": 4,
+      "prerequisites": ["motive", "sequence-melodic", "sentence-structure"],
+      "keywords": ["form", "fortspinnung", "spinning", "continuous", "development", "Baroque"],
+      "wtc_examples": [
+        {
+          "bwv": 846,
+          "type": "prelude",
+          "measures": "1-35",
+          "description": "Entire prelude as Fortspinnung of arpeggiated figure"
+        },
+        {
+          "bwv": 847,
+          "type": "prelude",
+          "measures": "1-34",
+          "description": "Toccata-style continuous spinning out"
+        },
+        {
+          "bwv": 851,
+          "type": "fugue",
+          "measures": "15-25",
+          "description": "Episode demonstrating classic Fortspinnung technique"
+        }
+      ]
+    },
+    {
+      "id": "barform",
+      "name": "Barform",
+      "category": "form",
+      "definitions": {
+        "brief": "AAB structure: two Stollen plus contrasting Abgesang.",
+        "standard": "A medieval German song form consisting of two identical sections (Stollen) followed by a contrasting section (Abgesang). The structure AAB—two statements plus departure—became foundational for Lutheran chorales and influenced much Baroque composition, including Bach's chorale harmonizations.",
+        "detailed": "Barform represents one of Western music's most venerable structures, originating with medieval Minnesinger and adopted by Renaissance Meistersinger. The form comprises two Stollen (stanzas) with identical music, followed by an Abgesang (aftersong) with contrasting material. This AAB structure proved ideally suited to Lutheran chorales: the repeated Stollen establish congregational familiarity; the Abgesang provides developmental interest. Bach inherited this tradition, harmonizing hundreds of chorales that retain Barform proportions. The influence extends beyond chorales: many Baroque themes exhibit AAB proportions, and the larger pattern of statement-restatement-departure underlies diverse formal schemes. Recognizing Barform connections reveals Bach's deep roots in German musical tradition."
+      },
+      "listening_guidance": "Listen for two similar sections (A-A) followed by a contrasting section (B). In chorales, the first two phrases typically share music while the third phrase introduces new material. The Abgesang often provides cadential weight, being longer or more elaborate than individual Stollen. The form creates satisfaction through familiarity followed by departure.",
+      "visual_markers": "Notation showing two identical or nearly identical sections followed by contrasting material. In chorale scores, similar opening phrases with different third phrase. Repeat signs may indicate Stollen repetition. The Abgesang often shows different rhythmic or melodic character.",
+      "common_contexts": "Foundational structure for Lutheran chorales. Many chorale-based movements in cantatas and organ works. Some fugue subjects exhibit AAB proportions. Understanding Barform essential for Bach's sacred music context.",
+      "difficulty_level": 3,
+      "prerequisites": ["phrase", "period"],
+      "keywords": ["form", "barform", "AAB", "stollen", "abgesang", "chorale", "German"],
+      "wtc_examples": [
+        {
+          "bwv": 851,
+          "type": "prelude",
+          "measures": "1-12",
+          "description": "Theme showing Barform-influenced proportions"
+        },
+        {
+          "bwv": 891,
+          "type": "fugue",
+          "measures": "1-6",
+          "description": "Subject with AAB phrase structure"
+        }
+      ]
+    }
+  ]
+}

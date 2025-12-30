@@ -1,0 +1,36 @@
+import { PrismaClient } from '@prisma/client';
+import { seedPieces } from './seeds/pieces';
+import { seedFeatures } from './seeds/features';
+import { seedCurriculum } from './seeds/curriculum';
+
+const prisma = new PrismaClient();
+
+async function main() {
+  console.log('🌱 Starting database seeding...\n');
+
+  try {
+    // Seed in dependency order
+    await seedFeatures(prisma);
+    console.log('');
+
+    await seedPieces(prisma);
+    console.log('');
+
+    await seedCurriculum(prisma);
+    console.log('');
+
+    console.log('✅ Database seeding completed successfully!');
+  } catch (error) {
+    console.error('❌ Error during seeding:', error);
+    throw error;
+  }
+}
+
+main()
+  .catch((e) => {
+    console.error(e);
+    process.exit(1);
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
+  });

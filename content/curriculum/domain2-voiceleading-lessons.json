@@ -1,0 +1,445 @@
+{
+  "domain": {
+    "id": "voice-leading",
+    "name": "Voice Leading",
+    "description": "The art of combining independent melodic lines, from two-voice counterpoint through four-voice textures and advanced contrapuntal techniques",
+    "total_lessons": 8,
+    "estimated_total_minutes": 270,
+    "prerequisites": ["harm-fund-001-intervals"]
+  },
+  "generated_at": "2025-12-29T20:00:00.000Z",
+  "lessons": [
+    {
+      "id": "two-voice-counterpoint",
+      "lesson_id": "voice-lead-001-two-voice",
+      "title": "Two-Voice Counterpoint Fundamentals",
+      "domain": "voice-leading",
+      "order": 1,
+      "estimated_minutes": 30,
+      "learning_objectives": [
+        "Identify consonant intervals (thirds, sixths, perfect fifths, octaves) in two-voice textures",
+        "Recognize contrary, oblique, similar, and parallel motion between voices",
+        "Understand the prohibition against parallel perfect fifths and octaves",
+        "Analyze how Bach maintains voice independence in two-voice passages"
+      ],
+      "prerequisites": ["harm-fund-001-intervals"],
+      "content": {
+        "introduction": "Counterpoint, from the Latin punctus contra punctum meaning point against point or note against note, represents one of music's oldest and most fundamental disciplines. When Bach composed the Well-Tempered Clavier, he was drawing on centuries of contrapuntal tradition while simultaneously pushing its boundaries. Two-voice counterpoint forms the foundation of all polyphonic music, teaching us how independent melodic lines can combine to create something greater than either could achieve alone. Before attempting the complexities of three or four voices, we must master the art of making two voices sing together while maintaining their individual identities. This lesson introduces the fundamental principles that govern how two melodic lines relate to each other, principles that Bach himself would have learned as a young student and later taught to his own pupils.",
+        "explanation": "When two voices move together, they can relate to each other in four fundamental types of motion. Understanding these motion types is essential for analyzing and creating effective counterpoint.\n\nContrary motion occurs when voices move in opposite directions: one ascends while the other descends. This is generally considered the strongest type of motion because it maximizes the independence of the voices. When you hear one line rising and another falling, the ear perceives them as truly separate entities. Bach employs contrary motion frequently, particularly at cadences and moments of structural importance.\n\nSimilar motion describes voices moving in the same direction but by different intervals. Both might ascend, but one moves by a step while the other leaps by a third. This maintains some independence while creating a sense of unified direction. Similar motion requires care to avoid forbidden parallels, but it remains an important tool in the contrapuntist's arsenal.\n\nParallel motion, where voices move in the same direction by the same interval, is the most restricted type. Parallel thirds and sixths create a pleasing, homogeneous sound that Bach uses for passages of consonant flow. However, parallel perfect fifths and octaves are strictly forbidden in traditional counterpoint because they cause the voices to lose their independence, merging into a single sonic entity.\n\nOblique motion involves one voice moving while the other remains stationary. This creates maximum differentiation between the voices and often appears when one voice needs to sustain a tone while the other completes a melodic gesture. Oblique motion is particularly useful when approaching or leaving a held note.\n\nBeyond motion types, the intervals formed between voices at each moment determine the harmonic quality of the counterpoint. Consonant intervals include the perfect unison, octave, and fifth, as well as major and minor thirds and sixths. These intervals provide stability and can occur freely on strong beats. Dissonant intervals, including seconds, sevenths, and the tritone, create tension and typically require resolution. In strict two-voice counterpoint, dissonances must be approached and left by step, following specific patterns we will explore in subsequent lessons.\n\nThe rule against parallel perfect consonances deserves special attention. When two voices move in parallel fifths or octaves, they briefly become acoustically fused, losing the polyphonic independence that counterpoint strives to maintain. This rule applies whether the intervals are approached by similar or parallel motion. The prohibition has remained constant across centuries of Western music and represents one of the few absolute rules in voice leading.",
+        "guided_example": {
+          "bwv": 846,
+          "type": "fugue",
+          "measures": "1-7",
+          "analysis": "The C major fugue from Book I, BWV 846, provides an ideal introduction to two-voice counterpoint because Bach constructs it with crystalline clarity. The fugue subject enters alone in measure 1, establishing the soprano voice's melodic character. When the answer enters in measure 3, we immediately encounter two-voice counterpoint as the original voice continues with a countersubject.\n\nExamine the relationship between these voices in measures 3 through 7. In measure 3, as the alto enters on G, the soprano moves from its held E down to D, creating contrary motion that clearly separates the voices. The vertical intervals formed shift from a sixth to a fourth, then to a third, each change carefully calibrated for harmonic effect.\n\nNotice how Bach avoids parallel perfect intervals throughout this passage. When both voices move in the same direction, they do so at different intervals, and he frequently employs contrary motion to refresh the independence of the lines. The moments of oblique motion, where one voice moves while the other sustains, allow each line its moment of melodic expression without interference.\n\nPay particular attention to beat placement. Consonances consistently appear on strong beats, providing harmonic stability, while any dissonances occur in rhythmically weaker positions and resolve predictably. This metric treatment of consonance and dissonance creates the characteristic ebb and flow of contrapuntal music, where tension and resolution alternate in an elegant dance."
+        },
+        "additional_examples": [
+          {
+            "bwv": 772,
+            "type": "invention",
+            "measures": "1-8",
+            "brief": "The Two-Part Invention No. 1 in C major demonstrates pure two-voice counterpoint with clear imitation and consistent contrary motion at key structural points"
+          },
+          {
+            "bwv": 847,
+            "type": "fugue",
+            "measures": "3-6",
+            "brief": "The C minor fugue shows how contrary motion creates dramatic intensity even in two voices during the answer-subject interaction"
+          },
+          {
+            "bwv": 854,
+            "type": "fugue",
+            "measures": "1-4",
+            "brief": "The E major fugue's light texture highlights how spacing and motion types contribute to the character of two-voice passages"
+          }
+        ],
+        "summary": "Two-voice counterpoint establishes the fundamental principles that govern all polyphonic music. The four types of motion, contrary, similar, parallel, and oblique, each serve specific functions in creating independent yet harmonious voice relationships. Contrary motion provides maximum independence and appears at structurally important moments. Similar and parallel motion in imperfect consonances create flow and direction. Oblique motion differentiates voices when one must sustain. The prohibition against parallel perfect fifths and octaves, together with careful treatment of consonance and dissonance according to metric position, creates the characteristic sound of well-crafted counterpoint. Mastering these principles in two voices prepares us for the greater complexities of three and four-voice textures that Bach explores throughout the Well-Tempered Clavier."
+      },
+      "exercises": [
+        "In BWV 846 Fugue measures 3-7, identify each instance of contrary motion between soprano and alto voices",
+        "Mark all parallel thirds and sixths in the same passage and note how they differ from parallel fifths",
+        "Find three examples of oblique motion in the first seven measures and describe which voice moves",
+        "Compose a simple eight-measure counterpoint above a given cantus firmus using only whole notes, focusing on motion types"
+      ],
+      "related_features": ["contrary-motion", "similar-motion", "parallel-motion", "oblique-motion", "consonance", "dissonance"],
+      "narration_text": "Counterpoint, from the Latin for note against note, represents one of music's most fundamental disciplines. When Bach composed the Well-Tempered Clavier, he drew on centuries of contrapuntal tradition while pushing its boundaries. Two-voice counterpoint forms the foundation of all polyphonic music, teaching us how independent melodic lines combine to create something greater than either alone.\n\nWhen two voices move together, they relate in four fundamental ways. Contrary motion, where voices move in opposite directions, creates maximum independence. Similar motion describes voices moving the same direction but by different intervals. Parallel motion, moving by the same interval, is restricted to thirds and sixths. Parallel fifths and octaves are forbidden because they cause voices to lose independence. Oblique motion involves one voice moving while the other stays still.\n\nThe intervals between voices determine harmonic quality. Consonant intervals like thirds, sixths, fifths, and octaves provide stability on strong beats. Dissonant intervals create tension and require resolution.\n\nExamine the C major fugue from Book One. When the answer enters in measure three, we encounter two-voice counterpoint as the original voice continues with a countersubject. Notice how Bach avoids parallel perfect intervals throughout. He frequently employs contrary motion to refresh voice independence. Consonances appear on strong beats, while dissonances occur in weaker positions and resolve predictably.\n\nMastering these principles in two voices prepares us for the complexities of three and four-voice textures that Bach explores throughout the Well-Tempered Clavier."
+    },
+    {
+      "id": "consonance-dissonance",
+      "lesson_id": "voice-lead-002-consonance-dissonance",
+      "title": "Consonance, Dissonance, and Resolution",
+      "domain": "voice-leading",
+      "order": 2,
+      "estimated_minutes": 35,
+      "learning_objectives": [
+        "Distinguish consonant from dissonant intervals by ear and sight",
+        "Identify preparation, dissonance, and resolution in suspension figures",
+        "Understand the stepwise resolution requirements for dissonances",
+        "Analyze Bach's treatment of dissonance in contrapuntal textures"
+      ],
+      "prerequisites": ["voice-lead-001-two-voice"],
+      "content": {
+        "introduction": "The interplay between consonance and dissonance forms the heartbeat of contrapuntal music. Consonances provide moments of stability and rest, while dissonances create tension that demands resolution. This alternation between tension and release propels music forward, giving it emotional depth and structural direction. Bach's mastery of dissonance treatment represents one of his most distinctive achievements. He understood that dissonance, properly controlled, creates expressiveness that pure consonance cannot achieve. This lesson explores how to identify, prepare, and resolve dissonances according to the principles that Bach inherited and perfected. Understanding these principles will transform how you hear polyphonic music, revealing the sophisticated craft underlying its emotional impact.",
+        "explanation": "Consonance and dissonance exist on a spectrum rather than as absolute categories. Perfect consonances include the unison, perfect fifth, and octave. These intervals, based on simple frequency ratios, create the most stable and pure sonorities. Imperfect consonances, including major and minor thirds and sixths, offer sweetness and warmth while remaining stable. These intervals form the harmonic foundation of most contrapuntal passages.\n\nDissonant intervals include the major and minor second, the major and minor seventh, the tritone, and the perfect fourth in certain contexts. The fourth deserves special mention: against the bass, it functions as a dissonance requiring resolution, but between upper voices, it can behave as a consonance. This contextual nature of the fourth illustrates that dissonance is not merely an acoustic phenomenon but a functional one, determined by musical context and voice arrangement.\n\nThe treatment of dissonance follows strict protocols developed over centuries. Every dissonance requires three elements: preparation, the dissonance itself, and resolution. Preparation means the dissonant note must be consonant on the previous beat before becoming dissonant. The dissonance typically occurs on a strong beat, creating maximum tension at a point of metric emphasis. Resolution requires the dissonant voice to move by step, usually downward, to a consonance.\n\nThis three-part structure ensures that dissonances never surprise the ear but rather emerge organically from consonant contexts. The listener unconsciously perceives the preparation, feels the tension of the dissonance, and experiences satisfaction at the resolution. Bach exploits this psychological pattern to create passages of extraordinary emotional power.\n\nCertain dissonance types appear frequently in Baroque counterpoint. The suspension, where a consonant note is held while the harmony changes beneath it creating dissonance, represents the most common and expressive type. Passing tones move stepwise through dissonant intervals between consonances. Neighbor tones step away from a consonance and return to it. Each type has specific rules governing its approach and departure.\n\nMetric placement matters enormously. Dissonances on strong beats, called accented dissonances, create more tension than those on weak beats, called unaccented dissonances. Bach typically places suspensions on strong beats for maximum expressive impact, while passing and neighbor tones often occupy weaker metric positions. This metric organization of consonance and dissonance creates the characteristic rhythmic feel of Baroque counterpoint.",
+        "guided_example": {
+          "bwv": 847,
+          "type": "fugue",
+          "measures": "8-12",
+          "analysis": "The C minor fugue demonstrates Bach's sophisticated dissonance treatment with particular intensity. Examine measures 8 through 12, where three voices interact with frequent dissonant encounters.\n\nIn measure 8, observe the soprano voice sustaining a note while the lower voices move. When the bass moves to create a dissonant interval against this sustained soprano, we hear a classic suspension formation. The soprano note was consonant in the previous beat, it is held to become dissonant, and it then resolves downward by step to restore consonance. This pattern of preparation, dissonance, and resolution occurs repeatedly throughout the passage.\n\nMeasure 9 features passing dissonances as the middle voice moves through scale passages. Notice how these dissonances occur on weaker beats, connecting consonances on either side. The stepwise motion smooths over the dissonant intervals, making them feel natural and inevitable rather than jarring.\n\nMeasure 10 presents a chain of dissonances, where the resolution of one dissonance becomes the preparation for the next. This technique, common in Bach's more intense passages, creates a sense of constant forward motion. The ear never fully rests because each resolution immediately sets up new tension.\n\nPay attention to the bass voice throughout this passage. It often provides the stable foundation against which upper voices create their dissonances. When the bass itself participates in dissonance, as it does briefly in measure 11, the effect is particularly powerful because it destabilizes the harmonic foundation. Bach reserves such moments for points of maximum emotional intensity."
+        },
+        "additional_examples": [
+          {
+            "bwv": 849,
+            "type": "prelude",
+            "measures": "12-16",
+            "brief": "The C-sharp minor prelude showcases chains of suspensions creating sustained emotional intensity through continuous dissonance and resolution"
+          },
+          {
+            "bwv": 853,
+            "type": "fugue",
+            "measures": "10-14",
+            "brief": "The E-flat minor fugue demonstrates how dissonance treatment contributes to the work's profound expressiveness"
+          },
+          {
+            "bwv": 861,
+            "type": "fugue",
+            "measures": "14-18",
+            "brief": "The G minor fugue uses dissonance to build tension approaching structural cadences"
+          }
+        ],
+        "summary": "Consonance and dissonance create the dynamic tension that propels contrapuntal music forward. Consonances provide stability: perfect consonances like fifths and octaves offer purity, while imperfect consonances like thirds and sixths add warmth. Dissonances including seconds, sevenths, and the tritone demand resolution. Every dissonance requires preparation, where it begins as consonance, the dissonance itself on a metrically significant beat, and stepwise resolution to consonance. Bach's mastery of these principles allows him to create passages of extraordinary emotional power. Understanding dissonance treatment reveals the sophisticated craft underlying the emotional impact of the Well-Tempered Clavier, transforming our appreciation of both the technical and expressive dimensions of Bach's counterpoint."
+      },
+      "exercises": [
+        "In BWV 847 Fugue measures 8-12, identify all suspensions and label their preparation, dissonance, and resolution",
+        "Find three passing tones in the same passage and note their metric placement",
+        "Locate a chain of suspensions where one resolution becomes the next preparation",
+        "Compose a short passage introducing a 4-3 suspension with proper preparation and resolution"
+      ],
+      "related_features": ["suspension", "passing-tone", "neighbor-tone", "dissonance-resolution", "metric-placement"],
+      "narration_text": "The interplay between consonance and dissonance forms the heartbeat of contrapuntal music. Consonances provide stability while dissonances create tension demanding resolution. This alternation propels music forward, giving it emotional depth and direction.\n\nConsonance and dissonance exist on a spectrum. Perfect consonances, the unison, fifth, and octave, create the most stable sounds. Imperfect consonances, thirds and sixths, offer warmth while remaining stable. Dissonant intervals, including seconds, sevenths, and the tritone, require resolution.\n\nEvery dissonance needs three elements: preparation, the dissonance, and resolution. Preparation means the dissonant note must be consonant before becoming dissonant. The dissonance typically occurs on a strong beat. Resolution requires stepwise motion, usually downward, to consonance.\n\nExamine the C minor fugue measures eight through twelve. In measure eight, the soprano sustains while lower voices move, creating a classic suspension. The soprano was consonant, becomes dissonant, then resolves downward by step. This pattern repeats throughout.\n\nMeasure nine features passing dissonances on weaker beats. Measure ten presents a chain where each resolution becomes preparation for the next, creating constant forward motion. When the bass participates in dissonance in measure eleven, the effect is powerful because it destabilizes the foundation.\n\nUnderstanding dissonance treatment reveals the craft underlying Bach's emotional impact, transforming our appreciation of both technical and expressive dimensions."
+    },
+    {
+      "id": "passing-neighbor-tones",
+      "lesson_id": "voice-lead-003-passing-neighbor",
+      "title": "Passing Tones and Neighbor Tones",
+      "domain": "voice-leading",
+      "order": 3,
+      "estimated_minutes": 30,
+      "learning_objectives": [
+        "Identify passing tones moving stepwise through dissonance in melodic contexts",
+        "Recognize upper and lower neighbor tones as melodic embellishments",
+        "Understand the metric placement of passing and neighbor tones",
+        "Analyze how Bach uses these ornamental dissonances to create melodic fluidity"
+      ],
+      "prerequisites": ["voice-lead-002-consonance-dissonance"],
+      "content": {
+        "introduction": "While suspensions create sustained expressive tension, passing tones and neighbor tones serve a different musical purpose. These embellishing dissonances add melodic fluidity and interest, filling in the spaces between structural consonances. Bach's melodic lines achieve their remarkable singing quality partly through the skillful deployment of these ornamental tones. A melody consisting only of chord tones would sound square and static. By adding passing and neighbor tones, Bach creates lines that flow naturally, mimicking the curves and inflections of vocal music even in purely instrumental contexts. This lesson examines these essential melodic embellishments and their role in creating the seamless, singing quality of Bach's counterpoint.",
+        "explanation": "Passing tones fill the interval between two consonances with stepwise motion. When a melody moves from one chord tone to another chord tone a third apart, a passing tone can connect them smoothly. For example, moving from C to E might pass through D, with D functioning as a dissonant passing tone if the underlying harmony does not include it.\n\nPassing tones come in two varieties based on metric placement. Unaccented passing tones occur on weak beats or weak parts of beats, moving between consonances on stronger beats. This is the more common type, creating smooth melodic connections without significant harmonic disruption. Accented passing tones occur on strong beats, creating momentary clashes that resolve immediately as the melody continues. Bach uses accented passing tones for expressive emphasis, though they require more careful handling.\n\nThe direction of passing tones matters for melodic character. Ascending passing tones suggest rising energy or increased intensity. Descending passing tones often convey relaxation or resolution. Bach frequently uses sequential passages with consistent passing tone direction to create extended melodic arcs.\n\nNeighbor tones, also called auxiliary tones, embellish a single note by stepping away from it and returning. The upper neighbor steps up and returns. The lower neighbor steps down and returns. Like passing tones, neighbors can be accented or unaccented depending on their metric placement.\n\nThe chromatic neighbor deserves special attention. While most neighbor tones are diatonic, moving within the prevailing scale, chromatic neighbors borrow from outside the key. A chromatic lower neighbor approaches from a half step below, creating a leading-tone-like pull toward the main note. Bach uses chromatic neighbors to intensify melodic expression, particularly in minor keys and at emotionally charged moments.\n\nDouble neighbors, also called changing tones, combine upper and lower neighbors in succession before returning to the main note. The pattern might be main note, up, down, main note, or main note, down, up, main note. This figure creates a quick ornamental flourish that Bach employs frequently in faster-moving passages.\n\nThe escape tone and appoggiatura represent related but distinct embellishments. An escape tone leaves a consonance by step but resolves by leap, escaping the expected resolution. An appoggiatura approaches by leap but resolves by step. Both create more dramatic effects than standard passing or neighbor tones.\n\nRecognizing these embellishments transforms how we perceive melodic structure. What initially appears as a continuous stream of notes reveals itself as a framework of structural consonances adorned with embellishing dissonances. This structural hearing helps us understand how Bach constructs his seemingly effortless melodic lines.",
+        "guided_example": {
+          "bwv": 846,
+          "type": "prelude",
+          "measures": "5-11",
+          "analysis": "The C major prelude's arpeggiated figuration provides an excellent laboratory for studying passing and neighbor tones. While the surface presents continuous sixteenth-note motion, careful analysis reveals a clear underlying harmonic structure decorated with melodic embellishments.\n\nExamine measure 5. The arpeggiated pattern outlines a D minor seventh chord, but not every note belongs to that chord. Identify the chord tones first: D, F, A, and C. Any other notes function as embellishments. The sixteenth-note pattern includes passing tones that connect chord tones smoothly, creating the flowing character that defines this prelude.\n\nMeasure 7 introduces more complex embellishments as the harmony shifts. Notice how neighbor tones appear, particularly lower neighbors that approach chord tones from below. These create subtle tensions that resolve immediately, propelling the music forward without disrupting the prevailing calm.\n\nBy measure 9, the bass has descended chromatically, and the upper voice accommodates these changes with corresponding embellishments. Chromatic passing tones appear, following the chromatic bass motion. These chromatic inflections add harmonic color without changing the fundamental consonance-dissonance relationship.\n\nThroughout this passage, observe the metric placement of embellishing tones. The strong first beat of each pattern typically carries a chord tone, establishing harmonic clarity. Passing and neighbor tones occupy weaker positions, embellishing without obscuring the underlying structure. This metric organization allows Bach to maintain harmonic clarity while achieving melodic richness.\n\nThe prelude teaches us that even apparently simple music employs sophisticated embellishment techniques. What sounds like effortless flow results from careful attention to the interaction between structural harmony and melodic decoration."
+        },
+        "additional_examples": [
+          {
+            "bwv": 850,
+            "type": "prelude",
+            "measures": "1-8",
+            "brief": "The D major prelude's flowing sixteenth-note lines demonstrate systematic use of passing tones connecting underlying triadic structures"
+          },
+          {
+            "bwv": 853,
+            "type": "prelude",
+            "measures": "8-14",
+            "brief": "The E-flat minor prelude uses chromatic neighbors to intensify its expressive character"
+          },
+          {
+            "bwv": 862,
+            "type": "prelude",
+            "measures": "4-10",
+            "brief": "The A-flat major prelude showcases elegant neighbor tone figures in its lyrical upper voice"
+          }
+        ],
+        "summary": "Passing tones and neighbor tones transform static chord progressions into flowing melodic lines. Passing tones connect chord tones stepwise, filling in thirds with smooth motion. Neighbor tones embellish single notes by stepping away and returning. Both can be accented or unaccented depending on metric placement, with unaccented versions being more common. Chromatic neighbors borrow from outside the key for intensified expression. Double neighbors combine upper and lower neighbors for ornamental flourishes. Understanding these embellishments reveals the structural logic beneath Bach's seamless melodic surfaces. What appears as continuous motion consists of consonant frameworks decorated with dissonant embellishments, creating the singing quality that characterizes Bach's finest counterpoint."
+      },
+      "exercises": [
+        "In BWV 846 Prelude measures 5-8, identify all passing tones and mark whether each is accented or unaccented",
+        "Find five neighbor tones in the same passage and label each as upper or lower neighbor",
+        "Locate any chromatic passing or neighbor tones in measures 9-11",
+        "Add appropriate passing and neighbor tones to a given chord outline to create a flowing melodic line"
+      ],
+      "related_features": ["passing-tone", "neighbor-tone", "chromatic-neighbor", "double-neighbor", "melodic-embellishment"],
+      "narration_text": "While suspensions create sustained expressive tension, passing tones and neighbor tones serve a different purpose. These embellishing dissonances add melodic fluidity, filling spaces between structural consonances. Bach's melodic lines achieve their singing quality partly through skillful deployment of these ornamental tones.\n\nPassing tones fill intervals between consonances with stepwise motion. Moving from C to E might pass through D as a dissonant passing tone. Unaccented passing tones on weak beats are most common. Accented passing tones on strong beats create more dramatic effects.\n\nNeighbor tones embellish a single note by stepping away and returning. Upper neighbors step up and back. Lower neighbors step down and back. Chromatic neighbors approach from a half step, creating leading-tone-like pull.\n\nExamine the C major prelude measures five through eleven. The arpeggiated pattern outlines underlying chords, but not every note belongs to those chords. Passing tones connect chord tones smoothly. Neighbor tones appear, particularly lower neighbors approaching from below.\n\nThroughout, observe metric placement. Strong beats carry chord tones establishing harmonic clarity. Embellishing tones occupy weaker positions. This organization maintains clarity while achieving melodic richness.\n\nUnderstanding these embellishments reveals structural logic beneath Bach's seamless surfaces. What appears as continuous motion consists of consonant frameworks decorated with dissonant embellishments."
+    },
+    {
+      "id": "suspensions",
+      "lesson_id": "voice-lead-004-suspensions",
+      "title": "Suspensions and Their Resolutions",
+      "domain": "voice-leading",
+      "order": 4,
+      "estimated_minutes": 35,
+      "learning_objectives": [
+        "Identify 4-3, 7-6, 9-8, and 2-3 suspension figures",
+        "Understand the three-part structure: preparation, suspension, resolution",
+        "Recognize chains of suspensions and their expressive effects",
+        "Analyze Bach's use of suspensions to create intensity and forward drive"
+      ],
+      "prerequisites": ["voice-lead-002-consonance-dissonance"],
+      "content": {
+        "introduction": "The suspension stands as counterpoint's most expressive device. When a consonant note refuses to yield as the harmony changes beneath it, the resulting clash creates exquisite tension that resolves with profound satisfaction. Bach employs suspensions to create moments of heightened emotion, to drive music forward at crucial junctures, and to build climactic passages of extraordinary intensity. No other contrapuntal device so directly translates musical structure into emotional experience. This lesson examines the mechanics of suspensions in detail, exploring how their various types create distinct expressive effects and how chains of suspensions generate passages of sustained intensity that represent some of Bach's most powerful musical statements.",
+        "explanation": "A suspension consists of three parts occurring over a change of harmony. The preparation establishes the suspended note as a consonance. The suspension itself occurs when the harmony changes but the note remains, creating dissonance. The resolution follows as the suspended note moves by step, usually downward, to become consonant with the new harmony.\n\nSuspensions receive numerical labels based on the intervals they create. A 4-3 suspension creates a fourth against the bass that resolves to a third. This is the most common upper-voice suspension, appearing countless times in Bach's works. The dissonance of the fourth resolves to the sweeter consonance of the third, creating a characteristic sound of tension releasing.\n\nThe 7-6 suspension holds a seventh that resolves to a sixth. Because the seventh is more dissonant than the fourth, the 7-6 suspension creates greater tension. Bach frequently uses this suspension in passages of emotional intensity, exploiting its sharp bite.\n\nThe 9-8 suspension, where a ninth resolves to an octave, creates particular weight because of the wide interval involved. This suspension often appears in the bass voice, creating substantial harmonic foundation.\n\nThe 2-3 suspension, occurring in bass voices, inverts the typical pattern. The bass holds a note that creates a second against an upper voice, then resolves upward to a third. This ascending resolution gives the 2-3 suspension a unique character, often associated with passages of rising intensity.\n\nSuspension chains occur when the resolution of one suspension serves as the preparation for the next. The effect creates continuous tension without release, driving the music forward relentlessly. Bach constructs chains of 7-6 suspensions with particular frequency, using them in sequences that traverse large harmonic distances while maintaining constant intensity.\n\nOrnamented resolutions add melodic interest to the basic suspension pattern. Rather than moving directly from dissonance to resolution, the voice might insert a note below the resolution before arriving at it, creating a turn-like figure. These ornaments maintain the harmonic structure while adding melodic grace.\n\nThe metric placement of suspensions concentrates maximum tension on the strongest beat. The suspension proper occurs on the downbeat or other strong beat, placing the dissonance at the point of greatest metric emphasis. This alignment of harmonic and metric tension creates the characteristic suspended quality where time itself seems to hang.\n\nDouble suspensions involve two voices simultaneously suspending against the bass. Common combinations include the 9-8 and 4-3 double suspension, creating dense dissonance that resolves in parallel motion. Bach reserves these for moments of maximum intensity.\n\nRetardations represent upward-resolving suspensions in upper voices, though they are less common than standard downward-resolving suspensions. The upward resolution gives retardations a striving quality, as if the music reaches toward something rather than settling into rest.",
+        "guided_example": {
+          "bwv": 847,
+          "type": "prelude",
+          "measures": "20-28",
+          "analysis": "The C minor prelude builds to its climax through a remarkable passage of suspended dissonances. Measures 20 through 28 demonstrate Bach's mastery of suspension technique at its most intense.\n\nMeasure 20 begins establishing the pattern. The soprano voice holds a note from the previous beat while the bass moves, creating a 7-6 suspension. Notice the preparation: the soprano note was consonant in measure 19. The suspension creates its characteristic bite on the downbeat. Resolution follows as the soprano descends by step to consonance.\n\nMeasure 21 continues the pattern but with increased complexity. Now we encounter a chain of suspensions where one resolution immediately becomes the next preparation. The music never fully resolves because each moment of consonance instantly transforms into new dissonance. This creates relentless forward momentum.\n\nBy measure 24, Bach introduces double suspensions. Two voices simultaneously hold against the moving bass, creating dense dissonance that resolves in parallel motion. The effect is orchestral in its weight, despite occurring on a single keyboard.\n\nMeasure 26 features an ornamented resolution where the soprano inserts a lower neighbor before completing its descent to consonance. This ornament adds grace without diminishing the fundamental suspension structure.\n\nThe passage concludes in measure 28 with a final suspension resolving into the cadence. The accumulated tension of the entire chain releases in this final resolution, creating a sense of arrival that could not have been achieved without the preparatory intensity.\n\nThis passage exemplifies how suspensions create emotional narrative. The gradual increase in suspension density, from single suspensions to chains to double suspensions, parallels an emotional arc from tension through crisis to resolution. Bach the architect becomes Bach the dramatist through these contrapuntal means."
+        },
+        "additional_examples": [
+          {
+            "bwv": 849,
+            "type": "fugue",
+            "measures": "24-30",
+            "brief": "The C-sharp minor fugue uses chains of 7-6 suspensions to build toward its climax"
+          },
+          {
+            "bwv": 853,
+            "type": "prelude",
+            "measures": "16-22",
+            "brief": "The E-flat minor prelude demonstrates 4-3 suspensions with ornamented resolutions"
+          },
+          {
+            "bwv": 857,
+            "type": "fugue",
+            "measures": "28-34",
+            "brief": "The F minor fugue builds intensity through strategically placed suspensions approaching the final cadence"
+          }
+        ],
+        "summary": "Suspensions represent counterpoint's most expressive device, creating exquisite tension through notes that refuse to yield as harmony changes. Each suspension involves preparation as consonance, suspension as dissonance on a strong beat, and stepwise resolution. The 4-3 suspension resolves a fourth to a third. The more intense 7-6 resolves a seventh to a sixth. The weighty 9-8 resolves a ninth to an octave. The bass-voice 2-3 resolves upward, inverting the typical pattern. Suspension chains occur when resolutions become preparations for subsequent suspensions, creating relentless forward drive. Double suspensions intensify the effect through simultaneous dissonances. Ornamented resolutions add melodic grace. Through these techniques, Bach transforms abstract contrapuntal relationships into profound emotional experiences."
+      },
+      "exercises": [
+        "In BWV 847 Prelude measures 20-28, label all suspensions with their numerical types (4-3, 7-6, etc.)",
+        "Identify the preparation, suspension, and resolution for each suspension figure",
+        "Find the chain of suspensions and mark where each resolution becomes the next preparation",
+        "Compose a short passage featuring a chain of three 7-6 suspensions"
+      ],
+      "related_features": ["4-3-suspension", "7-6-suspension", "9-8-suspension", "2-3-suspension", "suspension-chain", "double-suspension"],
+      "narration_text": "The suspension stands as counterpoint's most expressive device. When a consonant note refuses to yield as harmony changes beneath it, the resulting clash creates exquisite tension that resolves with profound satisfaction.\n\nA suspension consists of three parts. The preparation establishes the note as consonance. The suspension occurs when harmony changes but the note remains, creating dissonance. Resolution follows as the note moves by step to become consonant.\n\nSuspensions receive numerical labels. A four-three suspension creates a fourth resolving to a third. The seven-six holds a seventh resolving to a sixth, creating greater tension. The nine-eight resolves a ninth to an octave. The two-three in bass voices resolves upward, giving a unique striving quality.\n\nSuspension chains occur when resolutions become preparations for subsequent suspensions. The effect creates continuous tension driving music forward relentlessly.\n\nExamine the C minor prelude measures twenty through twenty-eight. Measure twenty begins with a seven-six suspension. Notice the preparation, the suspension on the downbeat, and resolution as soprano descends by step. Measure twenty-one continues with a chain where one resolution becomes the next preparation.\n\nBy measure twenty-four, Bach introduces double suspensions with two voices holding simultaneously. The accumulated tension releases in measure twenty-eight's final cadence.\n\nThrough suspensions, Bach transforms abstract contrapuntal relationships into profound emotional experiences."
+    },
+    {
+      "id": "three-voice-counterpoint",
+      "lesson_id": "voice-lead-005-three-voice",
+      "title": "Three-Voice Texture and Independence",
+      "domain": "voice-leading",
+      "order": 5,
+      "estimated_minutes": 35,
+      "learning_objectives": [
+        "Analyze the distribution of harmonic functions across three voices",
+        "Recognize how each voice maintains melodic independence",
+        "Understand spacing and register considerations in three-voice writing",
+        "Identify instances where voices cross or temporarily share register"
+      ],
+      "prerequisites": ["voice-lead-001-two-voice", "voice-lead-004-suspensions"],
+      "content": {
+        "introduction": "Three voices represent the practical minimum for complete harmonic expression while maintaining the textural clarity that allows each voice to be heard distinctly. In three-voice texture, every voice must work harder than in four-voice writing because there is no redundancy. Each voice must contribute both melodically and harmonically at every moment. The three-voice fugues in the Well-Tempered Clavier demonstrate this efficiency at its finest, where Bach extracts maximum musical effect from minimal resources. This lesson examines how three voices distribute harmonic responsibility while maintaining melodic independence, and how Bach manipulates spacing and register to create variety within this economical texture.",
+        "explanation": "Three-voice writing requires distributing complete harmonic information across limited resources. A triad has three notes; three voices can state each note once. This correspondence makes three-voice texture particularly suited to triadic harmony, though it also means careful planning when richer harmonies appear.\n\nThe three voices typically occupy distinct registers: soprano in the upper range, alto or tenor in the middle, and bass at the bottom. Maintaining separation between voices preserves clarity; when voices cluster or cross, the texture thickens and distinctions blur. Bach generally keeps voices in their home registers but strategically employs crossing for expressive effect.\n\nVoice crossing occurs when an upper voice temporarily drops below a lower voice or vice versa. While generally avoided in four-voice chorale-style writing, crossing appears more freely in Bach's keyboard counterpoint. It can create melodic continuity when a line needs to extend beyond its normal register, or generate unexpected textural interest by placing unexpected voices in exposed positions.\n\nSpacing, the distance between voices, affects both harmonic clarity and textural character. Close spacing concentrates harmonic richness in a narrow range, creating density and warmth. Open spacing spreads the harmony, creating a lighter texture with more distinct voices. Bach varies spacing throughout a piece, using closer spacing for moments of harmonic intensity and opener spacing for sections requiring clarity.\n\nThe middle voice in three-voice texture plays a crucial role often overlooked in analysis. It must bridge the soprano and bass registrally while maintaining its own melodic interest. The middle voice frequently carries inner harmonies that would be divided between alto and tenor in four-voice texture, giving it significant melodic responsibility.\n\nIncomplete chords become necessary when seventh chords or other four-note structures appear in three-voice texture. Bach must choose which note to omit. Typically, the fifth receives the least priority because it contributes less to chord identity than the root and third, and less to forward drive than the seventh. The bass almost always states the root for harmonic clarity.\n\nContrapuntal rhythm, the pattern of motion among voices, creates much of the musical interest in three-voice texture. When all three voices move together, the effect is homophonic and weighty. When voices alternate motion, the texture lightens and individual lines become more distinct. Bach constantly varies this contrapuntal rhythm, keeping the listener's attention through textural variety.\n\nInvertible counterpoint becomes essential in three-voice fugues. Two voices that work well together must also work when their positions exchange, when the higher voice becomes lower and vice versa. This requirement constrains interval choice, particularly prohibiting parallel thirds that would become parallel sixths in inversion, still acceptable, but more restrictive is the avoidance of certain perfect intervals that would become dissonances in inversion.",
+        "guided_example": {
+          "bwv": 846,
+          "type": "fugue",
+          "measures": "7-14",
+          "analysis": "The C major fugue provides an ideal study in three-voice texture because its clarity makes every voice distinctly audible. Measures 7 through 14 show Bach working with all three voices fully established.\n\nIn measure 7, all three voices are active. The bass has just entered with the subject, the alto continues with the countersubject, and the soprano adds a third contrapuntal line. Notice the registral separation: the bass occupies the lowest octave, the alto sits in the middle, and the soprano remains high. This clear separation allows each voice its sonic space.\n\nExamine the spacing in measure 8. The three voices create a spacing that opens gradually from bass to soprano. This arrangement projects the melody clearly while maintaining full harmonic support. Bach varies this spacing throughout, compressing voices together in measure 10 for intensity, then spreading them again in measure 11 for relief.\n\nMeasure 9 demonstrates voice crossing as the alto briefly rises above the soprano on one beat. This crossing creates a moment of textural interest, placing an unexpected voice in the exposed upper position. The crossing is brief; voices return to normal positions immediately, but the momentary displacement adds variety.\n\nContrapuntal rhythm varies constantly throughout this passage. Measure 7 features all voices moving together on the downbeat, creating weight. Measure 8 shows the alto moving while soprano and bass sustain, highlighting the middle voice. By measure 12, the voices move in careful alternation, each taking its turn for melodic prominence.\n\nNotice incomplete seventh chords in measures 10 and 13. Bach omits the fifth to accommodate the seventh within three voices. The root and third in the bass and alto establish chord identity, the seventh adds harmonic drive, and the fifth's absence goes unnoticed because the remaining tones fulfill the essential functions.\n\nThe passage concludes with all three voices arriving together on the cadence, demonstrating how textural convergence creates structural articulation. After measures of varied contrapuntal rhythm, this unanimity signals formal importance."
+        },
+        "additional_examples": [
+          {
+            "bwv": 848,
+            "type": "fugue",
+            "measures": "10-16",
+            "brief": "The C-sharp major fugue demonstrates exceptional clarity in three-voice texture with distinct registral separation"
+          },
+          {
+            "bwv": 850,
+            "type": "fugue",
+            "measures": "8-14",
+            "brief": "The D major fugue shows strategic voice crossing for melodic continuity"
+          },
+          {
+            "bwv": 853,
+            "type": "fugue",
+            "measures": "12-18",
+            "brief": "The E-flat minor fugue uses three-voice density for expressive intensity"
+          }
+        ],
+        "summary": "Three-voice texture represents the minimum required for complete harmonic expression while maintaining clarity. Each voice must contribute both melodically and harmonically since no redundancy exists. Voices typically occupy distinct registers, soprano, alto or tenor, and bass, with separation preserving clarity. Voice crossing provides expressive variety when used sparingly. Spacing between voices affects character: close spacing creates density while open spacing provides clarity. The middle voice bridges outer voices while maintaining its own melodic interest. Incomplete chords become necessary for seventh chords, typically omitting the fifth. Contrapuntal rhythm, the pattern of motion among voices, creates variety through alternation. Invertible counterpoint ensures voice combinations work in any vertical arrangement. Through these techniques, Bach achieves remarkable richness from economical resources."
+      },
+      "exercises": [
+        "In BWV 846 Fugue measures 7-14, identify moments where all voices move together versus alternating motion",
+        "Find all instances of voice crossing and describe their expressive effect",
+        "Locate incomplete seventh chords and identify which note is omitted",
+        "Analyze spacing variation across the passage, marking compressed versus expanded voicing"
+      ],
+      "related_features": ["three-voice-texture", "voice-crossing", "spacing", "contrapuntal-rhythm", "incomplete-chord"],
+      "narration_text": "Three voices represent the minimum for complete harmonic expression while maintaining textural clarity. In three-voice texture, every voice must contribute both melodically and harmonically since no redundancy exists.\n\nThree voices typically occupy distinct registers: soprano high, alto or tenor in the middle, bass at the bottom. Maintaining separation preserves clarity. Voice crossing, where an upper voice drops below a lower one, appears strategically for expressive effect.\n\nSpacing affects character. Close spacing creates density and warmth. Open spacing provides lighter texture with distinct voices. Bach varies spacing throughout, using closer spacing for intensity and opener spacing for clarity.\n\nThe middle voice plays a crucial but often overlooked role, bridging soprano and bass while maintaining melodic interest. Incomplete chords become necessary when seventh chords appear, typically omitting the fifth.\n\nExamine the C major fugue measures seven through fourteen. In measure seven, all three voices are active with clear registral separation. Examine spacing in measure eight, opening gradually from bass to soprano. Measure nine demonstrates voice crossing as alto briefly rises above soprano.\n\nContrapuntal rhythm varies constantly. Measure seven features all voices moving together. Measure eight shows alto moving while others sustain. By measure twelve, voices move in careful alternation.\n\nThrough these techniques, Bach achieves remarkable richness from economical resources."
+    },
+    {
+      "id": "four-voice-counterpoint",
+      "lesson_id": "voice-lead-006-four-voice",
+      "title": "Four-Voice Texture and SATB Writing",
+      "domain": "voice-leading",
+      "order": 6,
+      "estimated_minutes": 35,
+      "learning_objectives": [
+        "Identify soprano, alto, tenor, and bass voices in keyboard texture",
+        "Understand voice-leading principles for four-voice chordal progressions",
+        "Recognize complete vs. incomplete chords (doubled third, omitted fifth, etc.)",
+        "Analyze how Bach distributes harmonic and melodic material across four voices"
+      ],
+      "prerequisites": ["voice-lead-005-three-voice"],
+      "content": {
+        "introduction": "Four-voice texture offers the fullest realization of traditional harmony, with each note of a seventh chord receiving its own voice. The SATB arrangement, soprano, alto, tenor, and bass, derives from choral practice but finds sophisticated application in Bach's keyboard works. With four voices, Bach can state complete harmonies without omission, create rich suspensions, and develop complex contrapuntal textures while maintaining harmonic clarity. The four-voice fugues of the Well-Tempered Clavier demonstrate the summit of keyboard counterpoint, demanding that performers conceive and project four distinct melodic lines simultaneously. This lesson examines the principles governing four-voice writing and how Bach balances harmonic completeness with contrapuntal independence.",
+        "explanation": "The four SATB voices occupy specific registers with established ranges. The soprano, highest voice, typically spans from middle C to the C two octaves above. The alto, second highest, ranges from the G below middle C to the E above it. The tenor, second lowest, covers from the C below middle C to the G above it. The bass, lowest voice, extends from the E two octaves below middle C to middle C itself. These ranges ensure each voice occupies its own sonic space.\n\nTraditional voice-leading principles govern how voices move from chord to chord. Common tones remain in the same voice when possible, minimizing motion. When movement is necessary, voices move by step or by small leap. Large leaps require careful approach and continuation, typically being approached and left in contrary motion. These principles create smooth voice leading where each part flows naturally.\n\nDoubling conventions determine which note to double when a triad must be voiced for four parts. The root is most commonly doubled, providing harmonic stability. The fifth may be doubled when smooth voice leading requires it. The third is generally not doubled in triads because doubling the third weakens the sense of modality (major versus minor) and can create voice-leading problems approaching the next chord.\n\nThe leading tone receives special treatment. It must never be doubled because its strong tendency to resolve would force parallel motion. It should always resolve upward to the tonic, though in inner voices it occasionally resolves downward to the fifth of the tonic chord when necessary for complete voicing.\n\nComplete versus incomplete chords present choices in four-voice texture. A complete chord includes all chord members, root, third, fifth, and seventh if present. An incomplete chord omits one member, almost always the fifth since it contributes least to chord identity. With four voices, seventh chords can be complete, but triads require doubling one member. The choice depends on voice-leading context.\n\nSpacing considerations extend from three-voice principles. Adjacent upper voices, soprano and alto, alto and tenor, should not exceed an octave. The bass may separate from the tenor by larger intervals, even two octaves, providing harmonic foundation. This practice places upper voices in a chorale-like cluster supported by an independent bass.\n\nVoice overlap and voice crossing receive stricter treatment in four-voice texture than in three. Overlap occurs when a voice moves to a position higher or lower than an adjacent voice occupied in the previous chord. Crossing occurs when voices simultaneously exchange vertical positions. Both disrupt the sense of four distinct lines and are generally avoided except for specific expressive purposes.\n\nIn fugal texture, four voices must each participate in subject statements while also providing accompaniment for other voices. This creates extraordinary demands. A voice might carry the subject, then transition to countersubject, then to free counterpoint, all while maintaining its melodic identity. Bach's four-voice fugues demonstrate this balancing act at the highest level of skill.",
+        "guided_example": {
+          "bwv": 849,
+          "type": "fugue",
+          "measures": "15-22",
+          "analysis": "The C-sharp minor fugue is among Bach's most elaborate four-voice compositions, and measures 15 through 22 show full four-voice texture with remarkable contrapuntal sophistication.\n\nIn measure 15, all four voices are active. Identify each: the soprano carries the melodic material highest in pitch, the bass provides the harmonic foundation lowest, and the alto and tenor fill the middle register. Notice how each voice maintains its registral identity while contributing to the harmonic whole.\n\nExamine the voice leading in measure 16. As the harmony changes, observe common tones held in the same voice. The tenor sustains while soprano, alto, and bass adjust around it. This efficient voice leading minimizes motion while maximizing harmonic connection between chords.\n\nMeasure 17 demonstrates how Bach handles a seventh chord in four voices. With four notes in the chord and four voices available, each voice states one chord member. The root appears in the bass establishing harmonic clarity. The third distinguishes major from minor. The fifth fills out the sonority. The seventh provides forward drive. This complete voicing gives the chord maximum richness.\n\nThe spacing varies strategically throughout the passage. Measure 18 shows close position with all four voices within two octaves, creating dense texture. Measure 19 opens the spacing, with bass separating further from upper voices for a lighter effect. This variation prevents textural monotony.\n\nMeasure 20 presents a voice exchange where soprano and alto trade melodic material. This technique, common in Bach's fugues, maintains interest by giving each voice new material while preserving the contrapuntal structure. The exchange occurs without crossing, the voices trade material but not registers.\n\nThe passage builds to a cadence in measure 22 where all voices arrive simultaneously on a chord. Notice how voice leading through measures 20-21 converges toward this goal, with each voice moving purposefully toward its cadential note. The bass moves by fifth, the soprano resolves a suspension, inner voices fill the harmony appropriately.\n\nThroughout, each voice maintains melodic interest. Even when supporting the subject in another voice, each line displays its own contour and rhythm. This independence within unity defines Bach's four-voice mastery."
+        },
+        "additional_examples": [
+          {
+            "bwv": 853,
+            "type": "fugue",
+            "measures": "18-24",
+            "brief": "The E-flat minor fugue demonstrates dense four-voice writing with expressive dissonance treatment"
+          },
+          {
+            "bwv": 857,
+            "type": "fugue",
+            "measures": "20-26",
+            "brief": "The F minor fugue shows strategic voice crossing in four-voice texture for expressive effect"
+          },
+          {
+            "bwv": 861,
+            "type": "fugue",
+            "measures": "22-28",
+            "brief": "The G minor fugue exemplifies varied spacing creating textural contrast in four voices"
+          }
+        ],
+        "summary": "Four-voice texture provides fullest harmonic realization with each chord member receiving its own voice. The SATB arrangement positions voices in distinct registers: soprano highest, bass lowest, alto and tenor filling the middle. Voice-leading principles mandate common tones remaining stationary, stepwise or small-leap motion when movement is necessary, and careful treatment of the leading tone which must resolve up and never be doubled. Doubling conventions favor root and fifth, rarely third. Complete chords include all members while incomplete chords omit the fifth. Spacing keeps adjacent upper voices within an octave while bass may separate further. Four-voice fugues demand each voice carry subjects, countersubjects, and free material while maintaining independence. Bach's mastery creates textures where four distinct melodic lines combine into rich yet clear harmonic progressions."
+      },
+      "exercises": [
+        "In BWV 849 Fugue measures 15-22, identify all four voices and their registral ranges",
+        "Analyze the voice leading between two consecutive chords, marking common tones and motion types",
+        "Find examples of complete and incomplete seventh chords, noting which member is omitted",
+        "Locate any voice exchanges and describe how Bach executes them"
+      ],
+      "related_features": ["SATB-voicing", "doubling", "leading-tone-resolution", "complete-chord", "voice-exchange"],
+      "narration_text": "Four-voice texture offers the fullest realization of traditional harmony, with each note of a seventh chord receiving its own voice. The SATB arrangement positions soprano highest, alto and tenor in the middle, and bass lowest.\n\nTraditional voice-leading principles govern movement between chords. Common tones remain in the same voice. Movement occurs by step or small leap. Large leaps require careful approach, typically in contrary motion.\n\nDoubling conventions determine which note to double in triads. The root is most commonly doubled. The third is generally not doubled because it weakens modality. The leading tone must never be doubled and should resolve upward.\n\nExamine the C-sharp minor fugue measures fifteen through twenty-two. In measure fifteen, all four voices are active. Identify soprano carrying melody highest, bass providing foundation lowest, alto and tenor filling the middle.\n\nMeasure seventeen demonstrates a complete seventh chord with each voice stating one member. Root in bass, third distinguishing mode, fifth filling out, seventh providing drive.\n\nSpacing varies strategically. Measure eighteen shows close position for density. Measure nineteen opens spacing for lighter effect. Measure twenty presents voice exchange where soprano and alto trade material without crossing registers.\n\nThroughout, each voice maintains melodic interest even when supporting subjects in other voices. This independence within unity defines Bach's four-voice mastery."
+    },
+    {
+      "id": "parallel-motion-rules",
+      "lesson_id": "voice-lead-007-parallel-motion",
+      "title": "Parallel Motion: Rules and Exceptions",
+      "domain": "voice-leading",
+      "order": 7,
+      "estimated_minutes": 35,
+      "learning_objectives": [
+        "Identify parallel perfect fifths and octaves and understand why they're avoided",
+        "Recognize acceptable parallel thirds and sixths",
+        "Understand direct (hidden) fifths and octaves and their acceptable contexts",
+        "Analyze instances where Bach seemingly breaks rules for expressive effect"
+      ],
+      "prerequisites": ["voice-lead-006-four-voice"],
+      "content": {
+        "introduction": "The prohibition against parallel perfect fifths and octaves stands as counterpoint's most famous and most misunderstood rule. This rule exists not from arbitrary tradition but from acoustic and perceptual reality: when two voices move in parallel perfect intervals, they cease to function as independent lines and merge into a single reinforced sound. Understanding this rule, including its nuances and occasional exceptions, clarifies the fundamental goal of counterpoint, maintaining the independence of each voice. This lesson examines parallel motion in all its forms, from forbidden parallels to acceptable ones, from direct fifths to compound intervals, providing a complete picture of how Bach navigates this essential aspect of voice leading.",
+        "explanation": "Parallel motion occurs when two voices move in the same direction by the same interval. Whether this is problematic depends on the interval involved. Parallel thirds and sixths, imperfect consonances, create pleasant sonority without sacrificing voice independence. These parallels appear frequently in Bach's counterpoint, providing moments of consonant flow.\n\nParallel fifths and octaves present the problem. When two voices move by parallel perfect fifths or octaves, the acoustic effect causes them to fuse into a single composite sound. The ear ceases to hear two independent lines and instead perceives one reinforced line. This undermines counterpoint's fundamental purpose of combining independent voices. The prohibition therefore serves the art's central aesthetic goal.\n\nThe rule against parallels applies regardless of whether voices approach the parallel by step or leap, and regardless of note duration. Even brief parallels between main beats constitute violations. However, the rule does not apply to intervals exceeding two octaves, where the voices are separated enough that fusion does not occur.\n\nDirect fifths and octaves, also called hidden or covered fifths and octaves, occur when two voices move in similar motion to a perfect interval. No actual parallel occurs, the first interval differs from the second, but arriving at a perfect interval by similar motion creates a weak parallel effect. Traditional rules restrict these progressions, particularly between outer voices where they are most audible.\n\nDirect fifths to an inner voice are generally acceptable. Direct fifths between soprano and bass receive strictest scrutiny. When the soprano moves by step approaching the fifth or octave, the effect is softened and most authorities accept it. When both voices leap to a perfect interval in similar motion, the parallel effect is strongest and should be avoided.\n\nUnequal fifths describe motion from a perfect fifth to a diminished fifth or vice versa. Because the diminished fifth functions as a dissonance, this motion does not create the fusion effect of parallel perfect fifths. Bach uses unequal fifths freely, particularly in sequences where they create chromatic color.\n\nConsecutive fifths by contrary motion also avoid the prohibition. If one voice ascends a step while another descends a fourth, both ending on members of a fifth, no parallel motion has occurred despite consecutive fifths on adjacent beats. The contrary motion preserves independence.\n\nHorn fifths represent a specific exception in instrumental music. When two voices in parallel fifths move within a single chord, particularly in horn-like passages, the effect may be acceptable because no actual harmonic motion occurs. Bach occasionally uses this effect in passages imitating brass fanfares.\n\nCompound parallels, fifths or octaves expanded by octaves, follow the same rules as simple parallels. Moving from a twelfth to a twelfth in parallel motion constitutes parallel fifths because the ear reduces compounds to their simple equivalents.\n\nBach occasionally appears to violate parallel prohibitions for expressive effect. Close analysis usually reveals these as unequal fifths, separated by intervening notes, or occurring with sufficient velocity that they pass unnoticed. True violations are extremely rare in Bach's mature works, demonstrating how deeply these principles shaped his compositional practice.",
+        "guided_example": {
+          "bwv": 846,
+          "type": "fugue",
+          "measures": "18-24",
+          "analysis": "The C major fugue provides an instructive examination of how Bach navigates parallel motion rules while maintaining flowing counterpoint. Measures 18 through 24 include several moments where parallels must be carefully managed.\n\nIn measure 18, examine the soprano and bass relationship. As the passage begins, both voices move in similar motion. Track whether they arrive at any perfect intervals. You will find that when approaching perfect intervals, Bach ensures contrary motion or stepwise approach in the soprano to avoid forbidden progressions.\n\nMeasure 19 demonstrates parallel thirds between soprano and alto. This acceptable parallelism creates a sweetness that momentarily homogenizes the texture. Notice how Bach limits the duration; after two beats of parallel thirds, the voices diverge to contrary motion, restoring independence.\n\nThe bass and tenor in measure 20 present what might appear to be parallel fifths. Examine carefully: the first interval is a perfect fifth, but the second is actually a diminished fifth due to chromatic alteration. These unequal fifths are perfectly acceptable and create chromatic color that enriches the harmonic palette.\n\nMeasure 21 shows a direct octave between soprano and bass. Both voices move in similar motion arriving at an octave. However, notice that the soprano moves by step while the bass leaps. This soprano-stepwise approach softens the direct octave sufficiently that most authorities accept it, and Bach uses such progressions when voice-leading demands require.\n\nIn measure 22, observe how Bach avoids parallels through rhythmic displacement. Where parallel fifths might occur if all voices moved simultaneously, one voice moves slightly before another, separating the intervals temporally. This rhythmic solution is common in Bach's counterpoint.\n\nMeasure 23 features a passage of sequences where similar patterns repeat. Sequences create heightened parallel risk because each repetition presents the same intervallic challenges. Bach's sequence is carefully constructed so that each iteration maintains proper voice leading despite the pattern's constraints.\n\nThe passage concludes in measure 24 with all voices arriving on a cadential sonority. The approach demonstrates impeccable voice leading: the bass moves by leap while upper voices move by step or common tone, the leading tone resolves upward, and no perfect parallel disturbs the arrival."
+        },
+        "additional_examples": [
+          {
+            "bwv": 848,
+            "type": "fugue",
+            "measures": "14-20",
+            "brief": "The C-sharp major fugue demonstrates how parallel thirds create flowing passages without violating voice independence"
+          },
+          {
+            "bwv": 850,
+            "type": "fugue",
+            "measures": "16-22",
+            "brief": "The D major fugue shows careful avoidance of parallels in a sequence with rising patterns"
+          },
+          {
+            "bwv": 853,
+            "type": "fugue",
+            "measures": "20-26",
+            "brief": "The E-flat minor fugue uses rhythmic displacement to avoid parallels in dense four-voice texture"
+          }
+        ],
+        "summary": "The prohibition against parallel fifths and octaves preserves voice independence; when voices move in parallel perfect intervals, they fuse acoustically and cease to function as separate lines. Parallel thirds and sixths remain acceptable, creating pleasant consonance without sacrificing independence. Direct fifths and octaves, arriving at perfect intervals by similar motion, are restricted particularly between outer voices, though soprano-stepwise approaches soften the effect. Unequal fifths, between perfect and diminished fifths, are acceptable because the dissonant diminished fifth prevents fusion. Consecutive fifths by contrary motion present no problem. Bach occasionally seems to violate these rules but close analysis usually reveals unequal fifths, rhythmic displacement, or sufficient velocity to mask the effect. Understanding these principles reveals how Bach maintains the independence essential to counterpoint's aesthetic goal."
+      },
+      "exercises": [
+        "In BWV 846 Fugue measures 18-24, search for any parallel fifths or octaves and determine whether they are actual violations or permitted unequal fifths",
+        "Find all instances of parallel thirds and sixths and note their duration before voices diverge",
+        "Locate direct fifths or octaves between soprano and bass and analyze the soprano's approach motion",
+        "Identify any instances where rhythmic displacement prevents potential parallels"
+      ],
+      "related_features": ["parallel-fifths", "parallel-octaves", "direct-fifths", "unequal-fifths", "parallel-thirds", "parallel-sixths"],
+      "narration_text": "The prohibition against parallel fifths and octaves preserves voice independence. When voices move in parallel perfect intervals, they fuse acoustically and cease to function as separate lines. This undermines counterpoint's fundamental purpose.\n\nParallel thirds and sixths remain acceptable, creating pleasant sonority without sacrificing independence. These appear frequently in Bach's counterpoint.\n\nDirect fifths and octaves occur when voices move in similar motion to a perfect interval. No actual parallel occurs, but the effect is weakened. When soprano moves by step approaching the fifth or octave, the effect is softened and generally accepted.\n\nUnequal fifths, motion from perfect fifth to diminished fifth, are acceptable because the diminished fifth functions as dissonance. Bach uses these freely.\n\nExamine the C major fugue measures eighteen through twenty-four. In measure eighteen, soprano and bass move similarly. Notice Bach ensures contrary motion or stepwise soprano approach when approaching perfect intervals.\n\nMeasure nineteen demonstrates parallel thirds between soprano and alto. Notice how Bach limits duration; after two beats, voices diverge to contrary motion. Measure twenty presents what appears to be parallel fifths but is actually unequal fifths due to chromatic alteration.\n\nMeasure twenty-two shows how Bach avoids parallels through rhythmic displacement. One voice moves before another, separating intervals temporally.\n\nUnderstanding these principles reveals how Bach maintains the independence essential to counterpoint."
+    },
+    {
+      "id": "voice-exchange-invertible",
+      "lesson_id": "voice-lead-008-voice-exchange",
+      "title": "Voice Exchange and Invertible Counterpoint",
+      "domain": "voice-leading",
+      "order": 8,
+      "estimated_minutes": 35,
+      "learning_objectives": [
+        "Identify voice exchange where two voices swap melodic material",
+        "Understand invertible counterpoint at the octave, tenth, and twelfth",
+        "Recognize how invertible counterpoint enables imitation and development",
+        "Analyze Bach's use of voice exchange in fugal episodes and sequences"
+      ],
+      "prerequisites": ["voice-lead-005-three-voice", "voice-lead-007-parallel-motion"],
+      "content": {
+        "introduction": "Advanced contrapuntal techniques transform good counterpoint into great counterpoint by enabling material to be developed, recombined, and varied while maintaining musical coherence. Voice exchange allows two voices to trade their melodic material, creating continuity within change. Invertible counterpoint, where two lines can exchange vertical position while remaining musically viable, enables the same material to serve multiple formal functions throughout a piece. Bach relies heavily on these techniques to construct the extended developments of his fugues, where limited thematic material must sustain interest across dozens of measures. This lesson examines these sophisticated tools that distinguish master counterpoint from competent counterpoint.",
+        "explanation": "Voice exchange occurs when two voices simultaneously trade their melodic material. Voice A takes what Voice B had, while Voice B takes what Voice A had. The effect maintains the same two-voice counterpoint but with reversed assignments, creating variety within unity. Voice exchange typically occurs over a sustained bass note, allowing upper voices to swap without changing the harmonic foundation.\n\nSimple voice exchange involves literal trading of material. More complex versions may include slight alterations, octave displacements, or rhythmic modifications. The essential requirement is that material previously in one voice now appears recognizably in another.\n\nInvertible counterpoint describes the technique of writing two lines that function musically whether one is above or below the other. This inverting refers not to melodic inversion (upside-down melodies) but to vertical repositioning of entire lines. A soprano melody becomes a bass line while the bass becomes the soprano, and the result must still be musically coherent.\n\nInvertibility at the octave represents the most common and strictest form. Two lines written to be invertible at the octave can exchange positions by transposing one voice up or down an octave. This requires careful attention to intervals: a third becomes a sixth when inverted at the octave (since 3+6=9, which equals 2 in mod 8 arithmetic), which is acceptable. But a fifth becomes a fourth, potentially problematic since fourths against the bass require resolution. This is why parallel fifths are prohibited: in inversion, they become parallel fourths, disrupting the voice leading.\n\nInvertibility at the tenth allows more flexibility. Two lines can exchange with one transposed a third plus an octave. The interval transformations differ: thirds remain thirds, sixths become thirds. This permits certain progressions forbidden in octave invertibility.\n\nInvertibility at the twelfth transposes by a fifth plus an octave. Thirds become sixths, sixths become thirds, fifths remain fifths. This permits the freest counterpoint because the most common consonances retain their consonant quality in inversion.\n\nBach's fugue subjects and countersubjects are routinely designed for invertibility. The countersubject that accompanies the first subject statement must also work beneath the answer, then beneath subsequent subject entries in various voices. This requires the subject-countersubject combination to be invertible, typically at the octave.\n\nEpisodes benefit enormously from invertible counterpoint. A sequence in an episode can be repeated with voices exchanged, doubling the music's length without introducing new material. This economy allows Bach to create substantial developments from limited thematic resources.\n\nMultiple invertibility describes counterpoint among three or more voices that can be rearranged in any vertical order. This extremely demanding technique requires each pair of voices to be mutually invertible. Bach's most sophisticated fugues, particularly those with multiple countersubjects, employ multiple invertibility to create maximum developmental possibilities.",
+        "guided_example": {
+          "bwv": 847,
+          "type": "fugue",
+          "measures": "14-22",
+          "analysis": "The C minor fugue contains a magnificent demonstration of voice exchange and invertible counterpoint in its first episode, measures 14 through 22. This passage shows Bach deriving maximum development from minimal material through these advanced techniques.\n\nExamine measures 14 and 15. Two upper voices, soprano and alto, engage in a sequence derived from the countersubject. The soprano carries a descending pattern while the alto supports with complementary motion. Note the specific intervallic relationship between these voices.\n\nNow observe measures 16 and 17. The voices have exchanged material. The soprano now carries what the alto had, and the alto takes the soprano's previous material. This voice exchange extends the sequence by presenting familiar material in a fresh configuration. The bass continues its foundational role, providing harmonic support while upper voices trade.\n\nMeasure 18 introduces a new twist. The alto and bass now participate in exchange while the soprano rests. The material that was in upper voices descends into the bass register. This demonstrates the invertibility of Bach's counterpoint; the same material functions effectively in bass position.\n\nThe passage from measures 19 to 21 shows chain exchange, where multiple voice exchanges occur in sequence. First soprano and alto trade, then alto and tenor, creating a sense of the material passing through all voices. Each exchange maintains the essential counterpoint while placing it in new registral contexts.\n\nMeasure 22 concludes the episode as voices converge toward the next subject entry. Notice how Bach uses these techniques to span eight measures with material derived from just a few beats of the countersubject. This economy is characteristic of Bach's developmental mastery.\n\nThe entire passage demonstrates invertible counterpoint at the octave. When voices exchange, one moves up an octave while the other moves down, or vice versa. The counterpoint remains viable because Bach composed it with octave invertibility in mind, avoiding intervals that would become problematic under inversion.\n\nThis episode serves as a model for fugal development. Rather than introducing new themes, Bach develops existing material through techniques that multiply its possibilities. Voice exchange and invertible counterpoint transform a single countersubject into sufficient material for an extended developmental passage."
+        },
+        "additional_examples": [
+          {
+            "bwv": 850,
+            "type": "fugue",
+            "measures": "18-24",
+            "brief": "The D major fugue demonstrates voice exchange in a light-textured episode with crystalline clarity"
+          },
+          {
+            "bwv": 853,
+            "type": "fugue",
+            "measures": "22-28",
+            "brief": "The E-flat minor fugue uses invertible counterpoint at the twelfth for greater harmonic flexibility"
+          },
+          {
+            "bwv": 857,
+            "type": "fugue",
+            "measures": "24-30",
+            "brief": "The F minor fugue shows multiple invertibility with three-voice combinations appearing in various arrangements"
+          }
+        ],
+        "summary": "Voice exchange enables two voices to trade material, creating variety within unity as familiar counterpoint appears in new configurations. Invertible counterpoint allows lines to exchange vertical position while remaining musically viable. Invertibility at the octave, the strictest form, requires intervals that transform acceptably: thirds become sixths, but fifths become fourths requiring care. Invertibility at the tenth and twelfth permits greater flexibility with different interval transformations. Bach designs fugue subjects and countersubjects for invertibility so they function throughout the piece in various vertical arrangements. Episodes benefit from these techniques, allowing extended development from limited material through voice exchange and invertible repetition. Multiple invertibility among three or more voices creates maximum developmental possibilities. These advanced techniques distinguish master counterpoint, enabling Bach to construct substantial fugues from concentrated thematic material."
+      },
+      "exercises": [
+        "In BWV 847 Fugue measures 14-22, identify all instances of voice exchange and note which voices participate",
+        "Locate the first appearance of a counterpoint figure and trace its appearances in different voices",
+        "Analyze whether the voice exchanges demonstrate invertibility at the octave, tenth, or twelfth",
+        "Compose a short two-voice passage designed to be invertible at the octave"
+      ],
+      "related_features": ["voice-exchange", "invertible-counterpoint", "octave-invertibility", "tenth-invertibility", "twelfth-invertibility", "fugal-episode"],
+      "narration_text": "Advanced contrapuntal techniques transform good counterpoint into great counterpoint. Voice exchange allows two voices to trade their melodic material, creating variety within unity. Invertible counterpoint enables lines to exchange vertical position while remaining musically viable.\n\nVoice exchange occurs when voices simultaneously trade material. Voice A takes what Voice B had while Voice B takes Voice A's material. The effect maintains counterpoint but with reversed assignments.\n\nInvertible counterpoint at the octave allows lines to exchange positions by transposing one voice an octave. Thirds become sixths, acceptable. But fifths become fourths, requiring care. This is why parallel fifths are prohibited: in inversion, they become parallel fourths.\n\nInvertibility at the tenth and twelfth permits greater flexibility with different interval transformations.\n\nExamine the C minor fugue measures fourteen through twenty-two. In measures fourteen and fifteen, soprano and alto engage in sequence from the countersubject. Measures sixteen and seventeen show voice exchange: soprano takes what alto had and vice versa.\n\nMeasure eighteen introduces bass participating while soprano rests. The same material functions in bass register, demonstrating invertibility. Measures nineteen through twenty-one show chain exchange with material passing through all voices.\n\nThis episode derives eight measures from a few beats of countersubject. Voice exchange and invertible counterpoint transform single themes into extended development, distinguishing master counterpoint from competent counterpoint."
+    }
+  ]
+}
