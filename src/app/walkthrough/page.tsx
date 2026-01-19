@@ -1,18 +1,67 @@
 import Link from 'next/link'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import { db } from '@/lib/db'
 
-// Mock data - replace with actual data source
-const pieces = [
-  { bwv: 846, title: 'Prelude and Fugue No. 1', key: 'C major', book: 'I' },
-  { bwv: 847, title: 'Prelude and Fugue No. 2', key: 'C minor', book: 'I' },
-  { bwv: 848, title: 'Prelude and Fugue No. 3', key: 'C♯ major', book: 'I' },
-  { bwv: 849, title: 'Prelude and Fugue No. 4', key: 'C♯ minor', book: 'I' },
-  { bwv: 850, title: 'Prelude and Fugue No. 5', key: 'D major', book: 'I' },
-  { bwv: 851, title: 'Prelude and Fugue No. 6', key: 'D minor', book: 'I' },
-]
+interface GroupedPiece {
+  bwv: number;
+  title: string;
+  key: string;
+  book: string;
+  numberInBook: number;
+  hasPrelude: boolean;
+  hasFugue: boolean;
+}
 
-export default function WalkthroughPage() {
+async function getPieces(): Promise<GroupedPiece[]> {
+  const pieces = await db.piece.findMany({
+    orderBy: [
+      { book: 'asc' },
+      { numberInBook: 'asc' },
+    ],
+    select: {
+      bwvNumber: true,
+      book: true,
+      numberInBook: true,
+      type: true,
+      keyTonic: true,
+      keyMode: true,
+    },
+  });
+
+  // Group pieces by BWV number and book
+  const groupedMap = new Map<string, GroupedPiece>();
+
+  pieces.forEach(piece => {
+    const key = `${piece.book}-${piece.numberInBook}`;
+    const keyName = `${piece.keyTonic} ${piece.keyMode.toLowerCase()}`;
+    const romanBook = piece.book === 1 ? 'I' : 'II';
+
+    if (!groupedMap.has(key)) {
+      groupedMap.set(key, {
+        bwv: piece.bwvNumber,
+        title: `Prelude and Fugue No. ${piece.numberInBook}`,
+        key: keyName,
+        book: romanBook,
+        numberInBook: piece.numberInBook,
+        hasPrelude: false,
+        hasFugue: false,
+      });
+    }
+
+    const grouped = groupedMap.get(key)!;
+    if (piece.type === 'PRELUDE') {
+      grouped.hasPrelude = true;
+    } else if (piece.type === 'FUGUE') {
+      grouped.hasFugue = true;
+    }
+  });
+
+  return Array.from(groupedMap.values());
+}
+
+export default async function WalkthroughPage() {
+  const pieces = await getPieces();
   return (
     <div className="container mx-auto p-6 space-y-6">
       <div className="space-y-2">

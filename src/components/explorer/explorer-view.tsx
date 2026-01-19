@@ -13,25 +13,33 @@ import type {
 } from '@/types/explorer';
 import type { FeatureCategory } from '@/types/database';
 
-// Mock search function - replace with actual API call
+// Call the actual search API
 async function searchFeatures(
-  _query: string,
-  _filters: ExplorerFilters,
-  _sortBy: SortOption,
-  _page: number = 1,
-  _pageSize: number = 20
+  query: string,
+  filters: ExplorerFilters,
+  sortBy: SortOption,
+  page: number = 1,
+  pageSize: number = 20
 ): Promise<SearchResult> {
-  // TODO: Implement actual search API
-  return {
-    instances: [],
-    totalCount: 0,
-    facets: {
-      categories: {} as Record<FeatureCategory, number>,
-      keys: {},
-      books: {},
-      types: { PRELUDE: 0, FUGUE: 0 },
-    },
-  };
+  const params = new URLSearchParams();
+
+  if (query) params.set('q', query);
+  if (filters.categories.length > 0) {
+    params.set('categories', filters.categories.join(','));
+  }
+  if (filters.keyFilter) params.set('key', filters.keyFilter);
+  if (filters.bookFilter) params.set('book', String(filters.bookFilter));
+  if (filters.typeFilter) params.set('type', filters.typeFilter);
+  params.set('sort', sortBy);
+  params.set('limit', String(pageSize));
+  params.set('offset', String((page - 1) * pageSize));
+
+  const response = await fetch(`/api/search?${params.toString()}`);
+  if (!response.ok) {
+    throw new Error(`Search failed: ${response.statusText}`);
+  }
+
+  return response.json();
 }
 
 export function ExplorerView({ features, categories }: ExplorerViewProps) {

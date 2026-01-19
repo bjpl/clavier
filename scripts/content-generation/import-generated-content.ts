@@ -201,7 +201,8 @@ async function importCurriculumLessons() {
 
   let created = 0;
 
-  for (const { file, domainName } of lessonFiles) {
+  for (let i = 0; i < lessonFiles.length; i++) {
+    const { file, domainName } = lessonFiles[i];
     const data = await readJsonFile<{ lessons: GeneratedLesson[] }>(
       path.join(CONTENT_DIR, 'curriculum', file)
     );
@@ -218,7 +219,7 @@ async function importCurriculumLessons() {
         data: {
           name: domainName,
           description: `Study of ${domainName.toLowerCase()} principles in Bach's Well-Tempered Clavier`,
-          orderIndex: lessonFiles.indexOf({ file, domainName }) + 1,
+          orderIndex: i + 6, // Start at 6 to avoid conflict with seeded domains (1-5)
         },
       });
     }
