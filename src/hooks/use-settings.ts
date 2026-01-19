@@ -7,7 +7,7 @@
 
 import { useCallback } from 'react';
 import { useSettingsStore } from '@/lib/settings/settings-store';
-import type { Theme, AnnotationLayer, UserSettings } from '@/lib/settings/settings-schema';
+import type { UserSettings } from '@/lib/settings/settings-schema';
 
 /**
  * Main hook for accessing settings

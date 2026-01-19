@@ -5,7 +5,7 @@
  * Run with: npm test (when test framework is set up)
  */
 
-import { describe, it, expect, beforeEach } from '@jest/globals';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { useSettingsStore } from './settings-store';
 import {
   DEFAULT_SETTINGS,
@@ -116,7 +116,9 @@ describe('Settings Store', () => {
 
   it('should toggle annotation layers', () => {
     const { toggleAnnotationLayer } = useSettingsStore.getState();
-    const initial = useSettingsStore.getState().annotationLayers;
+
+    // Ensure harmonic starts in the layers
+    expect(useSettingsStore.getState().annotationLayers).toContain('harmonic');
 
     // Remove a layer
     toggleAnnotationLayer('harmonic');
@@ -129,7 +131,7 @@ describe('Settings Store', () => {
 
   it('should set annotation layers', () => {
     const { setAnnotationLayers } = useSettingsStore.getState();
-    const newLayers = ['harmonic', 'pedagogical'];
+    const newLayers: Array<'harmonic' | 'melodic' | 'structural' | 'pedagogical'> = ['harmonic', 'pedagogical'];
 
     setAnnotationLayers(newLayers);
     expect(useSettingsStore.getState().annotationLayers).toEqual(newLayers);
@@ -189,14 +191,13 @@ describe('Settings Store', () => {
   it('should validate bulk updates', () => {
     const { updateSettings } = useSettingsStore.getState();
 
-    // Try to set invalid settings - should be rejected
-    const beforeUpdate = useSettingsStore.getState().scoreZoom;
+    // Try to set invalid settings - value should be clamped
     updateSettings({
-      scoreZoom: 5.0, // Invalid - too high
+      scoreZoom: 5.0, // Invalid - too high, should be clamped to max
     } as any);
 
-    // State should not change for invalid updates
-    // Note: Current implementation clamps values, so this test verifies that behavior
-    expect(useSettingsStore.getState().scoreZoom).toBeDefined();
+    // Current implementation clamps values, so this test verifies that behavior
+    // scoreZoom should be clamped to max value (2.0)
+    expect(useSettingsStore.getState().scoreZoom).toBeLessThanOrEqual(CONSTRAINTS.scoreZoom.max);
   });
 });

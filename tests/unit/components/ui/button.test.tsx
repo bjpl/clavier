@@ -54,15 +54,15 @@ describe('Button Component', () => {
       expect(screen.getByRole('button')).toBeInTheDocument()
     })
 
-    it('should render link variant', () => {
-      render(<Button variant="link">Link</Button>)
+    it('should render ghost variant with link text', () => {
+      render(<Button variant="ghost">Link</Button>)
       expect(screen.getByRole('button')).toBeInTheDocument()
     })
   })
 
   describe('Sizes', () => {
-    it('should render default size', () => {
-      render(<Button size="default">Default</Button>)
+    it('should render medium size', () => {
+      render(<Button size="md">Default</Button>)
       expect(screen.getByRole('button')).toBeInTheDocument()
     })
 
@@ -167,14 +167,10 @@ describe('Button Component', () => {
     })
   })
 
-  describe('As Child', () => {
-    it('should render as different element when asChild is true', () => {
-      render(
-        <Button asChild>
-          <a href="/music">Go to Music</a>
-        </Button>
-      )
-      expect(screen.getByRole('link')).toHaveTextContent('Go to Music')
+  describe('Loading State', () => {
+    it('should render loading spinner when loading is true', () => {
+      render(<Button loading>Loading</Button>)
+      expect(screen.getByRole('button')).toBeDisabled()
     })
   })
 })

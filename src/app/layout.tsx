@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { Providers } from '@/components/providers'
@@ -16,7 +16,11 @@ export const metadata: Metadata = {
   description: 'An interactive music theory learning application for mastering scales, chords, ear training, and sight-reading',
   keywords: ['music theory', 'ear training', 'sight-reading', 'music education', 'piano', 'scales', 'chords'],
   authors: [{ name: 'Clavier Team' }],
-  viewport: 'width=device-width, initial-scale=1',
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
   themeColor: '#2563EB',
 }
 

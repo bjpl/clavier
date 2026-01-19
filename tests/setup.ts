@@ -26,52 +26,115 @@ vi.mock('next/navigation', () => ({
 
 // Mock Tone.js (audio library)
 vi.mock('tone', () => {
-  const mockVolume = function() {
-    return {
-      toDestination: vi.fn(),
+  // Create a fresh mock instance each time
+  const createVolumeInstance = () => {
+    const instance = {
+      toDestination: vi.fn().mockReturnThis(),
       dispose: vi.fn(),
       volume: { value: 0 },
       mute: false,
+      connect: vi.fn().mockReturnThis(),
     }
+    // Make toDestination return the instance itself for chaining
+    instance.toDestination = vi.fn(() => instance)
+    return instance
   }
 
-  const mockSampler = function() {
+  const mockVolume = vi.fn().mockImplementation(() => createVolumeInstance())
+
+  const mockSampler = vi.fn().mockImplementation((options) => {
+    // Simulate successful load by calling onload if provided
+    if (options?.onload) {
+      setTimeout(() => options.onload(), 10)
+    }
     return {
       triggerAttackRelease: vi.fn(),
+      triggerAttack: vi.fn(),
       triggerRelease: vi.fn(),
       releaseAll: vi.fn(),
-      connect: vi.fn(),
+      connect: vi.fn().mockReturnThis(),
       dispose: vi.fn(),
+      loaded: true,
     }
+  })
+
+  const mockSynth = vi.fn().mockImplementation(() => ({
+    triggerAttackRelease: vi.fn(),
+    triggerAttack: vi.fn(),
+    triggerRelease: vi.fn(),
+    releaseAll: vi.fn(),
+    connect: vi.fn().mockReturnThis(),
+    chain: vi.fn().mockReturnThis(),
+    dispose: vi.fn(),
+  }))
+
+  const mockPolySynth = vi.fn().mockImplementation(() => ({
+    triggerAttackRelease: vi.fn(),
+    triggerAttack: vi.fn(),
+    triggerRelease: vi.fn(),
+    releaseAll: vi.fn(),
+    connect: vi.fn().mockReturnThis(),
+    chain: vi.fn().mockReturnThis(),
+    dispose: vi.fn(),
+    maxPolyphony: 32,
+  }))
+
+  const mockReverb = vi.fn().mockImplementation(() => ({
+    connect: vi.fn().mockReturnThis(),
+    dispose: vi.fn(),
+  }))
+
+  const mockCompressor = vi.fn().mockImplementation(() => ({
+    connect: vi.fn().mockReturnThis(),
+    dispose: vi.fn(),
+  }))
+
+  const mockTransport = {
+    start: vi.fn(),
+    stop: vi.fn(),
+    pause: vi.fn(),
+    cancel: vi.fn(),
+    clear: vi.fn(),
+    schedule: vi.fn().mockReturnValue(1),
+    scheduleOnce: vi.fn().mockReturnValue(1),
+    scheduleRepeat: vi.fn().mockReturnValue(1),
+    bpm: { value: 120 },
+    seconds: 0,
+    loop: false,
+    loopStart: 0,
+    loopEnd: 0,
+    position: '0:0:0',
+    state: 'stopped',
+  }
+
+  const mockContext = {
+    state: 'running',
+    resume: vi.fn().mockResolvedValue(undefined),
+    suspend: vi.fn().mockResolvedValue(undefined),
+    currentTime: 0,
   }
 
   return {
     default: {
-      Transport: {
-        start: vi.fn(),
-        stop: vi.fn(),
-        pause: vi.fn(),
-        bpm: { value: 120 },
-      },
+      Transport: mockTransport,
       Sampler: mockSampler,
+      Synth: mockSynth,
+      PolySynth: mockPolySynth,
       Volume: mockVolume,
-      context: {
-        state: 'running',
-      },
-      start: vi.fn(),
+      Reverb: mockReverb,
+      Compressor: mockCompressor,
+      context: mockContext,
+      start: vi.fn().mockResolvedValue(undefined),
     },
-    Transport: {
-      start: vi.fn(),
-      stop: vi.fn(),
-      pause: vi.fn(),
-      bpm: { value: 120 },
-    },
+    Transport: mockTransport,
     Sampler: mockSampler,
+    Synth: mockSynth,
+    PolySynth: mockPolySynth,
     Volume: mockVolume,
-    context: {
-      state: 'running',
-    },
-    start: vi.fn(),
+    Reverb: mockReverb,
+    Compressor: mockCompressor,
+    context: mockContext,
+    start: vi.fn().mockResolvedValue(undefined),
   }
 })
 

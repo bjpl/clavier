@@ -33,10 +33,15 @@ export interface FeatureWithStats extends Feature {
   typeDistribution: Record<PieceType, number>;
 }
 
+// Related instance with piece context for display
+export interface RelatedInstanceWithPiece extends FeatureInstance {
+  piece?: Pick<Piece, 'id' | 'bwvNumber' | 'type' | 'keyTonic' | 'keyMode' | 'book'>;
+}
+
 export interface FeatureInstanceWithContext extends FeatureInstance {
   feature: Feature;
   piece: Piece;
-  relatedInstances?: FeatureInstance[];
+  relatedInstances?: RelatedInstanceWithPiece[];
   curriculumReferences?: Array<{
     lessonId: string;
     lessonTitle: string;

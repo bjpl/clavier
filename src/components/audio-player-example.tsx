@@ -35,7 +35,7 @@ export function AudioPlayerExample() {
 
   // Get piano keyboard controls
   const piano = usePianoSounds(engine, {
-    duration: 0.8,
+    fixedDuration: 0.8,
     velocity: 0.7
   })
 

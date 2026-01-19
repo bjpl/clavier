@@ -1,6 +1,13 @@
 /**
  * MIDI Player
  * Controls playback of MIDI data with tempo, looping, and event callbacks
+ *
+ * Features:
+ * - Precise event scheduling with Tone.js Transport
+ * - Tempo control with multiplier
+ * - Loop region support
+ * - Measure and beat tracking
+ * - Note on/off callbacks for visualization
  */
 
 import * as Tone from 'tone'
@@ -17,25 +24,64 @@ import {
 } from './types'
 
 /**
+ * Extended note event with voice information
+ */
+export interface ExtendedNoteEvent extends NoteEvent {
+  voice?: string
+  eventId?: number
+}
+
+/**
+ * MIDI player configuration
+ */
+export interface MIDIPlayerConfig {
+  /** Lookahead time for scheduling (seconds) */
+  lookahead?: number
+  /** Position update interval (ms) */
+  updateInterval?: number
+  /** Auto-stop after playback ends */
+  autoStop?: boolean
+}
+
+const DEFAULT_CONFIG: MIDIPlayerConfig = {
+  lookahead: 0.1,
+  updateInterval: 50,
+  autoStop: true
+}
+
+/**
  * MIDI playback controller with transport synchronization
  */
 export class MIDIPlayer {
   private engine: AudioEngine
+  private config: MIDIPlayerConfig
   private events: MIDIEvent[] = []
   private midiData: MIDIData | null = null
   private playbackState: PlaybackState = 'stopped'
   private callbacks: PlaybackCallbacks = {}
-  private scheduledEvents: number[] = []
+  private scheduledEventIds: number[] = []
   private loopRegion: LoopRegion | null = null
   private tempoMultiplier = 1.0
+  private baseTempo = 120
   private currentMeasure = 1
   private currentBeat = 1
-  private updateInterval: number | null = null
-  private activeNotes = new Set<number>()
+  private updateIntervalId: number | null = null
+  private activeNotes = new Map<number, ExtendedNoteEvent>()
+  private startPosition = 0 // Starting position in seconds when play was called
+  private pausePosition = 0 // Position when paused
 
-  constructor(engine: AudioEngine) {
+  constructor(engine: AudioEngine, config?: Partial<MIDIPlayerConfig>) {
     this.engine = engine
-    this.setupTransportCallbacks()
+    this.config = { ...DEFAULT_CONFIG, ...config }
+    this.setupTransport()
+  }
+
+  /**
+   * Setup transport with initial configuration
+   */
+  private setupTransport(): void {
+    // Configure transport
+    Tone.Transport.bpm.value = this.baseTempo
   }
 
   /**
@@ -45,15 +91,25 @@ export class MIDIPlayer {
     this.stop()
     this.midiData = data
     this.events = [...data.events].sort((a, b) => a.time - b.time)
+    this.baseTempo = data.tempo
 
-    // Set initial tempo
-    this.setTempo(data.tempo)
+    // Apply tempo multiplier
+    this.updateEffectiveTempo()
 
     // Reset position
     this.currentMeasure = 1
     this.currentBeat = 1
+    this.pausePosition = 0
+    this.startPosition = 0
 
-    console.log(`Loaded MIDI: ${data.name || 'Untitled'}, ${data.measures} measures, ${this.events.length} events`)
+    console.log(`Loaded MIDI: ${data.name || 'Untitled'}, ${data.measures} measures, ${this.events.length} events, ${data.tempo} BPM`)
+  }
+
+  /**
+   * Get loaded MIDI data
+   */
+  getMIDIData(): MIDIData | null {
+    return this.midiData
   }
 
   /**
@@ -65,19 +121,38 @@ export class MIDIPlayer {
       return
     }
 
-    if (this.playbackState === 'playing') return
+    if (this.playbackState === 'playing') {
+      console.log('Already playing')
+      return
+    }
 
-    // Schedule all events
-    this.scheduleEvents()
+    // Ensure audio context is running
+    this.engine.resume()
 
-    // Start transport
+    // Clear any previously scheduled events
+    this.cancelScheduledEvents()
+
+    // Determine start position
+    if (this.playbackState === 'paused') {
+      // Resume from pause position
+      this.startPosition = this.pausePosition
+    } else {
+      // Start from beginning or current seek position
+      this.startPosition = this.pausePosition
+    }
+
+    // Schedule events from current position
+    this.scheduleEventsFrom(this.startPosition)
+
+    // Set transport position and start
+    Tone.Transport.seconds = this.startPosition
     Tone.Transport.start()
 
     this.playbackState = 'playing'
     this.startPositionUpdates()
     this.callbacks.onPlaybackStart?.()
 
-    console.log('Playback started')
+    console.log(`Playback started from ${this.startPosition.toFixed(2)}s`)
   }
 
   /**
@@ -86,12 +161,23 @@ export class MIDIPlayer {
   pause(): void {
     if (this.playbackState !== 'playing') return
 
+    // Save current position
+    this.pausePosition = Tone.Transport.seconds
+
+    // Pause transport
     Tone.Transport.pause()
+
+    // Cancel scheduled events
+    this.cancelScheduledEvents()
+
+    // Stop currently playing notes
+    this.releaseAllActiveNotes()
+
     this.playbackState = 'paused'
     this.stopPositionUpdates()
     this.callbacks.onPlaybackPause?.()
 
-    console.log('Playback paused')
+    console.log(`Playback paused at ${this.pausePosition.toFixed(2)}s`)
   }
 
   /**
@@ -100,19 +186,21 @@ export class MIDIPlayer {
   stop(): void {
     // Stop transport
     Tone.Transport.stop()
-    Tone.Transport.position = 0
+    Tone.Transport.seconds = 0
 
     // Cancel all scheduled events
     this.cancelScheduledEvents()
 
     // Stop all playing notes
+    this.releaseAllActiveNotes()
     this.engine.stopAllNotes()
-    this.activeNotes.clear()
 
     // Reset state
     this.playbackState = 'stopped'
     this.currentMeasure = 1
     this.currentBeat = 1
+    this.pausePosition = 0
+    this.startPosition = 0
     this.stopPositionUpdates()
 
     console.log('Playback stopped')
@@ -126,57 +214,96 @@ export class MIDIPlayer {
 
     const wasPlaying = this.playbackState === 'playing'
 
-    // Stop current playback
+    // Pause if playing
     if (wasPlaying) {
-      this.pause()
+      Tone.Transport.pause()
+      this.cancelScheduledEvents()
+      this.releaseAllActiveNotes()
     }
 
     // Calculate time position from measure and beat
-    const beatsPerMeasure = this.midiData.timeSignature.numerator
-    const beatNumber = (measure - 1) * beatsPerMeasure + (beat - 1)
-    const secondsPerBeat = 60 / (this.midiData.tempo * this.tempoMultiplier)
-    const timePosition = beatNumber * secondsPerBeat
+    const timePosition = this.measureBeatToTime({ measure, beat })
 
-    // Update transport position
-    Tone.Transport.position = timePosition
-
-    // Update current position
+    // Update state
+    this.pausePosition = timePosition
     this.currentMeasure = measure
     this.currentBeat = beat
 
-    // Resume if was playing
-    if (wasPlaying) {
-      this.cancelScheduledEvents()
-      this.scheduleEvents()
-      this.play()
-    }
+    // Update transport position
+    Tone.Transport.seconds = timePosition
 
+    // Notify listeners
     this.callbacks.onMeasureChange?.(measure)
     this.callbacks.onBeatChange?.(beat)
+
+    // Resume if was playing
+    if (wasPlaying) {
+      this.startPosition = timePosition
+      this.scheduleEventsFrom(timePosition)
+      Tone.Transport.start()
+      this.playbackState = 'playing'
+    }
+
+    console.log(`Seeked to measure ${measure}, beat ${beat} (${timePosition.toFixed(2)}s)`)
   }
 
   /**
-   * Set playback tempo
+   * Seek to a specific time in seconds
+   */
+  seekToTime(timeSeconds: number): void {
+    if (!this.midiData) return
+
+    const { measure, beat } = this.timeToMeasureBeat(timeSeconds)
+    this.seekToMeasure(measure, beat)
+  }
+
+  /**
+   * Set base tempo (BPM)
    */
   setTempo(bpm: number): void {
-    const effectiveTempo = bpm * this.tempoMultiplier
-    Tone.Transport.bpm.value = effectiveTempo
+    this.baseTempo = Math.max(20, Math.min(300, bpm))
+    this.updateEffectiveTempo()
   }
 
   /**
-   * Set tempo multiplier for practice (0.5 = half speed, 2.0 = double speed)
+   * Set tempo multiplier for practice (0.25 = quarter speed, 2.0 = double speed)
    */
   setTempoMultiplier(multiplier: number): void {
     this.tempoMultiplier = Math.max(0.25, Math.min(2.0, multiplier))
-    if (this.midiData) {
-      this.setTempo(this.midiData.tempo)
-    }
+    this.updateEffectiveTempo()
+  }
+
+  /**
+   * Get current tempo multiplier
+   */
+  getTempoMultiplier(): number {
+    return this.tempoMultiplier
+  }
+
+  /**
+   * Get effective tempo (base * multiplier)
+   */
+  getEffectiveTempo(): number {
+    return this.baseTempo * this.tempoMultiplier
+  }
+
+  /**
+   * Update transport BPM based on base tempo and multiplier
+   */
+  private updateEffectiveTempo(): void {
+    const effectiveTempo = this.baseTempo * this.tempoMultiplier
+    Tone.Transport.bpm.value = effectiveTempo
   }
 
   /**
    * Set loop region
    */
   setLoop(start: MeasureBeat, end: MeasureBeat): void {
+    if (!this.midiData) return
+
+    const startTime = this.measureBeatToTime(start)
+    const endTime = this.measureBeatToTime(end)
+
     this.loopRegion = {
       start,
       end,
@@ -184,14 +311,11 @@ export class MIDIPlayer {
     }
 
     // Configure Tone.js transport loop
-    if (this.midiData) {
-      const startTime = this.measureBeatToTime(start)
-      const endTime = this.measureBeatToTime(end)
+    Tone.Transport.loopStart = startTime
+    Tone.Transport.loopEnd = endTime
+    Tone.Transport.loop = true
 
-      Tone.Transport.loopStart = startTime
-      Tone.Transport.loopEnd = endTime
-      Tone.Transport.loop = true
-    }
+    console.log(`Loop set: M${start.measure}:B${start.beat || 1} to M${end.measure}:B${end.beat || 1}`)
   }
 
   /**
@@ -200,6 +324,7 @@ export class MIDIPlayer {
   clearLoop(): void {
     this.loopRegion = null
     Tone.Transport.loop = false
+    console.log('Loop cleared')
   }
 
   /**
@@ -216,51 +341,42 @@ export class MIDIPlayer {
     return this.loopRegion?.enabled ?? false
   }
 
-  /**
-   * Register callback for note on events
-   */
+  // ===== Callback Registration =====
+
   onNoteOn(callback: (note: NoteEvent) => void): void {
     this.callbacks.onNoteOn = callback
   }
 
-  /**
-   * Register callback for note off events
-   */
   onNoteOff(callback: (note: NoteEvent) => void): void {
     this.callbacks.onNoteOff = callback
   }
 
-  /**
-   * Register callback for measure changes
-   */
   onMeasureChange(callback: (measure: number) => void): void {
     this.callbacks.onMeasureChange = callback
   }
 
-  /**
-   * Register callback for beat changes
-   */
   onBeatChange(callback: (beat: number) => void): void {
     this.callbacks.onBeatChange = callback
   }
 
-  /**
-   * Register callback for playback end
-   */
   onPlaybackEnd(callback: () => void): void {
     this.callbacks.onPlaybackEnd = callback
   }
 
-  /**
-   * Get current playback state
-   */
+  onPlaybackStart(callback: () => void): void {
+    this.callbacks.onPlaybackStart = callback
+  }
+
+  onPlaybackPause(callback: () => void): void {
+    this.callbacks.onPlaybackPause = callback
+  }
+
+  // ===== State Getters =====
+
   get state(): PlaybackState {
     return this.playbackState
   }
 
-  /**
-   * Get current playback position
-   */
   get position(): MeasureBeat {
     return {
       measure: this.currentMeasure,
@@ -268,121 +384,192 @@ export class MIDIPlayer {
     }
   }
 
-  /**
-   * Get set of currently active notes
-   */
-  get currentlyPlayingNotes(): Set<number> {
-    return new Set(this.activeNotes)
+  get currentTimeSeconds(): number {
+    if (this.playbackState === 'playing') {
+      return Tone.Transport.seconds
+    }
+    return this.pausePosition
   }
 
+  get currentlyPlayingNotes(): Set<number> {
+    return new Set(this.activeNotes.keys())
+  }
+
+  get duration(): number {
+    return this.midiData?.duration || 0
+  }
+
+  get totalMeasures(): number {
+    return this.midiData?.measures || 0
+  }
+
+  // ===== Private Methods =====
+
   /**
-   * Schedule all MIDI events
+   * Schedule all MIDI events from a given time position
    */
-  private scheduleEvents(): void {
+  private scheduleEventsFrom(startTime: number): void {
     if (!this.midiData) return
 
-    this.events.forEach(event => {
+    const transport = Tone.Transport
+
+    // Filter and schedule events that occur after startTime
+    this.events.forEach((event, index) => {
+      if (event.time < startTime) return
+
       if (event.type === 'noteOn') {
         const noteEvent = event as NoteMIDIEvent
-        const scheduleTime = event.time
 
         // Find corresponding noteOff to calculate duration
-        const noteOffEvent = this.events.find(
-          e => e.type === 'noteOff' &&
-               e.time > event.time &&
-               (e as NoteMIDIEvent).data.midiNote === noteEvent.data.midiNote
-        ) as NoteMIDIEvent | undefined
-
+        const noteOffEvent = this.findNoteOff(noteEvent, index)
         const duration = noteOffEvent
           ? noteOffEvent.time - event.time
           : 0.5 // Default duration if no noteOff found
 
-        // Schedule note with Tone.js
-        const eventId = Tone.Transport.schedule((time) => {
-          this.handleNoteOn(noteEvent.data.midiNote, noteEvent.data.velocity, duration, time)
-        }, scheduleTime)
+        // Schedule note
+        const eventId = transport.schedule((time) => {
+          this.triggerNoteOn(noteEvent.data.midiNote, noteEvent.data.velocity, duration, time)
+        }, event.time)
 
-        this.scheduledEvents.push(eventId as unknown as number)
+        this.scheduledEventIds.push(eventId as unknown as number)
 
-        // Schedule noteOff callback
+        // Schedule noteOff callback (for visualization)
         if (noteOffEvent) {
-          const offEventId = Tone.Transport.schedule((time) => {
-            this.handleNoteOff(noteEvent.data.midiNote, time)
+          const offEventId = transport.schedule((time) => {
+            this.triggerNoteOff(noteEvent.data.midiNote, time)
           }, noteOffEvent.time)
 
-          this.scheduledEvents.push(offEventId as unknown as number)
+          this.scheduledEventIds.push(offEventId as unknown as number)
         }
       }
     })
+
+    // Schedule end-of-playback event
+    if (this.midiData.duration > startTime && !Tone.Transport.loop) {
+      const endEventId = transport.schedule(() => {
+        this.handlePlaybackEnd()
+      }, this.midiData.duration)
+
+      this.scheduledEventIds.push(endEventId as unknown as number)
+    }
+  }
+
+  /**
+   * Find matching noteOff event for a noteOn
+   */
+  private findNoteOff(noteOn: NoteMIDIEvent, startIndex: number): NoteMIDIEvent | undefined {
+    for (let i = startIndex + 1; i < this.events.length; i++) {
+      const event = this.events[i]
+      if (
+        event.type === 'noteOff' &&
+        (event as NoteMIDIEvent).data.midiNote === noteOn.data.midiNote
+      ) {
+        return event as NoteMIDIEvent
+      }
+    }
+    return undefined
+  }
+
+  /**
+   * Trigger note on with audio and callbacks
+   */
+  private triggerNoteOn(midiNote: number, velocity: number, duration: number, time: number): void {
+    // Normalize velocity to 0-1 range
+    const normalizedVelocity = velocity / 127
+
+    // Play the note
+    this.engine.playNote(midiNote, duration, time, normalizedVelocity)
+
+    // Track active note
+    const noteEvent: ExtendedNoteEvent = {
+      midiNote,
+      velocity: normalizedVelocity,
+      duration,
+      time
+    }
+    this.activeNotes.set(midiNote, noteEvent)
+
+    // Fire callback
+    this.callbacks.onNoteOn?.(noteEvent)
+  }
+
+  /**
+   * Trigger note off with callbacks
+   */
+  private triggerNoteOff(midiNote: number, time: number): void {
+    const activeNote = this.activeNotes.get(midiNote)
+
+    if (activeNote) {
+      this.activeNotes.delete(midiNote)
+
+      const noteEvent: NoteEvent = {
+        midiNote,
+        velocity: 0,
+        duration: 0,
+        time
+      }
+
+      this.callbacks.onNoteOff?.(noteEvent)
+    }
+  }
+
+  /**
+   * Release all currently active notes
+   */
+  private releaseAllActiveNotes(): void {
+    this.activeNotes.forEach((_note, midiNote) => {
+      this.callbacks.onNoteOff?.({
+        midiNote,
+        velocity: 0,
+        duration: 0,
+        time: Tone.Transport.seconds
+      })
+    })
+    this.activeNotes.clear()
+  }
+
+  /**
+   * Handle end of playback
+   */
+  private handlePlaybackEnd(): void {
+    if (this.playbackState !== 'playing') return
+
+    if (this.config.autoStop) {
+      this.stop()
+    }
+
+    this.callbacks.onPlaybackEnd?.()
+    console.log('Playback ended')
   }
 
   /**
    * Cancel all scheduled events
    */
   private cancelScheduledEvents(): void {
-    this.scheduledEvents.forEach(id => {
+    this.scheduledEventIds.forEach(id => {
       Tone.Transport.clear(id)
     })
-    this.scheduledEvents = []
-  }
-
-  /**
-   * Handle note on event
-   */
-  private handleNoteOn(midiNote: number, velocity: number, duration: number, time: number): void {
-    this.activeNotes.add(midiNote)
-    this.engine.playNote(midiNote, duration, time)
-
-    const noteEvent: NoteEvent = {
-      midiNote,
-      velocity,
-      duration,
-      time
-    }
-
-    this.callbacks.onNoteOn?.(noteEvent)
-  }
-
-  /**
-   * Handle note off event
-   */
-  private handleNoteOff(midiNote: number, time: number): void {
-    this.activeNotes.delete(midiNote)
-
-    const noteEvent: NoteEvent = {
-      midiNote,
-      velocity: 0,
-      duration: 0,
-      time
-    }
-
-    this.callbacks.onNoteOff?.(noteEvent)
-  }
-
-  /**
-   * Setup transport callbacks for position tracking
-   */
-  private setupTransportCallbacks(): void {
-    // Transport will handle looping automatically
-    // We just need to track position changes
+    this.scheduledEventIds = []
   }
 
   /**
    * Start position update interval
    */
   private startPositionUpdates(): void {
-    this.updateInterval = window.setInterval(() => {
+    this.stopPositionUpdates() // Clear any existing interval
+
+    this.updateIntervalId = window.setInterval(() => {
       this.updatePosition()
-    }, 50) // Update every 50ms
+    }, this.config.updateInterval)
   }
 
   /**
    * Stop position update interval
    */
   private stopPositionUpdates(): void {
-    if (this.updateInterval !== null) {
-      clearInterval(this.updateInterval)
-      this.updateInterval = null
+    if (this.updateIntervalId !== null) {
+      clearInterval(this.updateIntervalId)
+      this.updateIntervalId = null
     }
   }
 
@@ -390,7 +577,7 @@ export class MIDIPlayer {
    * Update current position from transport
    */
   private updatePosition(): void {
-    if (!this.midiData) return
+    if (!this.midiData || this.playbackState !== 'playing') return
 
     const currentTime = Tone.Transport.seconds
     const { measure, beat = 1 } = this.timeToMeasureBeat(currentTime)
@@ -406,12 +593,6 @@ export class MIDIPlayer {
       this.currentBeat = beat
       this.callbacks.onBeatChange?.(beat)
     }
-
-    // Check if reached end
-    if (currentTime >= this.midiData.duration && !Tone.Transport.loop) {
-      this.stop()
-      this.callbacks.onPlaybackEnd?.()
-    }
   }
 
   /**
@@ -422,7 +603,10 @@ export class MIDIPlayer {
 
     const beatsPerMeasure = this.midiData.timeSignature.numerator
     const beatNumber = (position.measure - 1) * beatsPerMeasure + ((position.beat || 1) - 1)
-    const secondsPerBeat = 60 / (this.midiData.tempo * this.tempoMultiplier)
+
+    // Calculate based on effective tempo (base * multiplier)
+    // Note: Transport handles tempo internally, so we use base tempo for time calculations
+    const secondsPerBeat = 60 / this.baseTempo
 
     return beatNumber * secondsPerBeat
   }
@@ -433,7 +617,7 @@ export class MIDIPlayer {
   private timeToMeasureBeat(time: number): MeasureBeat {
     if (!this.midiData) return { measure: 1, beat: 1 }
 
-    const secondsPerBeat = 60 / (this.midiData.tempo * this.tempoMultiplier)
+    const secondsPerBeat = 60 / this.baseTempo
     const totalBeats = time / secondsPerBeat
     const beatsPerMeasure = this.midiData.timeSignature.numerator
 
@@ -451,5 +635,6 @@ export class MIDIPlayer {
     this.callbacks = {}
     this.events = []
     this.midiData = null
+    this.activeNotes.clear()
   }
 }

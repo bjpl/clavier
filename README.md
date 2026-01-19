@@ -80,9 +80,43 @@ clavier/
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
 - `npm run typecheck` - Run TypeScript type checking
+- `npm run test` - Run unit tests
+- `npm run test:e2e` - Run end-to-end tests
 - `npm run db:generate` - Generate Prisma client
 - `npm run db:push` - Push schema changes to database
 - `npm run db:studio` - Open Prisma Studio
+- `npm run db:seed` - Seed the database with initial data
+- `npm run music:setup` - Download and setup music files
+
+## Deployment
+
+### Vercel (Recommended)
+
+1. Connect your repository to Vercel
+2. Configure environment variables in Vercel dashboard:
+   - `DATABASE_URL` - PostgreSQL connection string
+   - `DIRECT_URL` - Direct PostgreSQL connection (same as DATABASE_URL for most providers)
+   - `NEXTAUTH_SECRET` - Generate with `openssl rand -base64 32`
+   - `NEXTAUTH_URL` - Your production URL (e.g., https://your-app.vercel.app)
+   - `CRON_SECRET` - Secret for cron job authentication (generate with `openssl rand -base64 32`)
+3. Optional environment variables:
+   - `ANTHROPIC_API_KEY` - For AI content generation features
+   - `NEXT_PUBLIC_ELEVENLABS_API_KEY` - For high-quality TTS
+   - `NEXT_PUBLIC_OPENAI_API_KEY` - For OpenAI TTS
+
+### Railway
+
+1. Create a new project and add a PostgreSQL service
+2. Railway auto-injects `DATABASE_URL`
+3. Add the remaining environment variables listed above
+4. Deploy with: `npm run railway:seed` (runs migrations and seeds data)
+
+### Post-Deployment Steps
+
+1. Run database migrations: `npx prisma migrate deploy`
+2. Seed the database: `npm run db:seed`
+3. Import music content: `npm run content:import:all`
+4. Verify health endpoint: `GET /api/health`
 
 ## License
 

@@ -22,8 +22,8 @@ interface Annotation {
 interface MeasureCommentary {
   text: string
   terms: string[]
-  lessonId: string
-  featureId: string
+  lessonId: string | null
+  featureId: string | null
 }
 
 interface CommentaryPanelProps {
@@ -106,22 +106,26 @@ export function CommentaryPanel({
             <Play className="h-4 w-4 mr-2" />
             Play in Context
           </Button>
-          <Button
-            onClick={() => onLearnMore(commentary.lessonId)}
-            variant="outline"
-            size="sm"
-          >
-            <BookOpen className="h-4 w-4 mr-2" />
-            Learn More
-          </Button>
-          <Button
-            onClick={() => onFindSimilar(commentary.featureId)}
-            variant="outline"
-            size="sm"
-          >
-            <Search className="h-4 w-4 mr-2" />
-            Find Similar
-          </Button>
+          {commentary.lessonId && (
+            <Button
+              onClick={() => onLearnMore(commentary.lessonId!)}
+              variant="outline"
+              size="sm"
+            >
+              <BookOpen className="h-4 w-4 mr-2" />
+              Learn More
+            </Button>
+          )}
+          {commentary.featureId && (
+            <Button
+              onClick={() => onFindSimilar(commentary.featureId!)}
+              variant="outline"
+              size="sm"
+            >
+              <Search className="h-4 w-4 mr-2" />
+              Find Similar
+            </Button>
+          )}
         </div>
       </CardContent>
     </Card>

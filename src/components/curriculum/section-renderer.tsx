@@ -2,6 +2,7 @@
 
 import { LessonSection } from '@/lib/types/curriculum';
 import ReactMarkdown from 'react-markdown';
+import Image from 'next/image';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -47,7 +48,16 @@ function TextSectionView({
         <div className="space-y-4">
           {section.images.map((image, idx) => (
             <figure key={idx} className="border rounded-lg overflow-hidden">
-              <img src={image.url} alt={image.alt} className="w-full" />
+              <div className="relative w-full" style={{ aspectRatio: '16/9' }}>
+                <Image
+                  src={image.url}
+                  alt={image.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
+                  className="object-contain"
+                  unoptimized={image.url.startsWith('http')}
+                />
+              </div>
               {image.caption && (
                 <figcaption className="text-sm text-muted-foreground p-3 bg-gray-50">
                   {image.caption}

@@ -1,22 +1,20 @@
 /**
  * Integrated Walkthrough View
- * Example component demonstrating complete playback synchronization
+ * Complete playback synchronization using the unified useScorePlaybackSync hook
  *
- * This component shows how to wire together:
- * - MIDI playback (usePlayback hook)
- * - Playback coordination (PlaybackCoordinator)
- * - Score synchronization (ScoreSync)
- * - Keyboard synchronization (KeyboardSync)
- * - Transport controls (PlaybackControls)
+ * This component demonstrates the recommended approach for:
+ * - MIDI playback synchronized with score display
+ * - Smooth cursor animation during playback
+ * - Keyboard highlighting for currently playing notes
+ * - Transport controls with seeking and tempo adjustment
  */
 
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { AudioEngine } from '@/lib/audio/audio-engine'
-import { usePlayback } from '@/hooks/use-playback'
+import { useScorePlaybackSync } from '@/hooks/use-score-playback-sync'
 import { usePlaybackSync } from '@/lib/playback'
-import { getPlaybackCoordinator } from '@/lib/playback'
 import { ScoreViewer } from '@/components/score/score-viewer'
 import { PianoKeyboard } from '@/components/keyboard/piano-keyboard'
 import { PlaybackControls } from './playback-controls'
@@ -42,20 +40,12 @@ export function IntegratedWalkthroughView({
   musicXML,
   midiData,
   totalMeasures,
-  beatsPerMeasure
+  beatsPerMeasure: _beatsPerMeasure
 }: IntegratedWalkthroughViewProps) {
   // Audio engine state
   const [audioEngine, setAudioEngine] = useState<AudioEngine | null>(null)
   const [engineReady, setEngineReady] = useState(false)
   const [engineError, setEngineError] = useState<string | null>(null)
-
-  // Get playback coordinator
-  const coordinator = useRef(getPlaybackCoordinator()).current
-
-  // Initialize coordinator with time signature
-  useEffect(() => {
-    coordinator.initialize(beatsPerMeasure)
-  }, [coordinator, beatsPerMeasure])
 
   // Initialize audio engine
   useEffect(() => {
@@ -82,49 +72,39 @@ export function IntegratedWalkthroughView({
     }
   }, [])
 
-  // Setup MIDI playback with coordinator integration
+  // Use the unified score playback sync hook - this handles everything:
+  // - MIDIPlayer creation and management
+  // - SyncManager for time-to-position mapping
+  // - PlaybackCoordinator connection
+  // - Smooth cursor animation
   const {
-    play,
-    pause,
+    playbackState,
+    cursorPosition,
+    currentMeasure,
+    currentBeat,
+    tempoMultiplier,
     stop,
+    togglePlayback,
     seekToMeasure,
     setTempoMultiplier,
-    loadMIDI
-  } = usePlayback(audioEngine, {
-    // Wire MIDI events to coordinator
-    onNoteOn: (note) => {
-      coordinator.handleNoteOn(note)
-    },
-    onNoteOff: (note) => {
-      coordinator.handleNoteOff(note.midiNote)
-    },
-    onMeasureChange: (measure) => {
-      coordinator.handleMeasureChange(measure, 1)
-    },
-    onBeatChange: (beat) => {
-      // Update beat within current measure
-      const { measure } = coordinator.getState().cursor
-      coordinator.handleBeatTick(measure, beat)
+    loadMIDI,
+    handleMeasureClick
+  } = useScorePlaybackSync({
+    engine: audioEngine,
+    autoScroll: true,
+    syncConfig: {
+      smoothCursor: true,
+      cursorLookahead: 0.5
     }
   })
 
-  // Setup playback synchronization
+  // Subscribe to keyboard highlights from coordinator
   const {
-    cursorPosition,
     keyboardHighlights,
-    currentMeasure,
-    highlightedMeasures,
-    playbackState,
-    scoreSync: _scoreSync,
-    keyboardSync: _keyboardSync
+    highlightedMeasures
   } = usePlaybackSync({
     enableScoreSync: true,
     enableKeyboardSync: true,
-    scoreSyncConfig: {
-      autoScroll: true,
-      scrollDuration: 300,
-      highlightMeasure: true
-    },
     keyboardSyncConfig: {
       voiceColors: true,
       velocityOpacity: true,
@@ -132,48 +112,37 @@ export function IntegratedWalkthroughView({
     }
   })
 
-  // Load MIDI data when ready
+  // Load MIDI data when engine is ready
   useEffect(() => {
-    if (engineReady && audioEngine) {
+    if (engineReady && audioEngine && midiData) {
       loadMIDI(midiData)
     }
   }, [engineReady, audioEngine, midiData, loadMIDI])
 
   // Transport control handlers
   const handlePlayPause = () => {
-    if (playbackState === 'playing') {
-      pause()
-      coordinator.pausePlayback()
-    } else {
-      play()
-      coordinator.startPlayback()
-    }
+    togglePlayback()
   }
 
   const handleStop = () => {
     stop()
-    coordinator.stopPlayback()
   }
 
   const handleSkipBack = () => {
     const newMeasure = Math.max(1, currentMeasure - 1)
     seekToMeasure(newMeasure)
-    coordinator.seekTo(newMeasure)
   }
 
   const handleSkipForward = () => {
     const newMeasure = Math.min(totalMeasures, currentMeasure + 1)
     seekToMeasure(newMeasure)
-    coordinator.seekTo(newMeasure)
   }
 
   const handleTempoChange = (multiplier: number) => {
     setTempoMultiplier(multiplier)
-    coordinator.setTempoMultiplier(multiplier)
   }
 
   // Convert keyboard highlights to format expected by PianoKeyboard
-  // Note: voice names need to be lowercased for PianoKeyboard compatibility
   const keyboardActiveNotes = keyboardHighlights.map(highlight => ({
     midiNote: highlight.midiNote,
     voice: highlight.voice?.toLowerCase() as 'soprano' | 'alto' | 'tenor' | 'bass' | undefined,
@@ -216,9 +185,9 @@ export function IntegratedWalkthroughView({
             onSkipForward={handleSkipForward}
             onTempoChange={handleTempoChange}
             currentMeasure={currentMeasure}
-            currentBeat={cursorPosition.beat}
+            currentBeat={currentBeat}
             totalMeasures={totalMeasures}
-            tempoMultiplier={coordinator.getState().tempoMultiplier}
+            tempoMultiplier={tempoMultiplier}
           />
         </CardContent>
       </Card>
@@ -229,11 +198,12 @@ export function IntegratedWalkthroughView({
           <ScoreViewer
             musicXML={musicXML}
             currentMeasure={currentMeasure}
-            currentBeat={cursorPosition.beat}
+            currentBeat={currentBeat}
             cursorPosition={cursorPosition.beatProgress}
             highlightedMeasures={highlightedMeasures}
             voiceColors={true}
             enableAutoScroll={true}
+            onMeasureClick={handleMeasureClick}
           />
         </CardContent>
       </Card>

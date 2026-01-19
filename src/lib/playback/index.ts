@@ -26,6 +26,15 @@ export {
 } from './keyboard-sync'
 
 export {
+  SyncManager,
+  getSyncManager,
+  resetSyncManager,
+  type MeasureTimeMap,
+  type BeatPosition,
+  type SyncManagerConfig
+} from './sync-manager'
+
+export {
   usePlaybackSync,
   usePlaybackSyncWithControls,
   type UsePlaybackSyncOptions,

@@ -1,0 +1,532 @@
+/**
+ * useScorePlaybackSync Hook
+ * Comprehensive hook for synchronizing audio playback with score display
+ *
+ * This hook:
+ * - Connects MIDI player to score renderer via SyncManager
+ * - Updates currentMeasure in real-time during playback
+ * - Handles user seeking (click on measure to jump)
+ * - Syncs state across components
+ * - Handles edge cases like pickup measures and repeats
+ */
+
+'use client'
+
+import { useEffect, useCallback, useRef, useState, useMemo } from 'react'
+import { usePlaybackStore } from '@/lib/stores/playback-store'
+import { MIDIPlayer } from '@/lib/audio/midi-player'
+import { AudioEngine } from '@/lib/audio/audio-engine'
+import { MIDIData } from '@/lib/audio/types'
+import { APIMidiData, convertAPIMidiData, MIDIConversionConfig } from '@/lib/audio/midi-converter'
+import {
+  SyncManager,
+  getSyncManager,
+  SyncManagerConfig,
+  BeatPosition
+} from '@/lib/playback/sync-manager'
+import { UseScoreRendererReturn } from './use-score-renderer'
+import { getPlaybackCoordinator, CursorPosition } from '@/lib/playback/playback-coordinator'
+
+/**
+ * Hook options
+ */
+export interface UseScorePlaybackSyncOptions {
+  /** Audio engine instance */
+  engine: AudioEngine | null
+  /** Score renderer instance from useScoreRenderer */
+  scoreRenderer?: UseScoreRendererReturn | null
+  /** MIDI conversion config */
+  midiConversionConfig?: MIDIConversionConfig
+  /** Sync manager config overrides */
+  syncConfig?: Partial<SyncManagerConfig>
+  /** Enable auto-scroll during playback */
+  autoScroll?: boolean
+  /** Callback when cursor position changes */
+  onCursorChange?: (position: CursorPosition) => void
+  /** Callback when measure changes */
+  onMeasureChange?: (measure: number) => void
+  /** Callback when playback state changes */
+  onPlaybackStateChange?: (state: 'playing' | 'paused' | 'stopped') => void
+}
+
+/**
+ * Hook return value
+ */
+export interface UseScorePlaybackSyncReturn {
+  // State
+  /** Whether sync is ready */
+  isReady: boolean
+  /** Current playback state */
+  playbackState: 'stopped' | 'playing' | 'paused'
+  /** Current cursor position */
+  cursorPosition: CursorPosition
+  /** Current measure (1-indexed) */
+  currentMeasure: number
+  /** Current beat (1-indexed) */
+  currentBeat: number
+  /** Beat progress (0-1) for smooth cursor */
+  beatProgress: number
+  /** Current time in seconds */
+  currentTime: number
+  /** Total duration in seconds */
+  duration: number
+  /** Total measures */
+  totalMeasures: number
+  /** Current effective tempo */
+  effectiveTempo: number
+  /** Tempo multiplier */
+  tempoMultiplier: number
+
+  // Controls
+  /** Start playback */
+  play: () => void
+  /** Pause playback */
+  pause: () => void
+  /** Stop playback and reset */
+  stop: () => void
+  /** Toggle play/pause */
+  togglePlayback: () => void
+  /** Seek to specific measure and beat */
+  seekToMeasure: (measure: number, beat?: number) => void
+  /** Seek to specific time */
+  seekToTime: (timeSeconds: number) => void
+  /** Set tempo multiplier (0.25 - 2.0) */
+  setTempoMultiplier: (multiplier: number) => void
+
+  // MIDI Loading
+  /** Load MIDI data directly */
+  loadMIDI: (data: MIDIData) => void
+  /** Load MIDI from API response */
+  loadFromAPI: (apiData: APIMidiData) => void
+
+  // Sync utilities
+  /** Convert time to position */
+  timeToPosition: (time: number) => BeatPosition | null
+  /** Convert position to time */
+  positionToTime: (measure: number, beat?: number) => number
+  /** Get sync manager for advanced usage */
+  getSyncManager: () => SyncManager
+
+  // Score interaction
+  /** Handle click on measure (seek to that measure) */
+  handleMeasureClick: (measure: number) => void
+}
+
+/**
+ * Hook for synchronized score playback
+ */
+export function useScorePlaybackSync(
+  options: UseScorePlaybackSyncOptions
+): UseScorePlaybackSyncReturn {
+  const {
+    engine,
+    scoreRenderer,
+    midiConversionConfig,
+    syncConfig,
+    autoScroll = true,
+    onCursorChange,
+    onMeasureChange,
+    onPlaybackStateChange
+  } = options
+
+  // Refs for stable references
+  const playerRef = useRef<MIDIPlayer | null>(null)
+  const syncManagerRef = useRef<SyncManager | null>(null)
+  const optionsRef = useRef(options)
+
+  // Update options ref
+  useEffect(() => {
+    optionsRef.current = options
+  }, [options])
+
+  // Zustand store
+  const {
+    isPlaying,
+    tempo,
+    tempoMultiplier: storeTempoMultiplier,
+    play: storePlay,
+    pause: storePause,
+    stop: storeStop,
+    seek: storeSeek,
+    setTempo: setStoreTempo,
+    setTempoMultiplier: setStoreTempoMultiplier,
+    setPiece,
+    addActiveNote,
+    removeActiveNote,
+    clearActiveNotes
+  } = usePlaybackStore()
+
+  // Local state for smooth updates
+  const [isReady, setIsReady] = useState(false)
+  const [cursorPosition, setCursorPosition] = useState<CursorPosition>({
+    measure: 1,
+    beat: 1,
+    beatProgress: 0
+  })
+  const [currentTime, setCurrentTime] = useState(0)
+  const [duration, setDuration] = useState(0)
+  const [totalMeasures, setTotalMeasures] = useState(0)
+
+  // Derived state
+  const playbackState = useMemo((): 'playing' | 'paused' | 'stopped' => {
+    if (isPlaying) return 'playing'
+    if (playerRef.current?.state === 'paused') return 'paused'
+    return 'stopped'
+  }, [isPlaying])
+
+  const effectiveTempo = tempo * storeTempoMultiplier
+
+  // Initialize player and sync manager
+  useEffect(() => {
+    if (!engine || !engine.isReady) {
+      setIsReady(false)
+      return
+    }
+
+    // Create MIDI player
+    if (!playerRef.current) {
+      playerRef.current = new MIDIPlayer(engine, {
+        lookahead: 0.1,
+        updateInterval: 50,
+        autoStop: true
+      })
+    }
+
+    // Create sync manager
+    if (!syncManagerRef.current) {
+      syncManagerRef.current = getSyncManager({
+        autoScroll,
+        smoothCursor: true,
+        ...syncConfig
+      })
+    }
+
+    // Connect player to sync manager
+    syncManagerRef.current.connectPlayer(playerRef.current)
+
+    setIsReady(true)
+
+    return () => {
+      if (syncManagerRef.current && playerRef.current) {
+        syncManagerRef.current.disconnectPlayer()
+      }
+    }
+  }, [engine?.isReady, autoScroll, syncConfig])
+
+  // Connect score renderer when available
+  useEffect(() => {
+    if (!syncManagerRef.current || !scoreRenderer) return
+
+    syncManagerRef.current.connectScoreRenderer(scoreRenderer)
+
+    return () => {
+      if (syncManagerRef.current) {
+        syncManagerRef.current.disconnectScoreRenderer()
+      }
+    }
+  }, [scoreRenderer])
+
+  // Subscribe to coordinator events
+  useEffect(() => {
+    const coordinator = getPlaybackCoordinator()
+
+    const handleCursorUpdate = (position: CursorPosition) => {
+      setCursorPosition(position)
+      onCursorChange?.(position)
+
+      // Update time
+      if (syncManagerRef.current) {
+        const time = syncManagerRef.current.positionToTime(
+          position.measure,
+          position.beat,
+          position.beatProgress
+        )
+        setCurrentTime(time)
+      }
+    }
+
+    const handleMeasureChange = (measure: number, beat: number) => {
+      storeSeek(measure, beat)
+      onMeasureChange?.(measure)
+    }
+
+    const handleStateChange = (state: 'playing' | 'paused' | 'stopped') => {
+      onPlaybackStateChange?.(state)
+
+      if (state === 'stopped') {
+        clearActiveNotes()
+      }
+    }
+
+    const handleNoteOn = (note: { midiNote: number }) => {
+      addActiveNote(note.midiNote)
+    }
+
+    const handleNoteOff = (midiNote: number) => {
+      removeActiveNote(midiNote)
+    }
+
+    coordinator.on('cursor-update', handleCursorUpdate)
+    coordinator.on('measure-change', handleMeasureChange)
+    coordinator.on('state-change', handleStateChange)
+    coordinator.on('note-on', handleNoteOn)
+    coordinator.on('note-off', handleNoteOff)
+
+    return () => {
+      coordinator.off('cursor-update', handleCursorUpdate)
+      coordinator.off('measure-change', handleMeasureChange)
+      coordinator.off('state-change', handleStateChange)
+      coordinator.off('note-on', handleNoteOn)
+      coordinator.off('note-off', handleNoteOff)
+    }
+  }, [
+    onCursorChange,
+    onMeasureChange,
+    onPlaybackStateChange,
+    storeSeek,
+    addActiveNote,
+    removeActiveNote,
+    clearActiveNotes
+  ])
+
+  // Load MIDI data
+  const loadMIDI = useCallback((data: MIDIData) => {
+    if (!playerRef.current || !syncManagerRef.current) {
+      console.warn('Player or sync manager not ready')
+      return
+    }
+
+    playerRef.current.loadMIDI(data)
+    syncManagerRef.current.loadMIDI(data)
+
+    setStoreTempo(data.tempo)
+    setDuration(data.duration)
+    setTotalMeasures(data.measures)
+
+    // Reset position
+    storeStop()
+    storeSeek(1, 1)
+    setCursorPosition({ measure: 1, beat: 1, beatProgress: 0 })
+    setCurrentTime(0)
+    clearActiveNotes()
+
+    console.log(`Loaded MIDI for sync: ${data.name || 'Untitled'}, ${data.measures} measures`)
+  }, [setStoreTempo, storeStop, storeSeek, clearActiveNotes])
+
+  // Load from API response
+  const loadFromAPI = useCallback((apiData: APIMidiData) => {
+    const midiData = convertAPIMidiData(apiData, midiConversionConfig)
+    setPiece(apiData.pieceId, midiData.tempo)
+    loadMIDI(midiData)
+  }, [loadMIDI, setPiece, midiConversionConfig])
+
+  // Playback controls
+  const play = useCallback(() => {
+    if (!playerRef.current) {
+      console.warn('Player not ready')
+      return
+    }
+    playerRef.current.play()
+    storePlay()
+  }, [storePlay])
+
+  const pause = useCallback(() => {
+    if (!playerRef.current) {
+      console.warn('Player not ready')
+      return
+    }
+    playerRef.current.pause()
+    storePause()
+  }, [storePause])
+
+  const stop = useCallback(() => {
+    if (!playerRef.current) {
+      console.warn('Player not ready')
+      return
+    }
+    playerRef.current.stop()
+    storeStop()
+    storeSeek(1, 1)
+    setCursorPosition({ measure: 1, beat: 1, beatProgress: 0 })
+    setCurrentTime(0)
+    clearActiveNotes()
+  }, [storeStop, storeSeek, clearActiveNotes])
+
+  const togglePlayback = useCallback(() => {
+    if (playbackState === 'playing') {
+      pause()
+    } else {
+      play()
+    }
+  }, [playbackState, play, pause])
+
+  // Seeking
+  const seekToMeasure = useCallback((measure: number, beat: number = 1) => {
+    if (!syncManagerRef.current) {
+      console.warn('Sync manager not ready')
+      return
+    }
+
+    syncManagerRef.current.seekToMeasure(measure, beat)
+    storeSeek(measure, beat)
+    clearActiveNotes()
+  }, [storeSeek, clearActiveNotes])
+
+  const seekToTime = useCallback((timeSeconds: number) => {
+    if (!syncManagerRef.current) {
+      console.warn('Sync manager not ready')
+      return
+    }
+
+    syncManagerRef.current.seekToTime(timeSeconds)
+    clearActiveNotes()
+  }, [clearActiveNotes])
+
+  // Tempo control
+  const setTempoMultiplier = useCallback((multiplier: number) => {
+    if (!playerRef.current) {
+      console.warn('Player not ready')
+      return
+    }
+
+    playerRef.current.setTempoMultiplier(multiplier)
+    setStoreTempoMultiplier(multiplier)
+  }, [setStoreTempoMultiplier])
+
+  // Utility functions
+  const timeToPosition = useCallback((time: number): BeatPosition | null => {
+    if (!syncManagerRef.current) return null
+    return syncManagerRef.current.timeToPosition(time)
+  }, [])
+
+  const positionToTime = useCallback((measure: number, beat: number = 1): number => {
+    if (!syncManagerRef.current) return 0
+    return syncManagerRef.current.positionToTime(measure, beat)
+  }, [])
+
+  const handleMeasureClick = useCallback((measure: number) => {
+    seekToMeasure(measure, 1)
+  }, [seekToMeasure])
+
+  const getSyncManagerFn = useCallback(() => {
+    if (!syncManagerRef.current) {
+      throw new Error('Sync manager not initialized')
+    }
+    return syncManagerRef.current
+  }, [])
+
+  return {
+    // State
+    isReady,
+    playbackState,
+    cursorPosition,
+    currentMeasure: cursorPosition.measure,
+    currentBeat: cursorPosition.beat,
+    beatProgress: cursorPosition.beatProgress,
+    currentTime,
+    duration,
+    totalMeasures,
+    effectiveTempo,
+    tempoMultiplier: storeTempoMultiplier,
+
+    // Controls
+    play,
+    pause,
+    stop,
+    togglePlayback,
+    seekToMeasure,
+    seekToTime,
+    setTempoMultiplier,
+
+    // MIDI Loading
+    loadMIDI,
+    loadFromAPI,
+
+    // Utilities
+    timeToPosition,
+    positionToTime,
+    getSyncManager: getSyncManagerFn,
+
+    // Score interaction
+    handleMeasureClick
+  }
+}
+
+/**
+ * Simplified hook variant with keyboard shortcuts
+ */
+export function useScorePlaybackSyncWithKeyboard(
+  options: UseScorePlaybackSyncOptions
+): UseScorePlaybackSyncReturn {
+  const sync = useScorePlaybackSync(options)
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Ignore if typing in input
+      if (
+        e.target instanceof HTMLInputElement ||
+        e.target instanceof HTMLTextAreaElement ||
+        e.target instanceof HTMLSelectElement
+      ) {
+        return
+      }
+
+      switch (e.key) {
+        case ' ':
+          e.preventDefault()
+          sync.togglePlayback()
+          break
+
+        case 'Escape':
+          e.preventDefault()
+          sync.stop()
+          break
+
+        case 'ArrowLeft':
+          if (e.shiftKey) {
+            e.preventDefault()
+            sync.seekToMeasure(Math.max(1, sync.currentMeasure - 1))
+          }
+          break
+
+        case 'ArrowRight':
+          if (e.shiftKey) {
+            e.preventDefault()
+            sync.seekToMeasure(Math.min(sync.totalMeasures, sync.currentMeasure + 1))
+          }
+          break
+
+        case 'Home':
+          e.preventDefault()
+          sync.seekToMeasure(1)
+          break
+
+        case 'End':
+          e.preventDefault()
+          if (sync.totalMeasures > 0) {
+            sync.seekToMeasure(sync.totalMeasures)
+          }
+          break
+
+        case '+':
+        case '=':
+          if (e.shiftKey || e.key === '+') {
+            e.preventDefault()
+            sync.setTempoMultiplier(Math.min(2.0, sync.tempoMultiplier + 0.1))
+          }
+          break
+
+        case '-':
+        case '_':
+          e.preventDefault()
+          sync.setTempoMultiplier(Math.max(0.25, sync.tempoMultiplier - 0.1))
+          break
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [sync])
+
+  return sync
+}
