@@ -25,10 +25,10 @@ interface NoteData {
 // Time signature: 4/4, each beat divided into 16th notes
 
 function createMeasureNotes(
-  measureNumber: number,
+  _measureNumber: number,
   bass: number,
   chord: number[], // Array of MIDI numbers for the chord
-  bassOctave: number = 2
+  _bassOctave: number = 2
 ): NoteData[] {
   const notes: NoteData[] = [];
 
