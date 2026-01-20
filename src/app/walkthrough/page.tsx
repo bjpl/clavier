@@ -18,6 +18,7 @@ async function getPieces(): Promise<GroupedPiece[]> {
     orderBy: [
       { book: 'asc' },
       { numberInBook: 'asc' },
+      { type: 'asc' }, // PRELUDE comes before FUGUE alphabetically
     ],
     select: {
       bwvNumber: true,
@@ -29,7 +30,7 @@ async function getPieces(): Promise<GroupedPiece[]> {
     },
   });
 
-  // Group pieces by BWV number and book
+  // Group pieces by book and number, using Prelude's BWV number
   const groupedMap = new Map<string, GroupedPiece>();
 
   pieces.forEach(piece => {
@@ -52,6 +53,8 @@ async function getPieces(): Promise<GroupedPiece[]> {
     const grouped = groupedMap.get(key)!;
     if (piece.type === 'PRELUDE') {
       grouped.hasPrelude = true;
+      // Use Prelude's BWV number for the group
+      grouped.bwv = piece.bwvNumber;
     } else if (piece.type === 'FUGUE') {
       grouped.hasFugue = true;
     }
