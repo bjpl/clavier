@@ -49,20 +49,25 @@ export function MeasureNavigation({
           size="icon"
           onClick={onPrevious}
           disabled={currentMeasure <= 1}
+          aria-label="Previous measure"
         >
           <ChevronLeft className="h-4 w-4" />
         </Button>
 
-        <form onSubmit={handleInputSubmit} className="flex items-center gap-2">
-          <span className="text-sm font-medium whitespace-nowrap">Measure</span>
+        <form onSubmit={handleInputSubmit} className="flex items-center gap-2" role="search" aria-label="Navigate to measure">
+          <label htmlFor="measure-input" className="text-sm font-medium whitespace-nowrap">Measure</label>
           <Input
+            id="measure-input"
             type="text"
+            inputMode="numeric"
+            pattern="[0-9]*"
             value={inputValue}
             onChange={handleInputChange}
             onBlur={handleInputBlur}
             className="w-16 text-center"
+            aria-describedby="measure-total"
           />
-          <span className="text-sm text-muted-foreground">of {totalMeasures}</span>
+          <span id="measure-total" className="text-sm text-muted-foreground">of {totalMeasures}</span>
         </form>
 
         <Button
@@ -70,6 +75,7 @@ export function MeasureNavigation({
           size="icon"
           onClick={onNext}
           disabled={currentMeasure >= totalMeasures}
+          aria-label="Next measure"
         >
           <ChevronRight className="h-4 w-4" />
         </Button>

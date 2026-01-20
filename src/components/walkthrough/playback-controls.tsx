@@ -108,20 +108,20 @@ export function PlaybackControls({
     <div className="flex items-center gap-4">
       {/* Transport Controls */}
       <div className="flex items-center gap-1">
-        <Button variant="outline" size="icon" onClick={handleSkipBack}>
+        <Button variant="outline" size="icon" onClick={handleSkipBack} aria-label="Previous measure">
           <SkipBack className="h-4 w-4" />
         </Button>
-        <Button variant="outline" size="icon" onClick={onPlayPause}>
+        <Button variant="outline" size="icon" onClick={onPlayPause} aria-label={isPlaying ? 'Pause' : 'Play'}>
           {isPlaying ? (
             <Pause className="h-4 w-4" />
           ) : (
             <Play className="h-4 w-4" />
           )}
         </Button>
-        <Button variant="outline" size="icon" onClick={handleStop}>
+        <Button variant="outline" size="icon" onClick={handleStop} aria-label="Stop">
           <Square className="h-4 w-4" />
         </Button>
-        <Button variant="outline" size="icon" onClick={handleSkipForward}>
+        <Button variant="outline" size="icon" onClick={handleSkipForward} aria-label="Next measure">
           <SkipForward className="h-4 w-4" />
         </Button>
       </div>
@@ -139,7 +139,8 @@ export function PlaybackControls({
         variant={isLooping ? 'default' : 'outline'}
         size="icon"
         onClick={handleLoopToggle}
-        title="Loop playback"
+        aria-label={isLooping ? 'Disable loop' : 'Enable loop'}
+        aria-pressed={isLooping}
       >
         <Repeat className="h-4 w-4" />
       </Button>
@@ -175,7 +176,7 @@ export function PlaybackControls({
       {/* Volume Control */}
       <Popover>
         <PopoverTrigger asChild>
-          <Button variant="outline" size="icon">
+          <Button variant="outline" size="icon" aria-label="Volume control">
             <Volume2 className="h-4 w-4" />
           </Button>
         </PopoverTrigger>
