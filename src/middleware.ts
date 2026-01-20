@@ -30,8 +30,9 @@ export function middleware(request: NextRequest) {
       "style-src 'self' 'unsafe-inline'", // Allow inline styles for CSS-in-JS
       "img-src 'self' data: https: blob:",
       "font-src 'self' data:",
-      "connect-src 'self' https://api.anthropic.com https://*.google.com https://*.azure.com https://*.openai.com",
-      "media-src 'self' blob:",
+      "connect-src 'self' https://api.anthropic.com https://*.google.com https://*.azure.com https://*.openai.com https://gleitz.github.io",
+      "media-src 'self' blob: https://gleitz.github.io",
+      "worker-src 'self' blob:", // Allow blob workers for Tone.js
       "object-src 'none'",
       "frame-ancestors 'none'",
       "base-uri 'self'",
