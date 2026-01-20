@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/db';
-import { readFile } from 'fs/promises';
-import path from 'path';
+import { headers } from 'next/headers';
 
 export async function GET(
   _request: NextRequest,
@@ -27,14 +26,34 @@ export async function GET(
       );
     }
 
-    // Read the MusicXML file from the file system
-    const filePath = path.join(process.cwd(), piece.musicxmlPath);
-    const xmlContent = await readFile(filePath, 'utf-8');
+    // Convert the file path to a URL path
+    // musicxmlPath is stored as 'public/scores/file.musicxml'
+    // We need to serve it as '/scores/file.musicxml' from the public folder
+    const urlPath = piece.musicxmlPath.replace(/^public\//, '/');
+
+    // Get the host from the request to build the full URL
+    const headersList = await headers();
+    const host = headersList.get('host') || 'localhost:3000';
+    const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http';
+    const fullUrl = `${protocol}://${host}${urlPath}`;
+
+    // Fetch the MusicXML file from the public URL
+    const response = await fetch(fullUrl);
+
+    if (!response.ok) {
+      console.error(`Failed to fetch MusicXML from ${fullUrl}: ${response.status}`);
+      return NextResponse.json(
+        { error: 'MusicXML file not found' },
+        { status: 404 }
+      );
+    }
+
+    const xmlContent = await response.text();
 
     return new NextResponse(xmlContent, {
       headers: {
         'Content-Type': 'application/xml',
-        'Content-Disposition': `attachment; filename="piece-${params.id}.musicxml"`,
+        'Cache-Control': 'public, max-age=86400', // Cache for 24 hours
       },
     });
   } catch (error) {
