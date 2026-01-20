@@ -56,6 +56,11 @@ export function WalkthroughView({ piece, measures, annotations }: WalkthroughVie
   const router = useRouter()
   const scoreRef = useRef<ScoreDisplayRef>(null)
 
+  // Detect if this is a fallback piece (no database data available)
+  // Fallback pieces have IDs like "fallback-846-prelude"
+  const isFallbackPiece = piece.id?.startsWith('fallback-') ?? false
+  const pieceIdForApi = isFallbackPiece ? null : piece.id || null
+
   // Local state
   const [currentMeasure, setCurrentMeasure] = useState(1)
   const [similarPatternsOpen, setSimilarPatternsOpen] = useState(false)
@@ -101,18 +106,18 @@ export function WalkthroughView({ piece, measures, annotations }: WalkthroughVie
     },
   })
 
-  // Fetch commentary for current measure
+  // Fetch commentary for current measure (only for non-fallback pieces)
   const {
     commentary: fetchedCommentary,
     annotations: fetchedAnnotations,
     isLoading: commentaryLoading,
-  } = useMeasureCommentary(piece.id || null, currentMeasure)
+  } = useMeasureCommentary(pieceIdForApi, currentMeasure)
 
-  // Fetch score XML
-  const { scoreXML, isLoading: scoreLoading } = useScoreXML(piece.id || null)
+  // Fetch score XML (only for non-fallback pieces)
+  const { scoreXML, isLoading: scoreLoading } = useScoreXML(pieceIdForApi)
 
-  // Fetch MIDI data
-  const { midiData } = useMidiData(piece.id || null)
+  // Fetch MIDI data (only for non-fallback pieces)
+  const { midiData } = useMidiData(pieceIdForApi)
 
   // Load MIDI data when available
   useEffect(() => {
@@ -483,7 +488,7 @@ export function WalkthroughView({ piece, measures, annotations }: WalkthroughVie
         open={similarPatternsOpen}
         onOpenChange={setSimilarPatternsOpen}
         featureId={selectedFeatureId}
-        currentPieceId={piece.id}
+        currentPieceId={pieceIdForApi ?? undefined}
         onNavigate={handleNavigateToPattern}
       />
 

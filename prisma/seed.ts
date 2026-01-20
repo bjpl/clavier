@@ -2,6 +2,7 @@ import { PrismaClient } from '@prisma/client';
 import { seedPieces } from './seeds/pieces';
 import { seedFeatures } from './seeds/features';
 import { seedCurriculum } from './seeds/curriculum';
+import { seedMeasures } from './seeds/measures';
 
 const prisma = new PrismaClient();
 
@@ -14,6 +15,10 @@ async function main() {
     console.log('');
 
     await seedPieces(prisma);
+    console.log('');
+
+    // Seed measures after pieces (measures reference pieces)
+    await seedMeasures(prisma);
     console.log('');
 
     await seedCurriculum(prisma);
