@@ -131,7 +131,7 @@ function getFallbackPiece(bwv: string, type: string) {
 }
 
 interface PageProps {
-  params: Promise<{ bwv: string; type: string }>
+  params: { bwv: string; type: string }
 }
 
 function LoadingState() {
@@ -146,7 +146,7 @@ function LoadingState() {
 }
 
 export default async function WalkthroughPiecePage({ params }: PageProps) {
-  const { bwv, type } = await params
+  const { bwv, type } = params
 
   // Validate type parameter
   const normalizedType = type.toLowerCase()

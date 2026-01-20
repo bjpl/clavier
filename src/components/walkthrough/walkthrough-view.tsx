@@ -67,6 +67,7 @@ export function WalkthroughView({ piece, measures, annotations }: WalkthroughVie
   const [learnMoreOpen, setLearnMoreOpen] = useState(false)
   const [selectedFeatureId, setSelectedFeatureId] = useState<string | null>(null)
   const [selectedLessonId, setSelectedLessonId] = useState<string | null>(null)
+  const [scoreError, setScoreError] = useState<Error | null>(null)
 
   // Split view state from Zustand store
   const splitViewSettings = useViewStore(selectSplitViewSettings)
@@ -269,6 +270,12 @@ export function WalkthroughView({ piece, measures, annotations }: WalkthroughVie
     handleGoTo(measure)
   }, [handleGoTo])
 
+  // Handle score rendering errors
+  const handleScoreError = useCallback((error: Error) => {
+    console.error('[WalkthroughView] Score rendering error:', error)
+    setScoreError(error)
+  }, [])
+
   // Current measure data
   const currentMeasureData = measures[currentMeasure - 1] || { number: currentMeasure, notes: [], duration: 4 }
 
@@ -372,6 +379,23 @@ export function WalkthroughView({ piece, measures, annotations }: WalkthroughVie
                     <p className="text-sm text-muted-foreground">Loading score...</p>
                   </div>
                 </div>
+              ) : scoreError ? (
+                <div className="h-full flex items-center justify-center p-8">
+                  <div className="text-center space-y-4">
+                    <div className="text-2xl font-semibold text-destructive">
+                      Score Rendering Error
+                    </div>
+                    <div className="text-muted-foreground max-w-md">
+                      {scoreError.message || 'Failed to render the music score.'}
+                    </div>
+                    <Button
+                      variant="outline"
+                      onClick={() => setScoreError(null)}
+                    >
+                      Try Again
+                    </Button>
+                  </div>
+                </div>
               ) : scoreXML ? (
                 <ScoreDisplay
                   ref={scoreRef}
@@ -385,6 +409,7 @@ export function WalkthroughView({ piece, measures, annotations }: WalkthroughVie
                   enableAutoScroll={true}
                   enableCursor={true}
                   onMeasureClick={handleMeasureClick}
+                  onError={handleScoreError}
                   height="100%"
                 />
               ) : (
