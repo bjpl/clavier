@@ -197,7 +197,7 @@ export async function generateStaticParams() {
  * Generate metadata for SEO
  */
 export async function generateMetadata({ params }: PageProps) {
-  const { bwv, type } = await params
+  const { bwv, type } = params
 
   const fallback = getFallbackPiece(bwv, type)
   const title = fallback
