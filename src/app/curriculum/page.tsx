@@ -1,54 +1,161 @@
 'use client';
 
+import { useState, useEffect, useMemo } from 'react';
 import { CurriculumMap } from '@/components/curriculum';
-import { curriculumDomains } from '@/lib/data/curriculum-structure';
 import { useCurriculumStore } from '@/lib/stores/curriculum-store';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { BookOpen, Clock, TrendingUp } from 'lucide-react';
+import { BookOpen, Clock, TrendingUp, Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import type { Domain } from '@/lib/types/curriculum';
+
+// Type for API response (matches database schema)
+interface APIDomain {
+  id: string;
+  name: string;
+  description: string | null;
+  orderIndex: number;
+  icon: string | null;
+  units: Array<{
+    id: string;
+    name: string;
+    description: string | null;
+    orderIndex: number;
+    modules: Array<{
+      id: string;
+      name: string;
+      description: string | null;
+      orderIndex: number;
+      estimatedDurationMinutes: number | null;
+      lessons: Array<{
+        id: string;
+        name: string;
+        description: string | null;
+        orderIndex: number;
+      }>;
+    }>;
+  }>;
+}
+
+// Transform API response to match component types
+function transformAPIDomain(apiDomain: APIDomain): Domain {
+  return {
+    id: apiDomain.id,
+    name: apiDomain.name,
+    description: apiDomain.description || '',
+    order: apiDomain.orderIndex,
+    icon: apiDomain.icon || '📚',
+    units: apiDomain.units.map((unit) => ({
+      id: unit.id,
+      domainId: apiDomain.id,
+      name: unit.name,
+      description: unit.description || '',
+      order: unit.orderIndex,
+      modules: unit.modules.map((module) => ({
+        id: module.id,
+        unitId: unit.id,
+        name: module.name,
+        description: module.description || '',
+        order: module.orderIndex,
+        lessons: module.lessons.map((lesson) => ({
+          id: lesson.id,
+          moduleId: module.id,
+          title: lesson.name,
+          description: lesson.description || '',
+          duration: module.estimatedDurationMinutes || 15,
+          difficulty: 'beginner' as const,
+          order: lesson.orderIndex,
+        })),
+      })),
+    })),
+  };
+}
 
 export default function CurriculumPage() {
   const router = useRouter();
   const completedLessons = useCurriculumStore((state) => state.completedLessons);
   const lessonProgress = useCurriculumStore((state) => state.lessonProgress);
+  const [domains, setDomains] = useState<Domain[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  // Fetch curriculum data from API
+  useEffect(() => {
+    async function fetchCurriculum() {
+      try {
+        const response = await fetch('/api/curriculum');
+        if (!response.ok) {
+          throw new Error('Failed to fetch curriculum');
+        }
+        const data = await response.json();
+        const apiDomains: APIDomain[] = data.domains || [];
+        // Transform API response to match component types
+        setDomains(apiDomains.map(transformAPIDomain));
+      } catch (err) {
+        console.error('Error fetching curriculum:', err);
+        setError(err instanceof Error ? err.message : 'Failed to load curriculum');
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    fetchCurriculum();
+  }, []);
 
   const handleDomainSelect = (domainId: string) => {
     router.push(`/curriculum/${domainId}`);
   };
 
-  // Calculate overall statistics
-  const totalLessons = curriculumDomains.reduce(
-    (sum, domain) =>
-      sum +
-      domain.units.reduce(
-        (uSum, unit) =>
-          uSum + unit.modules.reduce((mSum, module) => mSum + module.lessons.length, 0),
-        0
-      ),
-    0
-  );
+  // Calculate overall statistics from fetched data
+  const { totalLessons, totalMinutes } = useMemo(() => {
+    let lessons = 0;
+    let minutes = 0;
+    domains.forEach((domain) => {
+      domain.units.forEach((unit) => {
+        unit.modules.forEach((module) => {
+          lessons += module.lessons.length;
+          // Sum up duration from each lesson
+          module.lessons.forEach((lesson) => {
+            minutes += lesson.duration;
+          });
+        });
+      });
+    });
+    return { totalLessons: lessons, totalMinutes: minutes };
+  }, [domains]);
 
   const recentLessons = Object.values(lessonProgress)
     .sort((a, b) => new Date(b.lastAccessedAt).getTime() - new Date(a.lastAccessedAt).getTime())
     .slice(0, 5);
 
-  const totalMinutes = curriculumDomains.reduce(
-    (sum, domain) =>
-      sum +
-      domain.units.reduce(
-        (uSum, unit) =>
-          uSum +
-          unit.modules.reduce(
-            (mSum, module) =>
-              mSum + module.lessons.reduce((lSum, lesson) => lSum + lesson.duration, 0),
-            0
-          ),
-        0
-      ),
-    0
-  );
+  // Loading state
+  if (isLoading) {
+    return (
+      <div className="container mx-auto px-4 py-8 flex items-center justify-center min-h-[400px]">
+        <div className="text-center">
+          <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4 text-muted-foreground" />
+          <p className="text-muted-foreground">Loading curriculum...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Error state
+  if (error) {
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <Card className="border-destructive">
+          <CardHeader>
+            <CardTitle className="text-destructive">Error Loading Curriculum</CardTitle>
+            <CardDescription>{error}</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Button onClick={() => window.location.reload()}>Try Again</Button>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
 
   return (
     <div className="container mx-auto px-4 py-8 space-y-8">
@@ -70,7 +177,7 @@ export default function CurriculumPage() {
           <CardContent>
             <div className="text-2xl font-bold">{totalLessons}</div>
             <p className="text-xs text-muted-foreground">
-              Across {curriculumDomains.length} domains
+              Across {domains.length} domains
             </p>
           </CardContent>
         </Card>
@@ -83,7 +190,7 @@ export default function CurriculumPage() {
           <CardContent>
             <div className="text-2xl font-bold">{completedLessons.length}</div>
             <p className="text-xs text-muted-foreground">
-              {((completedLessons.length / totalLessons) * 100).toFixed(0)}% of curriculum
+              {totalLessons > 0 ? ((completedLessons.length / totalLessons) * 100).toFixed(0) : 0}% of curriculum
             </p>
           </CardContent>
         </Card>
@@ -118,7 +225,7 @@ export default function CurriculumPage() {
       </div>
 
       {/* Continue Learning */}
-      {recentLessons.length > 0 && (
+      {recentLessons.length > 0 && domains.length > 0 && (
         <Card>
           <CardHeader>
             <CardTitle>Continue Learning</CardTitle>
@@ -127,14 +234,14 @@ export default function CurriculumPage() {
           <CardContent>
             <div className="space-y-3">
               {recentLessons.map((progress) => {
-                // Find the lesson details
-                let lessonData = null;
-                for (const domain of curriculumDomains) {
+                // Find the lesson details from transformed domains
+                let lessonData: { lesson: { id: string; title: string; description: string }; domainName: string } | null = null;
+                for (const domain of domains) {
                   for (const unit of domain.units) {
                     for (const currModule of unit.modules) {
                       const lesson = currModule.lessons.find((l) => l.id === progress.lessonId);
                       if (lesson) {
-                        lessonData = { lesson, domain, unit, module: currModule };
+                        lessonData = { lesson, domainName: domain.name };
                         break;
                       }
                     }
@@ -155,7 +262,7 @@ export default function CurriculumPage() {
                       <div className="flex items-center gap-2 mb-1">
                         <h4 className="font-medium">{lessonData.lesson.title}</h4>
                         <Badge variant="outline" className="text-xs">
-                          {lessonData.domain.name}
+                          {lessonData.domainName}
                         </Badge>
                       </div>
                       <p className="text-sm text-muted-foreground">
@@ -187,10 +294,12 @@ export default function CurriculumPage() {
       )}
 
       {/* Domain Map */}
-      <div>
-        <h2 className="text-2xl font-bold mb-4">All Domains</h2>
-        <CurriculumMap domains={curriculumDomains} onSelectDomain={handleDomainSelect} />
-      </div>
+      {domains.length > 0 && (
+        <div>
+          <h2 className="text-2xl font-bold mb-4">All Domains</h2>
+          <CurriculumMap domains={domains} onSelectDomain={handleDomainSelect} />
+        </div>
+      )}
 
       {/* Learning Path */}
       <Card>
@@ -202,7 +311,7 @@ export default function CurriculumPage() {
         </CardHeader>
         <CardContent>
           <ol className="space-y-3">
-            {curriculumDomains.map((domain, idx) => (
+            {domains.map((domain, idx) => (
               <li key={domain.id} className="flex items-start gap-4">
                 <div className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-medium text-sm">
                   {idx + 1}

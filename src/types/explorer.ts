@@ -4,6 +4,7 @@ import type { Feature, FeatureInstance, FeatureCategory, Piece, PieceType } from
 export interface ExplorerFilters {
   categories: FeatureCategory[];
   keyFilter: string | null;
+  modeFilter: 'MAJOR' | 'MINOR' | null;
   bookFilter: 1 | 2 | null;
   typeFilter: PieceType | null;
 }
@@ -80,6 +81,7 @@ export interface FilterPanelProps {
   selectedCategories: FeatureCategory[];
   onCategoryChange: (categories: FeatureCategory[]) => void;
   keyFilter: string | null;
+  modeFilter: 'MAJOR' | 'MINOR' | null;
   bookFilter: 1 | 2 | null;
   typeFilter: PieceType | null;
   onFilterChange: (filters: Partial<ExplorerFilters>) => void;

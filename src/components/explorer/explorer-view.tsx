@@ -28,6 +28,7 @@ async function searchFeatures(
     params.set('categories', filters.categories.join(','));
   }
   if (filters.keyFilter) params.set('key', filters.keyFilter);
+  if (filters.modeFilter) params.set('mode', filters.modeFilter);
   if (filters.bookFilter) params.set('book', String(filters.bookFilter));
   if (filters.typeFilter) params.set('type', filters.typeFilter);
   params.set('sort', sortBy);
@@ -47,6 +48,7 @@ export function ExplorerView({ features, categories }: ExplorerViewProps) {
   const [filters, setFilters] = useState<ExplorerFilters>({
     categories: [],
     keyFilter: null,
+    modeFilter: null,
     bookFilter: null,
     typeFilter: null,
   });
@@ -103,6 +105,7 @@ export function ExplorerView({ features, categories }: ExplorerViewProps) {
     setFilters({
       categories: [],
       keyFilter: null,
+      modeFilter: null,
       bookFilter: null,
       typeFilter: null,
     });
@@ -132,6 +135,7 @@ export function ExplorerView({ features, categories }: ExplorerViewProps) {
         selectedCategories={filters.categories}
         onCategoryChange={handleCategoryChange}
         keyFilter={filters.keyFilter}
+        modeFilter={filters.modeFilter}
         bookFilter={filters.bookFilter}
         typeFilter={filters.typeFilter}
         onFilterChange={handleFilterChange}

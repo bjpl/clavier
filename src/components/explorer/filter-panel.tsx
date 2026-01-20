@@ -13,6 +13,7 @@ export function FilterPanel({
   selectedCategories,
   onCategoryChange,
   keyFilter,
+  modeFilter,
   bookFilter,
   typeFilter,
   onFilterChange,
@@ -41,8 +42,12 @@ export function FilterPanel({
   const activeFilterCount =
     selectedCategories.length +
     (keyFilter ? 1 : 0) +
+    (modeFilter ? 1 : 0) +
     (bookFilter ? 1 : 0) +
     (typeFilter ? 1 : 0);
+
+  // Get unique key tonics from WTC_KEYS
+  const uniqueKeys = [...new Set(WTC_KEYS.map((k) => k.key))];
 
   return (
     <div className="w-64 h-full overflow-y-auto bg-gray-50 border-r border-gray-200">
@@ -92,15 +97,51 @@ export function FilterPanel({
             className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <option value="">All keys</option>
-            {WTC_KEYS.map((k) => (
-              <option key={`${k.key}-${k.mode}`} value={`${k.key}-${k.mode}`}>
-                {k.displayName}
-                {facets?.keys[`${k.key}-${k.mode}`]
-                  ? ` (${facets.keys[`${k.key}-${k.mode}`]})`
-                  : ''}
+            {uniqueKeys.map((key) => (
+              <option key={key} value={key}>
+                {key}
               </option>
             ))}
           </select>
+        </div>
+
+        <Separator />
+
+        {/* Mode Filter */}
+        <div>
+          <h3 className="text-sm font-medium text-gray-900 mb-3">Mode</h3>
+          <div className="space-y-2">
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="radio"
+                name="mode"
+                checked={modeFilter === null}
+                onChange={() => onFilterChange({ modeFilter: null })}
+                className="w-4 h-4 text-blue-600"
+              />
+              <span className="text-sm">Both</span>
+            </label>
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="radio"
+                name="mode"
+                checked={modeFilter === 'MAJOR'}
+                onChange={() => onFilterChange({ modeFilter: 'MAJOR' })}
+                className="w-4 h-4 text-blue-600"
+              />
+              <span className="text-sm">Major</span>
+            </label>
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="radio"
+                name="mode"
+                checked={modeFilter === 'MINOR'}
+                onChange={() => onFilterChange({ modeFilter: 'MINOR' })}
+                className="w-4 h-4 text-blue-600"
+              />
+              <span className="text-sm">Minor</span>
+            </label>
+          </div>
         </div>
 
         <Separator />

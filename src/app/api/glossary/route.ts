@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+// Force dynamic rendering since we use searchParams
+export const dynamic = 'force-dynamic';
+
 // In a real implementation, this would be stored in the database
 // For now, using a static glossary
 const GLOSSARY: Record<string, {
