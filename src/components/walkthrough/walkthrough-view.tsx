@@ -406,7 +406,12 @@ export function WalkthroughView({ piece, measures, annotations }: WalkthroughVie
                 showLabels={true}
                 onNoteClick={(midiNote) => {
                   if (engine?.isReady) {
-                    engine.playNote(midiNote, 0.5)
+                    engine.triggerAttack(midiNote, 0.8)
+                  }
+                }}
+                onNoteRelease={(midiNote) => {
+                  if (engine?.isReady) {
+                    engine.triggerRelease(midiNote)
                   }
                 }}
                 voiceColors={true}
