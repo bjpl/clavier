@@ -5,14 +5,31 @@
 @layer base {
   :root {
     --font-inter: 'Inter', system-ui, sans-serif;
+    --background: 255 255 255;
+    --foreground: 17 24 39;
+    --muted: 243 244 246;
+    --muted-foreground: 107 114 128;
+    --border: 229 231 235;
+    --primary: 37 99 235;
+    --primary-foreground: 255 255 255;
+  }
+
+  .dark {
+    --background: 17 24 39;
+    --foreground: 243 244 246;
+    --muted: 31 41 55;
+    --muted-foreground: 156 163 175;
+    --border: 55 65 81;
+    --primary: 59 130 246;
+    --primary-foreground: 255 255 255;
   }
 
   * {
-    @apply border-gray-200;
+    @apply border-border;
   }
 
   body {
-    @apply bg-white text-gray-900;
+    @apply bg-background text-foreground;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -26,11 +43,11 @@
   }
 
   .btn-primary {
-    @apply bg-accent text-white hover:bg-accent-600 focus-visible:ring-accent;
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-primary;
   }
 
   .btn-secondary {
-    @apply bg-gray-100 text-gray-900 hover:bg-gray-200 focus-visible:ring-gray-500;
+    @apply bg-muted text-foreground hover:bg-muted/80 focus-visible:ring-muted;
   }
 
   .btn-success {
@@ -38,11 +55,11 @@
   }
 
   .card {
-    @apply rounded-lg border bg-white shadow-sm;
+    @apply rounded-lg border border-border bg-background shadow-sm;
   }
 
   .input {
-    @apply flex w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+    @apply flex w-full rounded-lg border border-border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
   }
 }
 

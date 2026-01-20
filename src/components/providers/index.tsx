@@ -1,5 +1,6 @@
 'use client';
 
+import { ThemeProvider } from 'next-themes';
 import { QueryProvider } from './query-provider';
 import { AudioProvider } from './audio-provider';
 
@@ -10,17 +11,24 @@ import { AudioProvider } from './audio-provider';
  * This makes it easy to add new providers and maintain the provider tree.
  *
  * Order matters:
- * 1. QueryProvider - Data fetching and caching
- * 2. AudioProvider - Audio engine and playback
- * 3. Future providers (Theme, Auth, etc.) can be added here
+ * 1. ThemeProvider - Theme/color scheme management (must wrap UI)
+ * 2. QueryProvider - Data fetching and caching
+ * 3. AudioProvider - Audio engine and playback
  */
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <QueryProvider>
-      <AudioProvider autoInit>
-        {children}
-      </AudioProvider>
-    </QueryProvider>
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
+      <QueryProvider>
+        <AudioProvider autoInit>
+          {children}
+        </AudioProvider>
+      </QueryProvider>
+    </ThemeProvider>
   );
 }
 
