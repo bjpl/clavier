@@ -31,9 +31,13 @@ function getServerSnapshot() {
   return false // Always false on server
 }
 
+// Maximum time to wait for hydration before proceeding anyway
+const HYDRATION_TIMEOUT_MS = 5000
+
 /**
  * Trigger hydration once globally
- * Returns a promise that resolves when all stores are hydrated
+ * Returns a promise that resolves when all stores are hydrated OR timeout is reached
+ * This prevents infinite loading if localStorage is corrupted or rehydration hangs
  */
 function triggerHydration(): Promise<void> {
   if (hydrationPromise) {
@@ -44,7 +48,17 @@ function triggerHydration(): Promise<void> {
     return Promise.resolve()
   }
 
-  hydrationPromise = (async () => {
+  // Create a timeout promise that resolves (not rejects) after HYDRATION_TIMEOUT_MS
+  // This ensures we don't hang forever if rehydration fails
+  const timeoutPromise = new Promise<void>((resolve) => {
+    setTimeout(() => {
+      console.warn(`[useHydrated] Hydration timeout after ${HYDRATION_TIMEOUT_MS}ms, proceeding with defaults`)
+      resolve()
+    }, HYDRATION_TIMEOUT_MS)
+  })
+
+  // Create the actual rehydration promise
+  const rehydrationPromise = (async () => {
     try {
       // Rehydrate all stores in parallel
       await Promise.all([
@@ -53,12 +67,16 @@ function triggerHydration(): Promise<void> {
       ])
     } catch (error) {
       console.error('Store rehydration failed:', error)
-    } finally {
-      globalHydrated = true
-      // Notify all subscribers
-      listeners.forEach((listener) => listener())
+      // Don't throw - we'll use default values
     }
   })()
+
+  // Race between rehydration and timeout - whichever finishes first wins
+  hydrationPromise = Promise.race([rehydrationPromise, timeoutPromise]).then(() => {
+    globalHydrated = true
+    // Notify all subscribers
+    listeners.forEach((listener) => listener())
+  })
 
   return hydrationPromise
 }

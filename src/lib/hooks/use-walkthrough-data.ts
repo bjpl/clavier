@@ -323,7 +323,8 @@ export function useWalkthroughData(bwv: string, type: string) {
     totalMeasures: piece?.totalMeasures || 0,
 
     // Loading states
-    isLoading: piecesLoading || pieceLoading || !pieceId,
+    // NOTE: Don't include !pieceId here - if API returns no data, we should show fallback UI not infinite loading
+    isLoading: piecesLoading || pieceLoading,
     isCommentaryLoading: commentaryLoading,
     isScoreLoading: scoreLoading,
     isMidiLoading: midiLoading,

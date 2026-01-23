@@ -1,12 +1,15 @@
 'use client'
 
-import { useMemo } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import { Loader2 } from 'lucide-react'
 import { WalkthroughView } from './walkthrough-view'
 import { useWalkthroughData } from '@/lib/hooks/use-walkthrough-data'
 
 // Stable empty array to prevent re-renders (never changes reference)
 const EMPTY_ANNOTATIONS: never[] = []
+
+// Maximum time to wait for API before showing fallback UI
+const LOADING_TIMEOUT_MS = 10000
 
 interface WalkthroughPageClientProps {
   bwv: string
@@ -60,6 +63,9 @@ function LoadingState() {
 export function WalkthroughPageClient({ bwv, type }: WalkthroughPageClientProps) {
   const normalizedType = type.toLowerCase() as 'prelude' | 'fugue'
 
+  // Track if loading has timed out - prevents infinite loading spinner
+  const [loadingTimedOut, setLoadingTimedOut] = useState(false)
+
   // Use the comprehensive data hook that fetches from API
   const {
     pieceId,
@@ -68,6 +74,24 @@ export function WalkthroughPageClient({ bwv, type }: WalkthroughPageClientProps)
     isLoading,
     error,
   } = useWalkthroughData(bwv, normalizedType)
+
+  // Set up loading timeout - if still loading after LOADING_TIMEOUT_MS, use fallback data
+  useEffect(() => {
+    if (!isLoading) {
+      // Loading finished, reset timeout state
+      setLoadingTimedOut(false)
+      return
+    }
+
+    const timer = setTimeout(() => {
+      if (isLoading) {
+        console.warn(`[WalkthroughPageClient] Loading timeout after ${LOADING_TIMEOUT_MS}ms for BWV ${bwv} ${normalizedType}, using fallback data`)
+        setLoadingTimedOut(true)
+      }
+    }, LOADING_TIMEOUT_MS)
+
+    return () => clearTimeout(timer)
+  }, [isLoading, bwv, normalizedType])
 
   // Calculate fallback values BEFORE any conditional returns
   // This ensures useMemo hooks below are always called (React Rules of Hooks)
@@ -111,7 +135,9 @@ export function WalkthroughPageClient({ bwv, type }: WalkthroughPageClientProps)
   )
 
   // NOW we can have conditional returns - AFTER all hooks are called
-  if (isLoading) {
+  // Show loading state only if actually loading AND hasn't timed out
+  // If loading times out, we proceed with fallback data instead of showing infinite spinner
+  if (isLoading && !loadingTimedOut) {
     return <LoadingState />
   }
 
