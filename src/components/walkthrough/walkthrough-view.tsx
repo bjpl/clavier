@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useEffect, useRef } from 'react'
+import { useState, useCallback, useEffect, useRef, useMemo } from 'react'
 import { useRouter } from 'next/navigation'
 import { PieceSelector } from './piece-selector'
 import { MeasureNavigation } from './measure-navigation'
@@ -298,7 +298,7 @@ export function WalkthroughView({ piece, measures, annotations }: WalkthroughVie
     featureId: null,
   }
 
-  // Map annotations to expected format
+  // Map annotations to expected format - memoize to prevent re-renders
   interface AnnotationInput {
     id: string
     measureNumber?: number
@@ -307,20 +307,27 @@ export function WalkthroughView({ piece, measures, annotations }: WalkthroughVie
     type?: string
     content: string
   }
-  const currentAnnotations = (fetchedAnnotations || annotations.filter(
-    (a) => a.measureNumber === currentMeasure
-  )).map((a: AnnotationInput) => ({
-    id: a.id,
-    measureNumber: currentMeasure,
-    type: a.annotationType || a.type || 'general',
-    content: a.content,
-  }))
+  const currentAnnotations = useMemo(() => {
+    const sourceAnnotations = fetchedAnnotations || annotations.filter(
+      (a) => a.measureNumber === currentMeasure
+    )
+    return sourceAnnotations.map((a: AnnotationInput) => ({
+      id: a.id,
+      measureNumber: currentMeasure,
+      type: a.annotationType || a.type || 'general',
+      content: a.content,
+    }))
+  }, [fetchedAnnotations, annotations, currentMeasure])
 
-  // Convert active notes for piano keyboard
-  const pianoActiveNotes: ActiveNote[] = activeNotes.map((midiNote) => ({
-    midiNote,
-    velocity: 0.8,
-  }))
+  // Convert active notes for piano keyboard - MUST memoize to prevent infinite re-renders
+  // Without useMemo, map() creates a new array on every render which can cause loops
+  const pianoActiveNotes: ActiveNote[] = useMemo(
+    () => activeNotes.map((midiNote) => ({
+      midiNote,
+      velocity: 0.8,
+    })),
+    [activeNotes]
+  )
 
   const totalMeasures = piece.totalMeasures || measures.length
   const isPlaying = playbackState === 'playing'

@@ -456,6 +456,11 @@ export function useScorePlaybackSyncWithKeyboard(
 ): UseScorePlaybackSyncReturn {
   const sync = useScorePlaybackSync(options)
 
+  // Use a ref to store the sync object to prevent useEffect dependency issues
+  // This avoids re-creating the keyboard handler on every render
+  const syncRef = useRef(sync)
+  syncRef.current = sync
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       // Ignore if typing in input
@@ -467,40 +472,42 @@ export function useScorePlaybackSyncWithKeyboard(
         return
       }
 
+      const s = syncRef.current
+
       switch (e.key) {
         case ' ':
           e.preventDefault()
-          sync.togglePlayback()
+          s.togglePlayback()
           break
 
         case 'Escape':
           e.preventDefault()
-          sync.stop()
+          s.stop()
           break
 
         case 'ArrowLeft':
           if (e.shiftKey) {
             e.preventDefault()
-            sync.seekToMeasure(Math.max(1, sync.currentMeasure - 1))
+            s.seekToMeasure(Math.max(1, s.currentMeasure - 1))
           }
           break
 
         case 'ArrowRight':
           if (e.shiftKey) {
             e.preventDefault()
-            sync.seekToMeasure(Math.min(sync.totalMeasures, sync.currentMeasure + 1))
+            s.seekToMeasure(Math.min(s.totalMeasures, s.currentMeasure + 1))
           }
           break
 
         case 'Home':
           e.preventDefault()
-          sync.seekToMeasure(1)
+          s.seekToMeasure(1)
           break
 
         case 'End':
           e.preventDefault()
-          if (sync.totalMeasures > 0) {
-            sync.seekToMeasure(sync.totalMeasures)
+          if (s.totalMeasures > 0) {
+            s.seekToMeasure(s.totalMeasures)
           }
           break
 
@@ -508,21 +515,21 @@ export function useScorePlaybackSyncWithKeyboard(
         case '=':
           if (e.shiftKey || e.key === '+') {
             e.preventDefault()
-            sync.setTempoMultiplier(Math.min(2.0, sync.tempoMultiplier + 0.1))
+            s.setTempoMultiplier(Math.min(2.0, s.tempoMultiplier + 0.1))
           }
           break
 
         case '-':
         case '_':
           e.preventDefault()
-          sync.setTempoMultiplier(Math.max(0.25, sync.tempoMultiplier - 0.1))
+          s.setTempoMultiplier(Math.max(0.25, s.tempoMultiplier - 0.1))
           break
       }
     }
 
     document.addEventListener('keydown', handleKeyDown)
     return () => document.removeEventListener('keydown', handleKeyDown)
-  }, [sync])
+  }, []) // Empty dependency - uses ref for current values
 
   return sync
 }
