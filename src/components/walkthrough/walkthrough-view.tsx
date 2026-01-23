@@ -91,6 +91,14 @@ export function WalkthroughView({ piece, measures, annotations }: WalkthroughVie
 
   // Audio engine and playback
   const { engine, isReady: audioReady, initialize: initAudio, isLoading: audioLoading } = useAudioEngine()
+
+  // IMPORTANT: Memoize the onMeasureChange callback to prevent re-render loops
+  // This callback is passed to useMeasurePlayback and must be stable
+  const handleMeasureChangeFromPlayback = useCallback((measure: number) => {
+    setCurrentMeasure(measure)
+    markVisited(measure)
+  }, [markVisited])
+
   const {
     play,
     pause,
@@ -106,10 +114,7 @@ export function WalkthroughView({ piece, measures, annotations }: WalkthroughVie
     setLoop,
     clearLoop,
   } = useMeasurePlayback(engine, {
-    onMeasureChange: (measure) => {
-      setCurrentMeasure(measure)
-      markVisited(measure)
-    },
+    onMeasureChange: handleMeasureChangeFromPlayback,
   })
 
   // Fetch commentary for current measure (only for non-fallback pieces)

@@ -121,32 +121,49 @@ export function usePlayback(
   const activeNotesRef = useRef<Set<number>>(new Set())
   const optionsRef = useRef(options)
 
-  // Update options ref when they change
-  useEffect(() => {
-    optionsRef.current = options
-  }, [options])
+  // Update options ref - use individual callback refs to avoid re-render loops
+  // NOTE: We compare individual callbacks, not the entire options object,
+  // because the options object may be recreated on every render
+  const onNoteOnRef = useRef(options.onNoteOn)
+  const onNoteOffRef = useRef(options.onNoteOff)
+  const onMeasureChangeRef = useRef(options.onMeasureChange)
+  const onBeatChangeRef = useRef(options.onBeatChange)
+  const onPlaybackEndRef = useRef(options.onPlaybackEnd)
+  const onPlaybackStartRef = useRef(options.onPlaybackStart)
+  const onPlaybackPauseRef = useRef(options.onPlaybackPause)
 
-  // Get playback store state and actions
-  const {
-    isPlaying,
-    currentMeasure,
-    currentBeat,
-    tempo,
-    tempoMultiplier: storeTempoMultiplier,
-    loopEnabled,
-    play: storePlay,
-    pause: storePause,
-    stop: storeStop,
-    seek,
-    setTempo: setStoreTempo,
-    setTempoMultiplier: setStoreTempoMultiplier,
-    enableLoop,
-    disableLoop,
-    addActiveNote,
-    removeActiveNote,
-    clearActiveNotes,
-    setPiece
-  } = usePlaybackStore()
+  // Update refs when callbacks change (stable update, no effect dependencies on object)
+  onNoteOnRef.current = options.onNoteOn
+  onNoteOffRef.current = options.onNoteOff
+  onMeasureChangeRef.current = options.onMeasureChange
+  onBeatChangeRef.current = options.onBeatChange
+  onPlaybackEndRef.current = options.onPlaybackEnd
+  onPlaybackStartRef.current = options.onPlaybackStart
+  onPlaybackPauseRef.current = options.onPlaybackPause
+  optionsRef.current = options
+
+  // Get playback store state using PRIMITIVE SELECTORS to prevent re-render loops
+  // IMPORTANT: Do NOT destructure entire store - each selector causes subscription
+  const isPlaying = usePlaybackStore((s) => s.isPlaying)
+  const currentMeasure = usePlaybackStore((s) => s.currentMeasure)
+  const currentBeat = usePlaybackStore((s) => s.currentBeat)
+  const tempo = usePlaybackStore((s) => s.tempo)
+  const storeTempoMultiplier = usePlaybackStore((s) => s.tempoMultiplier)
+  const loopEnabled = usePlaybackStore((s) => s.loopEnabled)
+
+  // Get store actions (these are stable references)
+  const storePlay = usePlaybackStore((s) => s.play)
+  const storePause = usePlaybackStore((s) => s.pause)
+  const storeStop = usePlaybackStore((s) => s.stop)
+  const seek = usePlaybackStore((s) => s.seek)
+  const setStoreTempo = usePlaybackStore((s) => s.setTempo)
+  const setStoreTempoMultiplier = usePlaybackStore((s) => s.setTempoMultiplier)
+  const enableLoop = usePlaybackStore((s) => s.enableLoop)
+  const disableLoop = usePlaybackStore((s) => s.disableLoop)
+  const addActiveNote = usePlaybackStore((s) => s.addActiveNote)
+  const removeActiveNote = usePlaybackStore((s) => s.removeActiveNote)
+  const clearActiveNotes = usePlaybackStore((s) => s.clearActiveNotes)
+  const setPiece = usePlaybackStore((s) => s.setPiece)
 
   // Initialize player when engine is ready
   useEffect(() => {
@@ -174,6 +191,7 @@ export function usePlayback(
 
   /**
    * Setup player callbacks
+   * Uses refs for callbacks to avoid stale closures and prevent re-render loops
    */
   const setupCallbacks = useCallback(() => {
     if (!playerRef.current) return
@@ -182,37 +200,37 @@ export function usePlayback(
     playerRef.current.onNoteOn((note) => {
       activeNotesRef.current.add(note.midiNote)
       addActiveNote(note.midiNote)
-      optionsRef.current.onNoteOn?.(note)
+      onNoteOnRef.current?.(note)
     })
 
     // Note off callback
     playerRef.current.onNoteOff((note) => {
       activeNotesRef.current.delete(note.midiNote)
       removeActiveNote(note.midiNote)
-      optionsRef.current.onNoteOff?.(note)
+      onNoteOffRef.current?.(note)
     })
 
     // Measure change callback
     playerRef.current.onMeasureChange((measure) => {
       seek(measure, 1)
-      optionsRef.current.onMeasureChange?.(measure)
+      onMeasureChangeRef.current?.(measure)
     })
 
     // Beat change callback
     playerRef.current.onBeatChange((beat) => {
       const currentMeasure = playerRef.current?.position.measure || 1
       seek(currentMeasure, beat)
-      optionsRef.current.onBeatChange?.(beat)
+      onBeatChangeRef.current?.(beat)
     })
 
     // Playback start callback
     playerRef.current.onPlaybackStart(() => {
-      optionsRef.current.onPlaybackStart?.()
+      onPlaybackStartRef.current?.()
     })
 
     // Playback pause callback
     playerRef.current.onPlaybackPause(() => {
-      optionsRef.current.onPlaybackPause?.()
+      onPlaybackPauseRef.current?.()
     })
 
     // Playback end callback
@@ -220,7 +238,7 @@ export function usePlayback(
       storeStop()
       clearActiveNotes()
       activeNotesRef.current.clear()
-      optionsRef.current.onPlaybackEnd?.()
+      onPlaybackEndRef.current?.()
     })
   }, [addActiveNote, removeActiveNote, seek, storeStop, clearActiveNotes])
 
@@ -424,7 +442,8 @@ export function usePlaybackWithKeyboard(
   options: UsePlaybackOptions = {}
 ): UsePlaybackReturn {
   const playback = usePlayback(engine, options)
-  const { isPlaying } = usePlaybackStore()
+  // Use primitive selector to prevent re-render loops
+  const isPlaying = usePlaybackStore((s) => s.isPlaying)
 
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
