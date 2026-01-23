@@ -1,26 +1,15 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import { Loader2 } from 'lucide-react'
 import { WalkthroughView } from './walkthrough-view'
-
-interface PieceData {
-  id: string
-  title: string
-  bwv: number
-  key: string
-  type: 'prelude' | 'fugue'
-  totalMeasures: number
-  measures: Array<{ number: number; notes: unknown[]; duration: number }>
-  annotations: Array<{ id: string; measureNumber: number; type: string; content: string }>
-}
+import { useWalkthroughData } from '@/lib/hooks/use-walkthrough-data'
 
 interface WalkthroughPageClientProps {
   bwv: string
   type: string
 }
 
-// Fallback data for common BWV numbers
+// Fallback data for when API returns no data
 const fallbackPieces: Record<string, { totalMeasures: Record<string, number>; key: string }> = {
   '846': { totalMeasures: { prelude: 35, fugue: 27 }, key: 'C major' },
   '847': { totalMeasures: { prelude: 24, fugue: 29 }, key: 'C minor' },
@@ -48,31 +37,6 @@ const fallbackPieces: Record<string, { totalMeasures: Record<string, number>; ke
   '869': { totalMeasures: { prelude: 24, fugue: 76 }, key: 'B minor' },
 }
 
-function getFallbackPiece(bwv: string, type: string): PieceData | null {
-  const fallback = fallbackPieces[bwv]
-  if (!fallback) {
-    return null
-  }
-
-  const normalizedType = type.toLowerCase() as 'prelude' | 'fugue'
-  const totalMeasures = fallback.totalMeasures[normalizedType]
-
-  return {
-    id: `fallback-${bwv}-${type}`,
-    title: `${type.charAt(0).toUpperCase() + type.slice(1)} in ${fallback.key}`,
-    bwv: parseInt(bwv, 10),
-    key: fallback.key,
-    type: normalizedType,
-    totalMeasures,
-    measures: Array.from({ length: totalMeasures }, (_, i) => ({
-      number: i + 1,
-      notes: [],
-      duration: 4,
-    })),
-    annotations: [],
-  }
-}
-
 function LoadingState() {
   return (
     <div className="flex items-center justify-center h-screen">
@@ -85,44 +49,62 @@ function LoadingState() {
 }
 
 /**
- * Fully client-side walkthrough page component.
- * This prevents any hydration mismatches by not rendering during SSR.
+ * Client-side walkthrough page component.
+ * Uses useWalkthroughData hook to fetch real piece data from the API,
+ * with fallback to static data if the API returns nothing.
  */
 export function WalkthroughPageClient({ bwv, type }: WalkthroughPageClientProps) {
-  const [piece, setPiece] = useState<PieceData | null>(null)
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+  const normalizedType = type.toLowerCase() as 'prelude' | 'fugue'
 
-  useEffect(() => {
-    // Get fallback data on client side only
-    const normalizedType = type.toLowerCase()
-    if (normalizedType !== 'prelude' && normalizedType !== 'fugue') {
-      setError('Invalid piece type')
-      setIsLoading(false)
-      return
-    }
+  // Use the comprehensive data hook that fetches from API
+  const {
+    pieceId,
+    piece: apiPiece,
+    totalMeasures,
+    isLoading,
+    error,
+  } = useWalkthroughData(bwv, normalizedType)
 
-    const fallbackPiece = getFallbackPiece(bwv, normalizedType)
-    if (!fallbackPiece) {
-      setError('Piece not found')
-      setIsLoading(false)
-      return
-    }
-
-    setPiece(fallbackPiece)
-    setIsLoading(false)
-  }, [bwv, type])
-
+  // Show loading state while fetching
   if (isLoading) {
     return <LoadingState />
   }
 
-  if (error || !piece) {
+  // Build piece data for WalkthroughView
+  // Use API data if available, otherwise fall back to static data
+  const fallback = fallbackPieces[bwv]
+  const fallbackTotalMeasures = fallback?.totalMeasures[normalizedType] || 35
+
+  const pieceData = {
+    // Use real piece ID from API if available (enables MIDI, score, commentary)
+    // Otherwise use a fallback ID (disables API features but shows basic UI)
+    id: pieceId || `fallback-${bwv}-${normalizedType}`,
+    title: apiPiece
+      ? `${normalizedType.charAt(0).toUpperCase() + normalizedType.slice(1)} in ${apiPiece.keyTonic} ${apiPiece.keyMode.toLowerCase()}`
+      : `${normalizedType.charAt(0).toUpperCase() + normalizedType.slice(1)} in ${fallback?.key || 'Unknown'}`,
+    bwv: parseInt(bwv, 10),
+    key: apiPiece
+      ? `${apiPiece.keyTonic} ${apiPiece.keyMode.toLowerCase()}`
+      : fallback?.key || 'Unknown',
+    type: normalizedType,
+    totalMeasures: totalMeasures || fallbackTotalMeasures,
+    measures: Array.from({ length: totalMeasures || fallbackTotalMeasures }, (_, i) => ({
+      number: i + 1,
+      notes: [],
+      duration: 4,
+    })),
+    annotations: [],
+  }
+
+  // Show error state only if both API failed AND no fallback exists
+  if (error && !fallback) {
     return (
       <div className="flex items-center justify-center h-screen">
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-2">Piece Not Found</h1>
-          <p className="text-muted-foreground">{error || 'The requested piece could not be found.'}</p>
+          <p className="text-muted-foreground">
+            BWV {bwv} {normalizedType} could not be loaded.
+          </p>
         </div>
       </div>
     )
@@ -130,9 +112,9 @@ export function WalkthroughPageClient({ bwv, type }: WalkthroughPageClientProps)
 
   return (
     <WalkthroughView
-      piece={piece}
-      measures={piece.measures}
-      annotations={piece.annotations}
+      piece={pieceData}
+      measures={pieceData.measures}
+      annotations={pieceData.annotations}
     />
   )
 }

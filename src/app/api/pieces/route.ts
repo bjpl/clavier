@@ -8,6 +8,7 @@ export const dynamic = 'force-dynamic';
 export async function GET(request: NextRequest) {
   try {
     const searchParams = request.nextUrl.searchParams;
+    const bwv = searchParams.get('bwv');
     const book = searchParams.get('book');
     const type = searchParams.get('type');
     const key = searchParams.get('key');
@@ -15,6 +16,10 @@ export async function GET(request: NextRequest) {
 
     // Build where clause dynamically
     const where: Prisma.PieceWhereInput = {};
+
+    if (bwv) {
+      where.bwvNumber = parseInt(bwv, 10);
+    }
 
     if (book) {
       where.book = parseInt(book, 10);
