@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback } from 'react'
+import { useCallback, useRef, useEffect } from 'react'
 import {
   Dialog,
   DialogContent,
@@ -18,7 +18,7 @@ interface SimilarPatternsModalProps {
   onOpenChange: (open: boolean) => void
   featureId: string | null
   currentPieceId?: string
-  onNavigate: (pieceId: string, measureStart: number) => void
+  onNavigate: (bwvNumber: number, pieceType: string, measureStart: number) => void
 }
 
 export function SimilarPatternsModal({
@@ -28,14 +28,32 @@ export function SimilarPatternsModal({
   currentPieceId,
   onNavigate,
 }: SimilarPatternsModalProps) {
+  // Focus management: store trigger element ref
+  const triggerRef = useRef<HTMLElement | null>(null)
+
+  // When opening modal, store the currently focused element
+  useEffect(() => {
+    if (open) {
+      triggerRef.current = document.activeElement as HTMLElement
+    }
+  }, [open])
+
+  // When closing, return focus to the trigger element
+  useEffect(() => {
+    if (!open && triggerRef.current) {
+      triggerRef.current.focus()
+      triggerRef.current = null
+    }
+  }, [open])
+
   const { patterns, total, isLoading, error } = useSimilarPatterns(
     open ? featureId : null,
     20
   )
 
   const handleNavigate = useCallback(
-    (pieceId: string, measureStart: number) => {
-      onNavigate(pieceId, measureStart)
+    (bwvNumber: number, pieceType: string, measureStart: number) => {
+      onNavigate(bwvNumber, pieceType, measureStart)
     },
     [onNavigate]
   )
@@ -100,7 +118,7 @@ export function SimilarPatternsModal({
                     variant="ghost"
                     size="sm"
                     onClick={() =>
-                      handleNavigate(pattern.pieceId, pattern.measureStart)
+                      handleNavigate(pattern.bwvNumber, pattern.type, pattern.measureStart)
                     }
                   >
                     <ExternalLink className="h-4 w-4 mr-1" />

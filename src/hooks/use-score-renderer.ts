@@ -271,6 +271,41 @@ export function useScoreRenderer(
   const highlightLayerRef = useRef<SVGGElement | null>(null)
   const mountedRef = useRef(true)
 
+  /**
+   * Create highlight layer in SVG
+   * Defined early to avoid circular dependencies
+   */
+  const createHighlightLayer = useCallback(() => {
+    if (!containerRef.current) return
+
+    const svgElement = containerRef.current.querySelector('svg')
+    if (!svgElement) return
+
+    // Remove existing highlight layer
+    const existingLayer = svgElement.querySelector('#osmd-highlight-layer')
+    if (existingLayer) {
+      existingLayer.remove()
+    }
+
+    // Create new highlight layer
+    const highlightLayer = document.createElementNS('http://www.w3.org/2000/svg', 'g')
+    highlightLayer.setAttribute('id', 'osmd-highlight-layer')
+
+    // Insert at the beginning so highlights appear behind notes
+    svgElement.insertBefore(highlightLayer, svgElement.firstChild)
+    highlightLayerRef.current = highlightLayer
+  }, [containerRef])
+
+  /**
+   * Clear all highlights
+   * Defined early to avoid circular dependencies
+   */
+  const clearHighlights = useCallback(() => {
+    if (highlightLayerRef.current) {
+      highlightLayerRef.current.innerHTML = ''
+    }
+  }, [])
+
   // Initialize OSMD when container is ready
   useEffect(() => {
     mountedRef.current = true
@@ -373,7 +408,7 @@ export function useScoreRenderer(
         }
       }
     },
-    [osmd]
+    [osmd, createHighlightLayer]
   )
 
   /**
@@ -420,7 +455,7 @@ export function useScoreRenderer(
         console.error('Error clearing score:', err)
       }
     }
-  }, [osmd])
+  }, [osmd, clearHighlights])
 
   /**
    * Set zoom level
@@ -620,30 +655,6 @@ export function useScoreRenderer(
   }, [osmd])
 
   /**
-   * Create highlight layer in SVG
-   */
-  const createHighlightLayer = useCallback(() => {
-    if (!containerRef.current) return
-
-    const svgElement = containerRef.current.querySelector('svg')
-    if (!svgElement) return
-
-    // Remove existing highlight layer
-    const existingLayer = svgElement.querySelector('#osmd-highlight-layer')
-    if (existingLayer) {
-      existingLayer.remove()
-    }
-
-    // Create new highlight layer
-    const highlightLayer = document.createElementNS('http://www.w3.org/2000/svg', 'g')
-    highlightLayer.setAttribute('id', 'osmd-highlight-layer')
-
-    // Insert at the beginning so highlights appear behind notes
-    svgElement.insertBefore(highlightLayer, svgElement.firstChild)
-    highlightLayerRef.current = highlightLayer
-  }, [containerRef])
-
-  /**
    * Highlight specific measures
    */
   const highlightMeasures = useCallback(
@@ -713,15 +724,6 @@ export function useScoreRenderer(
     },
     []
   )
-
-  /**
-   * Clear all highlights
-   */
-  const clearHighlights = useCallback(() => {
-    if (highlightLayerRef.current) {
-      highlightLayerRef.current.innerHTML = ''
-    }
-  }, [])
 
   /**
    * Apply voice coloring to notes
@@ -844,7 +846,22 @@ export function useScoreRenderer(
     highlightLayerRef.current = null
   }, [osmd])
 
-  // Cleanup on unmount
+  // Cleanup on unmount - ensure voice color styles and highlight layer are removed
+  useEffect(() => {
+    return () => {
+      // Remove voice color styles on unmount (even if setVoiceColors(false) wasn't called)
+      const styleElement = document.getElementById('osmd-voice-colors')
+      if (styleElement) styleElement.remove()
+
+      // Clean up highlight layer reference
+      if (highlightLayerRef.current) {
+        highlightLayerRef.current.remove()
+        highlightLayerRef.current = null
+      }
+    }
+  }, [])
+
+  // Cleanup OSMD instance on unmount
   useEffect(() => {
     return () => {
       destroy()

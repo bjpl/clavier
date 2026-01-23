@@ -587,6 +587,12 @@ export function useMeasurePlayback(
   // Destructure stable method references to avoid using [playback] as dependency
   const { seekToMeasure, setLoop, clearLoop, play, stop, player } = playback
 
+  // Ref for stop function to avoid stale closure in timeout callbacks
+  // This ensures the timeout always calls the current version of stop,
+  // even if the component remounts or dependencies change
+  const stopRef = useRef(stop)
+  stopRef.current = stop
+
   /**
    * Clear any pending stop timeout
    */
@@ -620,12 +626,13 @@ export function useMeasurePlayback(
         const measureDuration = beatsPerMeasure * secondsPerBeat
 
         // Schedule stop at end of measure (with small buffer for audio to finish)
+        // Use stopRef to avoid stale closure if component remounts
         stopTimeoutRef.current = setTimeout(() => {
-          stop()
+          stopRef.current()
         }, measureDuration * 1000 + 100)
       }
     }
-  }, [clearStopTimeout, clearLoop, seekToMeasure, play, player, stop])
+  }, [clearStopTimeout, clearLoop, seekToMeasure, play, player])
 
   /**
    * Play a single measure
@@ -679,13 +686,14 @@ export function useMeasurePlayback(
           const rangeDuration = numMeasures * beatsPerMeasure * secondsPerBeat
 
           // Schedule stop at end of range
+          // Use stopRef to avoid stale closure if component remounts
           stopTimeoutRef.current = setTimeout(() => {
-            stop()
+            stopRef.current()
           }, rangeDuration * 1000 + 100)
         }
       }
     }
-  }, [clearStopTimeout, seekToMeasure, setLoop, clearLoop, play, player, stop])
+  }, [clearStopTimeout, seekToMeasure, setLoop, clearLoop, play, player])
 
   // Clean up timeout on unmount
   useEffect(() => {

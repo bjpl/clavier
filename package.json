@@ -72,6 +72,7 @@
     "swr": "^2.3.8",
     "tailwind-merge": "^2.2.0",
     "tone": "^14.7.77",
+    "zod": "^3.25.0",
     "zustand": "^4.5.0"
   },
   "devDependencies": {

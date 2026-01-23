@@ -45,12 +45,17 @@ export function CommentaryPanel({
   onLearnMore,
   onFindSimilar,
 }: CommentaryPanelProps) {
+  // Helper to escape regex special characters
+  const escapeRegex = (str: string) =>
+    str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+
   // Helper to highlight terms in text
   const renderTextWithTooltips = (text: string, terms: string[]) => {
     if (terms.length === 0) return text
 
-    // Create a regex pattern to match all terms
-    const pattern = new RegExp(`\\b(${terms.join('|')})\\b`, 'gi')
+    // Create a regex pattern to match all terms (escape special chars to prevent regex errors)
+    const escapedTerms = terms.map(escapeRegex)
+    const pattern = new RegExp(`\\b(${escapedTerms.join('|')})\\b`, 'gi')
     const parts = text.split(pattern)
 
     return parts.map((part, index) => {
@@ -77,7 +82,13 @@ export function CommentaryPanel({
         </div>
       </CardHeader>
       <CardContent className="space-y-4">
-        <div className="prose prose-sm max-w-none dark:prose-invert">
+        <div
+          className="prose prose-sm max-w-none dark:prose-invert"
+          aria-live="polite"
+          aria-atomic="true"
+          role="region"
+          aria-label="Measure commentary"
+        >
           <p className="leading-relaxed">
             {renderTextWithTooltips(commentary.text, commentary.terms)}
           </p>

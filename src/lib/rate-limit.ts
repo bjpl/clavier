@@ -1,4 +1,5 @@
 import { NextApiRequest } from 'next';
+import { NextRequest, NextResponse } from 'next/server';
 
 interface RateLimitConfig {
   interval: number; // Time window in milliseconds
@@ -16,17 +17,12 @@ interface RateLimitResult {
 const rateLimitStore = new Map<string, { count: number; reset: number }>();
 
 /**
- * Rate limiting implementation using in-memory store
- * For production, replace with Redis or Upstash
+ * Core rate limiting logic
  */
-export async function rateLimit(
-  request: NextApiRequest,
-  config: RateLimitConfig = {
-    interval: 60 * 1000, // 1 minute
-    uniqueTokenPerInterval: 100, // 100 requests per minute
-  }
-): Promise<RateLimitResult> {
-  const identifier = getIdentifier(request);
+function checkRateLimit(
+  identifier: string,
+  config: RateLimitConfig
+): RateLimitResult {
   const now = Date.now();
 
   // Clean up old entries
@@ -67,7 +63,36 @@ export async function rateLimit(
 }
 
 /**
- * Get unique identifier for rate limiting
+ * Rate limiting implementation using in-memory store (Pages Router)
+ * For production, replace with Redis or Upstash
+ */
+export async function rateLimit(
+  request: NextApiRequest,
+  config: RateLimitConfig = {
+    interval: 60 * 1000, // 1 minute
+    uniqueTokenPerInterval: 100, // 100 requests per minute
+  }
+): Promise<RateLimitResult> {
+  const identifier = getIdentifier(request);
+  return checkRateLimit(identifier, config);
+}
+
+/**
+ * Rate limiting for App Router (NextRequest)
+ */
+export async function rateLimitApp(
+  request: NextRequest,
+  config: RateLimitConfig = {
+    interval: 60 * 1000, // 1 minute
+    uniqueTokenPerInterval: 100, // 100 requests per minute
+  }
+): Promise<RateLimitResult> {
+  const identifier = getIdentifierApp(request);
+  return checkRateLimit(identifier, config);
+}
+
+/**
+ * Get unique identifier for rate limiting (Pages Router)
  * Priority: API key > User ID > IP address
  */
 function getIdentifier(request: NextApiRequest): string {
@@ -91,6 +116,63 @@ function getIdentifier(request: NextApiRequest): string {
     : request.socket.remoteAddress || 'unknown';
 
   return `ip:${ip}`;
+}
+
+/**
+ * Get unique identifier for rate limiting (App Router)
+ * Priority: API key > IP address
+ */
+function getIdentifierApp(request: NextRequest): string {
+  // Check for API key in headers
+  const apiKey = request.headers.get('x-api-key');
+  if (apiKey) {
+    return `api:${apiKey}`;
+  }
+
+  // Fall back to IP address
+  const forwarded = request.headers.get('x-forwarded-for');
+  const ip = forwarded
+    ? forwarded.split(',')[0].trim()
+    : request.headers.get('x-real-ip') || 'unknown';
+
+  return `ip:${ip}`;
+}
+
+/**
+ * Create rate limit error response for App Router
+ */
+export function rateLimitResponse(result: RateLimitResult): NextResponse {
+  const retryAfter = Math.ceil((result.reset - Date.now()) / 1000);
+
+  return NextResponse.json(
+    {
+      error: 'Too Many Requests',
+      message: 'Rate limit exceeded. Please try again later.',
+      retryAfter,
+    },
+    {
+      status: 429,
+      headers: {
+        'X-RateLimit-Limit': result.limit.toString(),
+        'X-RateLimit-Remaining': result.remaining.toString(),
+        'X-RateLimit-Reset': result.reset.toString(),
+        'Retry-After': retryAfter.toString(),
+      },
+    }
+  );
+}
+
+/**
+ * Add rate limit headers to a response
+ */
+export function addRateLimitHeaders(
+  response: NextResponse,
+  result: RateLimitResult
+): NextResponse {
+  response.headers.set('X-RateLimit-Limit', result.limit.toString());
+  response.headers.set('X-RateLimit-Remaining', result.remaining.toString());
+  response.headers.set('X-RateLimit-Reset', result.reset.toString());
+  return response;
 }
 
 /**

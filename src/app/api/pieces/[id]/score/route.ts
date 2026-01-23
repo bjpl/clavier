@@ -1,11 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/db';
 import { headers } from 'next/headers';
+import { rateLimitApp, rateLimitResponse } from '@/lib/rate-limit';
 
 export async function GET(
-  _request: NextRequest,
+  request: NextRequest,
   { params }: { params: { id: string } }
 ) {
+  // Apply rate limiting: 100 requests per minute
+  const rateLimitResult = await rateLimitApp(request, {
+    interval: 60 * 1000,
+    uniqueTokenPerInterval: 100,
+  });
+
+  if (!rateLimitResult.allowed) {
+    return rateLimitResponse(rateLimitResult);
+  }
+
   try {
     const piece = await db.piece.findUnique({
       where: { id: params.id },
@@ -15,14 +26,28 @@ export async function GET(
     if (!piece) {
       return NextResponse.json(
         { error: 'Piece not found' },
-        { status: 404 }
+        {
+          status: 404,
+          headers: {
+            'X-RateLimit-Limit': rateLimitResult.limit.toString(),
+            'X-RateLimit-Remaining': rateLimitResult.remaining.toString(),
+            'X-RateLimit-Reset': rateLimitResult.reset.toString(),
+          },
+        }
       );
     }
 
     if (!piece.musicxmlPath) {
       return NextResponse.json(
         { error: 'MusicXML not available for this piece' },
-        { status: 404 }
+        {
+          status: 404,
+          headers: {
+            'X-RateLimit-Limit': rateLimitResult.limit.toString(),
+            'X-RateLimit-Remaining': rateLimitResult.remaining.toString(),
+            'X-RateLimit-Reset': rateLimitResult.reset.toString(),
+          },
+        }
       );
     }
 
@@ -44,7 +69,14 @@ export async function GET(
       console.error(`Failed to fetch MusicXML from ${fullUrl}: ${response.status}`);
       return NextResponse.json(
         { error: 'MusicXML file not found' },
-        { status: 404 }
+        {
+          status: 404,
+          headers: {
+            'X-RateLimit-Limit': rateLimitResult.limit.toString(),
+            'X-RateLimit-Remaining': rateLimitResult.remaining.toString(),
+            'X-RateLimit-Reset': rateLimitResult.reset.toString(),
+          },
+        }
       );
     }
 
@@ -54,13 +86,23 @@ export async function GET(
       headers: {
         'Content-Type': 'application/xml',
         'Cache-Control': 'public, max-age=86400', // Cache for 24 hours
+        'X-RateLimit-Limit': rateLimitResult.limit.toString(),
+        'X-RateLimit-Remaining': rateLimitResult.remaining.toString(),
+        'X-RateLimit-Reset': rateLimitResult.reset.toString(),
       },
     });
   } catch (error) {
     console.error('Error fetching MusicXML:', error);
     return NextResponse.json(
       { error: 'Failed to fetch MusicXML' },
-      { status: 500 }
+      {
+        status: 500,
+        headers: {
+          'X-RateLimit-Limit': rateLimitResult.limit.toString(),
+          'X-RateLimit-Remaining': rateLimitResult.remaining.toString(),
+          'X-RateLimit-Reset': rateLimitResult.reset.toString(),
+        },
+      }
     );
   }
 }

@@ -345,7 +345,7 @@ export const ScoreDisplay = forwardRef<ScoreDisplayRef, ScoreDisplayProps>(
         <div
           ref={containerRef}
           className={cn(
-            'w-full overflow-auto rounded-lg border bg-white',
+            'score-container relative w-full overflow-auto rounded-lg border bg-white',
             isLoading && 'flex items-center justify-center',
             !isReady && !isLoading && !error && 'flex items-center justify-center',
             onMeasureClick && 'cursor-pointer'

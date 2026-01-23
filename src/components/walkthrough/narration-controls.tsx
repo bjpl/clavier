@@ -114,28 +114,42 @@ export function NarrationControls({ text, onAutoNarrateChange }: NarrationContro
   }, [text, narrationEnabled, isSupported])
 
   const playNarration = useCallback(() => {
-    if (!isSupported || !text) return
-
-    // Cancel any existing narration
-    window.speechSynthesis.cancel()
-
-    const utterance = new SpeechSynthesisUtterance(text)
-    utterance.rate = narrationSpeed
-
-    // Set voice if available
-    if (selectedVoice) {
-      const voice = availableVoices.find((v) => v.name === selectedVoice)
-      if (voice) {
-        utterance.voice = voice
-      }
+    if (!text || !window.speechSynthesis) {
+      console.warn('Speech synthesis not available')
+      return
     }
 
-    utterance.onstart = () => setIsNarrating(true)
-    utterance.onend = () => setIsNarrating(false)
-    utterance.onerror = () => setIsNarrating(false)
+    if (!isSupported) return
 
-    utteranceRef.current = utterance
-    window.speechSynthesis.speak(utterance)
+    try {
+      // Cancel any existing narration
+      window.speechSynthesis.cancel()
+
+      const utterance = new SpeechSynthesisUtterance(text)
+      utterance.rate = narrationSpeed
+
+      // Set voice if available
+      if (selectedVoice) {
+        const voice = availableVoices.find((v) => v.name === selectedVoice)
+        if (voice) {
+          utterance.voice = voice
+        }
+      }
+
+      utterance.onstart = () => setIsNarrating(true)
+      utterance.onend = () => setIsNarrating(false)
+      utterance.onerror = (event) => {
+        console.error('Speech synthesis error:', event.error)
+        setIsNarrating(false)
+      }
+
+      utteranceRef.current = utterance
+      window.speechSynthesis.speak(utterance)
+      setIsNarrating(true)
+    } catch (error) {
+      console.error('Failed to start speech synthesis:', error)
+      setIsNarrating(false)
+    }
   }, [text, narrationSpeed, selectedVoice, availableVoices, isSupported])
 
   const stopNarration = useCallback(() => {

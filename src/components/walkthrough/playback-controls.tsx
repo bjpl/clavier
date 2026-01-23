@@ -106,6 +106,13 @@ export function PlaybackControls({
 
   return (
     <div className="flex items-center gap-4">
+      {/* Screen reader announcement for playback state changes */}
+      <div className="sr-only" role="status" aria-live="polite" aria-atomic="true">
+        {isPlaying ? 'Playing' : 'Paused'}
+        {currentMeasure > 0 && `, measure ${currentMeasure}, beat ${currentBeat}`}
+        {isLooping && ', looping enabled'}
+      </div>
+
       {/* Transport Controls */}
       <div className="flex items-center gap-1">
         <Button variant="outline" size="icon" onClick={handleSkipBack} aria-label="Previous measure">

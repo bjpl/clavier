@@ -1,24 +1,27 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/db';
+import { measureParamsSchema, validateOrError } from '@/lib/api/validation';
 
 export async function GET(
   _request: NextRequest,
   { params }: { params: { id: string; measureNum: string } }
 ) {
   try {
-    const measureNumber = parseInt(params.measureNum, 10);
-
-    if (isNaN(measureNumber)) {
+    // Validate route parameters
+    const validation = validateOrError(measureParamsSchema, params);
+    if (!validation.success) {
       return NextResponse.json(
-        { error: 'Invalid measure number' },
+        { error: validation.error, details: validation.details },
         { status: 400 }
       );
     }
 
+    const { id: pieceId, measureNum: measureNumber } = validation.data;
+
     const measure = await db.measure.findUnique({
       where: {
         pieceId_measureNumber: {
-          pieceId: params.id,
+          pieceId,
           measureNumber,
         },
       },

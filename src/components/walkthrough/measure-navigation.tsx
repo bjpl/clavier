@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
@@ -22,6 +22,10 @@ export function MeasureNavigation({
   onGoTo,
 }: MeasureNavigationProps) {
   const [inputValue, setInputValue] = useState(currentMeasure.toString())
+
+  useEffect(() => {
+    setInputValue(String(currentMeasure))
+  }, [currentMeasure])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value)

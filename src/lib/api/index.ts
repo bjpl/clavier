@@ -9,6 +9,9 @@ export * from './fetchers';
 // Export all query hooks
 export * from './queries';
 
+// Export response utilities
+export * from './response';
+
 // Re-export commonly used types
 export type {
   PieceFilters,

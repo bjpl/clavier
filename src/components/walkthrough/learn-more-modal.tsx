@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import {
   Dialog,
   DialogContent,
@@ -60,6 +60,24 @@ export function LearnMoreModal({
 }: LearnMoreModalProps) {
   const router = useRouter()
   const [previewSection, setPreviewSection] = useState(0)
+
+  // Focus management: store trigger element ref
+  const triggerRef = useRef<HTMLElement | null>(null)
+
+  // When opening modal, store the currently focused element
+  useEffect(() => {
+    if (open) {
+      triggerRef.current = document.activeElement as HTMLElement
+    }
+  }, [open])
+
+  // When closing, return focus to the trigger element
+  useEffect(() => {
+    if (!open && triggerRef.current) {
+      triggerRef.current.focus()
+      triggerRef.current = null
+    }
+  }, [open])
 
   const { data: lesson, error, isLoading } = useSWR<LessonData>(
     open && lessonId ? `/api/curriculum/lessons/${lessonId}` : null,

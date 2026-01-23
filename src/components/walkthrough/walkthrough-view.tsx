@@ -253,10 +253,12 @@ export function WalkthroughView({ piece, measures, annotations }: WalkthroughVie
     setSimilarPatternsOpen(true)
   }, [])
 
-  const handleNavigateToPattern = useCallback((pieceId: string, measureStart: number) => {
+  const handleNavigateToPattern = useCallback((bwvNumber: number, pieceType: string, measureStart: number) => {
     setSimilarPatternsOpen(false)
-    // Navigate to the piece and measure
-    router.push(`/walkthrough/${pieceId}?measure=${measureStart}`)
+    // Navigate to the piece using BWV number and type (not UUID)
+    // Route format: /walkthrough/846/prelude?measure=5
+    const typeSlug = pieceType.toLowerCase()
+    router.push(`/walkthrough/${bwvNumber}/${typeSlug}?measure=${measureStart}`)
   }, [router])
 
   const handleVolumeChange = useCallback((volume: number) => {

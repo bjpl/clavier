@@ -134,8 +134,16 @@ export function useScorePlaybackSync(
   const syncManagerRef = useRef<SyncManager | null>(null)
   const optionsRef = useRef(options)
 
+  // Refs for callbacks to prevent effect re-runs (fixes lines 278-286 audit issue)
+  const onCursorChangeRef = useRef(onCursorChange)
+  const onMeasureChangeRef = useRef(onMeasureChange)
+  const onPlaybackStateChangeRef = useRef(onPlaybackStateChange)
+
   // Update options ref synchronously (no useEffect to avoid render loops)
   optionsRef.current = options
+  onCursorChangeRef.current = onCursorChange
+  onMeasureChangeRef.current = onMeasureChange
+  onPlaybackStateChangeRef.current = onPlaybackStateChange
 
   // Zustand store - use PRIMITIVE SELECTORS to prevent re-render loops
   const isPlaying = usePlaybackStore((s) => s.isPlaying)
@@ -172,9 +180,16 @@ export function useScorePlaybackSync(
 
   const effectiveTempo = tempo * storeTempoMultiplier
 
+  // Stable reference for syncConfig to prevent effect re-runs
+  const syncConfigRef = useRef(syncConfig)
+  syncConfigRef.current = syncConfig
+
+  // Track engine readiness separately to avoid optional chaining in dependencies
+  const engineIsReady = engine?.isReady ?? false
+
   // Initialize player and sync manager
   useEffect(() => {
-    if (!engine || !engine.isReady) {
+    if (!engine || !engineIsReady) {
       setIsReady(false)
       return
     }
@@ -193,7 +208,7 @@ export function useScorePlaybackSync(
       syncManagerRef.current = getSyncManager({
         autoScroll,
         smoothCursor: true,
-        ...syncConfig
+        ...syncConfigRef.current
       })
     }
 
@@ -203,11 +218,16 @@ export function useScorePlaybackSync(
     setIsReady(true)
 
     return () => {
-      if (syncManagerRef.current && playerRef.current) {
+      // Dispose player to prevent resource leaks (audit fix)
+      if (playerRef.current) {
+        playerRef.current.dispose()
+        playerRef.current = null
+      }
+      if (syncManagerRef.current) {
         syncManagerRef.current.disconnectPlayer()
       }
     }
-  }, [engine?.isReady, autoScroll, syncConfig])
+  }, [engine, engineIsReady, autoScroll])
 
   // Connect score renderer when available
   useEffect(() => {
@@ -223,12 +243,13 @@ export function useScorePlaybackSync(
   }, [scoreRenderer])
 
   // Subscribe to coordinator events
+  // Uses refs for callbacks to prevent effect re-runs when callbacks change
   useEffect(() => {
     const coordinator = getPlaybackCoordinator()
 
     const handleCursorUpdate = (position: CursorPosition) => {
       setCursorPosition(position)
-      onCursorChange?.(position)
+      onCursorChangeRef.current?.(position)
 
       // Update time
       if (syncManagerRef.current) {
@@ -243,11 +264,11 @@ export function useScorePlaybackSync(
 
     const handleMeasureChange = (measure: number, beat: number) => {
       storeSeek(measure, beat)
-      onMeasureChange?.(measure)
+      onMeasureChangeRef.current?.(measure)
     }
 
     const handleStateChange = (state: 'playing' | 'paused' | 'stopped') => {
-      onPlaybackStateChange?.(state)
+      onPlaybackStateChangeRef.current?.(state)
 
       if (state === 'stopped') {
         clearActiveNotes()
@@ -276,9 +297,7 @@ export function useScorePlaybackSync(
       coordinator.off('note-off', handleNoteOff)
     }
   }, [
-    onCursorChange,
-    onMeasureChange,
-    onPlaybackStateChange,
+    // Removed callback dependencies - now using refs
     storeSeek,
     addActiveNote,
     removeActiveNote,
