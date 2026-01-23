@@ -9,7 +9,7 @@
  * - Error handling and recovery
  */
 
-import { useEffect, useState, useRef, useCallback } from 'react'
+import { useEffect, useState, useRef, useCallback, useMemo } from 'react'
 import {
   AudioEngine,
   AudioEngineState,
@@ -250,7 +250,8 @@ export function useAudioEngine(config?: Partial<AudioEngineConfig>): UseAudioEng
     initializingRef.current = false
   }, [])
 
-  return {
+  // CRITICAL: Memoize the return object to prevent infinite re-render loops
+  return useMemo(() => ({
     engine: engineRef.current,
     isReady: state === 'ready',
     isLoading: state === 'loading',
@@ -268,7 +269,22 @@ export function useAudioEngine(config?: Partial<AudioEngineConfig>): UseAudioEng
     isMuted,
     reset,
     isSupported
-  }
+  }), [
+    state,
+    isUsingSynthesizer,
+    error,
+    loadProgress,
+    initialize,
+    resume,
+    suspend,
+    setVolume,
+    getVolume,
+    toggleMute,
+    setMute,
+    isMuted,
+    reset,
+    isSupported
+  ])
 }
 
 /**

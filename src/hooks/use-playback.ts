@@ -568,27 +568,31 @@ export function useMeasurePlayback(
 } {
   const playback = usePlayback(engine, options)
 
+  // Destructure stable method references to avoid using [playback] as dependency
+  const { seekToMeasure, setLoop, play } = playback
+
   /**
    * Play a single measure
    */
   const playMeasure = useCallback((measure: number) => {
-    playback.seekToMeasure(measure)
-    playback.setLoop({ measure, beat: 1 }, { measure: measure + 1, beat: 1 })
-    playback.play()
-  }, [playback])
+    seekToMeasure(measure)
+    setLoop({ measure, beat: 1 }, { measure: measure + 1, beat: 1 })
+    play()
+  }, [seekToMeasure, setLoop, play])
 
   /**
    * Play a range of measures
    */
   const playMeasureRange = useCallback((start: number, end: number) => {
-    playback.seekToMeasure(start)
-    playback.setLoop({ measure: start, beat: 1 }, { measure: end + 1, beat: 1 })
-    playback.play()
-  }, [playback])
+    seekToMeasure(start)
+    setLoop({ measure: start, beat: 1 }, { measure: end + 1, beat: 1 })
+    play()
+  }, [seekToMeasure, setLoop, play])
 
-  return {
+  // CRITICAL: Memoize the return object to prevent infinite re-render loops
+  return useMemo(() => ({
     ...playback,
     playMeasure,
     playMeasureRange
-  }
+  }), [playback, playMeasure, playMeasureRange])
 }
