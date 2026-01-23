@@ -98,6 +98,8 @@ vi.mock('tone', () => {
     schedule: vi.fn().mockReturnValue(1),
     scheduleOnce: vi.fn().mockReturnValue(1),
     scheduleRepeat: vi.fn().mockReturnValue(1),
+    on: vi.fn(),
+    off: vi.fn(),
     bpm: { value: 120 },
     seconds: 0,
     loop: false,
