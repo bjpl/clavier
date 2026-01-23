@@ -1,7 +1,13 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import useSWR from 'swr';
+
+// Stable empty arrays to prevent creating new references on every render
+// These are module-level constants that never change
+const EMPTY_ANNOTATIONS: never[] = [];
+const EMPTY_FEATURE_INSTANCES: never[] = [];
+const EMPTY_PATTERNS: never[] = [];
 
 /**
  * Types for walkthrough data
@@ -83,6 +89,7 @@ const fetcher = async (url: string) => {
 
 /**
  * Hook to fetch and manage walkthrough piece data
+ * CRITICAL: Return object is memoized to prevent infinite re-render loops (React Error #185)
  */
 export function useWalkthroughPiece(pieceId: string | null) {
   const { data, error, isLoading, mutate } = useSWR<PieceData>(
@@ -94,16 +101,18 @@ export function useWalkthroughPiece(pieceId: string | null) {
     }
   );
 
-  return {
+  // CRITICAL: Memoize return object to prevent cascading re-renders
+  return useMemo(() => ({
     piece: data,
     error,
     isLoading,
     refresh: mutate,
-  };
+  }), [data, error, isLoading, mutate]);
 }
 
 /**
  * Hook to fetch measure commentary
+ * CRITICAL: Return object is memoized to prevent infinite re-render loops (React Error #185)
  */
 export function useMeasureCommentary(
   pieceId: string | null,
@@ -120,18 +129,25 @@ export function useMeasureCommentary(
     }
   );
 
-  return {
+  // CRITICAL: Use stable empty array references instead of creating new [] on every render
+  // Without this, `|| []` creates a new array every render, causing infinite re-render loops
+  const annotations = data?.annotations ?? EMPTY_ANNOTATIONS;
+  const featureInstances = data?.featureInstances ?? EMPTY_FEATURE_INSTANCES;
+
+  // CRITICAL: Memoize return object to prevent cascading re-renders
+  return useMemo(() => ({
     commentary: data?.commentary,
-    annotations: data?.annotations || [],
-    featureInstances: data?.featureInstances || [],
+    annotations,
+    featureInstances,
     error,
     isLoading,
     refresh: mutate,
-  };
+  }), [data?.commentary, annotations, featureInstances, error, isLoading, mutate]);
 }
 
 /**
  * Hook to fetch score XML
+ * CRITICAL: Return object is memoized to prevent infinite re-render loops (React Error #185)
  */
 export function useScoreXML(pieceId: string | null) {
   const { data, error, isLoading } = useSWR<string>(
@@ -147,15 +163,17 @@ export function useScoreXML(pieceId: string | null) {
     }
   );
 
-  return {
+  // CRITICAL: Memoize return object to prevent cascading re-renders
+  return useMemo(() => ({
     scoreXML: data,
     error,
     isLoading,
-  };
+  }), [data, error, isLoading]);
 }
 
 /**
  * Hook to fetch MIDI data for playback
+ * CRITICAL: Return object is memoized to prevent infinite re-render loops (React Error #185)
  */
 export function useMidiData(pieceId: string | null) {
   const { data, error, isLoading } = useSWR(
@@ -167,15 +185,17 @@ export function useMidiData(pieceId: string | null) {
     }
   );
 
-  return {
+  // CRITICAL: Memoize return object to prevent cascading re-renders
+  return useMemo(() => ({
     midiData: data,
     error,
     isLoading,
-  };
+  }), [data, error, isLoading]);
 }
 
 /**
  * Hook to fetch similar patterns for a feature
+ * CRITICAL: Return object is memoized to prevent infinite re-render loops (React Error #185)
  */
 export function useSimilarPatterns(featureId: string | null, limit = 10) {
   const { data, error, isLoading } = useSWR<{
@@ -189,16 +209,21 @@ export function useSimilarPatterns(featureId: string | null, limit = 10) {
     }
   );
 
-  return {
-    patterns: data?.instances || [],
+  // CRITICAL: Use stable empty array reference instead of creating new [] on every render
+  const patterns = data?.instances ?? EMPTY_PATTERNS;
+
+  // CRITICAL: Memoize return object to prevent cascading re-renders
+  return useMemo(() => ({
+    patterns,
     total: data?.total || 0,
     error,
     isLoading,
-  };
+  }), [patterns, data?.total, error, isLoading]);
 }
 
 /**
  * Hook to fetch glossary definition
+ * CRITICAL: Return object is memoized to prevent infinite re-render loops (React Error #185)
  */
 export function useGlossaryTerm(term: string | null) {
   const normalizedTerm = term?.toLowerCase().replace(/\s+/g, '-');
@@ -212,11 +237,12 @@ export function useGlossaryTerm(term: string | null) {
     }
   );
 
-  return {
+  // CRITICAL: Memoize return object to prevent cascading re-renders
+  return useMemo(() => ({
     definition: data,
     error,
     isLoading,
-  };
+  }), [data, error, isLoading]);
 }
 
 /**
@@ -281,7 +307,10 @@ export function useWalkthroughData(bwv: string, type: string) {
     setCurrentMeasure((m) => Math.max(1, m - 1));
   }, []);
 
-  return {
+  // CRITICAL: Memoize return object to prevent infinite re-render loops
+  // Without useMemo, this creates a NEW object on every render, which causes
+  // any component using this hook to re-render infinitely (React Error #185)
+  return useMemo(() => ({
     // Data
     pieceId,
     piece,
@@ -306,5 +335,23 @@ export function useWalkthroughData(bwv: string, type: string) {
     goToMeasure,
     nextMeasure,
     prevMeasure,
-  };
+  }), [
+    pieceId,
+    piece,
+    currentMeasure,
+    commentary,
+    annotations,
+    featureInstances,
+    scoreXML,
+    midiData,
+    piecesLoading,
+    pieceLoading,
+    commentaryLoading,
+    scoreLoading,
+    midiLoading,
+    piecesError,
+    goToMeasure,
+    nextMeasure,
+    prevMeasure,
+  ]);
 }

@@ -166,6 +166,10 @@ export function usePlayback(
   const setPiece = usePlaybackStore((s) => s.setPiece)
 
   // Initialize player when engine is ready
+  // CRITICAL: Must depend on `engine` (not just `engine?.isReady`) to properly
+  // recreate the player if the engine instance changes. The `setupCallbacks`
+  // function uses refs internally for all callbacks, so it doesn't need to be
+  // in the dependency array - the refs ensure callbacks are always current.
   useEffect(() => {
     if (!engine || !engine.isReady) {
       return
@@ -187,7 +191,8 @@ export function usePlayback(
         playerRef.current = null
       }
     }
-  }, [engine?.isReady])
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- setupCallbacks uses refs internally
+  }, [engine])
 
   /**
    * Setup player callbacks
@@ -564,41 +569,136 @@ export function usePlaybackWithKeyboard(
 
 /**
  * Hook for measure-by-measure playback (walkthrough mode)
+ *
+ * Provides functions to play individual measures or ranges without infinite looping.
+ * By default, playMeasure plays the measure ONCE and stops (not loops).
  */
 export function useMeasurePlayback(
   engine: AudioEngine | null,
   options: UsePlaybackOptions = {}
 ): UsePlaybackReturn & {
-  playMeasure: (measure: number) => void
-  playMeasureRange: (start: number, end: number) => void
+  playMeasure: (measure: number, loop?: boolean) => void
+  playMeasureOnce: (measure: number) => void
+  playMeasureRange: (start: number, end: number, loop?: boolean) => void
 } {
   const playback = usePlayback(engine, options)
+  const stopTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   // Destructure stable method references to avoid using [playback] as dependency
-  const { seekToMeasure, setLoop, play } = playback
+  const { seekToMeasure, setLoop, clearLoop, play, stop, player } = playback
+
+  /**
+   * Clear any pending stop timeout
+   */
+  const clearStopTimeout = useCallback(() => {
+    if (stopTimeoutRef.current) {
+      clearTimeout(stopTimeoutRef.current)
+      stopTimeoutRef.current = null
+    }
+  }, [])
+
+  /**
+   * Play a single measure ONCE (no looping) - this is the default behavior
+   * The playback will automatically stop at the end of the measure.
+   */
+  const playMeasureOnce = useCallback((measure: number) => {
+    clearStopTimeout()
+    clearLoop() // Make sure no loop is active
+    seekToMeasure(measure)
+    play()
+
+    // Calculate measure duration and schedule stop
+    // Use player's internal tempo and time signature
+    if (player) {
+      const midiData = player.getMIDIData?.()
+      if (midiData) {
+        const beatsPerMeasure = midiData.timeSignature?.numerator || 4
+        const baseTempo = midiData.tempo || 120
+        const tempoMultiplier = player.getTempoMultiplier?.() || 1
+        const effectiveTempo = baseTempo * tempoMultiplier
+        const secondsPerBeat = 60 / effectiveTempo
+        const measureDuration = beatsPerMeasure * secondsPerBeat
+
+        // Schedule stop at end of measure (with small buffer for audio to finish)
+        stopTimeoutRef.current = setTimeout(() => {
+          stop()
+        }, measureDuration * 1000 + 100)
+      }
+    }
+  }, [clearStopTimeout, clearLoop, seekToMeasure, play, player, stop])
 
   /**
    * Play a single measure
+   * @param measure - The measure number to play
+   * @param loop - If true, loop the measure continuously. Default is false (play once).
    */
-  const playMeasure = useCallback((measure: number) => {
-    seekToMeasure(measure)
-    setLoop({ measure, beat: 1 }, { measure: measure + 1, beat: 1 })
-    play()
-  }, [seekToMeasure, setLoop, play])
+  const playMeasure = useCallback((measure: number, loop = false) => {
+    clearStopTimeout()
+
+    if (loop) {
+      // Loop mode: use setLoop for continuous looping
+      seekToMeasure(measure)
+      setLoop({ measure, beat: 1 }, { measure: measure + 1, beat: 1 })
+      play()
+    } else {
+      // Default: play once and stop
+      playMeasureOnce(measure)
+    }
+  }, [clearStopTimeout, seekToMeasure, setLoop, play, playMeasureOnce])
 
   /**
    * Play a range of measures
+   * @param start - Start measure
+   * @param end - End measure (inclusive)
+   * @param loop - If true, loop the range continuously. Default is false (play once).
    */
-  const playMeasureRange = useCallback((start: number, end: number) => {
-    seekToMeasure(start)
-    setLoop({ measure: start, beat: 1 }, { measure: end + 1, beat: 1 })
-    play()
-  }, [seekToMeasure, setLoop, play])
+  const playMeasureRange = useCallback((start: number, end: number, loop = false) => {
+    clearStopTimeout()
+
+    if (loop) {
+      // Loop mode: use setLoop for continuous looping
+      seekToMeasure(start)
+      setLoop({ measure: start, beat: 1 }, { measure: end + 1, beat: 1 })
+      play()
+    } else {
+      // Play once: seek to start, schedule stop at end of range
+      clearLoop()
+      seekToMeasure(start)
+      play()
+
+      // Calculate duration of the range and schedule stop
+      if (player) {
+        const midiData = player.getMIDIData?.()
+        if (midiData) {
+          const beatsPerMeasure = midiData.timeSignature?.numerator || 4
+          const baseTempo = midiData.tempo || 120
+          const tempoMultiplier = player.getTempoMultiplier?.() || 1
+          const effectiveTempo = baseTempo * tempoMultiplier
+          const secondsPerBeat = 60 / effectiveTempo
+          const numMeasures = end - start + 1
+          const rangeDuration = numMeasures * beatsPerMeasure * secondsPerBeat
+
+          // Schedule stop at end of range
+          stopTimeoutRef.current = setTimeout(() => {
+            stop()
+          }, rangeDuration * 1000 + 100)
+        }
+      }
+    }
+  }, [clearStopTimeout, seekToMeasure, setLoop, clearLoop, play, player, stop])
+
+  // Clean up timeout on unmount
+  useEffect(() => {
+    return () => {
+      clearStopTimeout()
+    }
+  }, [clearStopTimeout])
 
   // CRITICAL: Memoize the return object to prevent infinite re-render loops
   return useMemo(() => ({
     ...playback,
     playMeasure,
+    playMeasureOnce,
     playMeasureRange
-  }), [playback, playMeasure, playMeasureRange])
+  }), [playback, playMeasure, playMeasureOnce, playMeasureRange])
 }
