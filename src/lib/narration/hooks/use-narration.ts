@@ -6,35 +6,63 @@
 'use client';
 
 import { useEffect, useCallback } from 'react';
-import { useNarrationStore, selectNarrationState, selectNarrationConfig } from '../narration-controller';
+import {
+  useNarrationStore,
+  selectNarrationConfig,
+  selectIsPlaying,
+  selectIsLoading,
+  selectProgress,
+  selectNarrationVoices,
+  selectNarrationError,
+  selectCurrentText,
+  selectCurrentMeasure,
+  selectInitialize,
+  selectPlay,
+  selectPause,
+  selectResume,
+  selectStop,
+  selectSetRate,
+  selectSetPitch,
+  selectSetVolume,
+  selectToggleMute,
+  selectSetVoice,
+  selectSetProvider,
+  selectClearCache,
+  selectUpdateConfig,
+  selectAddEventListener,
+  selectRemoveEventListener,
+} from '../narration-controller';
 import type { Voice, TTSProvider, NarrationEvent } from '../types/narration';
 
 /**
  * Main narration hook
- * Provides narration controls and state
+ * Uses primitive selectors to prevent infinite re-render loops
  */
 export function useNarration() {
-  const state = useNarrationStore(selectNarrationState);
+  // Use primitive selectors for state values
+  const isPlaying = useNarrationStore(selectIsPlaying);
+  const isLoading = useNarrationStore(selectIsLoading);
+  const progress = useNarrationStore(selectProgress);
   const config = useNarrationStore(selectNarrationConfig);
-  const {
-    initialize,
-    play,
-    pause,
-    resume,
-    stop,
-    setRate,
-    setPitch,
-    setVolume,
-    toggleMute,
-    setVoice,
-    setProvider,
-    clearCache,
-    updateConfig,
-    availableVoices,
-    error,
-    currentText,
-    currentMeasure,
-  } = useNarrationStore();
+  const availableVoices = useNarrationStore(selectNarrationVoices);
+  const error = useNarrationStore(selectNarrationError);
+  const currentText = useNarrationStore(selectCurrentText);
+  const currentMeasure = useNarrationStore(selectCurrentMeasure);
+
+  // Use action selectors (these are stable function references)
+  const initialize = useNarrationStore(selectInitialize);
+  const play = useNarrationStore(selectPlay);
+  const pause = useNarrationStore(selectPause);
+  const resume = useNarrationStore(selectResume);
+  const stop = useNarrationStore(selectStop);
+  const setRate = useNarrationStore(selectSetRate);
+  const setPitch = useNarrationStore(selectSetPitch);
+  const setVolume = useNarrationStore(selectSetVolume);
+  const toggleMute = useNarrationStore(selectToggleMute);
+  const setVoice = useNarrationStore(selectSetVoice);
+  const setProvider = useNarrationStore(selectSetProvider);
+  const clearCache = useNarrationStore(selectClearCache);
+  const updateConfig = useNarrationStore(selectUpdateConfig);
 
   // Initialize on mount
   useEffect(() => {
@@ -50,7 +78,9 @@ export function useNarration() {
 
   return {
     // State
-    ...state,
+    isPlaying,
+    isLoading,
+    progress,
     config,
     availableVoices,
     error,
@@ -75,12 +105,14 @@ export function useNarration() {
 
 /**
  * Hook for narration event listeners
+ * Uses primitive selectors to prevent infinite re-render loops
  */
 export function useNarrationEvents(
   callback: (event: NarrationEvent) => void,
   deps: React.DependencyList = []
 ) {
-  const { addEventListener, removeEventListener } = useNarrationStore();
+  const addEventListener = useNarrationStore(selectAddEventListener);
+  const removeEventListener = useNarrationStore(selectRemoveEventListener);
 
   useEffect(() => {
     const listener = callback;
@@ -109,9 +141,13 @@ export function useAutoNarration(
 
 /**
  * Hook for managing narration voice
+ * Uses primitive selectors to prevent infinite re-render loops
  */
 export function useNarrationVoice() {
-  const { availableVoices, config, setVoice, setProvider } = useNarrationStore();
+  const availableVoices = useNarrationStore(selectNarrationVoices);
+  const config = useNarrationStore(selectNarrationConfig);
+  const setVoice = useNarrationStore(selectSetVoice);
+  const setProvider = useNarrationStore(selectSetProvider);
 
   const currentVoice = config.voice;
   const currentProvider = config.provider;

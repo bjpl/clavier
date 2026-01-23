@@ -459,7 +459,13 @@ export const useNarrationStore = create<NarrationStore>()(
   )
 );
 
-// Selectors for optimized component subscriptions
+// =============================================================================
+// SELECTORS
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Object-returning selectors (create new references - use with useShallow)
+// -----------------------------------------------------------------------------
 export const selectNarrationState = (state: NarrationStore) => ({
   isPlaying: state.isPlaying,
   isLoading: state.isLoading,
@@ -467,5 +473,32 @@ export const selectNarrationState = (state: NarrationStore) => ({
 });
 
 export const selectNarrationConfig = (state: NarrationStore) => state.config;
+
+// -----------------------------------------------------------------------------
+// Primitive selectors (stable references - no useShallow needed)
+// Use these to prevent unnecessary re-renders
+// -----------------------------------------------------------------------------
+export const selectIsPlaying = (state: NarrationStore) => state.isPlaying;
+export const selectIsLoading = (state: NarrationStore) => state.isLoading;
+export const selectProgress = (state: NarrationStore) => state.progress;
 export const selectNarrationVoices = (state: NarrationStore) => state.availableVoices;
 export const selectNarrationError = (state: NarrationStore) => state.error;
+export const selectCurrentText = (state: NarrationStore) => state.currentText;
+export const selectCurrentMeasure = (state: NarrationStore) => state.currentMeasure;
+
+// Action selectors (stable function references)
+export const selectInitialize = (state: NarrationStore) => state.initialize;
+export const selectPlay = (state: NarrationStore) => state.play;
+export const selectPause = (state: NarrationStore) => state.pause;
+export const selectResume = (state: NarrationStore) => state.resume;
+export const selectStop = (state: NarrationStore) => state.stop;
+export const selectSetRate = (state: NarrationStore) => state.setRate;
+export const selectSetPitch = (state: NarrationStore) => state.setPitch;
+export const selectSetVolume = (state: NarrationStore) => state.setVolume;
+export const selectToggleMute = (state: NarrationStore) => state.toggleMute;
+export const selectSetVoice = (state: NarrationStore) => state.setVoice;
+export const selectSetProvider = (state: NarrationStore) => state.setProvider;
+export const selectClearCache = (state: NarrationStore) => state.clearCache;
+export const selectUpdateConfig = (state: NarrationStore) => state.updateConfig;
+export const selectAddEventListener = (state: NarrationStore) => state.addEventListener;
+export const selectRemoveEventListener = (state: NarrationStore) => state.removeEventListener;
