@@ -23,7 +23,11 @@ export function useNarrationSync(
     autoAdvanceOnNarrationEnd?: boolean;
   } = {}
 ) {
-  const { currentMeasure, isPlaying: isMusicPlaying, pause: pauseMusic, seek } = usePlaybackStore();
+  // Use primitive selectors to prevent re-render loops
+  const currentMeasure = usePlaybackStore((s) => s.currentMeasure);
+  const isMusicPlaying = usePlaybackStore((s) => s.isPlaying);
+  const pauseMusic = usePlaybackStore((s) => s.pause);
+  const seek = usePlaybackStore((s) => s.seek);
   const {
     speak,
     stop,
@@ -95,7 +99,8 @@ export function useNarrationSync(
  * Hook for managing narration during playback navigation
  */
 export function useNarrationNavigation() {
-  const { currentMeasure } = usePlaybackStore();
+  // Use primitive selector to prevent re-render loops
+  const currentMeasure = usePlaybackStore((s) => s.currentMeasure);
   const { stop, isPlaying } = useNarration();
 
   // Stop narration when navigating to different measure

@@ -134,27 +134,23 @@ export function useScorePlaybackSync(
   const syncManagerRef = useRef<SyncManager | null>(null)
   const optionsRef = useRef(options)
 
-  // Update options ref
-  useEffect(() => {
-    optionsRef.current = options
-  }, [options])
+  // Update options ref synchronously (no useEffect to avoid render loops)
+  optionsRef.current = options
 
-  // Zustand store
-  const {
-    isPlaying,
-    tempo,
-    tempoMultiplier: storeTempoMultiplier,
-    play: storePlay,
-    pause: storePause,
-    stop: storeStop,
-    seek: storeSeek,
-    setTempo: setStoreTempo,
-    setTempoMultiplier: setStoreTempoMultiplier,
-    setPiece,
-    addActiveNote,
-    removeActiveNote,
-    clearActiveNotes
-  } = usePlaybackStore()
+  // Zustand store - use PRIMITIVE SELECTORS to prevent re-render loops
+  const isPlaying = usePlaybackStore((s) => s.isPlaying)
+  const tempo = usePlaybackStore((s) => s.tempo)
+  const storeTempoMultiplier = usePlaybackStore((s) => s.tempoMultiplier)
+  const storePlay = usePlaybackStore((s) => s.play)
+  const storePause = usePlaybackStore((s) => s.pause)
+  const storeStop = usePlaybackStore((s) => s.stop)
+  const storeSeek = usePlaybackStore((s) => s.seek)
+  const setStoreTempo = usePlaybackStore((s) => s.setTempo)
+  const setStoreTempoMultiplier = usePlaybackStore((s) => s.setTempoMultiplier)
+  const setPiece = usePlaybackStore((s) => s.setPiece)
+  const addActiveNote = usePlaybackStore((s) => s.addActiveNote)
+  const removeActiveNote = usePlaybackStore((s) => s.removeActiveNote)
+  const clearActiveNotes = usePlaybackStore((s) => s.clearActiveNotes)
 
   // Local state for smooth updates
   const [isReady, setIsReady] = useState(false)

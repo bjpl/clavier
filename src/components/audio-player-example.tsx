@@ -39,9 +39,12 @@ export function AudioPlayerExample() {
     velocity: 0.7
   })
 
-  // Get playback state from store
-  const playbackState = usePlaybackStore()
-  const { isPlaying, currentMeasure, currentBeat, tempoMultiplier, loopEnabled } = playbackState
+  // Get playback state from store - use primitive selectors to prevent re-render loops
+  const isPlaying = usePlaybackStore((s) => s.isPlaying)
+  const currentMeasure = usePlaybackStore((s) => s.currentMeasure)
+  const currentBeat = usePlaybackStore((s) => s.currentBeat)
+  const tempoMultiplier = usePlaybackStore((s) => s.tempoMultiplier)
+  const loopEnabled = usePlaybackStore((s) => s.loopEnabled)
 
   // Derived state for UI
   const state = isPlaying ? 'playing' : 'stopped'
