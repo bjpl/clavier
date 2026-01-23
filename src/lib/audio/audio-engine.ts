@@ -162,10 +162,28 @@ export class AudioEngine {
 
   /**
    * Convert note name to FluidR3 filename format
-   * FluidR3 uses 's' for sharps (e.g., Fs1 instead of F#1)
+   * FluidR3 uses flat notation (e.g., Eb4 instead of D#4)
+   * Sharp to flat enharmonic mapping required
    */
   private toFluidR3FileName(note: string): string {
-    return note.replace('#', 's')
+    // FluidR3 uses flat notation, not sharp-with-s
+    // Map sharps to their enharmonic flat equivalents
+    const sharpToFlat: Record<string, string> = {
+      'C#': 'Db',
+      'D#': 'Eb',
+      'F#': 'Gb',
+      'G#': 'Ab',
+      'A#': 'Bb'
+    }
+
+    // Extract note letter(s) and octave
+    const match = note.match(/^([A-G]#?)(\d+)$/)
+    if (!match) return note
+
+    const [, noteName, octave] = match
+    const flatNote = sharpToFlat[noteName]
+
+    return flatNote ? `${flatNote}${octave}` : note
   }
 
   /**
