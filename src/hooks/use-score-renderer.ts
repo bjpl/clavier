@@ -569,12 +569,33 @@ export function useScoreRenderer(
     (measure: number) => {
       if (!osmd?.cursor) return
 
+      // Bounds check
+      const totalMeasures = osmd.Sheet?.SourceMeasures?.length || 0
+      if (measure < 1 || measure > totalMeasures) {
+        console.warn(`cursorToMeasure: measure ${measure} out of range (1-${totalMeasures})`)
+        return
+      }
+
       osmd.cursor.reset()
 
-      // Move cursor to target measure
-      for (let i = 0; i < measure - 1; i++) {
+      // Move cursor to target measure with safety guards
+      const maxIterations = totalMeasures + 10 // Small buffer for safety
+      let iterations = 0
+      let lastMeasureIndex = -1
+
+      for (let i = 0; i < measure - 1 && iterations < maxIterations; i++) {
         osmd.cursor.next()
-        if (osmd.cursor.iterator.CurrentMeasureIndex >= measure - 1) break
+        iterations++
+
+        // Check if cursor actually advanced
+        const currentIndex = osmd.cursor.iterator.CurrentMeasureIndex
+        if (currentIndex === lastMeasureIndex) {
+          console.warn('cursorToMeasure: cursor not advancing, breaking to prevent infinite loop')
+          break
+        }
+        lastMeasureIndex = currentIndex
+
+        if (currentIndex >= measure - 1) break
       }
 
       setState(prev => ({ ...prev, currentMeasure: measure }))

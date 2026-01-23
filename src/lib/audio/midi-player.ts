@@ -69,6 +69,7 @@ export class MIDIPlayer {
   private activeNotes = new Map<number, ExtendedNoteEvent>()
   private startPosition = 0 // Starting position in seconds when play was called
   private pausePosition = 0 // Position when paused
+  private boundHandleLoopEvent: (() => void) | null = null // Bound handler for loop events
 
   constructor(engine: AudioEngine, config?: Partial<MIDIPlayerConfig>) {
     this.engine = engine
@@ -315,13 +316,98 @@ export class MIDIPlayer {
     Tone.Transport.loopEnd = endTime
     Tone.Transport.loop = true
 
+    // Remove existing loop handler if present
+    if (this.boundHandleLoopEvent) {
+      Tone.Transport.off('loop', this.boundHandleLoopEvent)
+    }
+
+    // Create and store bound handler for loop event
+    this.boundHandleLoopEvent = () => this.handleLoopEvent(startTime, endTime)
+    Tone.Transport.on('loop', this.boundHandleLoopEvent)
+
     console.log(`Loop set: M${start.measure}:B${start.beat || 1} to M${end.measure}:B${end.beat || 1}`)
+  }
+
+  /**
+   * Handle transport loop event - reschedule events when loop restarts
+   */
+  private handleLoopEvent(loopStart: number, loopEnd: number): void {
+    if (this.playbackState !== 'playing' || !this.midiData) return
+
+    // Release any notes that were still active at loop boundary
+    this.releaseAllActiveNotes()
+
+    // Cancel all previously scheduled events
+    this.cancelScheduledEvents()
+
+    // Reschedule events within the loop region
+    this.scheduleEventsInRange(loopStart, loopEnd)
+
+    console.log(`Loop restarted: rescheduled events from ${loopStart.toFixed(2)}s to ${loopEnd.toFixed(2)}s`)
+  }
+
+  /**
+   * Schedule MIDI events within a specific time range (for loop playback)
+   */
+  private scheduleEventsInRange(startTime: number, endTime: number): void {
+    if (!this.midiData) return
+
+    const transport = Tone.Transport
+
+    // Filter and schedule events within the time range
+    this.events.forEach((event, index) => {
+      if (event.time < startTime || event.time >= endTime) return
+
+      if (event.type === 'noteOn') {
+        const noteEvent = event as NoteMIDIEvent
+
+        // Find corresponding noteOff to calculate duration
+        const noteOffEvent = this.findNoteOff(noteEvent, index)
+        let duration = noteOffEvent
+          ? noteOffEvent.time - event.time
+          : 0.5 // Default duration if no noteOff found
+
+        // Clamp duration to not exceed loop end
+        if (event.time + duration > endTime) {
+          duration = endTime - event.time
+        }
+
+        // Schedule note
+        const eventId = transport.schedule((time) => {
+          this.triggerNoteOn(noteEvent.data.midiNote, noteEvent.data.velocity, duration, time)
+        }, event.time)
+
+        this.scheduledEventIds.push(eventId as unknown as number)
+
+        // Schedule noteOff callback (for visualization) - only if within loop range
+        if (noteOffEvent && noteOffEvent.time <= endTime) {
+          const offEventId = transport.schedule((time) => {
+            this.triggerNoteOff(noteEvent.data.midiNote, time)
+          }, noteOffEvent.time)
+
+          this.scheduledEventIds.push(offEventId as unknown as number)
+        } else if (event.time + duration <= endTime) {
+          // Schedule noteOff at the calculated duration end if no noteOff event
+          const offEventId = transport.schedule((time) => {
+            this.triggerNoteOff(noteEvent.data.midiNote, time)
+          }, event.time + duration)
+
+          this.scheduledEventIds.push(offEventId as unknown as number)
+        }
+      }
+    })
   }
 
   /**
    * Clear loop region
    */
   clearLoop(): void {
+    // Remove loop event listener
+    if (this.boundHandleLoopEvent) {
+      Tone.Transport.off('loop', this.boundHandleLoopEvent)
+      this.boundHandleLoopEvent = null
+    }
+
     this.loopRegion = null
     Tone.Transport.loop = false
     console.log('Loop cleared')
@@ -632,6 +718,13 @@ export class MIDIPlayer {
    */
   dispose(): void {
     this.stop()
+
+    // Clean up loop event listener
+    if (this.boundHandleLoopEvent) {
+      Tone.Transport.off('loop', this.boundHandleLoopEvent)
+      this.boundHandleLoopEvent = null
+    }
+
     this.callbacks = {}
     this.events = []
     this.midiData = null

@@ -61,6 +61,8 @@ export class AudioEngine {
   private callbacks: AudioEngineCallbacks = {}
   private state: AudioEngineState = 'uninitialized'
   private activeNotes = new Set<string>()
+  private reverb: Tone.Reverb | null = null
+  private compressor: Tone.Compressor | null = null
   // Reserved for future retry logic
   // private loadRetries = 0
   // private maxLoadRetries = 2
@@ -159,6 +161,14 @@ export class AudioEngine {
   }
 
   /**
+   * Convert note name to FluidR3 filename format
+   * FluidR3 uses 's' for sharps (e.g., Fs1 instead of F#1)
+   */
+  private toFluidR3FileName(note: string): string {
+    return note.replace('#', 's')
+  }
+
+  /**
    * Attempt to load samples from the configured provider
    */
   private async tryLoadSamples(): Promise<void> {
@@ -173,8 +183,9 @@ export class AudioEngine {
         const provider = SAMPLE_PROVIDERS.fluidR3
 
         provider.notes.forEach(note => {
-          // FluidR3 format: {baseUrl}/{note}.mp3
-          sampleMap[note] = `${provider.baseUrl}/${note}.${provider.extension}`
+          // FluidR3 uses 's' for sharps (Fs1 instead of F#1)
+          const fileName = this.toFluidR3FileName(note)
+          sampleMap[note] = `${provider.baseUrl}/${fileName}.${provider.extension}`
         })
 
         // Reserved for future progress tracking
@@ -228,12 +239,12 @@ export class AudioEngine {
     })
 
     // Add some effects for a more piano-like sound
-    const reverb = new Tone.Reverb({
+    this.reverb = new Tone.Reverb({
       decay: 2,
       wet: 0.3
     })
 
-    const compressor = new Tone.Compressor({
+    this.compressor = new Tone.Compressor({
       threshold: -20,
       ratio: 4,
       attack: 0.003,
@@ -241,7 +252,7 @@ export class AudioEngine {
     })
 
     // Connect: synth -> compressor -> reverb -> volume -> destination
-    this.synth.chain(compressor, reverb, this.volume)
+    this.synth.chain(this.compressor, this.reverb, this.volume)
 
     this.usingSynth = true
     console.log('Fallback synthesizer created')
@@ -458,6 +469,16 @@ export class AudioEngine {
     if (this.synth) {
       this.synth.dispose()
       this.synth = null
+    }
+
+    if (this.reverb) {
+      this.reverb.dispose()
+      this.reverb = null
+    }
+
+    if (this.compressor) {
+      this.compressor.dispose()
+      this.compressor = null
     }
 
     this.volume.dispose()

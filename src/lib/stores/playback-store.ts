@@ -1,5 +1,9 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
+import { useShallow } from 'zustand/react/shallow';
+
+// Re-export useShallow for convenience when using object-returning selectors
+export { useShallow };
 
 export interface LoopPoint {
   measure: number;
@@ -185,24 +189,57 @@ export const usePlaybackStore = create<PlaybackState>()(
   )
 );
 
-// Selectors for optimized component subscriptions
-export const selectIsPlaying = (state: PlaybackState) => state.isPlaying;
+// =============================================================================
+// SELECTORS
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Object-returning selectors (for grouped state access)
+// IMPORTANT: These create new object references on every call.
+// Use with useShallow() hook to prevent unnecessary re-renders:
+//   const { measure, beat } = usePlaybackStore(useShallow(selectCurrentPosition))
+// -----------------------------------------------------------------------------
+
 export const selectCurrentPosition = (state: PlaybackState) => ({
   measure: state.currentMeasure,
   beat: state.currentBeat,
 });
-export const selectTempo = (state: PlaybackState) => ({
+
+export const selectTempoState = (state: PlaybackState) => ({
   base: state.tempo,
   multiplier: state.tempoMultiplier,
   effective: state.tempo * state.tempoMultiplier,
 });
-export const selectVolume = (state: PlaybackState) => ({
+
+export const selectVolumeState = (state: PlaybackState) => ({
   level: state.volume,
   isMuted: state.isMuted,
   effective: state.isMuted ? 0 : state.volume,
 });
+
 export const selectLoop = (state: PlaybackState) => ({
   enabled: state.loopEnabled,
   start: state.loopStart,
   end: state.loopEnd,
 });
+
+// -----------------------------------------------------------------------------
+// Primitive selectors (stable references, no useShallow needed)
+// Use these when you only need a single value to avoid unnecessary re-renders:
+//   const isPlaying = usePlaybackStore(selectIsPlaying)
+// -----------------------------------------------------------------------------
+
+export const selectIsPlaying = (state: PlaybackState) => state.isPlaying;
+export const selectCurrentPieceId = (state: PlaybackState) => state.currentPieceId;
+export const selectCurrentMeasure = (state: PlaybackState) => state.currentMeasure;
+export const selectCurrentBeat = (state: PlaybackState) => state.currentBeat;
+export const selectTempo = (state: PlaybackState) => state.tempo;
+export const selectTempoMultiplier = (state: PlaybackState) => state.tempoMultiplier;
+export const selectEffectiveTempo = (state: PlaybackState) => state.tempo * state.tempoMultiplier;
+export const selectVolume = (state: PlaybackState) => state.volume;
+export const selectIsMuted = (state: PlaybackState) => state.isMuted;
+export const selectEffectiveVolume = (state: PlaybackState) => state.isMuted ? 0 : state.volume;
+export const selectLoopEnabled = (state: PlaybackState) => state.loopEnabled;
+export const selectLoopStart = (state: PlaybackState) => state.loopStart;
+export const selectLoopEnd = (state: PlaybackState) => state.loopEnd;
+export const selectActiveNotes = (state: PlaybackState) => state.activeNotes;

@@ -89,6 +89,7 @@ export class PlaybackCoordinator extends EventEmitter {
   private animationFrameId: number | null = null
   private lastUpdateTime = 0
   private beatsPerMeasure = 4 // Default, will be updated from MIDI data
+  private baseTempo = 120 // Default BPM, will be updated from MIDI data
 
   constructor() {
     super()
@@ -108,10 +109,26 @@ export class PlaybackCoordinator extends EventEmitter {
   }
 
   /**
-   * Initialize coordinator with time signature
+   * Initialize coordinator with time signature and optional tempo
    */
-  initialize(beatsPerMeasure: number): void {
+  initialize(beatsPerMeasure: number, tempo: number = 120): void {
     this.beatsPerMeasure = beatsPerMeasure
+    this.setBaseTempo(tempo)
+  }
+
+  /**
+   * Set base tempo from MIDI data
+   * @param bpm - Beats per minute (clamped to 20-300 range)
+   */
+  setBaseTempo(bpm: number): void {
+    this.baseTempo = Math.max(20, Math.min(300, bpm))
+  }
+
+  /**
+   * Get current base tempo
+   */
+  getBaseTempo(): number {
+    return this.baseTempo
   }
 
   /**
@@ -295,9 +312,8 @@ export class PlaybackCoordinator extends EventEmitter {
     this.lastUpdateTime = now
 
     // Calculate beat progress based on tempo
-    // Assume 120 BPM base tempo, adjusted by multiplier
-    const baseTempo = 120
-    const effectiveTempo = baseTempo * this.state.tempoMultiplier
+    // Use configured base tempo, adjusted by multiplier
+    const effectiveTempo = this.baseTempo * this.state.tempoMultiplier
     const secondsPerBeat = 60 / effectiveTempo
     const beatProgress = deltaTime / secondsPerBeat
 
