@@ -1,8 +1,12 @@
 'use client'
 
+import { useMemo } from 'react'
 import { Loader2 } from 'lucide-react'
 import { WalkthroughView } from './walkthrough-view'
 import { useWalkthroughData } from '@/lib/hooks/use-walkthrough-data'
+
+// Stable empty array to prevent re-renders (never changes reference)
+const EMPTY_ANNOTATIONS: never[] = []
 
 interface WalkthroughPageClientProps {
   bwv: string
@@ -65,35 +69,50 @@ export function WalkthroughPageClient({ bwv, type }: WalkthroughPageClientProps)
     error,
   } = useWalkthroughData(bwv, normalizedType)
 
-  // Show loading state while fetching
-  if (isLoading) {
-    return <LoadingState />
-  }
-
-  // Build piece data for WalkthroughView
-  // Use API data if available, otherwise fall back to static data
+  // Calculate fallback values BEFORE any conditional returns
+  // This ensures useMemo hooks below are always called (React Rules of Hooks)
   const fallback = fallbackPieces[bwv]
   const fallbackTotalMeasures = fallback?.totalMeasures[normalizedType] || 35
+  const effectiveTotalMeasures = totalMeasures || fallbackTotalMeasures
 
-  const pieceData = {
-    // Use real piece ID from API if available (enables MIDI, score, commentary)
-    // Otherwise use a fallback ID (disables API features but shows basic UI)
-    id: pieceId || `fallback-${bwv}-${normalizedType}`,
-    title: apiPiece
-      ? `${normalizedType.charAt(0).toUpperCase() + normalizedType.slice(1)} in ${apiPiece.keyTonic} ${apiPiece.keyMode.toLowerCase()}`
-      : `${normalizedType.charAt(0).toUpperCase() + normalizedType.slice(1)} in ${fallback?.key || 'Unknown'}`,
-    bwv: parseInt(bwv, 10),
-    key: apiPiece
-      ? `${apiPiece.keyTonic} ${apiPiece.keyMode.toLowerCase()}`
-      : fallback?.key || 'Unknown',
-    type: normalizedType,
-    totalMeasures: totalMeasures || fallbackTotalMeasures,
-    measures: Array.from({ length: totalMeasures || fallbackTotalMeasures }, (_, i) => ({
-      number: i + 1,
-      notes: [],
-      duration: 4,
-    })),
-    annotations: [],
+  // CRITICAL: All useMemo hooks MUST be called BEFORE any conditional returns
+  // React's Rules of Hooks: hooks cannot be called conditionally
+  // Array.from creates a NEW array on every render - memoize to prevent infinite loops
+  const measures = useMemo(
+    () =>
+      Array.from({ length: effectiveTotalMeasures }, (_, i) => ({
+        number: i + 1,
+        notes: [] as unknown[],
+        duration: 4,
+      })),
+    [effectiveTotalMeasures]
+  )
+
+  // CRITICAL: Memoize pieceData object to prevent infinite re-render loops
+  // New object references on every render can trigger cascading re-renders
+  const pieceData = useMemo(
+    () => ({
+      // Use real piece ID from API if available (enables MIDI, score, commentary)
+      // Otherwise use a fallback ID (disables API features but shows basic UI)
+      id: pieceId || `fallback-${bwv}-${normalizedType}`,
+      title: apiPiece
+        ? `${normalizedType.charAt(0).toUpperCase() + normalizedType.slice(1)} in ${apiPiece.keyTonic} ${apiPiece.keyMode.toLowerCase()}`
+        : `${normalizedType.charAt(0).toUpperCase() + normalizedType.slice(1)} in ${fallback?.key || 'Unknown'}`,
+      bwv: parseInt(bwv, 10),
+      key: apiPiece
+        ? `${apiPiece.keyTonic} ${apiPiece.keyMode.toLowerCase()}`
+        : fallback?.key || 'Unknown',
+      type: normalizedType,
+      totalMeasures: effectiveTotalMeasures,
+      measures,
+      annotations: EMPTY_ANNOTATIONS,
+    }),
+    [pieceId, bwv, normalizedType, apiPiece, fallback?.key, effectiveTotalMeasures, measures]
+  )
+
+  // NOW we can have conditional returns - AFTER all hooks are called
+  if (isLoading) {
+    return <LoadingState />
   }
 
   // Show error state only if both API failed AND no fallback exists
