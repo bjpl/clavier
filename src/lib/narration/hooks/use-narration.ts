@@ -5,7 +5,7 @@
 
 'use client';
 
-import { useEffect, useCallback } from 'react';
+import { useEffect, useCallback, useMemo } from 'react';
 import {
   useNarrationStore,
   selectNarrationConfig,
@@ -76,7 +76,8 @@ export function useNarration() {
     [play]
   );
 
-  return {
+  // CRITICAL: Memoize the return object to prevent infinite re-render loops
+  return useMemo(() => ({
     // State
     isPlaying,
     isLoading,
@@ -100,7 +101,28 @@ export function useNarration() {
     setProvider,
     clearCache,
     updateConfig,
-  };
+  }), [
+    isPlaying,
+    isLoading,
+    progress,
+    config,
+    availableVoices,
+    error,
+    currentText,
+    currentMeasure,
+    speak,
+    pause,
+    resume,
+    stop,
+    setRate,
+    setPitch,
+    setVolume,
+    toggleMute,
+    setVoice,
+    setProvider,
+    clearCache,
+    updateConfig,
+  ]);
 }
 
 /**
@@ -166,11 +188,12 @@ export function useNarrationVoice() {
     [setProvider]
   );
 
-  return {
+  // CRITICAL: Memoize the return object to prevent infinite re-render loops
+  return useMemo(() => ({
     voices: availableVoices,
     currentVoice,
     currentProvider,
     changeVoice,
     changeProvider,
-  };
+  }), [availableVoices, currentVoice, currentProvider, changeVoice, changeProvider]);
 }

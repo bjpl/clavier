@@ -5,7 +5,7 @@
 
 'use client';
 
-import { useEffect, useCallback } from 'react';
+import { useEffect, useCallback, useMemo } from 'react';
 import { usePlaybackStore } from '../../stores/playback-store';
 import { useNarration } from './use-narration';
 
@@ -86,13 +86,21 @@ export function useNarrationSync(
     }
   }, [isNarrating, commentary, handleNarrationEnd]);
 
-  return {
+  // CRITICAL: Memoize callbacks to prevent re-render loops
+  const playNarration = useCallback(() => {
+    if (commentary) {
+      speak(commentary, currentMeasure);
+    }
+  }, [commentary, speak, currentMeasure]);
+
+  // CRITICAL: Memoize the return object to prevent infinite re-render loops
+  return useMemo(() => ({
     currentMeasure,
     isNarrating,
     isMusicPlaying,
-    playNarration: () => commentary && speak(commentary, currentMeasure),
+    playNarration,
     stopNarration: stop,
-  };
+  }), [currentMeasure, isNarrating, isMusicPlaying, playNarration, stop]);
 }
 
 /**
@@ -112,7 +120,8 @@ export function useNarrationNavigation() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentMeasure]);
 
-  return {
+  // CRITICAL: Memoize the return object to prevent infinite re-render loops
+  return useMemo(() => ({
     currentMeasure,
-  };
+  }), [currentMeasure]);
 }

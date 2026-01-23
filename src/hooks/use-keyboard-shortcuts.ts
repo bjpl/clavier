@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 
 export interface KeyboardShortcut {
   key: string;
@@ -64,35 +64,42 @@ export function useViewShortcuts({
   onToggleFullscreen?: () => void;
   enabled?: boolean;
 }) {
-  const shortcuts: KeyboardShortcut[] = [
-    {
-      key: 's',
-      metaKey: true,
-      callback: onToggleScore,
-    },
-    {
-      key: 'b',
-      metaKey: true,
-      callback: onToggleKeyboard,
-    },
-  ];
+  // CRITICAL: Memoize shortcuts array to prevent infinite re-render loops
+  // Without useMemo, a new array is created on every render, causing
+  // useKeyboardShortcuts' useEffect to re-run infinitely
+  const shortcuts = useMemo(() => {
+    const result: KeyboardShortcut[] = [
+      {
+        key: 's',
+        metaKey: true,
+        callback: onToggleScore,
+      },
+      {
+        key: 'b',
+        metaKey: true,
+        callback: onToggleKeyboard,
+      },
+    ];
 
-  if (onResetLayout) {
-    shortcuts.push({
-      key: 'r',
-      metaKey: true,
-      shiftKey: true,
-      callback: onResetLayout,
-    });
-  }
+    if (onResetLayout) {
+      result.push({
+        key: 'r',
+        metaKey: true,
+        shiftKey: true,
+        callback: onResetLayout,
+      });
+    }
 
-  if (onToggleFullscreen) {
-    shortcuts.push({
-      key: 'f',
-      metaKey: true,
-      callback: onToggleFullscreen,
-    });
-  }
+    if (onToggleFullscreen) {
+      result.push({
+        key: 'f',
+        metaKey: true,
+        callback: onToggleFullscreen,
+      });
+    }
+
+    return result;
+  }, [onToggleScore, onToggleKeyboard, onResetLayout, onToggleFullscreen]);
 
   useKeyboardShortcuts(shortcuts, enabled);
 }

@@ -11,7 +11,7 @@
 
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 import { AudioEngine } from '@/lib/audio/audio-engine'
 import { useScorePlaybackSync } from '@/hooks/use-score-playback-sync'
 import { usePlaybackSync } from '@/lib/playback'
@@ -143,12 +143,16 @@ export function IntegratedWalkthroughView({
   }
 
   // Convert keyboard highlights to format expected by PianoKeyboard
-  const keyboardActiveNotes = keyboardHighlights.map(highlight => ({
-    midiNote: highlight.midiNote,
-    voice: highlight.voice?.toLowerCase() as 'soprano' | 'alto' | 'tenor' | 'bass' | undefined,
-    velocity: highlight.velocity,
-    color: highlight.color
-  }))
+  // CRITICAL: Must memoize to prevent creating new array on every render
+  const keyboardActiveNotes = useMemo(() =>
+    keyboardHighlights.map(highlight => ({
+      midiNote: highlight.midiNote,
+      voice: highlight.voice?.toLowerCase() as 'soprano' | 'alto' | 'tenor' | 'bass' | undefined,
+      velocity: highlight.velocity,
+      color: highlight.color
+    })),
+    [keyboardHighlights]
+  )
 
   if (!engineReady) {
     return (

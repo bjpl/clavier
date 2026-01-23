@@ -2,7 +2,7 @@
  * Hook for managing piano keyboard interactions (mouse and touch)
  */
 
-import { useCallback, useRef, useEffect } from 'react';
+import { useCallback, useRef, useEffect, useMemo } from 'react';
 
 interface UseKeyboardInteractionOptions {
   onNoteOn: (midi: number) => void;
@@ -185,12 +185,20 @@ export function useKeyboardInteraction({
     };
   }, []);
 
-  return {
+  // CRITICAL: Memoize the return object to prevent infinite re-render loops
+  return useMemo(() => ({
     handleMouseDown,
     handleMouseUp,
     handleMouseEnter,
     handleMouseLeave,
     handleTouchStart,
     handleTouchEnd,
-  };
+  }), [
+    handleMouseDown,
+    handleMouseUp,
+    handleMouseEnter,
+    handleMouseLeave,
+    handleTouchStart,
+    handleTouchEnd,
+  ]);
 }

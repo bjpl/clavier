@@ -5,7 +5,7 @@
 
 'use client'
 
-import { useEffect, useState, useCallback, useRef } from 'react'
+import { useEffect, useState, useCallback, useRef, useMemo } from 'react'
 import {
   PlaybackCoordinator,
   getPlaybackCoordinator,
@@ -208,7 +208,8 @@ export function usePlaybackSync(
     }
   }, [scoreSync, keyboardSync])
 
-  return {
+  // CRITICAL: Memoize the return object to prevent infinite re-render loops
+  return useMemo(() => ({
     cursorPosition,
     keyboardHighlights,
     currentMeasure,
@@ -217,7 +218,16 @@ export function usePlaybackSync(
     scoreSync,
     keyboardSync,
     coordinator
-  }
+  }), [
+    cursorPosition,
+    keyboardHighlights,
+    currentMeasure,
+    highlightedMeasures,
+    playbackState,
+    scoreSync,
+    keyboardSync,
+    coordinator
+  ])
 }
 
 /**
@@ -249,12 +259,13 @@ export function usePlaybackSyncWithControls(
     coordinator.setTempoMultiplier(multiplier)
   }, [coordinator])
 
-  return {
+  // CRITICAL: Memoize the return object to prevent infinite re-render loops
+  return useMemo(() => ({
     ...syncState,
     play,
     pause,
     stop,
     seekTo,
     setTempoMultiplier
-  }
+  }), [syncState, play, pause, stop, seekTo, setTempoMultiplier])
 }

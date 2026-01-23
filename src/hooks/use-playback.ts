@@ -461,8 +461,11 @@ export function usePlaybackWithKeyboard(
   options: UsePlaybackOptions = {}
 ): UsePlaybackReturn {
   const playback = usePlayback(engine, options)
-  // Use primitive selector to prevent re-render loops
-  const isPlaying = usePlaybackStore((s) => s.isPlaying)
+
+  // Use a ref to store the playback object to prevent useEffect dependency issues
+  // This avoids re-creating the keyboard handler on every playback state change
+  const playbackRef = useRef(playback)
+  playbackRef.current = playback
 
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
@@ -475,26 +478,29 @@ export function usePlaybackWithKeyboard(
         return
       }
 
+      const p = playbackRef.current
+
       switch (e.key) {
         case ' ':
           e.preventDefault()
-          if (isPlaying) {
-            playback.pause()
+          // Use store.getState() to get current isPlaying value
+          if (usePlaybackStore.getState().isPlaying) {
+            p.pause()
           } else {
-            playback.play()
+            p.play()
           }
           break
 
         case 'Escape':
           e.preventDefault()
-          playback.stop()
+          p.stop()
           break
 
         case 'ArrowLeft':
           if (e.shiftKey) {
             e.preventDefault()
             const { currentMeasure } = usePlaybackStore.getState()
-            playback.seekToMeasure(Math.max(1, currentMeasure - 1))
+            p.seekToMeasure(Math.max(1, currentMeasure - 1))
           }
           break
 
@@ -502,20 +508,20 @@ export function usePlaybackWithKeyboard(
           if (e.shiftKey) {
             e.preventDefault()
             const { currentMeasure } = usePlaybackStore.getState()
-            const maxMeasure = playback.totalMeasures || 999
-            playback.seekToMeasure(Math.min(maxMeasure, currentMeasure + 1))
+            const maxMeasure = p.totalMeasures || 999
+            p.seekToMeasure(Math.min(maxMeasure, currentMeasure + 1))
           }
           break
 
         case 'Home':
           e.preventDefault()
-          playback.seekToMeasure(1)
+          p.seekToMeasure(1)
           break
 
         case 'End':
           e.preventDefault()
-          if (playback.totalMeasures > 0) {
-            playback.seekToMeasure(playback.totalMeasures)
+          if (p.totalMeasures > 0) {
+            p.seekToMeasure(p.totalMeasures)
           }
           break
 
@@ -523,16 +529,16 @@ export function usePlaybackWithKeyboard(
         case '=':
           if (e.shiftKey || e.key === '+') {
             e.preventDefault()
-            const newMultiplier = Math.min(2.0, playback.tempoMultiplier + 0.1)
-            playback.setTempoMultiplier(newMultiplier)
+            const newMultiplier = Math.min(2.0, p.tempoMultiplier + 0.1)
+            p.setTempoMultiplier(newMultiplier)
           }
           break
 
         case '-':
         case '_':
           e.preventDefault()
-          const newMultiplier = Math.max(0.25, playback.tempoMultiplier - 0.1)
-          playback.setTempoMultiplier(newMultiplier)
+          const newMultiplier = Math.max(0.25, p.tempoMultiplier - 0.1)
+          p.setTempoMultiplier(newMultiplier)
           break
 
         case 'l':
@@ -540,8 +546,8 @@ export function usePlaybackWithKeyboard(
           // Toggle loop (when markers are set)
           if (e.ctrlKey || e.metaKey) {
             e.preventDefault()
-            if (playback.isLooping) {
-              playback.clearLoop()
+            if (p.isLooping) {
+              p.clearLoop()
             }
             // Note: To set loop, user needs to define start/end points
           }
@@ -551,7 +557,7 @@ export function usePlaybackWithKeyboard(
 
     document.addEventListener('keydown', handleKeyPress)
     return () => document.removeEventListener('keydown', handleKeyPress)
-  }, [isPlaying, playback])
+  }, []) // Empty dependency array - uses ref for current values
 
   return playback
 }
