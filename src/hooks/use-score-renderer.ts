@@ -851,7 +851,8 @@ export function useScoreRenderer(
     }
   }, [destroy])
 
-  return {
+  // CRITICAL: Memoize the return object to prevent infinite re-render loops
+  return useMemo(() => ({
     osmd,
     state,
     isLoading: state.isLoading,
@@ -885,5 +886,29 @@ export function useScoreRenderer(
 
     getNotesAtMeasure,
     destroy,
-  }
+  }), [
+    osmd,
+    state,
+    loadScore,
+    loadScoreFromUrl,
+    clearScore,
+    setZoom,
+    fitToWidth,
+    fitToPage,
+    scrollToMeasure,
+    getMeasureBounds,
+    getAllMeasureBounds,
+    showCursor,
+    hideCursor,
+    cursorToMeasure,
+    cursorNext,
+    cursorPrevious,
+    highlightMeasures,
+    highlightMeasureRange,
+    highlightNotes,
+    clearHighlights,
+    setVoiceColors,
+    getNotesAtMeasure,
+    destroy,
+  ])
 }

@@ -411,7 +411,8 @@ export function useScorePlaybackSync(
     return syncManagerRef.current
   }, [])
 
-  return {
+  // CRITICAL: Memoize the return object to prevent infinite re-render loops
+  return useMemo(() => ({
     // State
     isReady,
     playbackState,
@@ -445,7 +446,29 @@ export function useScorePlaybackSync(
 
     // Score interaction
     handleMeasureClick
-  }
+  }), [
+    isReady,
+    playbackState,
+    cursorPosition,
+    currentTime,
+    duration,
+    totalMeasures,
+    effectiveTempo,
+    storeTempoMultiplier,
+    play,
+    pause,
+    stop,
+    togglePlayback,
+    seekToMeasure,
+    seekToTime,
+    setTempoMultiplier,
+    loadMIDI,
+    loadFromAPI,
+    timeToPosition,
+    positionToTime,
+    getSyncManagerFn,
+    handleMeasureClick
+  ])
 }
 
 /**

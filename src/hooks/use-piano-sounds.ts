@@ -10,7 +10,7 @@
  * - Active note tracking for visual feedback
  */
 
-import { useCallback, useRef, useEffect, useState } from 'react'
+import { useCallback, useRef, useEffect, useState, useMemo } from 'react'
 import { AudioEngine } from '@/lib/audio/audio-engine'
 
 export interface UsePianoSoundsOptions {
@@ -203,7 +203,8 @@ export function usePianoSounds(
     }
   }, [])
 
-  return {
+  // CRITICAL: Memoize the return object to prevent infinite re-render loops
+  return useMemo(() => ({
     noteOn,
     noteOff,
     playNote,
@@ -212,7 +213,7 @@ export function usePianoSounds(
     isNotePlaying,
     activeNotes: activeNotesState,
     isReady
-  }
+  }), [noteOn, noteOff, playNote, stopNote, stopAllNotes, isNotePlaying, activeNotesState, isReady])
 }
 
 /**
@@ -348,12 +349,13 @@ export function usePianoSoundsWithKeyboard(
     }
   }, [enabled, octaveOffset, pianoSounds, octaveUp, octaveDown])
 
-  return {
+  // CRITICAL: Memoize the return object to prevent infinite re-render loops
+  return useMemo(() => ({
     ...pianoSounds,
     octaveOffset,
     octaveUp,
     octaveDown
-  }
+  }), [pianoSounds, octaveOffset, octaveUp, octaveDown])
 }
 
 /**
@@ -437,14 +439,15 @@ export function usePianoSoundsWithTouch(
     }
   }, [])
 
-  return {
+  // CRITICAL: Memoize the return object to prevent infinite re-render loops
+  return useMemo(() => ({
     ...pianoSounds,
     handleTouchStart,
     handleTouchEnd,
     handleTouchMove,
     handleTouchCancel,
     touchNotes
-  }
+  }), [pianoSounds, handleTouchStart, handleTouchEnd, handleTouchMove, handleTouchCancel, touchNotes])
 }
 
 /**
@@ -475,12 +478,13 @@ export function usePianoSoundsComplete(
   })
   const touch = usePianoSoundsWithTouch(engine, options)
 
-  return {
+  // CRITICAL: Memoize the return object to prevent infinite re-render loops
+  return useMemo(() => ({
     ...keyboard,
     handleTouchStart: touch.handleTouchStart,
     handleTouchEnd: touch.handleTouchEnd,
     handleTouchMove: touch.handleTouchMove,
     handleTouchCancel: touch.handleTouchCancel,
     touchNotes: touch.touchNotes
-  }
+  }), [keyboard, touch])
 }

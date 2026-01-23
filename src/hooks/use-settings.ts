@@ -5,7 +5,7 @@
  * Provides type-safe, optimized access to the settings store.
  */
 
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useSettingsStore } from '@/lib/settings/settings-store';
 import type { UserSettings } from '@/lib/settings/settings-schema';
 
@@ -24,7 +24,7 @@ export function useTheme() {
   const theme = useSettingsStore((state) => state.theme);
   const setTheme = useSettingsStore((state) => state.setTheme);
 
-  return { theme, setTheme };
+  return useMemo(() => ({ theme, setTheme }), [theme, setTheme]);
 }
 
 /**
@@ -45,7 +45,7 @@ export function useScoreSettings() {
   const toggleAnnotationLayer = useSettingsStore((state) => state.toggleAnnotationLayer);
   const setAnnotationLayers = useSettingsStore((state) => state.setAnnotationLayers);
 
-  return {
+  return useMemo(() => ({
     // State
     zoom,
     voiceColors,
@@ -60,7 +60,7 @@ export function useScoreSettings() {
     toggleAnnotations,
     toggleAnnotationLayer,
     setAnnotationLayers,
-  };
+  }), [zoom, voiceColors, showAnnotations, annotationLayers, setZoom, increaseZoom, decreaseZoom, resetZoom, toggleVoiceColors, toggleAnnotations, toggleAnnotationLayer, setAnnotationLayers]);
 }
 
 /**
@@ -77,7 +77,7 @@ export function useLayoutSettings() {
   const setSidebarOpen = useSettingsStore((state) => state.setSidebarOpen);
   const setSplitPosition = useSettingsStore((state) => state.setSplitPosition);
 
-  return {
+  return useMemo(() => ({
     // State
     keyboardVisible,
     sidebarOpen,
@@ -88,7 +88,7 @@ export function useLayoutSettings() {
     toggleSidebar,
     setSidebarOpen,
     setSplitPosition,
-  };
+  }), [keyboardVisible, sidebarOpen, splitPosition, toggleKeyboard, setKeyboardVisible, toggleSidebar, setSidebarOpen, setSplitPosition]);
 }
 
 /**
@@ -111,7 +111,7 @@ export function useAudioSettings() {
   const setNarrationVolume = useSettingsStore((state) => state.setNarrationVolume);
   const setMusicVolume = useSettingsStore((state) => state.setMusicVolume);
 
-  return {
+  return useMemo(() => ({
     // State
     narrationAutoPlay,
     defaultTempo,
@@ -126,7 +126,7 @@ export function useAudioSettings() {
     setMasterVolume,
     setNarrationVolume,
     setMusicVolume,
-  };
+  }), [narrationAutoPlay, defaultTempo, defaultTempoMultiplier, masterVolume, narrationVolume, musicVolume, toggleNarrationAutoPlay, setDefaultTempo, setDefaultTempoMultiplier, setMasterVolume, setNarrationVolume, setMusicVolume]);
 }
 
 /**
@@ -139,14 +139,14 @@ export function usePlaybackSettings() {
   const toggleLoopByDefault = useSettingsStore((state) => state.toggleLoopByDefault);
   const toggleAutoAdvance = useSettingsStore((state) => state.toggleAutoAdvance);
 
-  return {
+  return useMemo(() => ({
     // State
     loopByDefault,
     autoAdvance,
     // Actions
     toggleLoopByDefault,
     toggleAutoAdvance,
-  };
+  }), [loopByDefault, autoAdvance, toggleLoopByDefault, toggleAutoAdvance]);
 }
 
 /**
@@ -168,10 +168,10 @@ export function useSettingsMutation() {
     resetSettings();
   }, [resetSettings]);
 
-  return {
+  return useMemo(() => ({
     mutate,
     reset,
-  };
+  }), [mutate, reset]);
 }
 
 /**
