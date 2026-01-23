@@ -1,5 +1,9 @@
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
+import { useShallow } from 'zustand/react/shallow';
+
+// Re-export useShallow for convenience when using object-returning selectors
+export { useShallow };
 
 export type AppMode = 'walkthrough' | 'curriculum' | 'explorer';
 export type Theme = 'light' | 'dark' | 'system';
@@ -223,6 +227,9 @@ export const useViewStore = create<ViewState>()(
       }),
       {
         name: 'clavier-view-settings',
+        // Skip automatic hydration to prevent SSR hydration mismatch
+        // Call useViewStore.persist.rehydrate() on client mount instead
+        skipHydration: true,
         partialize: (state) => ({
           theme: state.theme,
           scoreZoom: state.scoreZoom,
@@ -257,9 +264,32 @@ export const selectLayoutSettings = (state: ViewState) => ({
   splitOrientation: state.splitOrientation,
   sidebarOpen: state.sidebarOpen,
 });
+// -----------------------------------------------------------------------------
+// Object-returning selectors (for grouped state access)
+// IMPORTANT: These create new object references on every call.
+// Use with useShallow() hook to prevent unnecessary re-renders:
+//   const settings = useViewStore(useShallow(selectSplitViewSettings))
+// -----------------------------------------------------------------------------
+
 export const selectSplitViewSettings = (state: ViewState) => ({
   splitRatio: state.splitRatio,
   orientation: state.splitOrientation,
   showScore: state.scoreVisible,
   showKeyboard: state.keyboardVisible,
 });
+
+// -----------------------------------------------------------------------------
+// Primitive selectors (stable references, no useShallow needed)
+// Use these when you only need a single value to avoid unnecessary re-renders:
+//   const splitRatio = useViewStore(selectSplitRatio)
+// -----------------------------------------------------------------------------
+
+export const selectSplitRatio = (state: ViewState) => state.splitRatio;
+export const selectSplitOrientation = (state: ViewState) => state.splitOrientation;
+export const selectScoreVisible = (state: ViewState) => state.scoreVisible;
+export const selectKeyboardVisible = (state: ViewState) => state.keyboardVisible;
+export const selectSidebarOpen = (state: ViewState) => state.sidebarOpen;
+export const selectScoreZoom = (state: ViewState) => state.scoreZoom;
+export const selectVoiceColorsEnabled = (state: ViewState) => state.voiceColorsEnabled;
+export const selectShowAnnotations = (state: ViewState) => state.showAnnotations;
+export const selectAnnotationLayers = (state: ViewState) => state.annotationLayers;

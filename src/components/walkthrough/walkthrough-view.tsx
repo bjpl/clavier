@@ -13,13 +13,14 @@ import { SplitView } from '@/components/layout/split-view'
 import { ViewControls } from '@/components/layout/view-controls'
 import { ScoreDisplay, ScoreDisplayRef } from '@/components/score/score-display'
 import { PianoKeyboard, ActiveNote } from '@/components/keyboard/piano-keyboard'
-import { useViewStore, selectSplitViewSettings } from '@/lib/stores/view-store'
+import { useViewStore, selectSplitRatio, selectSplitOrientation, selectScoreVisible, selectKeyboardVisible } from '@/lib/stores/view-store'
 import { useWalkthroughStore } from '@/lib/stores/walkthrough-store'
 import { usePlaybackStore } from '@/lib/stores/playback-store'
 import { useViewShortcuts } from '@/hooks/use-keyboard-shortcuts'
 import { useAudioEngine } from '@/hooks/use-audio-engine'
 import { useMeasurePlayback } from '@/hooks/use-playback'
 import { useMeasureCommentary, useScoreXML, useMidiData } from '@/lib/hooks/use-walkthrough-data'
+import { useHydrated } from '@/lib/hooks/use-hydration'
 import { Settings, Loader2 } from 'lucide-react'
 
 interface Measure {
@@ -55,6 +56,7 @@ interface WalkthroughViewProps {
 export function WalkthroughView({ piece, measures, annotations }: WalkthroughViewProps) {
   const router = useRouter()
   const scoreRef = useRef<ScoreDisplayRef>(null)
+  const isHydrated = useHydrated()
 
   // Detect if this is a fallback piece (no database data available)
   // Fallback pieces have IDs like "fallback-846-prelude"
@@ -69,8 +71,11 @@ export function WalkthroughView({ piece, measures, annotations }: WalkthroughVie
   const [selectedLessonId, setSelectedLessonId] = useState<string | null>(null)
   const [scoreError, setScoreError] = useState<Error | null>(null)
 
-  // Split view state from Zustand store
-  const splitViewSettings = useViewStore(selectSplitViewSettings)
+  // Split view state from Zustand store - use primitive selectors to prevent re-render loops
+  const splitRatio = useViewStore(selectSplitRatio)
+  const orientation = useViewStore(selectSplitOrientation)
+  const showScore = useViewStore(selectScoreVisible)
+  const showKeyboard = useViewStore(selectKeyboardVisible)
   const setSplitRatio = useViewStore((state) => state.setSplitRatio)
   const toggleScore = useViewStore((state) => state.toggleScore)
   const toggleKeyboard = useViewStore((state) => state.toggleKeyboard)
@@ -134,7 +139,51 @@ export function WalkthroughView({ piece, measures, annotations }: WalkthroughVie
     onResetLayout: resetLayout,
   })
 
+  const handlePrevious = useCallback(() => {
+    const newMeasure = Math.max(1, currentMeasure - 1)
+    setCurrentMeasure(newMeasure)
+    markVisited(newMeasure)
+    seekToMeasure(newMeasure)
+    scoreRef.current?.scrollToMeasure(newMeasure)
+  }, [currentMeasure, markVisited, seekToMeasure])
+
+  const handleNext = useCallback(() => {
+    const total = piece.totalMeasures || measures.length
+    const newMeasure = Math.min(total, currentMeasure + 1)
+    setCurrentMeasure(newMeasure)
+    markVisited(newMeasure)
+    seekToMeasure(newMeasure)
+    scoreRef.current?.scrollToMeasure(newMeasure)
+  }, [currentMeasure, measures.length, piece.totalMeasures, markVisited, seekToMeasure])
+
+  const handleGoTo = useCallback((measure: number) => {
+    const total = piece.totalMeasures || measures.length
+    const clampedMeasure = Math.max(1, Math.min(total, measure))
+    setCurrentMeasure(clampedMeasure)
+    markVisited(clampedMeasure)
+    seekToMeasure(clampedMeasure)
+    scoreRef.current?.scrollToMeasure(clampedMeasure)
+  }, [measures.length, piece.totalMeasures, markVisited, seekToMeasure])
+
+  const handlePlayMeasure = useCallback(async () => {
+    if (!audioReady) {
+      await initAudio()
+    }
+    playMeasure(currentMeasure)
+  }, [audioReady, initAudio, playMeasure, currentMeasure])
+
+  const handlePlayInContext = useCallback(async () => {
+    if (!audioReady) {
+      await initAudio()
+    }
+    const total = piece.totalMeasures || measures.length
+    const start = Math.max(1, currentMeasure - 1)
+    const end = Math.min(total, currentMeasure + 1)
+    playMeasureRange(start, end)
+  }, [audioReady, initAudio, playMeasureRange, currentMeasure, measures.length, piece.totalMeasures])
+
   // Keyboard navigation for measures
+  // NOTE: Must be defined AFTER useCallback handlers it depends on
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       // Skip if in input field
@@ -187,50 +236,7 @@ export function WalkthroughView({ piece, measures, annotations }: WalkthroughVie
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [currentMeasure, playbackState])
-
-  const handlePrevious = useCallback(() => {
-    const newMeasure = Math.max(1, currentMeasure - 1)
-    setCurrentMeasure(newMeasure)
-    markVisited(newMeasure)
-    seekToMeasure(newMeasure)
-    scoreRef.current?.scrollToMeasure(newMeasure)
-  }, [currentMeasure, markVisited, seekToMeasure])
-
-  const handleNext = useCallback(() => {
-    const total = piece.totalMeasures || measures.length
-    const newMeasure = Math.min(total, currentMeasure + 1)
-    setCurrentMeasure(newMeasure)
-    markVisited(newMeasure)
-    seekToMeasure(newMeasure)
-    scoreRef.current?.scrollToMeasure(newMeasure)
-  }, [currentMeasure, measures.length, piece.totalMeasures, markVisited, seekToMeasure])
-
-  const handleGoTo = useCallback((measure: number) => {
-    const total = piece.totalMeasures || measures.length
-    const clampedMeasure = Math.max(1, Math.min(total, measure))
-    setCurrentMeasure(clampedMeasure)
-    markVisited(clampedMeasure)
-    seekToMeasure(clampedMeasure)
-    scoreRef.current?.scrollToMeasure(clampedMeasure)
-  }, [measures.length, piece.totalMeasures, markVisited, seekToMeasure])
-
-  const handlePlayMeasure = useCallback(async () => {
-    if (!audioReady) {
-      await initAudio()
-    }
-    playMeasure(currentMeasure)
-  }, [audioReady, initAudio, playMeasure, currentMeasure])
-
-  const handlePlayInContext = useCallback(async () => {
-    if (!audioReady) {
-      await initAudio()
-    }
-    const total = piece.totalMeasures || measures.length
-    const start = Math.max(1, currentMeasure - 1)
-    const end = Math.min(total, currentMeasure + 1)
-    playMeasureRange(start, end)
-  }, [audioReady, initAudio, playMeasureRange, currentMeasure, measures.length, piece.totalMeasures])
+  }, [playbackState, handlePrevious, handleNext, play, pause, stop, handlePlayMeasure, handlePlayInContext])
 
   const handleLearnMore = useCallback((lessonId: string) => {
     setSelectedLessonId(lessonId)
@@ -314,6 +320,19 @@ export function WalkthroughView({ piece, measures, annotations }: WalkthroughVie
   const totalMeasures = piece.totalMeasures || measures.length
   const isPlaying = playbackState === 'playing'
 
+  // Show loading state until client hydration is complete
+  // This prevents React Error #185 (hydration mismatch) caused by Zustand persist middleware
+  if (!isHydrated) {
+    return (
+      <div className="flex items-center justify-center h-screen bg-background">
+        <div className="flex flex-col items-center gap-4">
+          <Loader2 className="h-8 w-8 animate-spin text-primary" />
+          <p className="text-muted-foreground">Loading walkthrough...</p>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="flex flex-col h-screen">
       {/* Header */}
@@ -342,9 +361,9 @@ export function WalkthroughView({ piece, measures, annotations }: WalkthroughVie
 
           {/* View Controls */}
           <ViewControls
-            showScore={splitViewSettings.showScore}
-            showKeyboard={splitViewSettings.showKeyboard}
-            orientation={splitViewSettings.orientation}
+            showScore={showScore}
+            showKeyboard={showKeyboard}
+            orientation={orientation}
             onToggleScore={toggleScore}
             onToggleKeyboard={toggleKeyboard}
             onToggleOrientation={toggleOrientation}
@@ -362,11 +381,11 @@ export function WalkthroughView({ piece, measures, annotations }: WalkthroughVie
       {/* Main Split View Area */}
       <div className="flex-1 overflow-hidden">
         <SplitView
-          orientation={splitViewSettings.orientation}
-          splitRatio={splitViewSettings.splitRatio}
+          orientation={orientation}
+          splitRatio={splitRatio}
           onSplitRatioChange={setSplitRatio}
-          showFirstPanel={splitViewSettings.showScore}
-          showSecondPanel={splitViewSettings.showKeyboard}
+          showFirstPanel={showScore}
+          showSecondPanel={showKeyboard}
           minFirstPanel={30}
           maxFirstPanel={70}
           firstPanel={

@@ -64,11 +64,11 @@ export default function WalkthroughError({ error, reset }: ErrorProps) {
               We couldn't load the interactive walkthrough. This might be a temporary issue.
             </p>
 
-            {/* Error Details (Development) */}
+            {/* Error Details - only shown in development */}
             {process.env.NODE_ENV === 'development' && (
               <div className="mt-4 p-4 bg-gray-50 rounded-lg text-left">
                 <p className="text-sm font-mono text-gray-700 break-all">
-                  {error.message}
+                  {error.message || 'Unknown error'}
                 </p>
                 {error.digest && (
                   <p className="text-xs text-gray-500 mt-2">

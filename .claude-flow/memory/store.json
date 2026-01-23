@@ -1153,6 +1153,417 @@
       "storedAt": "2026-01-19T22:25:40.269Z",
       "accessCount": 0,
       "lastAccessed": "2026-01-19T22:25:40.269Z"
+    },
+    "clavier/eval/architecture/overview": {
+      "key": "clavier/eval/architecture/overview",
+      "value": {
+        "project": "clavier",
+        "domain": "music-education-app",
+        "architecture": {
+          "layers": [
+            "audio-synthesis",
+            "playback-control",
+            "state-management",
+            "score-display",
+            "view-coordination"
+          ],
+          "core-components": {
+            "audio": [
+              "AudioEngine",
+              "MIDIPlayer",
+              "audio-types"
+            ],
+            "playback": [
+              "PlaybackCoordinator",
+              "SyncManager",
+              "usePlayback"
+            ],
+            "stores": [
+              "playback-store",
+              "walkthrough-store",
+              "view-store"
+            ],
+            "score": [
+              "ScoreDisplay",
+              "ScoreSync",
+              "OSMD-integration"
+            ],
+            "view": [
+              "WalkthroughView",
+              "PianoKeyboard",
+              "SplitView"
+            ]
+          },
+          "technologies": {
+            "synthesis": "Tone.js",
+            "samples": "FluidR3_GM soundfonts",
+            "notation": "OpenSheetMusicDisplay",
+            "state": "Zustand",
+            "framework": "Next.js 14"
+          }
+        }
+      },
+      "metadata": {
+        "namespace": "clavier/eval/architecture",
+        "type": "overview",
+        "timestamp": "2026-01-22"
+      },
+      "storedAt": "2026-01-23T05:10:08.798Z",
+      "accessCount": 0,
+      "lastAccessed": "2026-01-23T05:10:08.798Z"
+    },
+    "clavier/eval/goap/initial-world-state": {
+      "key": "clavier/eval/goap/initial-world-state",
+      "value": {
+        "audio_engine_analyzed": false,
+        "midi_player_analyzed": false,
+        "sync_manager_analyzed": false,
+        "playback_coordinator_analyzed": false,
+        "state_stores_analyzed": false,
+        "score_integration_analyzed": false,
+        "view_components_analyzed": false,
+        "data_flow_mapped": false,
+        "issues_identified": false,
+        "recommendations_generated": false
+      },
+      "metadata": {
+        "namespace": "clavier/eval/goap",
+        "type": "world-state",
+        "purpose": "GOAP initial conditions"
+      },
+      "storedAt": "2026-01-23T05:10:08.904Z",
+      "accessCount": 0,
+      "lastAccessed": "2026-01-23T05:10:08.904Z"
+    },
+    "clavier/eval/goap/goal-state": {
+      "key": "clavier/eval/goap/goal-state",
+      "value": {
+        "audio_engine_analyzed": true,
+        "midi_player_analyzed": true,
+        "sync_manager_analyzed": true,
+        "playback_coordinator_analyzed": true,
+        "state_stores_analyzed": true,
+        "score_integration_analyzed": true,
+        "view_components_analyzed": true,
+        "data_flow_mapped": true,
+        "issues_identified": true,
+        "recommendations_generated": true
+      },
+      "metadata": {
+        "namespace": "clavier/eval/goap",
+        "type": "goal-state",
+        "purpose": "GOAP target conditions"
+      },
+      "storedAt": "2026-01-23T05:10:09.012Z",
+      "accessCount": 0,
+      "lastAccessed": "2026-01-23T05:10:09.012Z"
+    },
+    "clavier/eval/goap/actions": {
+      "key": "clavier/eval/goap/actions",
+      "value": {
+        "actions": [
+          {
+            "name": "analyze_audio_engine",
+            "preconditions": {},
+            "effects": {
+              "audio_engine_analyzed": true
+            },
+            "cost": 2
+          },
+          {
+            "name": "analyze_midi_player",
+            "preconditions": {
+              "audio_engine_analyzed": true
+            },
+            "effects": {
+              "midi_player_analyzed": true
+            },
+            "cost": 2
+          },
+          {
+            "name": "analyze_sync_manager",
+            "preconditions": {
+              "midi_player_analyzed": true
+            },
+            "effects": {
+              "sync_manager_analyzed": true
+            },
+            "cost": 2
+          },
+          {
+            "name": "analyze_playback_coordinator",
+            "preconditions": {
+              "sync_manager_analyzed": true
+            },
+            "effects": {
+              "playback_coordinator_analyzed": true
+            },
+            "cost": 2
+          },
+          {
+            "name": "analyze_state_stores",
+            "preconditions": {},
+            "effects": {
+              "state_stores_analyzed": true
+            },
+            "cost": 2
+          },
+          {
+            "name": "analyze_score_integration",
+            "preconditions": {
+              "playback_coordinator_analyzed": true
+            },
+            "effects": {
+              "score_integration_analyzed": true
+            },
+            "cost": 3
+          },
+          {
+            "name": "analyze_view_components",
+            "preconditions": {
+              "score_integration_analyzed": true,
+              "state_stores_analyzed": true
+            },
+            "effects": {
+              "view_components_analyzed": true
+            },
+            "cost": 3
+          },
+          {
+            "name": "map_data_flow",
+            "preconditions": {
+              "audio_engine_analyzed": true,
+              "state_stores_analyzed": true,
+              "view_components_analyzed": true
+            },
+            "effects": {
+              "data_flow_mapped": true
+            },
+            "cost": 4
+          },
+          {
+            "name": "identify_issues",
+            "preconditions": {
+              "data_flow_mapped": true
+            },
+            "effects": {
+              "issues_identified": true
+            },
+            "cost": 3
+          },
+          {
+            "name": "generate_recommendations",
+            "preconditions": {
+              "issues_identified": true
+            },
+            "effects": {
+              "recommendations_generated": true
+            },
+            "cost": 3
+          }
+        ]
+      },
+      "metadata": {
+        "namespace": "clavier/eval/goap",
+        "type": "actions",
+        "purpose": "GOAP action definitions"
+      },
+      "storedAt": "2026-01-23T05:10:28.502Z",
+      "accessCount": 0,
+      "lastAccessed": "2026-01-23T05:10:28.502Z"
+    },
+    "clavier/eval/report/final": {
+      "key": "clavier/eval/report/final",
+      "value": {
+        "title": "Clavier Audio/Player Architecture Evaluation Report",
+        "date": "2026-01-22",
+        "methodology": "GOAP-driven multi-agent swarm evaluation using claude-flow hierarchical-mesh topology",
+        "swarm_id": "swarm-1769145008688",
+        "overall_score": "7.2/10",
+        "summary": "The Clavier audio/player architecture demonstrates solid foundational design with Tone.js integration, modular state management via Zustand, and effective use of OSMD for score rendering. However, critical issues in loop playback, memory management, and state synchronization require immediate attention.",
+        "critical_issues": [
+          {
+            "severity": "CRITICAL",
+            "component": "MIDI Player",
+            "issue": "Loop playback broken - events not rescheduled on loop iteration",
+            "file": "src/lib/audio/midi-player.ts",
+            "impact": "Users experience silence after first loop iteration",
+            "fix": "Reschedule events at loop boundary or use Tone.Part with loop property"
+          },
+          {
+            "severity": "CRITICAL",
+            "component": "Score Display",
+            "issue": "Infinite loop risk in cursorToMeasure - no bounds checking",
+            "file": "src/components/score/score-display.tsx",
+            "impact": "Browser freeze possible with malformed score data",
+            "fix": "Add max iteration guard and bounds validation"
+          },
+          {
+            "severity": "HIGH",
+            "component": "Audio Engine",
+            "issue": "Memory leak in fallback synthesizer - effects not disposed",
+            "file": "src/lib/audio/audio-engine.ts:253",
+            "impact": "Memory accumulation on repeated init/dispose cycles",
+            "fix": "Track and dispose reverb/compressor effects in dispose()"
+          },
+          {
+            "severity": "HIGH",
+            "component": "Playback Coordinator",
+            "issue": "Hardcoded 120 BPM default ignores score tempo markings",
+            "file": "src/lib/playback/playback-coordinator.ts",
+            "impact": "Incorrect playback speed for pieces with tempo markings",
+            "fix": "Extract tempo from MIDI metadata or MusicXML"
+          },
+          {
+            "severity": "HIGH",
+            "component": "State Stores",
+            "issue": "Selectors not memoized - causes unnecessary re-renders",
+            "files": [
+              "playback-store.ts",
+              "walkthrough-store.ts"
+            ],
+            "impact": "Performance degradation with frequent state updates",
+            "fix": "Use createSelector pattern or useMemo in components"
+          }
+        ],
+        "component_scores": {
+          "audio_engine": {
+            "score": "7/10",
+            "strengths": [
+              "Clean fallback architecture",
+              "Proper volume control",
+              "Good error handling"
+            ],
+            "weaknesses": [
+              "Effect disposal missing",
+              "Race condition in init",
+              "No sample preloading"
+            ]
+          },
+          "midi_player": {
+            "score": "6.5/10",
+            "strengths": [
+              "Good Tone.Transport integration",
+              "Seek functionality",
+              "Tempo control"
+            ],
+            "weaknesses": [
+              "Loop broken",
+              "NoteOn/Off matching fails for polyphony",
+              "No velocity normalization"
+            ]
+          },
+          "sync_layer": {
+            "score": "7.5/10",
+            "strengths": [
+              "Time-to-measure mapping works",
+              "Smooth cursor animation",
+              "Event-driven updates"
+            ],
+            "weaknesses": [
+              "Hardcoded tempo",
+              "Singleton lifecycle issues",
+              "Memory not cleaned on unmount"
+            ]
+          },
+          "state_stores": {
+            "score": "7.5/10",
+            "strengths": [
+              "Zustand devtools integration",
+              "Persistence middleware",
+              "Clear action naming"
+            ],
+            "weaknesses": [
+              "No memoized selectors",
+              "Array vs Set for activeNotes",
+              "skipHydration may cause issues"
+            ]
+          },
+          "score_display": {
+            "score": "7.5/10",
+            "strengths": [
+              "OSMD integration solid",
+              "Zoom controls",
+              "Mobile responsive"
+            ],
+            "weaknesses": [
+              "Infinite loop risk",
+              "Duplicate highlighting implementations",
+              "No lazy loading for large scores"
+            ]
+          },
+          "view_components": {
+            "score": "7.5/10",
+            "strengths": [
+              "Good component composition",
+              "Responsive design",
+              "Keyboard shortcuts"
+            ],
+            "weaknesses": [
+              "Mixed data flow patterns",
+              "Accessibility gaps",
+              "No loading states for audio init"
+            ]
+          }
+        },
+        "cross_cutting_concerns": {
+          "memory_management": "Multiple components lack proper cleanup on unmount - AudioEngine effects, SyncManager listeners, PlaybackCoordinator subscriptions",
+          "state_synchronization": "Three different sources of truth for playback state: PlaybackStore, AudioEngine.isReady, Transport.state - need single source",
+          "error_boundaries": "No React error boundaries around audio components - Tone.js failures crash entire app",
+          "accessibility": "Missing ARIA labels on transport controls, no keyboard focus indicators, no screen reader announcements for playback state",
+          "mobile_support": "AudioContext resume() not consistently called after user gesture on iOS Safari"
+        },
+        "architectural_recommendations": [
+          {
+            "priority": 1,
+            "recommendation": "Unify playback state management",
+            "details": "Create single PlaybackStateMachine using XState or custom state machine that wraps all state sources"
+          },
+          {
+            "priority": 2,
+            "recommendation": "Implement proper disposal pattern",
+            "details": "Create AudioResourceManager class that tracks all Tone.js nodes and ensures cleanup"
+          },
+          {
+            "priority": 3,
+            "recommendation": "Add error boundaries",
+            "details": "Wrap WalkthroughView in ErrorBoundary with fallback UI showing retry option"
+          },
+          {
+            "priority": 4,
+            "recommendation": "Memoize all selectors",
+            "details": "Use Zustand's createSelector or external reselect for derived state"
+          },
+          {
+            "priority": 5,
+            "recommendation": "Refactor loop playback",
+            "details": "Use Tone.Part with native loop support instead of manual event rescheduling"
+          }
+        ],
+        "files_evaluated": [
+          "src/lib/audio/audio-engine.ts",
+          "src/lib/audio/midi-player.ts",
+          "src/lib/audio/types.ts",
+          "src/lib/playback/sync-manager.ts",
+          "src/lib/playback/playback-coordinator.ts",
+          "src/lib/playback/score-sync.ts",
+          "src/lib/stores/playback-store.ts",
+          "src/lib/stores/walkthrough-store.ts",
+          "src/lib/stores/view-store.ts",
+          "src/components/score/score-display.tsx",
+          "src/components/walkthrough/walkthrough-view.tsx",
+          "src/hooks/use-playback.ts",
+          "src/hooks/use-audio-engine.ts"
+        ]
+      },
+      "metadata": {
+        "type": "evaluation_report",
+        "version": "1.0",
+        "agents_used": 6
+      },
+      "storedAt": "2026-01-23T05:14:01.366Z",
+      "accessCount": 0,
+      "lastAccessed": "2026-01-23T05:14:01.366Z"
     }
   },
   "version": "3.0.0"

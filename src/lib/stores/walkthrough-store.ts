@@ -150,6 +150,9 @@ export const useWalkthroughStore = create<WalkthroughState>()(
       }),
       {
         name: 'clavier-walkthrough',
+        // Skip automatic hydration to prevent SSR hydration mismatch
+        // Call useWalkthroughStore.persist.rehydrate() on client mount instead
+        skipHydration: true,
         partialize: (state) => ({
           currentPieceId: state.currentPieceId,
           currentMeasure: state.currentMeasure,
