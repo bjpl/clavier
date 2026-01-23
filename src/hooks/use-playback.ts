@@ -400,7 +400,10 @@ export function usePlayback(
 
   const effectiveTempo = tempo * storeTempoMultiplier
 
-  return {
+  // CRITICAL: Memoize the return object to prevent infinite re-render loops
+  // Without useMemo, this creates a NEW object on every render, which causes
+  // any useCallback/useEffect with this as a dependency to re-run infinitely
+  return useMemo(() => ({
     play,
     pause,
     stop,
@@ -422,7 +425,23 @@ export function usePlayback(
     effectiveTempo,
     isLooping: loopEnabled,
     player: playerRef.current
-  }
+  }), [
+    play,
+    pause,
+    stop,
+    seekToMeasure,
+    seekToTime,
+    setTempoMultiplier,
+    setLoop,
+    clearLoop,
+    loadMIDI,
+    loadFromAPI,
+    isPlaying,
+    currentPosition,
+    storeTempoMultiplier,
+    effectiveTempo,
+    loopEnabled
+  ])
 }
 
 /**
